@@ -1,0 +1,291 @@
+<?xml version="1.0" encoding="utf-8"?>
+<METS_Profile xmlns="http://www.loc.gov/METS_Profile/v2"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xlink="http://www.w3.org/1999/xlink"
+	xmlns:METS="http://www.loc.gov/METS/" xmlns:PREMIS="info:lc/xmlns/premis-v2"
+	xmlns:OAI_DC="http://www.openarchives.org/OAI/2.0/oai_dc/"
+	xmlns:DC="http://purl.org/dc/elements/1.1/" xmlns:EAD="urn:isbn:1-931666-22-9"
+	xsi:schemaLocation="
+		http://www.w3.org/1999/xlink					http://www.loc.gov/standards/mets/xlink.xsd
+		http://www.loc.gov/METS_Profile/v2				http://www.loc.gov/standards/mets/profile_docs/mets.profile.v2-0.xsd
+		http://www.loc.gov/METS/						http://www.loc.gov/standards/mets/mets.xsd
+		info:lc/xmlns/premis-v2							http://www.loc.gov/premis/premis.xsd
+		http://www.openarchives.org/OAI/2.0/oai_dc/		http://www.openarchives.org/OAI/2.0/oai_dc.xsd
+		urn:isbn:1-931666-22-9							http://www.loc.gov/ead/ead.xsd"
+	STATUS="final" REGISTRATION="registered">
+	<URI LOCTYPE="URL" ASSIGNEDBY="local">http://www.pleade.com/xmlns/pleademets-profil.xml</URI>
+	
+	<title xml:lang="fr">METS-Profil pour le logiciel Pleade.</title>
+	<title xml:lang="en">METS-Profle for the software Pleade.</title>
+	
+	<abstract xml:lang="fr">Ce profil de METS décrit la structure d'un document mets supporté(soutenu) par le logiciel Pleade. 
+		Il est utilisé de faire METS, ALTO, EAD et d'autres documents XML consultables sur Internet avec leurs photos 
+		correspondantes, contenu et des métadonnées. METS est une partie importante de notre logiciel pour transférer des données 
+		d'un application à un autre, rassemblant des données de sites divers et stockant de nouvelles informations.</abstract>
+	<abstract xml:lang="en">This METS profile describes the structure of a mets document supported by the software Pleade. It is 
+		used to make METS, ALTO, EAD and other XML documents searchable on the Internet with their corresponding photos, content 
+		and metadata. METS is an important part of our software for transferring data from one application to another, gathering 
+		data from various sites, and storing new information.</abstract>
+	
+	<date>2012-11-27T10:00:00</date>
+	<contact>
+		<institution>AJLSM</institution>
+		<address>17 Rue vitaal Carles, 33000 Bordeaux, France</address>
+		<phone>+33 (0)5 57 14 25 24</phone>
+		<email>info@ajlsm.com</email>
+	</contact>
+	<related_profile/>
+	<profile_context/>
+	<external_schema>
+		<name>Simple Dublin Core (DC)</name>
+		<URL>http://dublincore.org/schemas/xmls/simpledc20021212.xsd</URL>
+		<context> Descriptive metadata may be supplied in Dublin-Core format inside of a
+			"METS:mets/METS:dmdSec/METS:mdWrap[@MDTYPE='DC']/METS:xmlData" element. </context>
+	</external_schema>
+	<external_schema>
+		<name>Encoded Archival Description (EAD)</name>
+		<URL>http://www.loc.gov/ead/ead.xsd</URL>
+		<context> Descriptive metadata may be supplied in EAD format inside of a
+			"METS:mets/METS:dmdSec/METS:mdWrap[@MDTYPE='EAD']/METS:xmlData" element. </context>
+	</external_schema>
+	<external_schema>
+		<name>Meta-donnés BM-ORLEANS</name>
+		<URL>http://www.bm-orleans.fr/ns/1.0</URL>
+		<context> Used for encoding technical and administrative metadata inside of a 
+			"METS:mets/METS:dmdSec/METS:mdWrap[@MDTYPE='BMO-CSV']/METS:xmlData" element. </context>
+	</external_schema>
+	<description_rules/>
+	<controlled_vocabularies/>
+	<structural_requirements>
+		<metsRootElement>
+			<requirement>
+				<description>
+					<head>General</head>
+					<p xmlns="http://www.w3.org/1999/xhtml"> Shouldn't contain a namespace by default. </p>
+					<p xmlns="http://www.w3.org/1999/xhtml"> In a collection of mets documents, if each mets document is 
+					in the same directory as the documents that describe it, then the name of the mets document must 
+					contain a common prefix.</p>
+				</description>
+			</requirement>
+			<requirement>
+				<description>
+					<head>OBJID</head>
+					<p xmlns="http://www.w3.org/1999/xhtml"> The OBJID attribute is mandatory. It's a unique identifier
+					for the set of mets documents. It must not contain diacritic (accented) characters nor spaces.</p>
+				</description>
+			</requirement>
+		</metsRootElement>
+		<dmdSec>
+			<requirement>
+				<description>
+					<head>General</head>
+					<p xmlns="http://www.w3.org/1999/xhtml"> DMD sections are optional. There may be
+					no more than one DMD section per archived object.</p>
+				</description>
+			</requirement>
+			<requirement>
+				<description>
+					<head>EAD</head>
+					<p xmlns="http://www.w3.org/1999/xhtml"> If the DMD section contains exactly one
+						"METS:mdWrap[@MDTYPE = 'EAD']" element, it must contain one valid EAD
+						element within a "/METS:xmlData" element. The mandatory "EAD:archdesc"
+						element must contain one "EAD:dsc/EAD:c" element with the attributes "level"
+						and "otherlevel". The attribute "level" must contain the value "otherlevel".
+						The attribute "otherlevel" must contain the respective object's level of
+						description.</p>
+				</description>
+			</requirement>
+			<requirement>
+				<description>
+					<head>DC</head>
+					<p xmlns="http://www.w3.org/1999/xhtml"> If the DMD section contains exactly one
+						"METS:mdWrap[@MDTYPE = 'DC']" element, it may contain one or more DC
+						elements within a "METS:xmlData/OAI_DC:dc" element. </p>
+				</description>
+			</requirement>
+			<requirement>
+				<description>
+					<head>Other</head>
+					<p xmlns="http://www.w3.org/1999/xhtml"> For any other DMD section type, there
+						are no restrictions. </p>
+				</description>
+			</requirement>
+		</dmdSec>
+		<fileSec>
+			<requirement>
+				<description>
+					<head>General</head>
+					<p xmlns="http://www.w3.org/1999/xhtml"> The METS file may contain zero or one
+						fileSec sections.</p>
+					<p xmlns="http://www.w3.org/1999/xhtml"> The fileSec section must contain, if it is present,
+						at least one "METS:fileGrp" element.</p>
+				</description>
+			</requirement>
+			<requirement>
+				<description>
+					<head>FileGrp</head>
+					<p xmlns="http://www.w3.org/1999/xhtml"> The "METS:fileGrp" element may contain
+						zero or more "METS:file" elements.</p>
+					<p xmlns="http://www.w3.org/1999/xhtml"> The "METS:fileGrp" must contain an unique "METS:@USE" attribute</p>
+					<p xmlns="http://www.w3.org/1999/xhtml"> The "METS:file" of the same "METS:fileGrp" must point to the same type of physical resource,
+					for example: (image/jpg or text/xml)</p>
+				</description>
+			</requirement>
+			<requirement>
+				<description>
+					<head>Files</head>
+					<p xmlns="http://www.w3.org/1999/xhtml"> Each "METS:file" element must contain
+						an "ID" attribute which must match the "METS:fptr[@FILEID]" attribute value
+						in the corresponding object from the structMap.</p>
+					<p xmlns="http://www.w3.org/1999/xhtml"> Each "METS:file" element must
+						necessarily contain a "METS:FLocat" element with the following mandatory
+						non-empty attributes: </p>
+					<ul xmlns="http://www.w3.org/1999/xhtml">
+						<li>"LOCTYPE" containing the static value "URL"</li>
+						<li>"href" containing the file path relative to the METS root directory in
+							URL format.</li>
+					</ul>
+				</description>
+			</requirement>
+		</fileSec>
+		<structMap>
+			<requirement>
+				<description>
+					<head>General</head>
+					<p xmlns="http://www.w3.org/1999/xhtml"> The METS file must contain at least one "METS:structMap"
+					with an attribute "METS:TYPE" of type "physical". </p>
+					<p xmlns="http://www.w3.org/1999/xhtml"> There could be multiple other types of structMap. But
+					each type of structMap should only appear one time.</p>
+					<p xmlns="http://www.w3.org/1999/xhtml"> The structMap contains exactly one
+						"METS:div" element as the root node. Other "METS:div" elements are
+						recursively nested within each other and describe the hierarchical structure
+						of the SIP. Each "METS:div" element represents a file or folder. </p>
+				</description>
+			</requirement>
+			<requirement>
+				<description>
+					<head>Files and Folders</head>
+					<p xmlns="http://www.w3.org/1999/xhtml"> Each "METS:div" can contain two
+						mandatory attributes: </p>
+					<ul xmlns="http://www.w3.org/1999/xhtml">
+						<li>"LABEL" containing the file or folder name. It can contain more information separated by a ";".
+						Example: LABEL="doc: 100779; page: NP".</li>
+						<li>"ID" is mandatory. It's a unique identifier in the actual mets document.</li>
+					</ul>
+					<p xmlns="http://www.w3.org/1999/xhtml"> Folder and rootfolder type "METS:div"
+						elements contain zero or more "METS:div" elements, one for each file or
+						folder within this folder in the file system. </p>
+					<p xmlns="http://www.w3.org/1999/xhtml"> File type "METS:div" elements contain
+						one or more "METS:fptr" element with its "FILEID" attribute value
+						matching the corresponding "METS:file[@ID]" attribute in the fileSec
+						section. </p>
+					<p xmlns="http://www.w3.org/1999/xhtml"> A particular case of structMap with type physical:
+					There is only one level of recursion with the DIV elements. This means that the DIV at the 
+					first level can contain multiple child DIV elements. these last DIV elements do not have 
+					children of type DIV. The structMap with type physical is used to describe the physical 
+					structure of digitized documents.</p>
+				</description>
+			</requirement>
+		</structMap>
+	</structural_requirements>
+	<technical_requirements/>
+	<tool/>
+	<Appendix NUMBER="1">
+		<METS:mets xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+			xmlns:xlink="http://www.w3.org/TR/xlink"
+			xsi:schemaLocation="
+				http://www.loc.gov/METS/ http://www.loc.gov/standards/mets/mets.xsd
+				http://www.openarchives.org/OAI/2.0/oai_dc/ http://www.openarchives.org/OAI/2.0/oai_dc.xsd
+				http://www.loc.gov/mix/v20 http://www.loc.gov/standards/mix/mix20/mix20.xsd
+				info:lc/xmlns/premis-v2 http://www.loc.gov/standards/premis/v2/premis-v2-0.xsd "
+			OBJID="ark:-bmo-mets-doc-100779-simple">
+			<METS:metsHdr CREATEDATE="2012-06-25T14:21:02.304+02:00"
+				RECORDSTATUS="Complete">
+				<METS:agent ROLE="OTHER" TYPE="ORGANIZATION">
+					<METS:name>AJSLM</METS:name>
+				</METS:agent>
+				<METS:agent ROLE="EDITOR" TYPE="ORGANIZATION">
+					<METS:name>Bibliothèque Municipale d'Orléans</METS:name>
+				</METS:agent>
+			</METS:metsHdr>
+			<METS:dmdSec ID="doc-100779">
+				<METS:mdWrap MIMETYPE="text/xml" MDTYPE="BMO-CSV"
+					LABEL="Données CSV fourni par BM-Orléans">
+					<METS:xmlData>
+						<bmo:root xmlns:bmo="http://www.bm-orleans.fr/ns/1.0">
+							<bmo:cote type="raw">E5127 (1779,1780,1781)</bmo:cote>
+							<bmo:title>Annonces, Affiches, nouvelles et avis divers de
+								l'Orléanais</bmo:title>
+							<bmo:doc-id>100779</bmo:doc-id>
+							<bmo:pages-count>7</bmo:pages-count>
+							<bmo:fasc-suppl>1+supplement</bmo:fasc-suppl>
+							<bmo:date>1779-01-01</bmo:date>
+							<bmo:date-scan>2011-11-10</bmo:date-scan>
+						</bmo:root>
+					</METS:xmlData>
+				</METS:mdWrap>
+			</METS:dmdSec>
+			<METS:fileSec>
+				<METS:fileGrp USE="TIFF">
+					<METS:file ID="tiff-100779-10000001" MIMETYPE="image/tiff">
+						<METS:FLocat xlink:href="./tiff-100779/10000001.tif"
+							LOCTYPE="URL" />
+					</METS:file>
+					<METS:file ID="tiff-100779-10000002" MIMETYPE="image/tiff">
+						<METS:FLocat xlink:href="./tiff-100779/10000002.tif"
+							LOCTYPE="URL" />
+					</METS:file>
+				</METS:fileGrp>
+				<METS:fileGrp USE="JPEG">
+					<METS:file ID="jpeg-100779-10000001" MIMETYPE="image/jpeg">
+						<METS:FLocat xlink:href="./jpeg-100779/10000001.jpg"
+							LOCTYPE="URL" />
+					</METS:file>
+					<METS:file ID="jpeg-100779-10000002" MIMETYPE="image/jpeg">
+						<METS:FLocat xlink:href="./jpeg-100779/10000002.jpg"
+							LOCTYPE="URL" />
+					</METS:file>
+				</METS:fileGrp>
+				<METS:fileGrp USE="ALTO">
+					<METS:file ID="alto-100779-10000001" MIMETYPE="text/xml">
+						<METS:FLocat xlink:href="./alto-100779/10000001.xml"
+							LOCTYPE="URL" />
+					</METS:file>
+					<METS:file ID="alto-100779-10000002" MIMETYPE="text/xml">
+						<METS:FLocat xlink:href="./alto-100779/10000002.xml"
+							LOCTYPE="URL" />
+					</METS:file>
+				</METS:fileGrp>
+			</METS:fileSec>
+			<METS:structMap TYPE="physical">
+				<METS:div LABEL="Annonces, Affiches, nouvelles et avis divers de l'Orléanais"
+					DMDID="doc-100779">
+					<METS:div ID="100779:1:NP" LABEL="page: NP">
+						<METS:fptr FILEID="tiff-100779-10000001" />
+						<METS:fptr FILEID="jpeg-100779-10000001" />
+						<METS:fptr FILEID="alto-100779-10000001" />
+					</METS:div>
+					<METS:div ID="100779:2:3" LABEL="page: 3">
+						<METS:fptr FILEID="tiff-100779-10000002" />
+						<METS:fptr FILEID="jpeg-100779-10000002" />
+						<METS:fptr FILEID="alto-100779-10000002" />
+					</METS:div>
+				</METS:div>
+			</METS:structMap>
+			<METS:structMap TYPE="tdm">
+				<METS:div LABEL="Annonces, Affiches, nouvelles et avis divers de l'Orléanais"
+					DMDID="doc-100779">
+					<METS:div ID="100779:1:NP-tdm" LABEL="page: NP">
+						<METS:fptr FILEID="tiff-100779-10000001" />
+						<METS:fptr FILEID="jpeg-100779-10000001" />
+						<METS:fptr FILEID="alto-100779-10000001" />
+						<METS:div ID="100779:2:3-tdm" LABEL="page: 3">
+							<METS:fptr FILEID="tiff-100779-10000002" />
+							<METS:fptr FILEID="jpeg-100779-10000002" />
+							<METS:fptr FILEID="alto-100779-10000002" />
+						</METS:div>
+					</METS:div>
+				</METS:div>
+			</METS:structMap>
+		</METS:mets>
+	</Appendix>
+</METS_Profile>
