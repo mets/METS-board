@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mets xmlns="http://www.loc.gov/METS/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:xlink="http://www.w3.org/1999/xlink"
+    xsi:schemaLocation="http://www.loc.gov/METS/ mets1-8WithLinkGrps.xsd
+    http://www.w3.org/1999/xlink http://www.loc.gov/standards/xlink/xlink.xsd">
+    <structMap TYPE="logical">
+        <div ID="log0001" TYPE="issue">
+            <div ID="log0002" TYPE="article"/>
+            <div ID="log0003" TYPE="article"/> 
+            <div ID="log0004" TYPE="article"/>
+            <div ID="log0005" TYPE="article"/>
+            <div ID="log0006" TYPE="article"/>
+            <div ID="log0007" TYPE="article"/>
+            <div ID="log0008" TYPE="article"/>
+            <div ID="log0009" TYPE="article"/>           
+        </div>
+    </structMap>    
+    <structLink>
+        <smLinkGrp xlink:title="Article 1" xlink:type="extended"  xlink:role="role value" ARCLINKORDER="ordered">
+            <smLocatorLink xlink:href="#log0002" xlink:label="article"/>
+            <smLocatorLink xlink:href="http://external.link.example/smLinkGrpExternalExampleMETS2.xml#phys0001" xlink:label="page area 1.1"/>
+            <smLocatorLink xlink:href="http://external.link.example/smLinkGrpExternalExampleMETS2.xml#phys0002" xlink:label="page area 1.2"/>
+            <smLocatorLink xlink:href="http://external.link.example/smLinkGrpExternalExampleMETS2.xml#phys0007" xlink:label="page area 2.2"/>           
+            <smArcLink xlink:type="arc" xlink:from="article" xlink:to="page area 1.1" xlink:title="title value" xlink:actuate="none" xlink:arcrole="arcrole uri value" xlink:show="none"/>
+            <smArcLink xlink:type="arc" xlink:from="article" xlink:to="page area 1.2" xlink:title="title value" xlink:actuate="none" xlink:arcrole="arcrole uri value" xlink:show="none" />
+            <smArcLink xlink:type="arc" xlink:from="article" xlink:to="page area 2.2" xlink:title="title value" xlink:actuate="none" xlink:arcrole="arcrole uri value" xlink:show="none"  />
+        </smLinkGrp>
+        <smLinkGrp xlink:title="Article 2" xlink:type="extended" ARCLINKORDER="ordered">
+            <smLocatorLink xlink:href="#log0003" xlink:label="article"/>
+            <smLocatorLink xlink:href="http://external.link.example/smLinkGrpExternalExampleMETS2.xml#phys0003" xlink:label="page area 1.3"/>
+            <smLocatorLink xlink:href="http://external.link.example/smLinkGrpExternalExampleMETS2.xml#phys0004" xlink:label="page area 1.4"/>
+            <smLocatorLink xlink:href="http://external.link.example/smLinkGrpExternalExampleMETS2.xml#phys0005" xlink:label="page area 1.5"/>            
+            <smArcLink xlink:type="arc" xlink:from="article" xlink:to="page area 1.3" xlink:title="title value" xlink:actuate="none" xlink:arcrole="arcrole uri value" xlink:show="none" />
+            <smArcLink xlink:type="arc" xlink:from="article" xlink:to="page area 1.4" xlink:title="title value" xlink:actuate="none" xlink:arcrole="arcrole uri value" xlink:show="none" />
+            <smArcLink xlink:type="arc" xlink:from="article" xlink:to="page area 1.5"  xlink:title="title value" xlink:actuate="none" xlink:arcrole="arcrole uri value" xlink:show="none"/>
+        </smLinkGrp>                    
+    </structLink>
+  
+</mets>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mets xmlns="http://www.loc.gov/METS/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:xlink="http://www.w3.org/1999/xlink"
+    xsi:schemaLocation="http://www.loc.gov/METS/ mets1-8WithLinkGrps.xsd
+    http://www.w3.org/1999/xlink http://www.loc.gov/standards/xlink/xlink.xsd">
+    
+    <structMap TYPE="physical">
+        <div ID="phys0000" TYPE="physSequence">
+            <div ID="physpage0001" TYPE="page">
+                <div ID="phys0001" TYPE="pagearea"/>
+                <div ID="phys0002" TYPE="pagearea"/>
+                <div ID="phys0003" TYPE="pagearea"/>
+                <div ID="phys0004" TYPE="pagearea"/>
+                <div ID="phys0005" TYPE="pagearea"/>
+            </div>
+            <div ID="physpage0002">
+                <div ID="phys0006" TYPE="pagearea"/>
+                <div ID="phys0007" TYPE="pagearea"/>
+                <div ID="phys0008" TYPE="pagearea"/>
+                <div ID="phys0009" TYPE="pagearea"/>
+            </div>                
+        </div>            
+    </structMap>
+</mets>

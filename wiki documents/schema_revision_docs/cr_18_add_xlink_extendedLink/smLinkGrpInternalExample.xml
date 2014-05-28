@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mets:mets xmlns:mets="http://www.loc.gov/METS/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:xlink="http://www.w3.org/1999/xlink"
+    xsi:schemaLocation="http://www.loc.gov/METS/ mets1-8.xsd
+    http://www.w3.org/1999/xlink http://www.loc.gov/standards/xlink/xlink.xsd">
+    <mets:amdSec>
+        <mets:sourceMD ID="src1">
+            <mets:mdWrap MDTYPE="OTHER" OTHERMDTYPE="LINKREFINEMENT">
+                <mets:xmlData xmlns:lr="http://www.bl.uk/linkRefinement">
+                    <lr:linkRefinement TYPE="COORDS"  UNIT="cm">
+                        <lr:refinementValue ORDER="1">10,10</lr:refinementValue>                
+                        <lr:refinementValue ORDER="2">52,10</lr:refinementValue>                
+                        <lr:refinementValue ORDER="3">52,122</lr:refinementValue>                
+                        <lr:refinementValue ORDER="4">10,122</lr:refinementValue>               
+                    </lr:linkRefinement> 
+                </mets:xmlData>                    
+            </mets:mdWrap>       
+        </mets:sourceMD>
+        <mets:sourceMD ID="src2">
+            <mets:mdWrap MDTYPE="OTHER" OTHERMDTYPE="LINKREFINEMENT">
+                <mets:xmlData xmlns:lr="http://www.bl.uk/linkRefinement">
+                    <lr:linkRefinement TYPE="COORDS"  UNIT="cm">
+                        <lr:refinementValue ORDER="1">30,30</lr:refinementValue>                
+                        <lr:refinementValue ORDER="2">72,30</lr:refinementValue>                
+                        <lr:refinementValue ORDER="3">72,132</lr:refinementValue>                
+                        <lr:refinementValue ORDER="4">30,132</lr:refinementValue>               
+                    </lr:linkRefinement> 
+                </mets:xmlData>                    
+            </mets:mdWrap>    
+        </mets:sourceMD>         
+        <mets:sourceMD ID="src3">
+            <mets:mdWrap MDTYPE="OTHER" OTHERMDTYPE="LINKREFINEMENT">
+                <mets:xmlData xmlns:lr="http://www.bl.uk/linkRefinement">
+                    <lr:linkRefinement TYPE="COORDS"  UNIT="cm">
+                        <lr:refinementValue ORDER="1">10,10</lr:refinementValue>                
+                        <lr:refinementValue ORDER="2">42,10</lr:refinementValue>                
+                        <lr:refinementValue ORDER="3">42,122</lr:refinementValue>                
+                        <lr:refinementValue ORDER="4">10,122</lr:refinementValue>               
+                    </lr:linkRefinement> 
+                </mets:xmlData>                    
+            </mets:mdWrap>       
+        </mets:sourceMD>             
+        <mets:sourceMD ID="src4">
+            <mets:mdWrap MDTYPE="OTHER" OTHERMDTYPE="LINKREFINEMENT">
+                <mets:xmlData xmlns:lr="http://www.bl.uk/linkRefinement">
+                    <lr:linkRefinement TYPE="COORDS"  UNIT="cm">
+                        <lr:refinementValue ORDER="1">30,10</lr:refinementValue>                
+                        <lr:refinementValue ORDER="2">82,10</lr:refinementValue>                
+                        <lr:refinementValue ORDER="3">82,102</lr:refinementValue>                
+                        <lr:refinementValue ORDER="4">30,102</lr:refinementValue>               
+                    </lr:linkRefinement> 
+                </mets:xmlData>                    
+            </mets:mdWrap>       
+        </mets:sourceMD>
+        <mets:sourceMD ID="src5">
+            <mets:mdWrap MDTYPE="OTHER" OTHERMDTYPE="LINKREFINEMENT">
+                <mets:xmlData xmlns:lr="http://www.bl.uk/linkRefinement">
+                    <lr:linkRefinement TYPE="COORDS"  UNIT="cm">
+                        <lr:refinementValue ORDER="1">82,10</lr:refinementValue>                
+                        <lr:refinementValue ORDER="2">140,10</lr:refinementValue>                
+                        <lr:refinementValue ORDER="3">140,102</lr:refinementValue>                
+                        <lr:refinementValue ORDER="4">82,102</lr:refinementValue>               
+                    </lr:linkRefinement> 
+                </mets:xmlData>                    
+            </mets:mdWrap>       
+        </mets:sourceMD>
+        <mets:sourceMD ID="src6">
+            <mets:mdWrap MDTYPE="OTHER" OTHERMDTYPE="LINKREFINEMENT">
+                <mets:xmlData xmlns:lr="http://www.bl.uk/linkRefinement">
+                    <lr:linkRefinement TYPE="COORDS"  UNIT="cm">
+                        <lr:refinementValue ORDER="1">82,40</lr:refinementValue>                
+                        <lr:refinementValue ORDER="2">100,40</lr:refinementValue>                
+                        <lr:refinementValue ORDER="3">100,122</lr:refinementValue>                
+                        <lr:refinementValue ORDER="4">82,122</lr:refinementValue>               
+                    </lr:linkRefinement> 
+                </mets:xmlData>                    
+            </mets:mdWrap>       
+        </mets:sourceMD> 
+    </mets:amdSec>      
+    <mets:structMap TYPE="logical">
+        <mets:div ID="log0001" TYPE="issue">
+            <mets:div ID="log0002" TYPE="article"/>
+            <mets:div ID="log0003" TYPE="article"/> 
+            <mets:div ID="log0004" TYPE="article"/>
+            <mets:div ID="log0005" TYPE="article"/>
+            <mets:div ID="log0006" TYPE="article"/>
+            <mets:div ID="log0007" TYPE="article"/>
+            <mets:div ID="log0008" TYPE="article"/>
+            <mets:div ID="log0009" TYPE="article"/>           
+        </mets:div>
+    </mets:structMap>
+    
+    <mets:structMap TYPE="physical">
+        <mets:div ID="phys0000" TYPE="physSequence">
+            <mets:div ID="physpage0001" TYPE="page">
+                <mets:div ID="phys0001" TYPE="pagearea"/>
+                <mets:div ID="phys0002" TYPE="pagearea"/>
+                <mets:div ID="phys0003" TYPE="pagearea"/>
+                <mets:div ID="phys0004" TYPE="pagearea"/>
+                <mets:div ID="phys0005" TYPE="pagearea"/>
+            </mets:div>
+            <mets:div ID="physpage0002">
+                <mets:div ID="phys0006" TYPE="pagearea"/>
+                <mets:div ID="phys0007" TYPE="pagearea"/>
+                <mets:div ID="phys0008" TYPE="pagearea"/>
+                <mets:div ID="phys0009" TYPE="pagearea"/>
+            </mets:div>                
+        </mets:div>            
+    </mets:structMap>
+    
+    <mets:structLink>
+        <mets:smLinkGrp xlink:title="Article 1" xlink:type="extended"  xlink:role="role value" ARCLINKORDER="ordered">
+            <mets:smLocatorLink xlink:href="#log0002" xlink:label="article" xlink:type="locator" xlink:role="role value" xlink:title="title value"/>
+            <mets:smLocatorLink xlink:href="#phys0001" xlink:label="page area 1" xlink:type="locator" xlink:role="role value" xlink:title="title value"/>
+            <mets:smLocatorLink xlink:href="#phys0002" xlink:label="page area 2" xlink:type="locator" xlink:role="role value" xlink:title="title value"/>
+            <mets:smLocatorLink xlink:href="#phys0007" xlink:label="page area 3" xlink:type="locator" xlink:role="role value" xlink:title="title value"/>
+            <mets:smArcLink xlink:type="arc" xlink:from="article" xlink:to="page area 1" xlink:title="title value" xlink:actuate="none" xlink:arcrole="arcrole uri value" xlink:show="none" ADMID="src1" ARCTYPE="article to page area"/>
+            <mets:smArcLink xlink:type="arc" xlink:from="article" xlink:to="page area 2" xlink:title="title value" xlink:actuate="none" xlink:arcrole="arcrole uri value" xlink:show="none" ADMID="src2" ARCTYPE="article to page area"/>
+            <mets:smArcLink xlink:type="arc" xlink:from="article" xlink:to="page area 3" xlink:title="title value" xlink:actuate="none" xlink:arcrole="arcrole uri value" xlink:show="none" ADMID="src3" ARCTYPE="article to page area"/>
+        </mets:smLinkGrp>
+        <mets:smLinkGrp xlink:title="Article 2" xlink:type="extended" ARCLINKORDER="ordered">
+            <mets:smLocatorLink xlink:href="#log0003" xlink:label="article" xlink:type="locator" xlink:role="role value" xlink:title="title value" />
+            <mets:smLocatorLink xlink:href="#phys0003" xlink:label="page area 1" xlink:type="locator" xlink:role="role value" xlink:title="title value"/>
+            <mets:smLocatorLink xlink:href="#phys0004" xlink:label="page area 2" xlink:type="locator" xlink:role="role value" xlink:title="title value"/>
+            <mets:smLocatorLink xlink:href="#phys0005" xlink:label="page area 3" xlink:type="locator" xlink:role="role value" xlink:title="title value"/>
+            <mets:smArcLink xlink:type="arc" xlink:from="article" xlink:to="page area 1" xlink:title="title value" xlink:actuate="none" xlink:arcrole="arcrole uri value" xlink:show="none" ADMID="src4"  ARCTYPE="article to page area"/>
+            <mets:smArcLink xlink:type="arc" xlink:from="article" xlink:to="page area 2" xlink:title="title value" xlink:actuate="none" xlink:arcrole="arcrole uri value" xlink:show="none" ADMID="src5" ARCTYPE="article to page area"/>
+            <mets:smArcLink xlink:type="arc" xlink:from="article" xlink:to="page area 3"  xlink:title="title value" xlink:actuate="none" xlink:arcrole="arcrole uri value" xlink:show="none" ADMID="src6" ARCTYPE="article to page area"/>
+        </mets:smLinkGrp>                    
+    </mets:structLink>
+  
+</mets:mets>
