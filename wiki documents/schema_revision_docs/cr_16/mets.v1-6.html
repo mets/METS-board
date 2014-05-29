@@ -1,0 +1,3357 @@
+<html xmlns:xsd="http://www.w3.org/2001/XMLSchema"><head>
+
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><title>XML Schema documentation for http://www.loc.gov/METS/</title>
+
+<style type="text/css">
+div { padding: 5px; border:1px dashed #ccc; }
+.documentation { background:#eee; }
+div.attributes { border:1px dashed #000; }
+.element	   { border:1px solid #0c0; }
+.complexType   { border:1px solid #000; }
+</style></head><body>
+
+<div>
+<a name="toc"><h1>Schema Documentation
+{http://www.loc.gov/METS/}
+</h1></a><h2>Contents</h2>
+<div><a class="onpage" href="#element">Elements</a></div>
+<div><a class="onpage" href="#complexType">Named Complex Types</a></div>
+</div>
+<div>
+<a name="element"><h2>Elements</h2></a><div>
+|	<a class="onpage" href="#agent">&lt;agent&gt;</a>
+|	<a class="onpage" href="#altRecordID">&lt;altRecordID&gt;</a>
+|	<a class="onpage" href="#amdSec">&lt;amdSec&gt;</a>
+|	<a class="onpage" href="#area">&lt;area&gt;</a>
+|	<a class="onpage" href="#behavior">&lt;behavior&gt;</a>
+|	<a class="onpage" href="#behaviorSec">&lt;behaviorSec&gt;</a>
+|	<a class="onpage" href="#binData">&lt;binData&gt;</a>
+|	<a class="onpage" href="#digiprovMD">&lt;digiprovMD&gt;</a>
+|	<a class="onpage" href="#div">&lt;div&gt;</a>
+|	<a class="onpage" href="#dmdSec">&lt;dmdSec&gt;</a>
+|	<a class="onpage" href="#FContent">&lt;FContent&gt;</a>
+|	<a class="onpage" href="#file">&lt;file&gt;</a>
+|	<a class="onpage" href="#fileGrp">&lt;fileGrp&gt;</a>
+|	<a class="onpage" href="#fileSec">&lt;fileSec&gt;</a>
+|	<a class="onpage" href="#FLocat">&lt;FLocat&gt;</a>
+|	<a class="onpage" href="#fptr">&lt;fptr&gt;</a>
+|	<a class="onpage" href="#interfaceDef">&lt;interfaceDef&gt;</a>
+|	<a class="onpage" href="#mdRef">&lt;mdRef&gt;</a>
+|	<a class="onpage" href="#mdWrap">&lt;mdWrap&gt;</a>
+|	<a class="onpage" href="#mechanism">&lt;mechanism&gt;</a>
+|	<a class="onpage" href="#mets">&lt;mets&gt;</a>
+|	<a class="onpage" href="#metsHdr">&lt;metsHdr&gt;</a>
+|	<a class="onpage" href="#mptr">&lt;mptr&gt;</a>
+|	<a class="onpage" href="#name">&lt;name&gt;</a>
+|	<a class="onpage" href="#note">&lt;note&gt;</a>
+|	<a class="onpage" href="#par">&lt;par&gt;</a>
+|	<a class="onpage" href="#rightsMD">&lt;rightsMD&gt;</a>
+|	<a class="onpage" href="#seq">&lt;seq&gt;</a>
+|	<a class="onpage" href="#smLink">&lt;smLink&gt;</a>
+|	<a class="onpage" href="#sourceMD">&lt;sourceMD&gt;</a>
+|	<a class="onpage" href="#stream">&lt;stream&gt;</a>
+|	<a class="onpage" href="#structLink">&lt;structLink&gt;</a>
+|	<a class="onpage" href="#structMap">&lt;structMap&gt;</a>
+|	<a class="onpage" href="#techMD">&lt;techMD&gt;</a>
+|	<a class="onpage" href="#transformFile">&lt;transformFile&gt;</a>
+|	<a class="onpage" href="#xmlData">&lt;xmlData&gt;</a>
+</div>
+<div class="element">
+<a name="mets"><h3>Element &lt;mets&gt;</h3></a> <div class="documentation">METS: Metadata Encoding and Transmission Standard.<br xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+METS is intended to provide a standardized XML format for transmission
+of complex digital library objects between systems. As such, it can be
+seen as filling a role similar to that defined for the Submission
+Information Package (SIP), Archival Information Package (AIP) and
+Dissemination Information Package (DIP) in the Reference Model for an
+Open Archival Information System.<br xmlns:xsd="http://www.w3.org/2001/XMLSchema">			</div>
+<div>complexType
+	
+| <a class="onpage" href="#metsType">metsType</a>
+</div>
+<div>may contain
+	
+|	<a class="onpage" href="#metsHdr">&lt;metsHdr&gt;</a>
+|	<a class="onpage" href="#dmdSec">&lt;dmdSec&gt;</a>
+|	<a class="onpage" href="#amdSec">&lt;amdSec&gt;</a>
+|	<a class="onpage" href="#fileSec">&lt;fileSec&gt;</a>
+|	<a class="onpage" href="#structMap">&lt;structMap&gt;</a>
+|	<a class="onpage" href="#structLink">&lt;structLink&gt;</a>
+|	<a class="onpage" href="#behaviorSec">&lt;behaviorSec&gt;</a>
+</div>
+<div></div>
+<div class="attributes">
+<p>attributes</p>
+<div>ID: 
+xsd:ID &nbsp;
+optional &nbsp;
+<div><div class="documentation">ID: an optional XML ID value<br xmlns:xsd="http://www.w3.org/2001/XMLSchema">				</div></div>
+</div>
+<div>OBJID: 
+xsd:string &nbsp;
+optional &nbsp;
+<div><div class="documentation">OBJID: an optional attribute recording a primary identifier assigned to the METS document.<br xmlns:xsd="http://www.w3.org/2001/XMLSchema">				</div></div>
+</div>
+<div>LABEL: 
+xsd:string &nbsp;
+optional &nbsp;
+<div><div class="documentation">LABEL: an optional attribute providing a title/text string identifying the document for users.<br xmlns:xsd="http://www.w3.org/2001/XMLSchema">				</div></div>
+</div>
+<div>TYPE: 
+xsd:string &nbsp;
+optional &nbsp;
+<div><div class="documentation">TYPE: an optional string attribute describing the type of object, e.g., book, journal, stereograph, etc.<br xmlns:xsd="http://www.w3.org/2001/XMLSchema">				</div></div>
+</div>
+<div>PROFILE: 
+xsd:string &nbsp;
+optional &nbsp;
+<div><div class="documentation">PROFILE: an optional attribute providing a URI or other identifier for a METS profile to which  this METS document conforms.<br xmlns:xsd="http://www.w3.org/2001/XMLSchema">			</div></div>
+</div>
+</div>
+<a href="#toc" class="onpage">Contents</a> |
+<a href="#element" class="onpage">Elements</a> |
+<a href="#complexType" class="onpage">Named Complex Types</a>
+</div>
+<div class="element">
+<a name="metsHdr"><h3>Element &lt;metsHdr&gt;</h3></a> minOccurs="0"
+  <div class="documentation">metsHdr: METS Header. <br xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+Like a TEI Header, the METS Header element records metadata about the
+METS document itself (not the digital library object that the METS
+document encodes). It has two possible subsidiary elements, agent
+(document agent) and altRecordID (alternative Record ID)..<br xmlns:xsd="http://www.w3.org/2001/XMLSchema">			</div>
+<div>
+may contain
+	
+|	<a class="onpage" href="#agent">&lt;agent&gt;</a>
+|	<a class="onpage" href="#altRecordID">&lt;altRecordID&gt;</a>
+</div>
+<div>contained within 
+|	<a xmlns:xsd="http://www.w3.org/2001/XMLSchema" class="onpage" href="#mets">&lt;mets&gt;</a>
+</div>
+<div class="attributes">
+<p>attributes</p>
+<div>ID: 
+xsd:ID &nbsp;
+optional &nbsp;
+<div><div class="documentation">ID: an optional XML ID value<br xmlns:xsd="http://www.w3.org/2001/XMLSchema">							</div></div>
+</div>
+<div>ADMID: 
+xsd:IDREFS &nbsp;
+optional &nbsp;
+<div><div class="documentation">ADMID: an optional attribute providing
+the XML ID values for the administrative metadata sections within this
+METS document applicable to this METS Document.<br xmlns:xsd="http://www.w3.org/2001/XMLSchema">							</div></div>
+</div>
+<div>CREATEDATE: 
+xsd:dateTime &nbsp;
+optional &nbsp;
+<div><div class="documentation">CREATEDATE: an optional dateTime specifying  when the METS document was created.<br xmlns:xsd="http://www.w3.org/2001/XMLSchema">							</div></div>
+</div>
+<div>LASTMODDATE: 
+xsd:dateTime &nbsp;
+optional &nbsp;
+<div><div class="documentation">LASTMODDATE: an optional dateTime specifying when the METS document was last modified;<br xmlns:xsd="http://www.w3.org/2001/XMLSchema">							</div></div>
+</div>
+<div>RECORDSTATUS: 
+xsd:string &nbsp;
+optional &nbsp;
+<div><div class="documentation">RECORDSTATUS: an optional string indicating the status of the METS document, to be used mainly for internal processing purposes.<br xmlns:xsd="http://www.w3.org/2001/XMLSchema">							</div></div>
+</div>
+</div>
+<a href="#toc" class="onpage">Contents</a> |
+<a href="#element" class="onpage">Elements</a> |
+<a href="#complexType" class="onpage">Named Complex Types</a>
+</div>
+<div class="element">
+<a name="agent"><h3>Element &lt;agent&gt;</h3></a> minOccurs="0"
+  maxOccurs="unbounded"
+  <div class="documentation">agent: METS agent.<br xmlns:xsd="http://www.w3.org/2001/XMLSchema">								The agent element allows for various parties and their roles with respect to the METS document to be recorded.  <br xmlns:xsd="http://www.w3.org/2001/XMLSchema">								</div>
+<div>
+may contain
+	
+|	<a class="onpage" href="#name">&lt;name&gt;</a>
+|	<a class="onpage" href="#note">&lt;note&gt;</a>
+</div>
+<div>contained within 
+|	<a xmlns:xsd="http://www.w3.org/2001/XMLSchema" class="onpage" href="#metsHdr">&lt;metsHdr&gt;</a>
+</div>
+<div class="attributes">
+<p>attributes</p>
+<div>ID: 
+xsd:ID &nbsp;
+optional &nbsp;
+<div><div class="documentation">ID: an optional XML ID<br xmlns:xsd="http://www.w3.org/2001/XMLSchema">										</div></div>
+</div>
+<div>ROLE: 
+ &nbsp;
+required &nbsp;
+
+| CREATOR
+| EDITOR
+| ARCHIVIST
+| PRESERVATION
+| DISSEMINATOR
+| CUSTODIAN
+| IPOWNER
+| OTHER<div><div class="documentation">ROLE:
+a required attribute specifying the role played by the agent with
+respect to the METS object. ROLE must have one of the following seven
+values:<br xmlns:xsd="http://www.w3.org/2001/XMLSchema">CREATOR: an agent responsible for creating the METS document<br xmlns:xsd="http://www.w3.org/2001/XMLSchema">EDITOR: an agent responsible for editing the METS document<br xmlns:xsd="http://www.w3.org/2001/XMLSchema">ARCHIVIST:
+an agent with archival responsibility for the METS document and/or the
+original sources used to create the METS object<br xmlns:xsd="http://www.w3.org/2001/XMLSchema">PRESERVATION: an agent responsible for preserving the METS object and/or the original sources used to create the METS object<br xmlns:xsd="http://www.w3.org/2001/XMLSchema">DISSEMINATOR: an agent responsible for distributing or publishing the METS object<br xmlns:xsd="http://www.w3.org/2001/XMLSchema">CUSTODIAN: an agent with custodial responsibility for the METS object<br xmlns:xsd="http://www.w3.org/2001/XMLSchema">IPOWNER: an agent with intellectual property rights in the METS object or some of its components.<br xmlns:xsd="http://www.w3.org/2001/XMLSchema">OTHER: an agent with other rights/responsibilities with respect to the METS object not set forth above.<br xmlns:xsd="http://www.w3.org/2001/XMLSchema">										</div></div>
+</div>
+<div>OTHERROLE: 
+xsd:string &nbsp;
+optional &nbsp;
+<div><div class="documentation">OTHERROLE:<br xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+an optional string attribute to specify the particular role an agent
+plays with respect to a METS object or its sources, to be used if the
+ROLE attribute has a value of OTHER.<br xmlns:xsd="http://www.w3.org/2001/XMLSchema">										</div></div>
+</div>
+<div>TYPE: 
+ &nbsp;
+optional &nbsp;
+
+| INDIVIDUAL
+| ORGANIZATION
+| OTHER<div><div class="documentation">TYPE:
+an optional attribute to specify the nature of the agent acting with
+respect to the METS object. It can take one of three values:<br xmlns:xsd="http://www.w3.org/2001/XMLSchema">INDIVIDUAL: a single, human agent<br xmlns:xsd="http://www.w3.org/2001/XMLSchema">ORGANIZATION: a collective entity<br xmlns:xsd="http://www.w3.org/2001/XMLSchema">OTHER: some other form of agent (e.g., a software agent)<br xmlns:xsd="http://www.w3.org/2001/XMLSchema">										</div></div>
+</div>
+<div>OTHERTYPE: 
+xsd:string &nbsp;
+optional &nbsp;
+<div><div class="documentation">OTHERTYPE: an optional string to
+indicate the particular type of agent, to be used if a value of OTHER
+is indicated in the agent's TYPE attribute.<br xmlns:xsd="http://www.w3.org/2001/XMLSchema">										</div></div>
+</div>
+</div>
+<a href="#toc" class="onpage">Contents</a> |
+<a href="#element" class="onpage">Elements</a> |
+<a href="#complexType" class="onpage">Named Complex Types</a>
+</div>
+<div class="element">
+<a name="name"><h3>Element &lt;name&gt;</h3></a> type="<a href="#xsd:string">xsd:string</a>"
+  <div class="documentation">name:The full name of the METS document agent.<br xmlns:xsd="http://www.w3.org/2001/XMLSchema">											</div>
+<div>may contain
+	</div>
+<div>contained within 
+|	<a xmlns:xsd="http://www.w3.org/2001/XMLSchema" class="onpage" href="#agent">&lt;agent&gt;</a>
+</div>
+<div class="attributes"><p>attributes</p></div>
+<a href="#toc" class="onpage">Contents</a> |
+<a href="#element" class="onpage">Elements</a> |
+<a href="#complexType" class="onpage">Named Complex Types</a>
+</div>
+<div class="element">
+<a name="note"><h3>Element &lt;note&gt;</h3></a> type="<a href="#xsd:string">xsd:string</a>"
+  minOccurs="0"
+  maxOccurs="unbounded"
+  <div class="documentation">note: Any additional information regarding the agent's activities with respect to the METS document.<br xmlns:xsd="http://www.w3.org/2001/XMLSchema">											</div>
+<div>may contain
+	</div>
+<div>contained within 
+|	<a xmlns:xsd="http://www.w3.org/2001/XMLSchema" class="onpage" href="#agent">&lt;agent&gt;</a>
+</div>
+<div class="attributes"><p>attributes</p></div>
+<a href="#toc" class="onpage">Contents</a> |
+<a href="#element" class="onpage">Elements</a> |
+<a href="#complexType" class="onpage">Named Complex Types</a>
+</div>
+<div class="element">
+<a name="altRecordID"><h3>Element &lt;altRecordID&gt;</h3></a> minOccurs="0"
+  maxOccurs="unbounded"
+  <div class="documentation">altRecordID: Alternative Record ID.  <br xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+This element allows for documentation of alternative ID values for the
+METS document in addition to the primary ID stored in the OBJID
+attribute in the root METS element.<br xmlns:xsd="http://www.w3.org/2001/XMLSchema">								</div>
+<div>contained within 
+|	<a xmlns:xsd="http://www.w3.org/2001/XMLSchema" class="onpage" href="#metsHdr">&lt;metsHdr&gt;</a>
+</div>
+<div class="attributes">
+<p>attributes</p>
+<div>ID: 
+xsd:ID &nbsp;
+optional &nbsp;
+<div><div class="documentation">ID: an optional XML ID value<br xmlns:xsd="http://www.w3.org/2001/XMLSchema">												</div></div>
+</div>
+<div>TYPE: 
+xsd:string &nbsp;
+optional &nbsp;
+<div><div class="documentation">TYPE: an optional string describing the type of identifier (e.g., OCLC #, LCCN, etc.).<br xmlns:xsd="http://www.w3.org/2001/XMLSchema">												</div></div>
+</div>
+</div>
+<a href="#toc" class="onpage">Contents</a> |
+<a href="#element" class="onpage">Elements</a> |
+<a href="#complexType" class="onpage">Named Complex Types</a>
+</div>
+<div class="element">
+<a name="dmdSec"><h3>Element &lt;dmdSec&gt;</h3></a> type="<a href="#mdSecType">mdSecType</a>"
+  minOccurs="0"
+  maxOccurs="unbounded"
+  <div class="documentation">dmdSec: Description Metadata Section.<br xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+This section records all of the descriptive metadata for all items in
+the METS object (including both structural map divs and descriptive
+metadata for data files). Metadata can be either included in the METS
+hub document (mdWrap) or referenced via an identifier/locator (mdRef),
+a la Warwick Framework. Multiple dmdSec elements are allowed so that
+descriptive metadata can be recorded for each separate item within the
+METS object.<br xmlns:xsd="http://www.w3.org/2001/XMLSchema">					</div>
+<div>may contain
+	
+|	<a class="onpage" href="#mdRef">&lt;mdRef&gt;</a>
+|	<a class="onpage" href="#mdWrap">&lt;mdWrap&gt;</a>
+</div>
+<div>contained within 
+|	<a xmlns:xsd="http://www.w3.org/2001/XMLSchema" class="onpage" href="#mets">&lt;mets&gt;</a>
+</div>
+<div class="attributes">
+<p>attributes</p>
+<div>ID: 
+xsd:ID &nbsp;
+required &nbsp;
+<div><div class="documentation">ID: a required XML ID value<br xmlns:xsd="http://www.w3.org/2001/XMLSchema">				</div></div>
+</div>
+<div>GROUPID: 
+xsd:string &nbsp;
+optional &nbsp;
+<div><div class="documentation">GROUPID: an optional string attribute
+providing an identifier that may be used to indicate that different
+metadata sections may be considered as part of a single group. Two
+metadata sections with the same GROUPID value are to be considered part
+of the same group. This facility might be used, for example, to group
+changed versions of the same metadata if previous versions are
+maintained in a file for tracking purposes;<br xmlns:xsd="http://www.w3.org/2001/XMLSchema">				</div></div>
+</div>
+<div>ADMID: 
+xsd:IDREFS &nbsp;
+optional &nbsp;
+<div><div class="documentation">ADMID: an optional attribute providing
+the XML ID attribute values for administrative metadata elements which
+apply to the current descriptive or administrative metadata. Typically
+used to reference preservation metadata which applies to the current
+metadata.<br xmlns:xsd="http://www.w3.org/2001/XMLSchema">				</div></div>
+</div>
+<div>CREATED: 
+xsd:dateTime &nbsp;
+optional &nbsp;
+<div><div class="documentation">CREATED: an optional dateTime attribute specifying the date and time of creation for the metadata.<br xmlns:xsd="http://www.w3.org/2001/XMLSchema">				</div></div>
+</div>
+<div>STATUS: 
+xsd:string &nbsp;
+optional &nbsp;
+<div><div class="documentation">STATUS: an optional string attribute indicating the status of this metadata (e.g., superceded, current, etc.).<br xmlns:xsd="http://www.w3.org/2001/XMLSchema">				</div></div>
+</div>
+</div>
+<a href="#toc" class="onpage">Contents</a> |
+<a href="#element" class="onpage">Elements</a> |
+<a href="#complexType" class="onpage">Named Complex Types</a>
+</div>
+<div class="element">
+<a name="amdSec"><h3>Element &lt;amdSec&gt;</h3></a> type="<a href="#amdSecType">amdSecType</a>"
+  minOccurs="0"
+  maxOccurs="unbounded"
+  <div class="documentation">amdSec: Administrative Metadata Section.<br xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+This section records all of the administrative metadata for all items
+in the METS object (including structural map divs, data files,
+descriptive metadata sections and adminstrative metadata sections
+themselves), and is divided into four subsections: techMD (technical
+metadata), rightsMD (intellectual property rights metadata), sourceMD
+(analog/digital source metadata), and digiprovMD (digital provenance
+metadata). Each of these subsections follows the mdSecType model, so
+that they can either include metadata within the METS hub document
+(mdWrap) or reference it via an identifier/locator (mdRef). Multiple
+techMD, rightsMD, sourceMD and digiprovMD elements are allowed so that
+administrative metadata can be recorded for each separate item within
+the METS object.</div>
+<div>may contain
+	
+|	<a class="onpage" href="#techMD">&lt;techMD&gt;</a>
+|	<a class="onpage" href="#rightsMD">&lt;rightsMD&gt;</a>
+|	<a class="onpage" href="#sourceMD">&lt;sourceMD&gt;</a>
+|	<a class="onpage" href="#digiprovMD">&lt;digiprovMD&gt;</a>
+</div>
+<div>contained within 
+|	<a xmlns:xsd="http://www.w3.org/2001/XMLSchema" class="onpage" href="#mets">&lt;mets&gt;</a>
+</div>
+<div class="attributes">
+<p>attributes</p>
+<div>ID: 
+xsd:ID &nbsp;
+optional &nbsp;
+<div><div class="documentation">ID: an optional XML ID value<br xmlns:xsd="http://www.w3.org/2001/XMLSchema">				</div></div>
+</div>
+</div>
+<a href="#toc" class="onpage">Contents</a> |
+<a href="#element" class="onpage">Elements</a> |
+<a href="#complexType" class="onpage">Named Complex Types</a>
+</div>
+<div class="element">
+<a name="fileSec"><h3>Element &lt;fileSec&gt;</h3></a> minOccurs="0"
+  <div class="documentation">fileSec: Content File Section. <br xmlns:xsd="http://www.w3.org/2001/XMLSchema">					The content file section records information regarding all of the data files which comprise the digital library object.<br xmlns:xsd="http://www.w3.org/2001/XMLSchema">					</div>
+<div>
+may contain
+	
+|	<a class="onpage" href="#fileGrp">&lt;fileGrp&gt;</a>
+</div>
+<div>contained within 
+|	<a xmlns:xsd="http://www.w3.org/2001/XMLSchema" class="onpage" href="#mets">&lt;mets&gt;</a>
+</div>
+<div class="attributes">
+<p>attributes</p>
+<div>ID: 
+xsd:ID &nbsp;
+optional &nbsp;
+<div><div class="documentation">ID: an optional XML ID value<br xmlns:xsd="http://www.w3.org/2001/XMLSchema">							</div></div>
+</div>
+</div>
+<a href="#toc" class="onpage">Contents</a> |
+<a href="#element" class="onpage">Elements</a> |
+<a href="#complexType" class="onpage">Named Complex Types</a>
+</div>
+<div class="element">
+<a name="fileGrp"><h3>Element &lt;fileGrp&gt;</h3></a> maxOccurs="unbounded"
+  <div class="documentation">fileGrp: File Group<br xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+This element allows for the grouping of content files into sets (all of
+the master images for a work, all of the images for a particular page,
+etc.).<br xmlns:xsd="http://www.w3.org/2001/XMLSchema">								</div>
+<div>complexType
+	
+| <a class="onpage" href="#fileGrpType">fileGrpType</a>
+</div>
+<div>may contain
+	
+|	<a class="onpage" href="#fileGrp">&lt;fileGrp&gt;</a>
+|	<a class="onpage" href="#file">&lt;file&gt;</a>
+</div>
+<div>contained within 
+|	<a xmlns:xsd="http://www.w3.org/2001/XMLSchema" class="onpage" href="#fileSec">&lt;fileSec&gt;</a>
+|	<a xmlns:xsd="http://www.w3.org/2001/XMLSchema" class="onpage" href="#fileGrp">&lt;fileGrp&gt;</a>
+|	<a xmlns:xsd="http://www.w3.org/2001/XMLSchema" class="onpage" href="#fileGrp">&lt;fileGrp&gt;</a>
+</div>
+<div class="attributes">
+<p>attributes</p>
+<div>ID: 
+xsd:ID &nbsp;
+optional &nbsp;
+<div><div class="documentation">ID: an optional XML ID value.<br xmlns:xsd="http://www.w3.org/2001/XMLSchema">				</div></div>
+</div>
+<div>VERSDATE: 
+xsd:dateTime &nbsp;
+optional &nbsp;
+<div><div class="documentation">VERSDATE: an optional dateTime attribute specifying the date this version/fileGrp of the digital object was created.<br xmlns:xsd="http://www.w3.org/2001/XMLSchema">				</div></div>
+</div>
+<div>ADMID: 
+xsd:IDREFS &nbsp;
+optional &nbsp;
+<div><div class="documentation">ADMID: an optional attribute specifying
+the XML ID values for administrative metadata sections in the METS
+document that provide information applicable to all of the files in
+this particular file group.<br xmlns:xsd="http://www.w3.org/2001/XMLSchema">				</div></div>
+</div>
+<div>USE: 
+xsd:string &nbsp;
+optional &nbsp;
+<div><div class="documentation">USE: an optional string attribute
+indicating the intended use of all the files within this file group
+(e.g., master, reference, thumbnails for image files).<br xmlns:xsd="http://www.w3.org/2001/XMLSchema">				</div></div>
+</div>
+</div>
+<a href="#toc" class="onpage">Contents</a> |
+<a href="#element" class="onpage">Elements</a> |
+<a href="#complexType" class="onpage">Named Complex Types</a>
+</div>
+<div class="element">
+<a name="structMap"><h3>Element &lt;structMap&gt;</h3></a> type="<a href="#structMapType">structMapType</a>"
+  maxOccurs="unbounded"
+  <div class="documentation">structMap: Structural Map.<br xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+The structural map is the heart of a METS document, defining the
+hierarchical arrangement of a primary source document which has been
+digitized. This hierarchy is encoded as a tree of 'div' elements. Any
+given 'div' can point to another METS document via the 'mptr' element,
+or to a single file, to a group of files, or to segments of individual
+files or groups of files through the 'fptr' and subsidiary elements.<br xmlns:xsd="http://www.w3.org/2001/XMLSchema">					</div>
+<div>may contain
+	
+|	<a class="onpage" href="#div">&lt;div&gt;</a>
+</div>
+<div>contained within 
+|	<a xmlns:xsd="http://www.w3.org/2001/XMLSchema" class="onpage" href="#mets">&lt;mets&gt;</a>
+</div>
+<div class="attributes">
+<p>attributes</p>
+<div>ID: 
+xsd:ID &nbsp;
+optional &nbsp;
+<div><div class="documentation">ID: an optional XML ID value.<br xmlns:xsd="http://www.w3.org/2001/XMLSchema">				</div></div>
+</div>
+<div>TYPE: 
+xsd:string &nbsp;
+optional &nbsp;
+<div><div class="documentation">TYPE: an optional string attribute
+specifying the type of structural map provided. Typical values will be
+"PHYSICAL" for a map which describes the physical composition of the
+original work (a series with individual monographs with pages) and
+"LOGICAL" for one which describes the intellectual structure of the
+work (a monograph with TOC, forward, chapters, index., etc.);<br xmlns:xsd="http://www.w3.org/2001/XMLSchema">				</div></div>
+</div>
+<div>LABEL: 
+xsd:string &nbsp;
+optional &nbsp;
+<div><div class="documentation">LABEL: an optional string attribute
+which may be used to describe the structMap to users. This is primarily
+useful where more than one structMap is provided for a single object
+(e.g., both logical and physical structMap).<br xmlns:xsd="http://www.w3.org/2001/XMLSchema">				</div></div>
+</div>
+</div>
+<a href="#toc" class="onpage">Contents</a> |
+<a href="#element" class="onpage">Elements</a> |
+<a href="#complexType" class="onpage">Named Complex Types</a>
+</div>
+<div class="element">
+<a name="structLink"><h3>Element &lt;structLink&gt;</h3></a> minOccurs="0"
+  <div class="documentation">structLink: Structural Map Linking.<br xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+The Structural Map Linking section allows for the specification of
+hyperlinks between different components of a METS structure delineated
+in a structural map.<br xmlns:xsd="http://www.w3.org/2001/XMLSchema">					</div>
+<div>complexType
+	
+| <a class="onpage" href="#structLinkType">structLinkType</a>
+</div>
+<div>may contain
+	
+|	<a class="onpage" href="#smLink">&lt;smLink&gt;</a>
+</div>
+<div>contained within 
+|	<a xmlns:xsd="http://www.w3.org/2001/XMLSchema" class="onpage" href="#mets">&lt;mets&gt;</a>
+</div>
+<div class="attributes">
+<p>attributes</p>
+<div>ID: 
+xsd:ID &nbsp;
+optional &nbsp;
+<div><div class="documentation">ID: an optional XML ID value<br xmlns:xsd="http://www.w3.org/2001/XMLSchema">				</div></div>
+</div>
+</div>
+<a href="#toc" class="onpage">Contents</a> |
+<a href="#element" class="onpage">Elements</a> |
+<a href="#complexType" class="onpage">Named Complex Types</a>
+</div>
+<div class="element">
+<a name="behaviorSec"><h3>Element &lt;behaviorSec&gt;</h3></a> type="<a href="#behaviorSecType">behaviorSecType</a>"
+  minOccurs="0"
+  maxOccurs="unbounded"
+  <div class="documentation">behaviorSec: Behavior Section.  This section records executable 	behaviors that are associated with content in the METS object.</div>
+<div>may contain
+	
+|	<a class="onpage" href="#behaviorSec">&lt;behaviorSec&gt;</a>
+|	<a class="onpage" href="#behavior">&lt;behavior&gt;</a>
+</div>
+<div>contained within 
+|	<a xmlns:xsd="http://www.w3.org/2001/XMLSchema" class="onpage" href="#mets">&lt;mets&gt;</a>
+|	<a xmlns:xsd="http://www.w3.org/2001/XMLSchema" class="onpage" href="#behaviorSec">&lt;behaviorSec&gt;</a>
+|	<a xmlns:xsd="http://www.w3.org/2001/XMLSchema" class="onpage" href="#behaviorSec">&lt;behaviorSec&gt;</a>
+</div>
+<div class="attributes">
+<p>attributes</p>
+<div>ID: 
+xsd:ID &nbsp;
+optional &nbsp;
+<div><div class="documentation">ID: an optional XML ID value.<br xmlns:xsd="http://www.w3.org/2001/XMLSchema">				</div></div>
+</div>
+<div>CREATED: 
+xsd:dateTime &nbsp;
+optional &nbsp;
+<div><div class="documentation">CREATED: an optional dateTime attribute specifying when the behaviorSec was created.<br xmlns:xsd="http://www.w3.org/2001/XMLSchema">				</div></div>
+</div>
+<div>LABEL: 
+xsd:string &nbsp;
+optional &nbsp;
+<div><div class="documentation">LABEL: an optional string attribute providing a text description of the behaviorSec.<br xmlns:xsd="http://www.w3.org/2001/XMLSchema">				</div></div>
+</div>
+</div>
+<a href="#toc" class="onpage">Contents</a> |
+<a href="#element" class="onpage">Elements</a> |
+<a href="#complexType" class="onpage">Named Complex Types</a>
+</div>
+<div class="element">
+<a name="techMD"><h3>Element &lt;techMD&gt;</h3></a> type="<a href="#mdSecType">mdSecType</a>"
+  minOccurs="0"
+  maxOccurs="unbounded"
+  <div class="documentation">techMD: technical metadata.  <br xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+The techMD element provides a wrapper around a generic metadata
+section, which should contain technical metadata regarding a file or
+files.<br xmlns:xsd="http://www.w3.org/2001/XMLSchema">					</div>
+<div>may contain
+	
+|	<a class="onpage" href="#mdRef">&lt;mdRef&gt;</a>
+|	<a class="onpage" href="#mdWrap">&lt;mdWrap&gt;</a>
+</div>
+<div>contained within 
+|	<a xmlns:xsd="http://www.w3.org/2001/XMLSchema" class="onpage" href="#amdSec">&lt;amdSec&gt;</a>
+</div>
+<div class="attributes">
+<p>attributes</p>
+<div>ID: 
+xsd:ID &nbsp;
+required &nbsp;
+<div><div class="documentation">ID: a required XML ID value<br xmlns:xsd="http://www.w3.org/2001/XMLSchema">				</div></div>
+</div>
+<div>GROUPID: 
+xsd:string &nbsp;
+optional &nbsp;
+<div><div class="documentation">GROUPID: an optional string attribute
+providing an identifier that may be used to indicate that different
+metadata sections may be considered as part of a single group. Two
+metadata sections with the same GROUPID value are to be considered part
+of the same group. This facility might be used, for example, to group
+changed versions of the same metadata if previous versions are
+maintained in a file for tracking purposes;<br xmlns:xsd="http://www.w3.org/2001/XMLSchema">				</div></div>
+</div>
+<div>ADMID: 
+xsd:IDREFS &nbsp;
+optional &nbsp;
+<div><div class="documentation">ADMID: an optional attribute providing
+the XML ID attribute values for administrative metadata elements which
+apply to the current descriptive or administrative metadata. Typically
+used to reference preservation metadata which applies to the current
+metadata.<br xmlns:xsd="http://www.w3.org/2001/XMLSchema">				</div></div>
+</div>
+<div>CREATED: 
+xsd:dateTime &nbsp;
+optional &nbsp;
+<div><div class="documentation">CREATED: an optional dateTime attribute specifying the date and time of creation for the metadata.<br xmlns:xsd="http://www.w3.org/2001/XMLSchema">				</div></div>
+</div>
+<div>STATUS: 
+xsd:string &nbsp;
+optional &nbsp;
+<div><div class="documentation">STATUS: an optional string attribute indicating the status of this metadata (e.g., superceded, current, etc.).<br xmlns:xsd="http://www.w3.org/2001/XMLSchema">				</div></div>
+</div>
+</div>
+<a href="#toc" class="onpage">Contents</a> |
+<a href="#element" class="onpage">Elements</a> |
+<a href="#complexType" class="onpage">Named Complex Types</a>
+</div>
+<div class="element">
+<a name="rightsMD"><h3>Element &lt;rightsMD&gt;</h3></a> type="<a href="#mdSecType">mdSecType</a>"
+  minOccurs="0"
+  maxOccurs="unbounded"
+  <div class="documentation">rightsMD: intellectual property rights metadata.  <br xmlns:xsd="http://www.w3.org/2001/XMLSchema">						The rightsMD element provides a wrapper around a generic metadata section,  which should contain IP rights metadata.<br xmlns:xsd="http://www.w3.org/2001/XMLSchema">					</div>
+<div>may contain
+	
+|	<a class="onpage" href="#mdRef">&lt;mdRef&gt;</a>
+|	<a class="onpage" href="#mdWrap">&lt;mdWrap&gt;</a>
+</div>
+<div>contained within 
+|	<a xmlns:xsd="http://www.w3.org/2001/XMLSchema" class="onpage" href="#amdSec">&lt;amdSec&gt;</a>
+</div>
+<div class="attributes">
+<p>attributes</p>
+<div>ID: 
+xsd:ID &nbsp;
+required &nbsp;
+<div><div class="documentation">ID: a required XML ID value<br xmlns:xsd="http://www.w3.org/2001/XMLSchema">				</div></div>
+</div>
+<div>GROUPID: 
+xsd:string &nbsp;
+optional &nbsp;
+<div><div class="documentation">GROUPID: an optional string attribute
+providing an identifier that may be used to indicate that different
+metadata sections may be considered as part of a single group. Two
+metadata sections with the same GROUPID value are to be considered part
+of the same group. This facility might be used, for example, to group
+changed versions of the same metadata if previous versions are
+maintained in a file for tracking purposes;<br xmlns:xsd="http://www.w3.org/2001/XMLSchema">				</div></div>
+</div>
+<div>ADMID: 
+xsd:IDREFS &nbsp;
+optional &nbsp;
+<div><div class="documentation">ADMID: an optional attribute providing
+the XML ID attribute values for administrative metadata elements which
+apply to the current descriptive or administrative metadata. Typically
+used to reference preservation metadata which applies to the current
+metadata.<br xmlns:xsd="http://www.w3.org/2001/XMLSchema">				</div></div>
+</div>
+<div>CREATED: 
+xsd:dateTime &nbsp;
+optional &nbsp;
+<div><div class="documentation">CREATED: an optional dateTime attribute specifying the date and time of creation for the metadata.<br xmlns:xsd="http://www.w3.org/2001/XMLSchema">				</div></div>
+</div>
+<div>STATUS: 
+xsd:string &nbsp;
+optional &nbsp;
+<div><div class="documentation">STATUS: an optional string attribute indicating the status of this metadata (e.g., superceded, current, etc.).<br xmlns:xsd="http://www.w3.org/2001/XMLSchema">				</div></div>
+</div>
+</div>
+<a href="#toc" class="onpage">Contents</a> |
+<a href="#element" class="onpage">Elements</a> |
+<a href="#complexType" class="onpage">Named Complex Types</a>
+</div>
+<div class="element">
+<a name="sourceMD"><h3>Element &lt;sourceMD&gt;</h3></a> type="<a href="#mdSecType">mdSecType</a>"
+  minOccurs="0"
+  maxOccurs="unbounded"
+  <div class="documentation">sourceMD: source metadata.  <br xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+The sourceMD element provides a wrapper around a generic metadata
+section which should contain descriptive or administrative metadata
+regarding the original source materials used to create the METS object.<br xmlns:xsd="http://www.w3.org/2001/XMLSchema">					</div>
+<div>may contain
+	
+|	<a class="onpage" href="#mdRef">&lt;mdRef&gt;</a>
+|	<a class="onpage" href="#mdWrap">&lt;mdWrap&gt;</a>
+</div>
+<div>contained within 
+|	<a xmlns:xsd="http://www.w3.org/2001/XMLSchema" class="onpage" href="#amdSec">&lt;amdSec&gt;</a>
+</div>
+<div class="attributes">
+<p>attributes</p>
+<div>ID: 
+xsd:ID &nbsp;
+required &nbsp;
+<div><div class="documentation">ID: a required XML ID value<br xmlns:xsd="http://www.w3.org/2001/XMLSchema">				</div></div>
+</div>
+<div>GROUPID: 
+xsd:string &nbsp;
+optional &nbsp;
+<div><div class="documentation">GROUPID: an optional string attribute
+providing an identifier that may be used to indicate that different
+metadata sections may be considered as part of a single group. Two
+metadata sections with the same GROUPID value are to be considered part
+of the same group. This facility might be used, for example, to group
+changed versions of the same metadata if previous versions are
+maintained in a file for tracking purposes;<br xmlns:xsd="http://www.w3.org/2001/XMLSchema">				</div></div>
+</div>
+<div>ADMID: 
+xsd:IDREFS &nbsp;
+optional &nbsp;
+<div><div class="documentation">ADMID: an optional attribute providing
+the XML ID attribute values for administrative metadata elements which
+apply to the current descriptive or administrative metadata. Typically
+used to reference preservation metadata which applies to the current
+metadata.<br xmlns:xsd="http://www.w3.org/2001/XMLSchema">				</div></div>
+</div>
+<div>CREATED: 
+xsd:dateTime &nbsp;
+optional &nbsp;
+<div><div class="documentation">CREATED: an optional dateTime attribute specifying the date and time of creation for the metadata.<br xmlns:xsd="http://www.w3.org/2001/XMLSchema">				</div></div>
+</div>
+<div>STATUS: 
+xsd:string &nbsp;
+optional &nbsp;
+<div><div class="documentation">STATUS: an optional string attribute indicating the status of this metadata (e.g., superceded, current, etc.).<br xmlns:xsd="http://www.w3.org/2001/XMLSchema">				</div></div>
+</div>
+</div>
+<a href="#toc" class="onpage">Contents</a> |
+<a href="#element" class="onpage">Elements</a> |
+<a href="#complexType" class="onpage">Named Complex Types</a>
+</div>
+<div class="element">
+<a name="digiprovMD"><h3>Element &lt;digiprovMD&gt;</h3></a> type="<a href="#mdSecType">mdSecType</a>"
+  minOccurs="0"
+  maxOccurs="unbounded"
+  <div class="documentation">digiprovMD: digital provenance metadata.<br xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+The digiprovMD element provides a wrapper around a generic metadata
+section, which should contain information regarding the ultimate origin
+of a digital object and the derivation of its current elements. This
+includes recording master/derivative relationships between various
+files which currently represent the object, as well recording any
+transformations or migrations undergone by files composing the digital
+object subsequent to the initial digitization of an item or, in the
+case of born digital materials, the files' creation. In short,
+digiprovMD should be used to record information to allow both
+archival/library staff and scholars to understand what modifications
+have been performed to a digital object during its life cycle in order
+to judge how those processes might have altered or corrupted the
+object's ability to accurately represent the original item.<br xmlns:xsd="http://www.w3.org/2001/XMLSchema">					</div>
+<div>may contain
+	
+|	<a class="onpage" href="#mdRef">&lt;mdRef&gt;</a>
+|	<a class="onpage" href="#mdWrap">&lt;mdWrap&gt;</a>
+</div>
+<div>contained within 
+|	<a xmlns:xsd="http://www.w3.org/2001/XMLSchema" class="onpage" href="#amdSec">&lt;amdSec&gt;</a>
+</div>
+<div class="attributes">
+<p>attributes</p>
+<div>ID: 
+xsd:ID &nbsp;
+required &nbsp;
+<div><div class="documentation">ID: a required XML ID value<br xmlns:xsd="http://www.w3.org/2001/XMLSchema">				</div></div>
+</div>
+<div>GROUPID: 
+xsd:string &nbsp;
+optional &nbsp;
+<div><div class="documentation">GROUPID: an optional string attribute
+providing an identifier that may be used to indicate that different
+metadata sections may be considered as part of a single group. Two
+metadata sections with the same GROUPID value are to be considered part
+of the same group. This facility might be used, for example, to group
+changed versions of the same metadata if previous versions are
+maintained in a file for tracking purposes;<br xmlns:xsd="http://www.w3.org/2001/XMLSchema">				</div></div>
+</div>
+<div>ADMID: 
+xsd:IDREFS &nbsp;
+optional &nbsp;
+<div><div class="documentation">ADMID: an optional attribute providing
+the XML ID attribute values for administrative metadata elements which
+apply to the current descriptive or administrative metadata. Typically
+used to reference preservation metadata which applies to the current
+metadata.<br xmlns:xsd="http://www.w3.org/2001/XMLSchema">				</div></div>
+</div>
+<div>CREATED: 
+xsd:dateTime &nbsp;
+optional &nbsp;
+<div><div class="documentation">CREATED: an optional dateTime attribute specifying the date and time of creation for the metadata.<br xmlns:xsd="http://www.w3.org/2001/XMLSchema">				</div></div>
+</div>
+<div>STATUS: 
+xsd:string &nbsp;
+optional &nbsp;
+<div><div class="documentation">STATUS: an optional string attribute indicating the status of this metadata (e.g., superceded, current, etc.).<br xmlns:xsd="http://www.w3.org/2001/XMLSchema">				</div></div>
+</div>
+</div>
+<a href="#toc" class="onpage">Contents</a> |
+<a href="#element" class="onpage">Elements</a> |
+<a href="#complexType" class="onpage">Named Complex Types</a>
+</div>
+<div class="element">
+<a name="fileGrp"><h3>Element &lt;fileGrp&gt;</h3></a> type="<a href="#fileGrpType">fileGrpType</a>"
+  minOccurs="0"
+  maxOccurs="unbounded"
+  <div>may contain
+	
+|	<a class="onpage" href="#fileGrp">&lt;fileGrp&gt;</a>
+|	<a class="onpage" href="#file">&lt;file&gt;</a>
+</div>
+<div>contained within 
+|	<a xmlns:xsd="http://www.w3.org/2001/XMLSchema" class="onpage" href="#fileSec">&lt;fileSec&gt;</a>
+|	<a xmlns:xsd="http://www.w3.org/2001/XMLSchema" class="onpage" href="#fileGrp">&lt;fileGrp&gt;</a>
+|	<a xmlns:xsd="http://www.w3.org/2001/XMLSchema" class="onpage" href="#fileGrp">&lt;fileGrp&gt;</a>
+</div>
+<div class="attributes">
+<p>attributes</p>
+<div>ID: 
+xsd:ID &nbsp;
+optional &nbsp;
+<div><div class="documentation">ID: an optional XML ID value.<br xmlns:xsd="http://www.w3.org/2001/XMLSchema">				</div></div>
+</div>
+<div>VERSDATE: 
+xsd:dateTime &nbsp;
+optional &nbsp;
+<div><div class="documentation">VERSDATE: an optional dateTime attribute specifying the date this version/fileGrp of the digital object was created.<br xmlns:xsd="http://www.w3.org/2001/XMLSchema">				</div></div>
+</div>
+<div>ADMID: 
+xsd:IDREFS &nbsp;
+optional &nbsp;
+<div><div class="documentation">ADMID: an optional attribute specifying
+the XML ID values for administrative metadata sections in the METS
+document that provide information applicable to all of the files in
+this particular file group.<br xmlns:xsd="http://www.w3.org/2001/XMLSchema">				</div></div>
+</div>
+<div>USE: 
+xsd:string &nbsp;
+optional &nbsp;
+<div><div class="documentation">USE: an optional string attribute
+indicating the intended use of all the files within this file group
+(e.g., master, reference, thumbnails for image files).<br xmlns:xsd="http://www.w3.org/2001/XMLSchema">				</div></div>
+</div>
+</div>
+<a href="#toc" class="onpage">Contents</a> |
+<a href="#element" class="onpage">Elements</a> |
+<a href="#complexType" class="onpage">Named Complex Types</a>
+</div>
+<div class="element">
+<a name="file"><h3>Element &lt;file&gt;</h3></a> minOccurs="0"
+  maxOccurs="unbounded"
+  type="<a href="#fileType">fileType</a>"
+  <div>may contain
+	
+|	<a class="onpage" href="#FLocat">&lt;FLocat&gt;</a>
+|	<a class="onpage" href="#FContent">&lt;FContent&gt;</a>
+|	<a class="onpage" href="#stream">&lt;stream&gt;</a>
+|	<a class="onpage" href="#transformFile">&lt;transformFile&gt;</a>
+|	<a class="onpage" href="#file">&lt;file&gt;</a>
+</div>
+<div>contained within 
+|	<a xmlns:xsd="http://www.w3.org/2001/XMLSchema" class="onpage" href="#fileGrp">&lt;fileGrp&gt;</a>
+|	<a xmlns:xsd="http://www.w3.org/2001/XMLSchema" class="onpage" href="#fileGrp">&lt;fileGrp&gt;</a>
+|	<a xmlns:xsd="http://www.w3.org/2001/XMLSchema" class="onpage" href="#file">&lt;file&gt;</a>
+|	<a xmlns:xsd="http://www.w3.org/2001/XMLSchema" class="onpage" href="#file">&lt;file&gt;</a>
+</div>
+<div class="attributes">
+<p>attributes</p>
+<div>ID: 
+xsd:ID &nbsp;
+required &nbsp;
+<div><div class="documentation">ID: an XML ID value.<br xmlns:xsd="http://www.w3.org/2001/XMLSchema">				</div></div>
+</div>
+<div>MIMETYPE: 
+xsd:string &nbsp;
+optional &nbsp;
+<div><div class="documentation">MIMETYPE: an optional string attribute providing the MIME type for the file.<br xmlns:xsd="http://www.w3.org/2001/XMLSchema">				</div></div>
+</div>
+<div>SEQ: 
+xsd:int &nbsp;
+optional &nbsp;
+<div><div class="documentation">SEQ: an optional integer indicating the sequence of this  file relative to the others in its file group.<br xmlns:xsd="http://www.w3.org/2001/XMLSchema">				</div></div>
+</div>
+<div>SIZE: 
+xsd:long &nbsp;
+optional &nbsp;
+<div><div class="documentation">SIZE: an optional long integer specifying the size of the file in bytes.<br xmlns:xsd="http://www.w3.org/2001/XMLSchema">				</div></div>
+</div>
+<div>CREATED: 
+xsd:dateTime &nbsp;
+optional &nbsp;
+<div><div class="documentation">CREATED: an optional dateTime providing the date of creation for the file.<br xmlns:xsd="http://www.w3.org/2001/XMLSchema">				</div></div>
+</div>
+<div>CHECKSUM: 
+xsd:string &nbsp;
+optional &nbsp;
+<div><div class="documentation">CHECKSUM: an optional string attribute providing a checksum value for the included file.<br xmlns:xsd="http://www.w3.org/2001/XMLSchema">				</div></div>
+</div>
+<div>CHECKSUMTYPE: 
+ &nbsp;
+optional &nbsp;
+
+| HAVAL
+| MD5
+| SHA-1
+| SHA-256
+| SHA-384
+| SHA-512
+| TIGER
+| WHIRLPOOL<div><div class="documentation">CHECKSUMTYPE:
+an optional attribute specifying the checksum algorithm used to produce
+the value contained in the CHECKSUM attribute. CHECKSUMTYPE must
+contain one of the following values:<br xmlns:xsd="http://www.w3.org/2001/XMLSchema">					HAVAL<br xmlns:xsd="http://www.w3.org/2001/XMLSchema">					MD5<br xmlns:xsd="http://www.w3.org/2001/XMLSchema">					SHA-1<br xmlns:xsd="http://www.w3.org/2001/XMLSchema">					SHA-256<br xmlns:xsd="http://www.w3.org/2001/XMLSchema">					SHA-384<br xmlns:xsd="http://www.w3.org/2001/XMLSchema">					SHA-512<br xmlns:xsd="http://www.w3.org/2001/XMLSchema">					TIGER<br xmlns:xsd="http://www.w3.org/2001/XMLSchema">					WHIRLPOOL<br xmlns:xsd="http://www.w3.org/2001/XMLSchema">				</div></div>
+</div>
+<div>OWNERID: 
+xsd:string &nbsp;
+optional &nbsp;
+<div><div class="documentation">OWNERID: an optional string attribute
+which may be used to provide a unique identifier (including a URI)
+assigned to the file which may differ from the URI used to retrieve the
+file.<br xmlns:xsd="http://www.w3.org/2001/XMLSchema">				</div></div>
+</div>
+<div>ADMID: 
+xsd:IDREFS &nbsp;
+optional &nbsp;
+<div><div class="documentation">ADMID: an optional attribute used to
+list the XML ID attribute values for administrative metadata sections
+in the METS document that provide information regarding this file.<br xmlns:xsd="http://www.w3.org/2001/XMLSchema">				</div></div>
+</div>
+<div>DMDID: 
+xsd:IDREFS &nbsp;
+optional &nbsp;
+<div><div class="documentation">DMDID: an optional attribute used to
+list the XML ID attribute values for descriptive metadata sections in
+the METS document that provide information regarding this file.<br xmlns:xsd="http://www.w3.org/2001/XMLSchema">				</div></div>
+</div>
+<div>GROUPID: 
+xsd:string &nbsp;
+optional &nbsp;
+<div><div class="documentation">GROUPID: an optional string attribute
+which may be used to record an identifier that establishes a
+correspondence between this file and files in other file groups. For
+example, a master image in one file group would share the same GROUPID
+value with a reference copy in a second file group and a thumbnail
+image in a third file group.<br xmlns:xsd="http://www.w3.org/2001/XMLSchema">				</div></div>
+</div>
+<div>USE: 
+xsd:string &nbsp;
+optional &nbsp;
+<div><div class="documentation">USE: an optional string attribute
+indicating the intended use of this file (e.g., "master", "reference",
+"thumbnail" for image files).<br xmlns:xsd="http://www.w3.org/2001/XMLSchema">				</div></div>
+</div>
+</div>
+<a href="#toc" class="onpage">Contents</a> |
+<a href="#element" class="onpage">Elements</a> |
+<a href="#complexType" class="onpage">Named Complex Types</a>
+</div>
+<div class="element">
+<a name="div"><h3>Element &lt;div&gt;</h3></a> type="<a href="#divType">divType</a>"
+  <div class="documentation">div: Division.  <br xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+The METS standard represents a document structurally as a series of
+nested div elements, that is, as a hierarchy (e.g., a book, which is
+composed of chapters, which are composed of subchapters, which are
+composed of text). Every div node in the structural map hierarchy may
+be connected (via subsidiary mptr or fptr elements) to content files
+which represent that div's portion of the whole document. <br xmlns:xsd="http://www.w3.org/2001/XMLSchema">					</div>
+<div>may contain
+	
+|	<a class="onpage" href="#mptr">&lt;mptr&gt;</a>
+|	<a class="onpage" href="#fptr">&lt;fptr&gt;</a>
+|	<a class="onpage" href="#div">&lt;div&gt;</a>
+</div>
+<div>contained within 
+|	<a xmlns:xsd="http://www.w3.org/2001/XMLSchema" class="onpage" href="#structMap">&lt;structMap&gt;</a>
+|	<a xmlns:xsd="http://www.w3.org/2001/XMLSchema" class="onpage" href="#div">&lt;div&gt;</a>
+|	<a xmlns:xsd="http://www.w3.org/2001/XMLSchema" class="onpage" href="#div">&lt;div&gt;</a>
+</div>
+<div class="attributes">
+<p>attributes</p>
+<div>ID: 
+xsd:ID &nbsp;
+optional &nbsp;
+<div><div class="documentation">ID: an optional XML ID value.<br xmlns:xsd="http://www.w3.org/2001/XMLSchema">				</div></div>
+</div>
+<div>ORDER: 
+xsd:integer &nbsp;
+optional &nbsp;
+<div><div class="documentation">ORDER: an optional integer representation of this div's order among its siblings (e.g., its sequence).<br xmlns:xsd="http://www.w3.org/2001/XMLSchema">				</div></div>
+</div>
+<div>ORDERLABEL: 
+xsd:string &nbsp;
+optional &nbsp;
+<div><div class="documentation">ORDERLABEL: an optional string
+representation of this div's order among its siblings (e.g., "xii"), or
+a non-integer native numbering system. It is presumed that this value
+will still be machine-actionable (e.g., supports a page 'go to'
+function), and is not a replacement/substitute for the LABEL attribute.<br xmlns:xsd="http://www.w3.org/2001/XMLSchema">				</div></div>
+</div>
+<div>LABEL: 
+xsd:string &nbsp;
+optional &nbsp;
+<div><div class="documentation">LABEL: an optional string label to
+describe this div to an end user viewing the document, as per a table
+of contents entry (NB: a div LABEL should be specific to its level in
+the structural map. In the case of a book with chapters, the book div
+LABEL should have the book title, and the chapter div LABELS should
+have the individual chapter titles, rather than having the chapter div
+LABELs combine both book title and chapter title).<br xmlns:xsd="http://www.w3.org/2001/XMLSchema">				</div></div>
+</div>
+<div>DMDID: 
+xsd:IDREFS &nbsp;
+optional &nbsp;
+<div><div class="documentation">DMDID: an optional attribute providing
+the XML ID values for the descriptive metadata sections within this
+METS document applicable to this div.<br xmlns:xsd="http://www.w3.org/2001/XMLSchema">				</div></div>
+</div>
+<div>ADMID: 
+xsd:IDREFS &nbsp;
+optional &nbsp;
+<div><div class="documentation">ADMID: an optional attribute providing
+the XML ID values for the administrative metadata sections within this
+METS document applicable to this div.<br xmlns:xsd="http://www.w3.org/2001/XMLSchema">				</div></div>
+</div>
+<div>TYPE: 
+xsd:string &nbsp;
+optional &nbsp;
+<div><div class="documentation">TYPE: an optional string attribute for specifying a type of division (e.g., chapter, article, page, etc.).<br xmlns:xsd="http://www.w3.org/2001/XMLSchema">				</div></div>
+</div>
+<div>CONTENTIDS: 
+URIs &nbsp;
+optional &nbsp;
+<div><div class="documentation">CONTENTIDS: Content IDs for this division (equivalent to DIDL DII)<br xmlns:xsd="http://www.w3.org/2001/XMLSchema">				</div></div>
+</div>
+<div>: 
+xlink:label &nbsp;
+ &nbsp;
+<div><div class="documentation">xlink:label - an xlink label to be referred to by an smLink element</div></div>
+</div>
+</div>
+<a href="#toc" class="onpage">Contents</a> |
+<a href="#element" class="onpage">Elements</a> |
+<a href="#complexType" class="onpage">Named Complex Types</a>
+</div>
+<div class="element">
+<a name="mptr"><h3>Element &lt;mptr&gt;</h3></a> minOccurs="0"
+  maxOccurs="unbounded"
+  <div class="documentation">mptr: METS Pointer.  <br xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+The mptr element allows a div to be associated with a separate METS
+document containing the content corresponding with that div, rather
+than pointing to an internal file or file group. A typical instance of
+this would be the case of a METS document for a journal run, with a div
+elements for each individual journal issue. The div elements for the
+issues might point to separate METS documents for each issue, rather
+than having files and file groups for every issue encoded in one
+document.<br xmlns:xsd="http://www.w3.org/2001/XMLSchema">NOTE: mptr is an empty element.  The location of the resource	pointed to MUST be stored in the xlink:href attribute.<br xmlns:xsd="http://www.w3.org/2001/XMLSchema">					</div>
+<div>contained within 
+|	<a xmlns:xsd="http://www.w3.org/2001/XMLSchema" class="onpage" href="#div">&lt;div&gt;</a>
+|	<a xmlns:xsd="http://www.w3.org/2001/XMLSchema" class="onpage" href="#div">&lt;div&gt;</a>
+</div>
+<div class="attributes">
+<p>attributes</p>
+<div>ID: 
+xsd:ID &nbsp;
+optional &nbsp;
+<div><div class="documentation">ID: an optional XML ID value.<br xmlns:xsd="http://www.w3.org/2001/XMLSchema">							</div></div>
+</div>
+<div>CONTENTIDS: 
+URIs &nbsp;
+optional &nbsp;
+<div><div class="documentation">CONTENTIDS: Content IDs for this division (equivalent to DIDL DII)<br xmlns:xsd="http://www.w3.org/2001/XMLSchema">				            </div></div>
+</div>
+<p>attributeGroup ref:LOCATION</p>
+<div>LOCTYPE: 
+ &nbsp;
+required &nbsp;
+
+| ARK
+| URN
+| URL
+| PURL
+| HANDLE
+| DOI
+| OTHER<div><div class="documentation">LOCTYPE: Location Type<br xmlns:xsd="http://www.w3.org/2001/XMLSchema">					the type of locator used to reference a file.  It must have one of the following values:<br xmlns:xsd="http://www.w3.org/2001/XMLSchema">URN: Uniform Resource Name<br xmlns:xsd="http://www.w3.org/2001/XMLSchema">URL: Uniform Resource Locator<br xmlns:xsd="http://www.w3.org/2001/XMLSchema">PURL: Persistent URL<br xmlns:xsd="http://www.w3.org/2001/XMLSchema">HANDLE: a CNRI Handle<br xmlns:xsd="http://www.w3.org/2001/XMLSchema">DOI: A Digital Object Identifier<br xmlns:xsd="http://www.w3.org/2001/XMLSchema">OTHER: a form of locator not specified above.<br xmlns:xsd="http://www.w3.org/2001/XMLSchema">				</div></div>
+</div>
+<div>OTHERLOCTYPE: 
+xsd:string &nbsp;
+optional &nbsp;
+<div><div class="documentation">OTHERLOCTYPE: an optional<br xmlns:xsd="http://www.w3.org/2001/XMLSchema">						string attribute used to indicate an alternative LOCTYPE if the LOCTYPE attribute itself has a value of "OTHER";<br xmlns:xsd="http://www.w3.org/2001/XMLSchema">				</div></div>
+</div>
+<p>attributeGroup ref:xlink:simpleLink</p>
+<p>attributeGroup ref:LOCATION</p>
+<div>LOCTYPE: 
+ &nbsp;
+required &nbsp;
+
+| ARK
+| URN
+| URL
+| PURL
+| HANDLE
+| DOI
+| OTHER<div><div class="documentation">LOCTYPE: Location Type<br xmlns:xsd="http://www.w3.org/2001/XMLSchema">					the type of locator used to reference a file.  It must have one of the following values:<br xmlns:xsd="http://www.w3.org/2001/XMLSchema">URN: Uniform Resource Name<br xmlns:xsd="http://www.w3.org/2001/XMLSchema">URL: Uniform Resource Locator<br xmlns:xsd="http://www.w3.org/2001/XMLSchema">PURL: Persistent URL<br xmlns:xsd="http://www.w3.org/2001/XMLSchema">HANDLE: a CNRI Handle<br xmlns:xsd="http://www.w3.org/2001/XMLSchema">DOI: A Digital Object Identifier<br xmlns:xsd="http://www.w3.org/2001/XMLSchema">OTHER: a form of locator not specified above.<br xmlns:xsd="http://www.w3.org/2001/XMLSchema">				</div></div>
+</div>
+<div>OTHERLOCTYPE: 
+xsd:string &nbsp;
+optional &nbsp;
+<div><div class="documentation">OTHERLOCTYPE: an optional<br xmlns:xsd="http://www.w3.org/2001/XMLSchema">						string attribute used to indicate an alternative LOCTYPE if the LOCTYPE attribute itself has a value of "OTHER";<br xmlns:xsd="http://www.w3.org/2001/XMLSchema">				</div></div>
+</div>
+<p>attributeGroup ref:xlink:simpleLink</p>
+</div>
+<a href="#toc" class="onpage">Contents</a> |
+<a href="#element" class="onpage">Elements</a> |
+<a href="#complexType" class="onpage">Named Complex Types</a>
+</div>
+<div class="element">
+<a name="fptr"><h3>Element &lt;fptr&gt;</h3></a> minOccurs="0"
+  maxOccurs="unbounded"
+  <div class="documentation">fptr: File Pointer.  <br xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+The fptr element associates a div element with content files that
+represent that div. It can either point to a file directly itself, via
+the FILEID attribute, or it can do more complex links to content via
+the subsidiary area, par and seq elements.<br xmlns:xsd="http://www.w3.org/2001/XMLSchema">					</div>
+<div>
+may contain
+	
+|	<a class="onpage" href="#par">&lt;par&gt;</a>
+|	<a class="onpage" href="#seq">&lt;seq&gt;</a>
+|	<a class="onpage" href="#area">&lt;area&gt;</a>
+</div>
+<div>contained within 
+|	<a xmlns:xsd="http://www.w3.org/2001/XMLSchema" class="onpage" href="#div">&lt;div&gt;</a>
+|	<a xmlns:xsd="http://www.w3.org/2001/XMLSchema" class="onpage" href="#div">&lt;div&gt;</a>
+</div>
+<div class="attributes">
+<p>attributes</p>
+<div>ID: 
+xsd:ID &nbsp;
+optional &nbsp;
+<div><div class="documentation">ID: an optional XML ID value.<br xmlns:xsd="http://www.w3.org/2001/XMLSchema">							</div></div>
+</div>
+<div>FILEID: 
+xsd:IDREF &nbsp;
+optional &nbsp;
+<div><div class="documentation">FILEID: an IDREF to the file element which corresponds with the div containing this ftpr.<br xmlns:xsd="http://www.w3.org/2001/XMLSchema">							</div></div>
+</div>
+<div>CONTENTIDS: 
+URIs &nbsp;
+optional &nbsp;
+<div><div class="documentation">CONTENTIDS: Content IDs for this division (equivalent to DIDL DII)<br xmlns:xsd="http://www.w3.org/2001/XMLSchema">				            </div></div>
+</div>
+</div>
+<a href="#toc" class="onpage">Contents</a> |
+<a href="#element" class="onpage">Elements</a> |
+<a href="#complexType" class="onpage">Named Complex Types</a>
+</div>
+<div class="element">
+<a name="par"><h3>Element &lt;par&gt;</h3></a> minOccurs="0"
+  <div class="documentation">par: Parallel  files.  <br xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+The par element should used to link a div to a set of content files
+when those files should be played/displayed in unison to deliver the
+content to the user (e.g., displaying a text transcript simultaneously
+with playing an audio file). A par element has two possible subsidiary
+elements, which should be used in different cases. In cases where each
+bytestream to be played in parallel can fit in a single file, you
+should use subsidiary &lt;area&gt; elements within the par element to
+point to those files. However, in some cases, bytestreams which should
+be played in parallel are too large to fit in a single file (high
+quality multi-track audio, or video). In those cases, you should use
+subsidiary &lt;seq&gt; elements, where each &lt;seq&gt; contains the
+files comprising a particular bytestream in the order they should be
+played back. So, for example, in the case where you had an audio
+recording which had to be split into three different, sequential files,
+and a text transcription of the recording in a single file, you would
+use a par element containing two seq elements. The first seq element
+would contain three area elements, one for each audio file; the second
+seq element would contain a single area element, for the text
+transcription file.<br xmlns:xsd="http://www.w3.org/2001/XMLSchema">								</div>
+<div>
+may contain
+	
+|	<a class="onpage" href="#area">&lt;area&gt;</a>
+|	<a class="onpage" href="#seq">&lt;seq&gt;</a>
+</div>
+<div>contained within 
+|	<a xmlns:xsd="http://www.w3.org/2001/XMLSchema" class="onpage" href="#fptr">&lt;fptr&gt;</a>
+</div>
+<div class="attributes">
+<p>attributes</p>
+<div>ID: 
+xsd:ID &nbsp;
+optional &nbsp;
+<div><div class="documentation">ID: an optional XML ID value.<br xmlns:xsd="http://www.w3.org/2001/XMLSchema">										</div></div>
+</div>
+</div>
+<a href="#toc" class="onpage">Contents</a> |
+<a href="#element" class="onpage">Elements</a> |
+<a href="#complexType" class="onpage">Named Complex Types</a>
+</div>
+<div class="element">
+<a name="area"><h3>Element &lt;area&gt;</h3></a> type="<a href="#areaType">areaType</a>"
+  maxOccurs="unbounded"
+  <div>may contain
+	</div>
+<div>contained within 
+|	<a xmlns:xsd="http://www.w3.org/2001/XMLSchema" class="onpage" href="#fptr">&lt;fptr&gt;</a>
+|	<a xmlns:xsd="http://www.w3.org/2001/XMLSchema" class="onpage" href="#par">&lt;par&gt;</a>
+|	<a xmlns:xsd="http://www.w3.org/2001/XMLSchema" class="onpage" href="#seq">&lt;seq&gt;</a>
+|	<a xmlns:xsd="http://www.w3.org/2001/XMLSchema" class="onpage" href="#seq">&lt;seq&gt;</a>
+</div>
+<div class="attributes">
+<p>attributes</p>
+<div>ID: 
+xsd:ID &nbsp;
+optional &nbsp;
+<div><div class="documentation">ID: an optional XML ID value.<br xmlns:xsd="http://www.w3.org/2001/XMLSchema">				</div></div>
+</div>
+<div>FILEID: 
+xsd:IDREF &nbsp;
+required &nbsp;
+<div><div class="documentation">FILEID: a mandatory IDREF to the file element being pointed to by the div.<br xmlns:xsd="http://www.w3.org/2001/XMLSchema">				</div></div>
+</div>
+<div>SHAPE: 
+ &nbsp;
+optional &nbsp;
+
+| RECT
+| CIRCLE
+| POLY<div><div class="documentation">SHAPE:
+an optional string attribute defining the shape of a two-dimensional
+area being referenced within a linked content file. It must have one of
+the following values:<br xmlns:xsd="http://www.w3.org/2001/XMLSchema">RECT: rectangular area<br xmlns:xsd="http://www.w3.org/2001/XMLSchema">CIRCLE: a circular area<br xmlns:xsd="http://www.w3.org/2001/XMLSchema">POLY: an irregular polygon.<br xmlns:xsd="http://www.w3.org/2001/XMLSchema">The SHAPE attribute should be used as in HTML 4.<br xmlns:xsd="http://www.w3.org/2001/XMLSchema">				</div></div>
+</div>
+<div>COORDS: 
+xsd:string &nbsp;
+optional &nbsp;
+<div><div class="documentation">COORDS: an optional string attribute
+listing a set of visual coordinates within an image (still image or
+video frame). The COORDS attribute should be used as in HTML 4.<br xmlns:xsd="http://www.w3.org/2001/XMLSchema">				</div></div>
+</div>
+<div>BEGIN: 
+xsd:string &nbsp;
+optional &nbsp;
+<div><div class="documentation">BEGIN: an optional string attribute
+specifying the beginning location for a subpart of the referenced file.
+Used with the END attribute.<br xmlns:xsd="http://www.w3.org/2001/XMLSchema">				</div></div>
+</div>
+<div>END: 
+xsd:string &nbsp;
+optional &nbsp;
+<div><div class="documentation">END: an optional string attribute
+specifying the ending location for a subpart of the referenced file.
+Used with the BEGIN attribute.<br xmlns:xsd="http://www.w3.org/2001/XMLSchema">				</div></div>
+</div>
+<div>BETYPE: 
+ &nbsp;
+optional &nbsp;
+
+| BYTE
+| IDREF
+| SMIL
+| MIDI
+| SMPTE-25
+| SMPTE-24
+| SMPTE-DF30
+| SMPTE-NDF30
+| SMPTE-DF29.97
+| SMPTE-NDF29.97
+| TIME
+| TCF<div><div class="documentation">BETYPE: Begin/End Type.<br xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+An optional attribute specifying the syntax used in the values recorded
+in the BEGIN and END attributes. It must have one of the following
+values:<br xmlns:xsd="http://www.w3.org/2001/XMLSchema">BYTE: a byte offset<br xmlns:xsd="http://www.w3.org/2001/XMLSchema">IDREF: an XML ID value for an element in the content file<br xmlns:xsd="http://www.w3.org/2001/XMLSchema">SMIL: a SMIL	time value<br xmlns:xsd="http://www.w3.org/2001/XMLSchema">MIDI: a MIDI time code<br xmlns:xsd="http://www.w3.org/2001/XMLSchema">SMPTE-25: SMPTE time code for 25 frame/second material<br xmlns:xsd="http://www.w3.org/2001/XMLSchema">SMPTE-24: SMPTE time code for 24 frame/second material<br xmlns:xsd="http://www.w3.org/2001/XMLSchema">SMPTE-DF30: SMPTE time code for 30 frame/second drop frame material<br xmlns:xsd="http://www.w3.org/2001/XMLSchema">SMPTE-NDF30: SMPTE time code for 30 frame/second non-drop frame material<br xmlns:xsd="http://www.w3.org/2001/XMLSchema">SMPTE-DF29.97: SMPTE time code for 29.97 frame/second drop frame material<br xmlns:xsd="http://www.w3.org/2001/XMLSchema">SMPTE-NDF29.97: SMPTE time code for 29.97 frame/second non-drop frame material<br xmlns:xsd="http://www.w3.org/2001/XMLSchema">TIME: a simple time code of the form	HH:MM:SS<br xmlns:xsd="http://www.w3.org/2001/XMLSchema">TCF: a Time code Character Format value<br xmlns:xsd="http://www.w3.org/2001/XMLSchema">				</div></div>
+</div>
+<div>EXTENT: 
+xsd:string &nbsp;
+optional &nbsp;
+<div><div class="documentation">EXTENT: an optional string attribute specifying the duration of the segment pointed to by the area element.<br xmlns:xsd="http://www.w3.org/2001/XMLSchema">				</div></div>
+</div>
+<div>EXTTYPE: 
+ &nbsp;
+optional &nbsp;
+
+| BYTE
+| SMIL
+| MIDI
+| SMPTE-25
+| SMPTE-24
+| SMPTE-DF30
+| SMPTE-NDF30
+| SMPTE-DF29.97
+| SMPTE-NDF29.97
+| TIME
+| TCF<div><div class="documentation">EXTTYPE: Extent Type<br xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+an option attribute specifying the syntax used for the value in the
+EXTENT attribute. See the BETYPE attribute for the specific values
+which may be used in EXTTYPE.<br xmlns:xsd="http://www.w3.org/2001/XMLSchema">				</div></div>
+</div>
+<div>ADMID: 
+xsd:IDREFS &nbsp;
+optional &nbsp;
+<div><div class="documentation">ADMID: an optional attribute listing
+the XML ID values for the administrative metadata sections within the
+METS document that provide information regarding this area.<br xmlns:xsd="http://www.w3.org/2001/XMLSchema">				</div></div>
+</div>
+<div>CONTENTIDS: 
+URIs &nbsp;
+optional &nbsp;
+<div><div class="documentation">CONTENTIDS: Content IDs for this division (equivalent to DIDL DII)<br xmlns:xsd="http://www.w3.org/2001/XMLSchema">				</div></div>
+</div>
+</div>
+<a href="#toc" class="onpage">Contents</a> |
+<a href="#element" class="onpage">Elements</a> |
+<a href="#complexType" class="onpage">Named Complex Types</a>
+</div>
+<div class="element">
+<a name="seq"><h3>Element &lt;seq&gt;</h3></a> type="<a href="#seqType">seqType</a>"
+  maxOccurs="unbounded"
+  <div>may contain
+	
+|	<a class="onpage" href="#area">&lt;area&gt;</a>
+</div>
+<div>contained within 
+|	<a xmlns:xsd="http://www.w3.org/2001/XMLSchema" class="onpage" href="#fptr">&lt;fptr&gt;</a>
+|	<a xmlns:xsd="http://www.w3.org/2001/XMLSchema" class="onpage" href="#par">&lt;par&gt;</a>
+</div>
+<div class="attributes">
+<p>attributes</p>
+<div>ID: 
+xsd:ID &nbsp;
+optional &nbsp;
+<div><div class="documentation">ID: an optional XML ID value.<br xmlns:xsd="http://www.w3.org/2001/XMLSchema">				</div></div>
+</div>
+</div>
+<a href="#toc" class="onpage">Contents</a> |
+<a href="#element" class="onpage">Elements</a> |
+<a href="#complexType" class="onpage">Named Complex Types</a>
+</div>
+<div class="element">
+<a name="seq"><h3>Element &lt;seq&gt;</h3></a> type="<a href="#seqType">seqType</a>"
+  minOccurs="0"
+  <div class="documentation">seq: Sequence of files.  <br xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+The seq element should be used to link a div to a set of content files
+when those files should be played/displayed sequentially to deliver
+content to a user. See the seqType documentation for more details.<br xmlns:xsd="http://www.w3.org/2001/XMLSchema">								</div>
+<div>may contain
+	
+|	<a class="onpage" href="#area">&lt;area&gt;</a>
+</div>
+<div>contained within 
+|	<a xmlns:xsd="http://www.w3.org/2001/XMLSchema" class="onpage" href="#fptr">&lt;fptr&gt;</a>
+|	<a xmlns:xsd="http://www.w3.org/2001/XMLSchema" class="onpage" href="#par">&lt;par&gt;</a>
+</div>
+<div class="attributes">
+<p>attributes</p>
+<div>ID: 
+xsd:ID &nbsp;
+optional &nbsp;
+<div><div class="documentation">ID: an optional XML ID value.<br xmlns:xsd="http://www.w3.org/2001/XMLSchema">				</div></div>
+</div>
+</div>
+<a href="#toc" class="onpage">Contents</a> |
+<a href="#element" class="onpage">Elements</a> |
+<a href="#complexType" class="onpage">Named Complex Types</a>
+</div>
+<div class="element">
+<a name="area"><h3>Element &lt;area&gt;</h3></a> type="<a href="#areaType">areaType</a>"
+  minOccurs="0"
+  <div class="documentation">area: file area<br xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+The area element provides for more sophisticated linking between a div
+element and content files representing that div, be they text, image,
+audio, or video files. An area element can link a div to a point within
+a file, to a one-dimension segment of a file (e.g., text screen, image
+line, audio/video clip), or a two-dimensional section of a file (e.g,
+subsection of an image, or a subsection of the video display of a video
+file. See the areaType documentation for more details.<br xmlns:xsd="http://www.w3.org/2001/XMLSchema">								</div>
+<div>may contain
+	</div>
+<div>contained within 
+|	<a xmlns:xsd="http://www.w3.org/2001/XMLSchema" class="onpage" href="#fptr">&lt;fptr&gt;</a>
+|	<a xmlns:xsd="http://www.w3.org/2001/XMLSchema" class="onpage" href="#par">&lt;par&gt;</a>
+|	<a xmlns:xsd="http://www.w3.org/2001/XMLSchema" class="onpage" href="#seq">&lt;seq&gt;</a>
+|	<a xmlns:xsd="http://www.w3.org/2001/XMLSchema" class="onpage" href="#seq">&lt;seq&gt;</a>
+</div>
+<div class="attributes">
+<p>attributes</p>
+<div>ID: 
+xsd:ID &nbsp;
+optional &nbsp;
+<div><div class="documentation">ID: an optional XML ID value.<br xmlns:xsd="http://www.w3.org/2001/XMLSchema">				</div></div>
+</div>
+<div>FILEID: 
+xsd:IDREF &nbsp;
+required &nbsp;
+<div><div class="documentation">FILEID: a mandatory IDREF to the file element being pointed to by the div.<br xmlns:xsd="http://www.w3.org/2001/XMLSchema">				</div></div>
+</div>
+<div>SHAPE: 
+ &nbsp;
+optional &nbsp;
+
+| RECT
+| CIRCLE
+| POLY<div><div class="documentation">SHAPE:
+an optional string attribute defining the shape of a two-dimensional
+area being referenced within a linked content file. It must have one of
+the following values:<br xmlns:xsd="http://www.w3.org/2001/XMLSchema">RECT: rectangular area<br xmlns:xsd="http://www.w3.org/2001/XMLSchema">CIRCLE: a circular area<br xmlns:xsd="http://www.w3.org/2001/XMLSchema">POLY: an irregular polygon.<br xmlns:xsd="http://www.w3.org/2001/XMLSchema">The SHAPE attribute should be used as in HTML 4.<br xmlns:xsd="http://www.w3.org/2001/XMLSchema">				</div></div>
+</div>
+<div>COORDS: 
+xsd:string &nbsp;
+optional &nbsp;
+<div><div class="documentation">COORDS: an optional string attribute
+listing a set of visual coordinates within an image (still image or
+video frame). The COORDS attribute should be used as in HTML 4.<br xmlns:xsd="http://www.w3.org/2001/XMLSchema">				</div></div>
+</div>
+<div>BEGIN: 
+xsd:string &nbsp;
+optional &nbsp;
+<div><div class="documentation">BEGIN: an optional string attribute
+specifying the beginning location for a subpart of the referenced file.
+Used with the END attribute.<br xmlns:xsd="http://www.w3.org/2001/XMLSchema">				</div></div>
+</div>
+<div>END: 
+xsd:string &nbsp;
+optional &nbsp;
+<div><div class="documentation">END: an optional string attribute
+specifying the ending location for a subpart of the referenced file.
+Used with the BEGIN attribute.<br xmlns:xsd="http://www.w3.org/2001/XMLSchema">				</div></div>
+</div>
+<div>BETYPE: 
+ &nbsp;
+optional &nbsp;
+
+| BYTE
+| IDREF
+| SMIL
+| MIDI
+| SMPTE-25
+| SMPTE-24
+| SMPTE-DF30
+| SMPTE-NDF30
+| SMPTE-DF29.97
+| SMPTE-NDF29.97
+| TIME
+| TCF<div><div class="documentation">BETYPE: Begin/End Type.<br xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+An optional attribute specifying the syntax used in the values recorded
+in the BEGIN and END attributes. It must have one of the following
+values:<br xmlns:xsd="http://www.w3.org/2001/XMLSchema">BYTE: a byte offset<br xmlns:xsd="http://www.w3.org/2001/XMLSchema">IDREF: an XML ID value for an element in the content file<br xmlns:xsd="http://www.w3.org/2001/XMLSchema">SMIL: a SMIL	time value<br xmlns:xsd="http://www.w3.org/2001/XMLSchema">MIDI: a MIDI time code<br xmlns:xsd="http://www.w3.org/2001/XMLSchema">SMPTE-25: SMPTE time code for 25 frame/second material<br xmlns:xsd="http://www.w3.org/2001/XMLSchema">SMPTE-24: SMPTE time code for 24 frame/second material<br xmlns:xsd="http://www.w3.org/2001/XMLSchema">SMPTE-DF30: SMPTE time code for 30 frame/second drop frame material<br xmlns:xsd="http://www.w3.org/2001/XMLSchema">SMPTE-NDF30: SMPTE time code for 30 frame/second non-drop frame material<br xmlns:xsd="http://www.w3.org/2001/XMLSchema">SMPTE-DF29.97: SMPTE time code for 29.97 frame/second drop frame material<br xmlns:xsd="http://www.w3.org/2001/XMLSchema">SMPTE-NDF29.97: SMPTE time code for 29.97 frame/second non-drop frame material<br xmlns:xsd="http://www.w3.org/2001/XMLSchema">TIME: a simple time code of the form	HH:MM:SS<br xmlns:xsd="http://www.w3.org/2001/XMLSchema">TCF: a Time code Character Format value<br xmlns:xsd="http://www.w3.org/2001/XMLSchema">				</div></div>
+</div>
+<div>EXTENT: 
+xsd:string &nbsp;
+optional &nbsp;
+<div><div class="documentation">EXTENT: an optional string attribute specifying the duration of the segment pointed to by the area element.<br xmlns:xsd="http://www.w3.org/2001/XMLSchema">				</div></div>
+</div>
+<div>EXTTYPE: 
+ &nbsp;
+optional &nbsp;
+
+| BYTE
+| SMIL
+| MIDI
+| SMPTE-25
+| SMPTE-24
+| SMPTE-DF30
+| SMPTE-NDF30
+| SMPTE-DF29.97
+| SMPTE-NDF29.97
+| TIME
+| TCF<div><div class="documentation">EXTTYPE: Extent Type<br xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+an option attribute specifying the syntax used for the value in the
+EXTENT attribute. See the BETYPE attribute for the specific values
+which may be used in EXTTYPE.<br xmlns:xsd="http://www.w3.org/2001/XMLSchema">				</div></div>
+</div>
+<div>ADMID: 
+xsd:IDREFS &nbsp;
+optional &nbsp;
+<div><div class="documentation">ADMID: an optional attribute listing
+the XML ID values for the administrative metadata sections within the
+METS document that provide information regarding this area.<br xmlns:xsd="http://www.w3.org/2001/XMLSchema">				</div></div>
+</div>
+<div>CONTENTIDS: 
+URIs &nbsp;
+optional &nbsp;
+<div><div class="documentation">CONTENTIDS: Content IDs for this division (equivalent to DIDL DII)<br xmlns:xsd="http://www.w3.org/2001/XMLSchema">				</div></div>
+</div>
+</div>
+<a href="#toc" class="onpage">Contents</a> |
+<a href="#element" class="onpage">Elements</a> |
+<a href="#complexType" class="onpage">Named Complex Types</a>
+</div>
+<div class="element">
+<a name="div"><h3>Element &lt;div&gt;</h3></a> type="<a href="#divType">divType</a>"
+  minOccurs="0"
+  maxOccurs="unbounded"
+  <div>may contain
+	
+|	<a class="onpage" href="#mptr">&lt;mptr&gt;</a>
+|	<a class="onpage" href="#fptr">&lt;fptr&gt;</a>
+|	<a class="onpage" href="#div">&lt;div&gt;</a>
+</div>
+<div>contained within 
+|	<a xmlns:xsd="http://www.w3.org/2001/XMLSchema" class="onpage" href="#structMap">&lt;structMap&gt;</a>
+|	<a xmlns:xsd="http://www.w3.org/2001/XMLSchema" class="onpage" href="#div">&lt;div&gt;</a>
+|	<a xmlns:xsd="http://www.w3.org/2001/XMLSchema" class="onpage" href="#div">&lt;div&gt;</a>
+</div>
+<div class="attributes">
+<p>attributes</p>
+<div>ID: 
+xsd:ID &nbsp;
+optional &nbsp;
+<div><div class="documentation">ID: an optional XML ID value.<br xmlns:xsd="http://www.w3.org/2001/XMLSchema">				</div></div>
+</div>
+<div>ORDER: 
+xsd:integer &nbsp;
+optional &nbsp;
+<div><div class="documentation">ORDER: an optional integer representation of this div's order among its siblings (e.g., its sequence).<br xmlns:xsd="http://www.w3.org/2001/XMLSchema">				</div></div>
+</div>
+<div>ORDERLABEL: 
+xsd:string &nbsp;
+optional &nbsp;
+<div><div class="documentation">ORDERLABEL: an optional string
+representation of this div's order among its siblings (e.g., "xii"), or
+a non-integer native numbering system. It is presumed that this value
+will still be machine-actionable (e.g., supports a page 'go to'
+function), and is not a replacement/substitute for the LABEL attribute.<br xmlns:xsd="http://www.w3.org/2001/XMLSchema">				</div></div>
+</div>
+<div>LABEL: 
+xsd:string &nbsp;
+optional &nbsp;
+<div><div class="documentation">LABEL: an optional string label to
+describe this div to an end user viewing the document, as per a table
+of contents entry (NB: a div LABEL should be specific to its level in
+the structural map. In the case of a book with chapters, the book div
+LABEL should have the book title, and the chapter div LABELS should
+have the individual chapter titles, rather than having the chapter div
+LABELs combine both book title and chapter title).<br xmlns:xsd="http://www.w3.org/2001/XMLSchema">				</div></div>
+</div>
+<div>DMDID: 
+xsd:IDREFS &nbsp;
+optional &nbsp;
+<div><div class="documentation">DMDID: an optional attribute providing
+the XML ID values for the descriptive metadata sections within this
+METS document applicable to this div.<br xmlns:xsd="http://www.w3.org/2001/XMLSchema">				</div></div>
+</div>
+<div>ADMID: 
+xsd:IDREFS &nbsp;
+optional &nbsp;
+<div><div class="documentation">ADMID: an optional attribute providing
+the XML ID values for the administrative metadata sections within this
+METS document applicable to this div.<br xmlns:xsd="http://www.w3.org/2001/XMLSchema">				</div></div>
+</div>
+<div>TYPE: 
+xsd:string &nbsp;
+optional &nbsp;
+<div><div class="documentation">TYPE: an optional string attribute for specifying a type of division (e.g., chapter, article, page, etc.).<br xmlns:xsd="http://www.w3.org/2001/XMLSchema">				</div></div>
+</div>
+<div>CONTENTIDS: 
+URIs &nbsp;
+optional &nbsp;
+<div><div class="documentation">CONTENTIDS: Content IDs for this division (equivalent to DIDL DII)<br xmlns:xsd="http://www.w3.org/2001/XMLSchema">				</div></div>
+</div>
+<div>: 
+xlink:label &nbsp;
+ &nbsp;
+<div><div class="documentation">xlink:label - an xlink label to be referred to by an smLink element</div></div>
+</div>
+</div>
+<a href="#toc" class="onpage">Contents</a> |
+<a href="#element" class="onpage">Elements</a> |
+<a href="#complexType" class="onpage">Named Complex Types</a>
+</div>
+<div class="element">
+<a name="area"><h3>Element &lt;area&gt;</h3></a> type="<a href="#areaType">areaType</a>"
+  maxOccurs="unbounded"
+  <div>may contain
+	</div>
+<div>contained within 
+|	<a xmlns:xsd="http://www.w3.org/2001/XMLSchema" class="onpage" href="#fptr">&lt;fptr&gt;</a>
+|	<a xmlns:xsd="http://www.w3.org/2001/XMLSchema" class="onpage" href="#par">&lt;par&gt;</a>
+|	<a xmlns:xsd="http://www.w3.org/2001/XMLSchema" class="onpage" href="#seq">&lt;seq&gt;</a>
+|	<a xmlns:xsd="http://www.w3.org/2001/XMLSchema" class="onpage" href="#seq">&lt;seq&gt;</a>
+</div>
+<div class="attributes">
+<p>attributes</p>
+<div>ID: 
+xsd:ID &nbsp;
+optional &nbsp;
+<div><div class="documentation">ID: an optional XML ID value.<br xmlns:xsd="http://www.w3.org/2001/XMLSchema">				</div></div>
+</div>
+<div>FILEID: 
+xsd:IDREF &nbsp;
+required &nbsp;
+<div><div class="documentation">FILEID: a mandatory IDREF to the file element being pointed to by the div.<br xmlns:xsd="http://www.w3.org/2001/XMLSchema">				</div></div>
+</div>
+<div>SHAPE: 
+ &nbsp;
+optional &nbsp;
+
+| RECT
+| CIRCLE
+| POLY<div><div class="documentation">SHAPE:
+an optional string attribute defining the shape of a two-dimensional
+area being referenced within a linked content file. It must have one of
+the following values:<br xmlns:xsd="http://www.w3.org/2001/XMLSchema">RECT: rectangular area<br xmlns:xsd="http://www.w3.org/2001/XMLSchema">CIRCLE: a circular area<br xmlns:xsd="http://www.w3.org/2001/XMLSchema">POLY: an irregular polygon.<br xmlns:xsd="http://www.w3.org/2001/XMLSchema">The SHAPE attribute should be used as in HTML 4.<br xmlns:xsd="http://www.w3.org/2001/XMLSchema">				</div></div>
+</div>
+<div>COORDS: 
+xsd:string &nbsp;
+optional &nbsp;
+<div><div class="documentation">COORDS: an optional string attribute
+listing a set of visual coordinates within an image (still image or
+video frame). The COORDS attribute should be used as in HTML 4.<br xmlns:xsd="http://www.w3.org/2001/XMLSchema">				</div></div>
+</div>
+<div>BEGIN: 
+xsd:string &nbsp;
+optional &nbsp;
+<div><div class="documentation">BEGIN: an optional string attribute
+specifying the beginning location for a subpart of the referenced file.
+Used with the END attribute.<br xmlns:xsd="http://www.w3.org/2001/XMLSchema">				</div></div>
+</div>
+<div>END: 
+xsd:string &nbsp;
+optional &nbsp;
+<div><div class="documentation">END: an optional string attribute
+specifying the ending location for a subpart of the referenced file.
+Used with the BEGIN attribute.<br xmlns:xsd="http://www.w3.org/2001/XMLSchema">				</div></div>
+</div>
+<div>BETYPE: 
+ &nbsp;
+optional &nbsp;
+
+| BYTE
+| IDREF
+| SMIL
+| MIDI
+| SMPTE-25
+| SMPTE-24
+| SMPTE-DF30
+| SMPTE-NDF30
+| SMPTE-DF29.97
+| SMPTE-NDF29.97
+| TIME
+| TCF<div><div class="documentation">BETYPE: Begin/End Type.<br xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+An optional attribute specifying the syntax used in the values recorded
+in the BEGIN and END attributes. It must have one of the following
+values:<br xmlns:xsd="http://www.w3.org/2001/XMLSchema">BYTE: a byte offset<br xmlns:xsd="http://www.w3.org/2001/XMLSchema">IDREF: an XML ID value for an element in the content file<br xmlns:xsd="http://www.w3.org/2001/XMLSchema">SMIL: a SMIL	time value<br xmlns:xsd="http://www.w3.org/2001/XMLSchema">MIDI: a MIDI time code<br xmlns:xsd="http://www.w3.org/2001/XMLSchema">SMPTE-25: SMPTE time code for 25 frame/second material<br xmlns:xsd="http://www.w3.org/2001/XMLSchema">SMPTE-24: SMPTE time code for 24 frame/second material<br xmlns:xsd="http://www.w3.org/2001/XMLSchema">SMPTE-DF30: SMPTE time code for 30 frame/second drop frame material<br xmlns:xsd="http://www.w3.org/2001/XMLSchema">SMPTE-NDF30: SMPTE time code for 30 frame/second non-drop frame material<br xmlns:xsd="http://www.w3.org/2001/XMLSchema">SMPTE-DF29.97: SMPTE time code for 29.97 frame/second drop frame material<br xmlns:xsd="http://www.w3.org/2001/XMLSchema">SMPTE-NDF29.97: SMPTE time code for 29.97 frame/second non-drop frame material<br xmlns:xsd="http://www.w3.org/2001/XMLSchema">TIME: a simple time code of the form	HH:MM:SS<br xmlns:xsd="http://www.w3.org/2001/XMLSchema">TCF: a Time code Character Format value<br xmlns:xsd="http://www.w3.org/2001/XMLSchema">				</div></div>
+</div>
+<div>EXTENT: 
+xsd:string &nbsp;
+optional &nbsp;
+<div><div class="documentation">EXTENT: an optional string attribute specifying the duration of the segment pointed to by the area element.<br xmlns:xsd="http://www.w3.org/2001/XMLSchema">				</div></div>
+</div>
+<div>EXTTYPE: 
+ &nbsp;
+optional &nbsp;
+
+| BYTE
+| SMIL
+| MIDI
+| SMPTE-25
+| SMPTE-24
+| SMPTE-DF30
+| SMPTE-NDF30
+| SMPTE-DF29.97
+| SMPTE-NDF29.97
+| TIME
+| TCF<div><div class="documentation">EXTTYPE: Extent Type<br xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+an option attribute specifying the syntax used for the value in the
+EXTENT attribute. See the BETYPE attribute for the specific values
+which may be used in EXTTYPE.<br xmlns:xsd="http://www.w3.org/2001/XMLSchema">				</div></div>
+</div>
+<div>ADMID: 
+xsd:IDREFS &nbsp;
+optional &nbsp;
+<div><div class="documentation">ADMID: an optional attribute listing
+the XML ID values for the administrative metadata sections within the
+METS document that provide information regarding this area.<br xmlns:xsd="http://www.w3.org/2001/XMLSchema">				</div></div>
+</div>
+<div>CONTENTIDS: 
+URIs &nbsp;
+optional &nbsp;
+<div><div class="documentation">CONTENTIDS: Content IDs for this division (equivalent to DIDL DII)<br xmlns:xsd="http://www.w3.org/2001/XMLSchema">				</div></div>
+</div>
+</div>
+<a href="#toc" class="onpage">Contents</a> |
+<a href="#element" class="onpage">Elements</a> |
+<a href="#complexType" class="onpage">Named Complex Types</a>
+</div>
+<div class="element">
+<a name="smLink"><h3>Element &lt;smLink&gt;</h3></a> maxOccurs="unbounded"
+  <div class="documentation">smLink: structural map Link<br xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+An element linking two elements in the structural map, used to indicate
+that a hyperlink exists between the two METS components represented by
+the two structural map nodes. You would use smLink, for example, to
+record the existence of hypertext links between web pages, if you wish
+to record those links' existence inside of METS.<br xmlns:xsd="http://www.w3.org/2001/XMLSchema">				</div>
+<div>contained within 
+|	<a xmlns:xsd="http://www.w3.org/2001/XMLSchema" class="onpage" href="#structLink">&lt;structLink&gt;</a>
+</div>
+<div class="attributes">
+<p>attributes</p>
+<div>ID: 
+xsd:ID &nbsp;
+optional &nbsp;
+<div><div class="documentation">ID: an optional XML ID value.<br xmlns:xsd="http://www.w3.org/2001/XMLSchema">							</div></div>
+</div>
+<div>: 
+xlink:arcrole &nbsp;
+optional &nbsp;
+<div><div class="documentation"><br xmlns:xsd="http://www.w3.org/2001/XMLSchema">								 xlink:arcrole - the role of the link, as per the xlink specification.  See http://www.w3.org/TR/xlink/<br xmlns:xsd="http://www.w3.org/2001/XMLSchema">							</div></div>
+</div>
+<div>: 
+xlink:title &nbsp;
+optional &nbsp;
+<div><div class="documentation"><br xmlns:xsd="http://www.w3.org/2001/XMLSchema">								xlink:title - a title for the link (if needed), as per the xlink specification.  See http://www.w3.org/TR/xlink/<br xmlns:xsd="http://www.w3.org/2001/XMLSchema">							</div></div>
+</div>
+<div>: 
+xlink:show &nbsp;
+optional &nbsp;
+<div><div class="documentation"><br xmlns:xsd="http://www.w3.org/2001/XMLSchema">								xlink:show - see the xlink specification at http://www.w3.org/TR/xlink/<br xmlns:xsd="http://www.w3.org/2001/XMLSchema">							</div></div>
+</div>
+<div>: 
+xlink:actuate &nbsp;
+optional &nbsp;
+<div><div class="documentation"><br xmlns:xsd="http://www.w3.org/2001/XMLSchema">								xlink:actuate - see the xlink specification at http://www.w3.org/TR/xlink/<br xmlns:xsd="http://www.w3.org/2001/XMLSchema">							</div></div>
+</div>
+<div>: 
+xlink:to &nbsp;
+required &nbsp;
+<div><div class="documentation"><br xmlns:xsd="http://www.w3.org/2001/XMLSchema">								xlink:to - the value of the label for the element in the structMap you are linking to.<br xmlns:xsd="http://www.w3.org/2001/XMLSchema">							</div></div>
+</div>
+<div>: 
+xlink:from &nbsp;
+required &nbsp;
+<div><div class="documentation"><br xmlns:xsd="http://www.w3.org/2001/XMLSchema">								xlink:from - the value of the label for the element in the structMap you are linking from.<br xmlns:xsd="http://www.w3.org/2001/XMLSchema">							</div></div>
+</div>
+</div>
+<a href="#toc" class="onpage">Contents</a> |
+<a href="#element" class="onpage">Elements</a> |
+<a href="#complexType" class="onpage">Named Complex Types</a>
+</div>
+<div class="element">
+<a name="behaviorSec"><h3>Element &lt;behaviorSec&gt;</h3></a> type="<a href="#behaviorSecType">behaviorSecType</a>"
+  minOccurs="0"
+  maxOccurs="unbounded"
+  <div>may contain
+	
+|	<a class="onpage" href="#behaviorSec">&lt;behaviorSec&gt;</a>
+|	<a class="onpage" href="#behavior">&lt;behavior&gt;</a>
+</div>
+<div>contained within 
+|	<a xmlns:xsd="http://www.w3.org/2001/XMLSchema" class="onpage" href="#mets">&lt;mets&gt;</a>
+|	<a xmlns:xsd="http://www.w3.org/2001/XMLSchema" class="onpage" href="#behaviorSec">&lt;behaviorSec&gt;</a>
+|	<a xmlns:xsd="http://www.w3.org/2001/XMLSchema" class="onpage" href="#behaviorSec">&lt;behaviorSec&gt;</a>
+</div>
+<div class="attributes">
+<p>attributes</p>
+<div>ID: 
+xsd:ID &nbsp;
+optional &nbsp;
+<div><div class="documentation">ID: an optional XML ID value.<br xmlns:xsd="http://www.w3.org/2001/XMLSchema">				</div></div>
+</div>
+<div>CREATED: 
+xsd:dateTime &nbsp;
+optional &nbsp;
+<div><div class="documentation">CREATED: an optional dateTime attribute specifying when the behaviorSec was created.<br xmlns:xsd="http://www.w3.org/2001/XMLSchema">				</div></div>
+</div>
+<div>LABEL: 
+xsd:string &nbsp;
+optional &nbsp;
+<div><div class="documentation">LABEL: an optional string attribute providing a text description of the behaviorSec.<br xmlns:xsd="http://www.w3.org/2001/XMLSchema">				</div></div>
+</div>
+</div>
+<a href="#toc" class="onpage">Contents</a> |
+<a href="#element" class="onpage">Elements</a> |
+<a href="#complexType" class="onpage">Named Complex Types</a>
+</div>
+<div class="element">
+<a name="behavior"><h3>Element &lt;behavior&gt;</h3></a> type="<a href="#behaviorType">behaviorType</a>"
+  minOccurs="0"
+  maxOccurs="unbounded"
+  <div>may contain
+	
+|	<a class="onpage" href="#interfaceDef">&lt;interfaceDef&gt;</a>
+|	<a class="onpage" href="#mechanism">&lt;mechanism&gt;</a>
+</div>
+<div>contained within 
+|	<a xmlns:xsd="http://www.w3.org/2001/XMLSchema" class="onpage" href="#behaviorSec">&lt;behaviorSec&gt;</a>
+|	<a xmlns:xsd="http://www.w3.org/2001/XMLSchema" class="onpage" href="#behaviorSec">&lt;behaviorSec&gt;</a>
+</div>
+<div class="attributes">
+<p>attributes</p>
+<div>ID: 
+xsd:ID &nbsp;
+required &nbsp;
+<div><div class="documentation">ID: a required XML ID value for the element   <br xmlns:xsd="http://www.w3.org/2001/XMLSchema">				</div></div>
+</div>
+<div>STRUCTID: 
+xsd:IDREFS &nbsp;
+required &nbsp;
+<div><div class="documentation">STRUCTID: Structural Map IDS<br xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+IDREFS to structMap sections or divs within a structMap in the METS
+document. The content that the STRUCTID attribute points to is
+considered "input" to the behavior mechanism (executable) defined for
+the behavior. <br xmlns:xsd="http://www.w3.org/2001/XMLSchema">				</div></div>
+</div>
+<div>BTYPE: 
+xsd:string &nbsp;
+optional &nbsp;
+<div><div class="documentation">BTYPE: Behavior Type<br xmlns:xsd="http://www.w3.org/2001/XMLSchema">					 an optional string attribute providing an identifier for a given set of related behaviors. 					</div></div>
+</div>
+<div>CREATED: 
+xsd:dateTime &nbsp;
+optional &nbsp;
+<div><div class="documentation">CREATED: an optional dateTime attribute specifying a date this behavior was created.  <br xmlns:xsd="http://www.w3.org/2001/XMLSchema">				</div></div>
+</div>
+<div>LABEL: 
+xsd:string &nbsp;
+optional &nbsp;
+<div><div class="documentation">LABEL: an optional string attribute providing a description of the behavior.  <br xmlns:xsd="http://www.w3.org/2001/XMLSchema">				</div></div>
+</div>
+<div>GROUPID: 
+xsd:string &nbsp;
+optional &nbsp;
+<div><div class="documentation">GROUPID: an optional string attribute
+providing an identifier that establishes a correspondence between this
+behavior and other behaviors. Typically, this will be used to
+facilitate versioning of behaviors. <br xmlns:xsd="http://www.w3.org/2001/XMLSchema">				</div></div>
+</div>
+<div>ADMID: 
+xsd:IDREFS &nbsp;
+optional &nbsp;
+<div><div class="documentation">ADMID: an optional attribute listing
+the XML ID values of administrative metadata sections within the METS
+document pertaining to this behavior.<br xmlns:xsd="http://www.w3.org/2001/XMLSchema">				</div></div>
+</div>
+</div>
+<a href="#toc" class="onpage">Contents</a> |
+<a href="#element" class="onpage">Elements</a> |
+<a href="#complexType" class="onpage">Named Complex Types</a>
+</div>
+<div class="element">
+<a name="interfaceDef"><h3>Element &lt;interfaceDef&gt;</h3></a> type="<a href="#objectType">objectType</a>"
+  minOccurs="0"
+  <div class="documentation">interfaceDef: interface definition object. <br xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+The interface definition element contains a pointer an abstract
+definition of a set of related behaviors. These abstract behaviors can
+be associated with the content of a METS object. The interface
+definition element will be a pointer to another object (an interface
+definition object). An interface definition object could be another
+METS object, or some other entity (e.g., a WSDL file). Ideally, an
+interface definition object should contain metadata that describes a
+set of behaviors or methods. It may also contain files that describe
+the intended usage of the behaviors, and possibly files that represent
+different expressions of the interface definition. The interfaceDef
+element is optional to allow for cases where an interface definition
+can be obtained from a behavior mechanism object (see the mechanism
+element of the behaviorSec). <br xmlns:xsd="http://www.w3.org/2001/XMLSchema">			</div>
+<div>may contain
+	</div>
+<div>contained within 
+|	<a xmlns:xsd="http://www.w3.org/2001/XMLSchema" class="onpage" href="#behavior">&lt;behavior&gt;</a>
+</div>
+<div class="attributes">
+<p>attributes</p>
+<div>ID: 
+xsd:ID &nbsp;
+optional &nbsp;
+<div><div class="documentation">ID: an optional XML ID value<br xmlns:xsd="http://www.w3.org/2001/XMLSchema">				</div></div>
+</div>
+<div>LABEL: 
+xsd:string &nbsp;
+optional &nbsp;
+<div><div class="documentation">LABEL: an optional string attribute providing a description of the object that is being linked to.<br xmlns:xsd="http://www.w3.org/2001/XMLSchema">				</div></div>
+</div>
+<p>attributeGroup ref:LOCATION</p>
+<div>LOCTYPE: 
+ &nbsp;
+required &nbsp;
+
+| ARK
+| URN
+| URL
+| PURL
+| HANDLE
+| DOI
+| OTHER<div><div class="documentation">LOCTYPE: Location Type<br xmlns:xsd="http://www.w3.org/2001/XMLSchema">					the type of locator used to reference a file.  It must have one of the following values:<br xmlns:xsd="http://www.w3.org/2001/XMLSchema">URN: Uniform Resource Name<br xmlns:xsd="http://www.w3.org/2001/XMLSchema">URL: Uniform Resource Locator<br xmlns:xsd="http://www.w3.org/2001/XMLSchema">PURL: Persistent URL<br xmlns:xsd="http://www.w3.org/2001/XMLSchema">HANDLE: a CNRI Handle<br xmlns:xsd="http://www.w3.org/2001/XMLSchema">DOI: A Digital Object Identifier<br xmlns:xsd="http://www.w3.org/2001/XMLSchema">OTHER: a form of locator not specified above.<br xmlns:xsd="http://www.w3.org/2001/XMLSchema">				</div></div>
+</div>
+<div>OTHERLOCTYPE: 
+xsd:string &nbsp;
+optional &nbsp;
+<div><div class="documentation">OTHERLOCTYPE: an optional<br xmlns:xsd="http://www.w3.org/2001/XMLSchema">						string attribute used to indicate an alternative LOCTYPE if the LOCTYPE attribute itself has a value of "OTHER";<br xmlns:xsd="http://www.w3.org/2001/XMLSchema">				</div></div>
+</div>
+<p>attributeGroup ref:xlink:simpleLink</p>
+</div>
+<a href="#toc" class="onpage">Contents</a> |
+<a href="#element" class="onpage">Elements</a> |
+<a href="#complexType" class="onpage">Named Complex Types</a>
+</div>
+<div class="element">
+<a name="mechanism"><h3>Element &lt;mechanism&gt;</h3></a> type="<a href="#objectType">objectType</a>"
+  <div class="documentation">mechanism: executable mechanism.  <br xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+A mechanism element contains a pointer to an executable code module
+that implements a set of behaviors defined by an interface definition.
+The mechanism element will be a pointer to another object (a mechanism
+object). A mechanism object could be another METS object, or some other
+entity (e.g., a WSDL file). A mechanism object should contain
+executable code, pointers to executable code, or specifications for
+binding to network services (e.g., web services).<br xmlns:xsd="http://www.w3.org/2001/XMLSchema">					</div>
+<div>may contain
+	</div>
+<div>contained within 
+|	<a xmlns:xsd="http://www.w3.org/2001/XMLSchema" class="onpage" href="#behavior">&lt;behavior&gt;</a>
+</div>
+<div class="attributes">
+<p>attributes</p>
+<div>ID: 
+xsd:ID &nbsp;
+optional &nbsp;
+<div><div class="documentation">ID: an optional XML ID value<br xmlns:xsd="http://www.w3.org/2001/XMLSchema">				</div></div>
+</div>
+<div>LABEL: 
+xsd:string &nbsp;
+optional &nbsp;
+<div><div class="documentation">LABEL: an optional string attribute providing a description of the object that is being linked to.<br xmlns:xsd="http://www.w3.org/2001/XMLSchema">				</div></div>
+</div>
+<p>attributeGroup ref:LOCATION</p>
+<div>LOCTYPE: 
+ &nbsp;
+required &nbsp;
+
+| ARK
+| URN
+| URL
+| PURL
+| HANDLE
+| DOI
+| OTHER<div><div class="documentation">LOCTYPE: Location Type<br xmlns:xsd="http://www.w3.org/2001/XMLSchema">					the type of locator used to reference a file.  It must have one of the following values:<br xmlns:xsd="http://www.w3.org/2001/XMLSchema">URN: Uniform Resource Name<br xmlns:xsd="http://www.w3.org/2001/XMLSchema">URL: Uniform Resource Locator<br xmlns:xsd="http://www.w3.org/2001/XMLSchema">PURL: Persistent URL<br xmlns:xsd="http://www.w3.org/2001/XMLSchema">HANDLE: a CNRI Handle<br xmlns:xsd="http://www.w3.org/2001/XMLSchema">DOI: A Digital Object Identifier<br xmlns:xsd="http://www.w3.org/2001/XMLSchema">OTHER: a form of locator not specified above.<br xmlns:xsd="http://www.w3.org/2001/XMLSchema">				</div></div>
+</div>
+<div>OTHERLOCTYPE: 
+xsd:string &nbsp;
+optional &nbsp;
+<div><div class="documentation">OTHERLOCTYPE: an optional<br xmlns:xsd="http://www.w3.org/2001/XMLSchema">						string attribute used to indicate an alternative LOCTYPE if the LOCTYPE attribute itself has a value of "OTHER";<br xmlns:xsd="http://www.w3.org/2001/XMLSchema">				</div></div>
+</div>
+<p>attributeGroup ref:xlink:simpleLink</p>
+</div>
+<a href="#toc" class="onpage">Contents</a> |
+<a href="#element" class="onpage">Elements</a> |
+<a href="#complexType" class="onpage">Named Complex Types</a>
+</div>
+<div class="element">
+<a name="mdRef"><h3>Element &lt;mdRef&gt;</h3></a> minOccurs="0"
+  <div class="documentation">mdRef: metadata reference.  <br xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+The mdRef element is a generic element used throughout the METS schema
+to provide a pointer to metadata which resides outside the METS
+document. NB: mdRef is an empty element. The location of the metadata
+must be recorded in the xlink:href attribute, supplemented by the XPTR
+attribute as needed.<br xmlns:xsd="http://www.w3.org/2001/XMLSchema">					</div>
+<div>contained within 
+|	<a xmlns:xsd="http://www.w3.org/2001/XMLSchema" class="onpage" href="#dmdSec">&lt;dmdSec&gt;</a>
+|	<a xmlns:xsd="http://www.w3.org/2001/XMLSchema" class="onpage" href="#techMD">&lt;techMD&gt;</a>
+|	<a xmlns:xsd="http://www.w3.org/2001/XMLSchema" class="onpage" href="#rightsMD">&lt;rightsMD&gt;</a>
+|	<a xmlns:xsd="http://www.w3.org/2001/XMLSchema" class="onpage" href="#sourceMD">&lt;sourceMD&gt;</a>
+|	<a xmlns:xsd="http://www.w3.org/2001/XMLSchema" class="onpage" href="#digiprovMD">&lt;digiprovMD&gt;</a>
+</div>
+<div class="attributes">
+<p>attributes</p>
+<div>ID: 
+xsd:ID &nbsp;
+optional &nbsp;
+<div><div class="documentation">ID: an optional XML ID value<br xmlns:xsd="http://www.w3.org/2001/XMLSchema">							</div></div>
+</div>
+<div>MIMETYPE: 
+xsd:string &nbsp;
+optional &nbsp;
+<div><div class="documentation">MIMETYPE: an optional string attribute providing the MIME type for the metadata being pointed at<br xmlns:xsd="http://www.w3.org/2001/XMLSchema">							</div></div>
+</div>
+<div>LABEL: 
+xsd:string &nbsp;
+optional &nbsp;
+<div><div class="documentation">LABEL: an optional string attribute providing a label to display to the viewer of the METS document identifying the metadata <br xmlns:xsd="http://www.w3.org/2001/XMLSchema">							</div></div>
+</div>
+<div>XPTR: 
+xsd:string &nbsp;
+optional &nbsp;
+<div><div class="documentation">XPTR: an optional string attribute for
+providing an xptr to a location within the file pointed to by the mdRef
+element, if applicable.<br xmlns:xsd="http://www.w3.org/2001/XMLSchema">							</div></div>
+</div>
+<p>attributeGroup ref:LOCATION</p>
+<div>LOCTYPE: 
+ &nbsp;
+required &nbsp;
+
+| ARK
+| URN
+| URL
+| PURL
+| HANDLE
+| DOI
+| OTHER<div><div class="documentation">LOCTYPE: Location Type<br xmlns:xsd="http://www.w3.org/2001/XMLSchema">					the type of locator used to reference a file.  It must have one of the following values:<br xmlns:xsd="http://www.w3.org/2001/XMLSchema">URN: Uniform Resource Name<br xmlns:xsd="http://www.w3.org/2001/XMLSchema">URL: Uniform Resource Locator<br xmlns:xsd="http://www.w3.org/2001/XMLSchema">PURL: Persistent URL<br xmlns:xsd="http://www.w3.org/2001/XMLSchema">HANDLE: a CNRI Handle<br xmlns:xsd="http://www.w3.org/2001/XMLSchema">DOI: A Digital Object Identifier<br xmlns:xsd="http://www.w3.org/2001/XMLSchema">OTHER: a form of locator not specified above.<br xmlns:xsd="http://www.w3.org/2001/XMLSchema">				</div></div>
+</div>
+<div>OTHERLOCTYPE: 
+xsd:string &nbsp;
+optional &nbsp;
+<div><div class="documentation">OTHERLOCTYPE: an optional<br xmlns:xsd="http://www.w3.org/2001/XMLSchema">						string attribute used to indicate an alternative LOCTYPE if the LOCTYPE attribute itself has a value of "OTHER";<br xmlns:xsd="http://www.w3.org/2001/XMLSchema">				</div></div>
+</div>
+<p>attributeGroup ref:xlink:simpleLink</p>
+<p>attributeGroup ref:METADATA</p>
+<div>MDTYPE: 
+ &nbsp;
+required &nbsp;
+
+| MARC
+| MODS
+| EAD
+| DC
+| NISOIMG
+| LC-AV
+| VRA
+| TEIHDR
+| DDI
+| FGDC
+| LOM
+| PREMIS
+| OTHER<div><div class="documentation">MDTYPE:
+a required attribute specifying the yype of metadata being pointed at
+(e.g., MARC, EAD, etc.). It must have one of the following values:<br xmlns:xsd="http://www.w3.org/2001/XMLSchema">MARC: any form of MARC record<br xmlns:xsd="http://www.w3.org/2001/XMLSchema">MODS: metadata in the Library of Congress MODS format<br xmlns:xsd="http://www.w3.org/2001/XMLSchema">EAD: Encoded Archival Description finding aid<br xmlns:xsd="http://www.w3.org/2001/XMLSchema">DC: Dublin Core<br xmlns:xsd="http://www.w3.org/2001/XMLSchema">NISOIMG: NISO Technical Metadata for Digital Still Images<br xmlns:xsd="http://www.w3.org/2001/XMLSchema">LC-AV: technical metadata specified in the Library of Congress A/V prototyping project<br xmlns:xsd="http://www.w3.org/2001/XMLSchema">VRA: Visual Resources Association Core<br xmlns:xsd="http://www.w3.org/2001/XMLSchema">TEIHDR: Text Encoding Initiative Header<br xmlns:xsd="http://www.w3.org/2001/XMLSchema">DDI: Data Documentation Initiative<br xmlns:xsd="http://www.w3.org/2001/XMLSchema">FGDC: Federal Geographic Data Committee metadata<br xmlns:xsd="http://www.w3.org/2001/XMLSchema">OTHER: metadata in a format not specified above.<br xmlns:xsd="http://www.w3.org/2001/XMLSchema">				</div></div>
+</div>
+<div>OTHERMDTYPE: 
+xsd:string &nbsp;
+optional &nbsp;
+<div><div class="documentation">OTHERMDTYPE: Other Metadata Type<br xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+an optional string which may be used to record the particular form of
+metadata referenced by this element when the MDTYPE attribute has a
+value of "OTHER".<br xmlns:xsd="http://www.w3.org/2001/XMLSchema">				</div></div>
+</div>
+<p>attributeGroup ref:LOCATION</p>
+<div>LOCTYPE: 
+ &nbsp;
+required &nbsp;
+
+| ARK
+| URN
+| URL
+| PURL
+| HANDLE
+| DOI
+| OTHER<div><div class="documentation">LOCTYPE: Location Type<br xmlns:xsd="http://www.w3.org/2001/XMLSchema">					the type of locator used to reference a file.  It must have one of the following values:<br xmlns:xsd="http://www.w3.org/2001/XMLSchema">URN: Uniform Resource Name<br xmlns:xsd="http://www.w3.org/2001/XMLSchema">URL: Uniform Resource Locator<br xmlns:xsd="http://www.w3.org/2001/XMLSchema">PURL: Persistent URL<br xmlns:xsd="http://www.w3.org/2001/XMLSchema">HANDLE: a CNRI Handle<br xmlns:xsd="http://www.w3.org/2001/XMLSchema">DOI: A Digital Object Identifier<br xmlns:xsd="http://www.w3.org/2001/XMLSchema">OTHER: a form of locator not specified above.<br xmlns:xsd="http://www.w3.org/2001/XMLSchema">				</div></div>
+</div>
+<div>OTHERLOCTYPE: 
+xsd:string &nbsp;
+optional &nbsp;
+<div><div class="documentation">OTHERLOCTYPE: an optional<br xmlns:xsd="http://www.w3.org/2001/XMLSchema">						string attribute used to indicate an alternative LOCTYPE if the LOCTYPE attribute itself has a value of "OTHER";<br xmlns:xsd="http://www.w3.org/2001/XMLSchema">				</div></div>
+</div>
+<p>attributeGroup ref:xlink:simpleLink</p>
+<p>attributeGroup ref:METADATA</p>
+<div>MDTYPE: 
+ &nbsp;
+required &nbsp;
+
+| MARC
+| MODS
+| EAD
+| DC
+| NISOIMG
+| LC-AV
+| VRA
+| TEIHDR
+| DDI
+| FGDC
+| LOM
+| PREMIS
+| OTHER<div><div class="documentation">MDTYPE:
+a required attribute specifying the yype of metadata being pointed at
+(e.g., MARC, EAD, etc.). It must have one of the following values:<br xmlns:xsd="http://www.w3.org/2001/XMLSchema">MARC: any form of MARC record<br xmlns:xsd="http://www.w3.org/2001/XMLSchema">MODS: metadata in the Library of Congress MODS format<br xmlns:xsd="http://www.w3.org/2001/XMLSchema">EAD: Encoded Archival Description finding aid<br xmlns:xsd="http://www.w3.org/2001/XMLSchema">DC: Dublin Core<br xmlns:xsd="http://www.w3.org/2001/XMLSchema">NISOIMG: NISO Technical Metadata for Digital Still Images<br xmlns:xsd="http://www.w3.org/2001/XMLSchema">LC-AV: technical metadata specified in the Library of Congress A/V prototyping project<br xmlns:xsd="http://www.w3.org/2001/XMLSchema">VRA: Visual Resources Association Core<br xmlns:xsd="http://www.w3.org/2001/XMLSchema">TEIHDR: Text Encoding Initiative Header<br xmlns:xsd="http://www.w3.org/2001/XMLSchema">DDI: Data Documentation Initiative<br xmlns:xsd="http://www.w3.org/2001/XMLSchema">FGDC: Federal Geographic Data Committee metadata<br xmlns:xsd="http://www.w3.org/2001/XMLSchema">OTHER: metadata in a format not specified above.<br xmlns:xsd="http://www.w3.org/2001/XMLSchema">				</div></div>
+</div>
+<div>OTHERMDTYPE: 
+xsd:string &nbsp;
+optional &nbsp;
+<div><div class="documentation">OTHERMDTYPE: Other Metadata Type<br xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+an optional string which may be used to record the particular form of
+metadata referenced by this element when the MDTYPE attribute has a
+value of "OTHER".<br xmlns:xsd="http://www.w3.org/2001/XMLSchema">				</div></div>
+</div>
+</div>
+<a href="#toc" class="onpage">Contents</a> |
+<a href="#element" class="onpage">Elements</a> |
+<a href="#complexType" class="onpage">Named Complex Types</a>
+</div>
+<div class="element">
+<a name="mdWrap"><h3>Element &lt;mdWrap&gt;</h3></a> minOccurs="0"
+  <div class="documentation">mdWrap: metadata wrapper.  <br xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+The mdWrap element is a generic element used throughout the METS schema
+to allow the encoder to place arbitrary metadata conforming to other
+standards/schema within a METS document. The included metadata can
+either be encoded in XML, in which case it may be placed directly
+within the mdWrap element, or it can be Base64 encoded, and placed
+within a subsidiary binData element.<br xmlns:xsd="http://www.w3.org/2001/XMLSchema">					</div>
+<div>
+may contain
+	
+|	<a class="onpage" href="#binData">&lt;binData&gt;</a>
+|	<a class="onpage" href="#xmlData">&lt;xmlData&gt;</a>
+</div>
+<div>contained within 
+|	<a xmlns:xsd="http://www.w3.org/2001/XMLSchema" class="onpage" href="#dmdSec">&lt;dmdSec&gt;</a>
+|	<a xmlns:xsd="http://www.w3.org/2001/XMLSchema" class="onpage" href="#techMD">&lt;techMD&gt;</a>
+|	<a xmlns:xsd="http://www.w3.org/2001/XMLSchema" class="onpage" href="#rightsMD">&lt;rightsMD&gt;</a>
+|	<a xmlns:xsd="http://www.w3.org/2001/XMLSchema" class="onpage" href="#sourceMD">&lt;sourceMD&gt;</a>
+|	<a xmlns:xsd="http://www.w3.org/2001/XMLSchema" class="onpage" href="#digiprovMD">&lt;digiprovMD&gt;</a>
+</div>
+<div class="attributes">
+<p>attributes</p>
+<div>ID: 
+xsd:ID &nbsp;
+optional &nbsp;
+<div><div class="documentation">ID: an optional XML ID value.<br xmlns:xsd="http://www.w3.org/2001/XMLSchema">							</div></div>
+</div>
+<div>MIMETYPE: 
+xsd:string &nbsp;
+optional &nbsp;
+<div><div class="documentation">MIMETYPE: an optional string attribute providing the MIME type for the metadata contained in the element<br xmlns:xsd="http://www.w3.org/2001/XMLSchema">							</div></div>
+</div>
+<div>LABEL: 
+xsd:string &nbsp;
+optional &nbsp;
+<div><div class="documentation">LABEL: an optional string attribute providing a label to display to the viewer of the METS document identifying the metadata.<br xmlns:xsd="http://www.w3.org/2001/XMLSchema">							</div></div>
+</div>
+<p>attributeGroup ref:METADATA</p>
+<div>MDTYPE: 
+ &nbsp;
+required &nbsp;
+
+| MARC
+| MODS
+| EAD
+| DC
+| NISOIMG
+| LC-AV
+| VRA
+| TEIHDR
+| DDI
+| FGDC
+| LOM
+| PREMIS
+| OTHER<div><div class="documentation">MDTYPE:
+a required attribute specifying the yype of metadata being pointed at
+(e.g., MARC, EAD, etc.). It must have one of the following values:<br xmlns:xsd="http://www.w3.org/2001/XMLSchema">MARC: any form of MARC record<br xmlns:xsd="http://www.w3.org/2001/XMLSchema">MODS: metadata in the Library of Congress MODS format<br xmlns:xsd="http://www.w3.org/2001/XMLSchema">EAD: Encoded Archival Description finding aid<br xmlns:xsd="http://www.w3.org/2001/XMLSchema">DC: Dublin Core<br xmlns:xsd="http://www.w3.org/2001/XMLSchema">NISOIMG: NISO Technical Metadata for Digital Still Images<br xmlns:xsd="http://www.w3.org/2001/XMLSchema">LC-AV: technical metadata specified in the Library of Congress A/V prototyping project<br xmlns:xsd="http://www.w3.org/2001/XMLSchema">VRA: Visual Resources Association Core<br xmlns:xsd="http://www.w3.org/2001/XMLSchema">TEIHDR: Text Encoding Initiative Header<br xmlns:xsd="http://www.w3.org/2001/XMLSchema">DDI: Data Documentation Initiative<br xmlns:xsd="http://www.w3.org/2001/XMLSchema">FGDC: Federal Geographic Data Committee metadata<br xmlns:xsd="http://www.w3.org/2001/XMLSchema">OTHER: metadata in a format not specified above.<br xmlns:xsd="http://www.w3.org/2001/XMLSchema">				</div></div>
+</div>
+<div>OTHERMDTYPE: 
+xsd:string &nbsp;
+optional &nbsp;
+<div><div class="documentation">OTHERMDTYPE: Other Metadata Type<br xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+an optional string which may be used to record the particular form of
+metadata referenced by this element when the MDTYPE attribute has a
+value of "OTHER".<br xmlns:xsd="http://www.w3.org/2001/XMLSchema">				</div></div>
+</div>
+<p>attributeGroup ref:METADATA</p>
+<div>MDTYPE: 
+ &nbsp;
+required &nbsp;
+
+| MARC
+| MODS
+| EAD
+| DC
+| NISOIMG
+| LC-AV
+| VRA
+| TEIHDR
+| DDI
+| FGDC
+| LOM
+| PREMIS
+| OTHER<div><div class="documentation">MDTYPE:
+a required attribute specifying the yype of metadata being pointed at
+(e.g., MARC, EAD, etc.). It must have one of the following values:<br xmlns:xsd="http://www.w3.org/2001/XMLSchema">MARC: any form of MARC record<br xmlns:xsd="http://www.w3.org/2001/XMLSchema">MODS: metadata in the Library of Congress MODS format<br xmlns:xsd="http://www.w3.org/2001/XMLSchema">EAD: Encoded Archival Description finding aid<br xmlns:xsd="http://www.w3.org/2001/XMLSchema">DC: Dublin Core<br xmlns:xsd="http://www.w3.org/2001/XMLSchema">NISOIMG: NISO Technical Metadata for Digital Still Images<br xmlns:xsd="http://www.w3.org/2001/XMLSchema">LC-AV: technical metadata specified in the Library of Congress A/V prototyping project<br xmlns:xsd="http://www.w3.org/2001/XMLSchema">VRA: Visual Resources Association Core<br xmlns:xsd="http://www.w3.org/2001/XMLSchema">TEIHDR: Text Encoding Initiative Header<br xmlns:xsd="http://www.w3.org/2001/XMLSchema">DDI: Data Documentation Initiative<br xmlns:xsd="http://www.w3.org/2001/XMLSchema">FGDC: Federal Geographic Data Committee metadata<br xmlns:xsd="http://www.w3.org/2001/XMLSchema">OTHER: metadata in a format not specified above.<br xmlns:xsd="http://www.w3.org/2001/XMLSchema">				</div></div>
+</div>
+<div>OTHERMDTYPE: 
+xsd:string &nbsp;
+optional &nbsp;
+<div><div class="documentation">OTHERMDTYPE: Other Metadata Type<br xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+an optional string which may be used to record the particular form of
+metadata referenced by this element when the MDTYPE attribute has a
+value of "OTHER".<br xmlns:xsd="http://www.w3.org/2001/XMLSchema">				</div></div>
+</div>
+</div>
+<a href="#toc" class="onpage">Contents</a> |
+<a href="#element" class="onpage">Elements</a> |
+<a href="#complexType" class="onpage">Named Complex Types</a>
+</div>
+<div class="element">
+<a name="binData"><h3>Element &lt;binData&gt;</h3></a> type="<a href="#xsd:base64Binary">xsd:base64Binary</a>"
+  minOccurs="0"
+  <div class="documentation">binData:<br xmlns:xsd="http://www.w3.org/2001/XMLSchema">									A wrapper element to contain Base64 encoded metadata.												</div>
+<div>may contain
+	</div>
+<div>contained within 
+|	<a xmlns:xsd="http://www.w3.org/2001/XMLSchema" class="onpage" href="#mdWrap">&lt;mdWrap&gt;</a>
+|	<a xmlns:xsd="http://www.w3.org/2001/XMLSchema" class="onpage" href="#FContent">&lt;FContent&gt;</a>
+</div>
+<div class="attributes"><p>attributes</p></div>
+<a href="#toc" class="onpage">Contents</a> |
+<a href="#element" class="onpage">Elements</a> |
+<a href="#complexType" class="onpage">Named Complex Types</a>
+</div>
+<div class="element">
+<a name="xmlData"><h3>Element &lt;xmlData&gt;</h3></a> minOccurs="0"
+  <div class="documentation">xmlData:<br xmlns:xsd="http://www.w3.org/2001/XMLSchema">									A wrapper element to contain XML encoded metadata.												</div>
+<div>contained within 
+|	<a xmlns:xsd="http://www.w3.org/2001/XMLSchema" class="onpage" href="#mdWrap">&lt;mdWrap&gt;</a>
+|	<a xmlns:xsd="http://www.w3.org/2001/XMLSchema" class="onpage" href="#FContent">&lt;FContent&gt;</a>
+</div>
+<div class="attributes"><p>attributes</p></div>
+<a href="#toc" class="onpage">Contents</a> |
+<a href="#element" class="onpage">Elements</a> |
+<a href="#complexType" class="onpage">Named Complex Types</a>
+</div>
+<div class="element">
+<a name="FLocat"><h3>Element &lt;FLocat&gt;</h3></a> minOccurs="0"
+  maxOccurs="unbounded"
+  <div class="documentation">FLocat: File Location.  <br xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+The FLocat element provides a pointer to the location of a content
+file. It uses the XLink syntax to provide linking information
+indicating the actual location of the content file, along with a few
+additional attributes specifying additional linking information.<br xmlns:xsd="http://www.w3.org/2001/XMLSchema">						NOTE: FLocat is an empty element.  The location of the resource pointed to MUST be stored in the xlink:href element.<br xmlns:xsd="http://www.w3.org/2001/XMLSchema">					</div>
+<div>contained within 
+|	<a xmlns:xsd="http://www.w3.org/2001/XMLSchema" class="onpage" href="#file">&lt;file&gt;</a>
+|	<a xmlns:xsd="http://www.w3.org/2001/XMLSchema" class="onpage" href="#file">&lt;file&gt;</a>
+</div>
+<div class="attributes">
+<p>attributes</p>
+<div>ID: 
+xsd:ID &nbsp;
+optional &nbsp;
+<div><div class="documentation">ID: an optional XML ID value<br xmlns:xsd="http://www.w3.org/2001/XMLSchema">							</div></div>
+</div>
+<div>USE: 
+xsd:string &nbsp;
+optional &nbsp;
+<div><div class="documentation">USE: an optional string indicating the intended use of the referenced file.<br xmlns:xsd="http://www.w3.org/2001/XMLSchema">							</div></div>
+</div>
+<p>attributeGroup ref:LOCATION</p>
+<div>LOCTYPE: 
+ &nbsp;
+required &nbsp;
+
+| ARK
+| URN
+| URL
+| PURL
+| HANDLE
+| DOI
+| OTHER<div><div class="documentation">LOCTYPE: Location Type<br xmlns:xsd="http://www.w3.org/2001/XMLSchema">					the type of locator used to reference a file.  It must have one of the following values:<br xmlns:xsd="http://www.w3.org/2001/XMLSchema">URN: Uniform Resource Name<br xmlns:xsd="http://www.w3.org/2001/XMLSchema">URL: Uniform Resource Locator<br xmlns:xsd="http://www.w3.org/2001/XMLSchema">PURL: Persistent URL<br xmlns:xsd="http://www.w3.org/2001/XMLSchema">HANDLE: a CNRI Handle<br xmlns:xsd="http://www.w3.org/2001/XMLSchema">DOI: A Digital Object Identifier<br xmlns:xsd="http://www.w3.org/2001/XMLSchema">OTHER: a form of locator not specified above.<br xmlns:xsd="http://www.w3.org/2001/XMLSchema">				</div></div>
+</div>
+<div>OTHERLOCTYPE: 
+xsd:string &nbsp;
+optional &nbsp;
+<div><div class="documentation">OTHERLOCTYPE: an optional<br xmlns:xsd="http://www.w3.org/2001/XMLSchema">						string attribute used to indicate an alternative LOCTYPE if the LOCTYPE attribute itself has a value of "OTHER";<br xmlns:xsd="http://www.w3.org/2001/XMLSchema">				</div></div>
+</div>
+<p>attributeGroup ref:xlink:simpleLink</p>
+<p>attributeGroup ref:LOCATION</p>
+<div>LOCTYPE: 
+ &nbsp;
+required &nbsp;
+
+| ARK
+| URN
+| URL
+| PURL
+| HANDLE
+| DOI
+| OTHER<div><div class="documentation">LOCTYPE: Location Type<br xmlns:xsd="http://www.w3.org/2001/XMLSchema">					the type of locator used to reference a file.  It must have one of the following values:<br xmlns:xsd="http://www.w3.org/2001/XMLSchema">URN: Uniform Resource Name<br xmlns:xsd="http://www.w3.org/2001/XMLSchema">URL: Uniform Resource Locator<br xmlns:xsd="http://www.w3.org/2001/XMLSchema">PURL: Persistent URL<br xmlns:xsd="http://www.w3.org/2001/XMLSchema">HANDLE: a CNRI Handle<br xmlns:xsd="http://www.w3.org/2001/XMLSchema">DOI: A Digital Object Identifier<br xmlns:xsd="http://www.w3.org/2001/XMLSchema">OTHER: a form of locator not specified above.<br xmlns:xsd="http://www.w3.org/2001/XMLSchema">				</div></div>
+</div>
+<div>OTHERLOCTYPE: 
+xsd:string &nbsp;
+optional &nbsp;
+<div><div class="documentation">OTHERLOCTYPE: an optional<br xmlns:xsd="http://www.w3.org/2001/XMLSchema">						string attribute used to indicate an alternative LOCTYPE if the LOCTYPE attribute itself has a value of "OTHER";<br xmlns:xsd="http://www.w3.org/2001/XMLSchema">				</div></div>
+</div>
+<p>attributeGroup ref:xlink:simpleLink</p>
+</div>
+<a href="#toc" class="onpage">Contents</a> |
+<a href="#element" class="onpage">Elements</a> |
+<a href="#complexType" class="onpage">Named Complex Types</a>
+</div>
+<div class="element">
+<a name="FContent"><h3>Element &lt;FContent&gt;</h3></a> minOccurs="0"
+  <div class="documentation">FContent: file content.  <br xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+The FContent element is used to deliver a content file for a METS
+document within the METS file itself. The content file must be either
+Base 64 encoded, and contained within the subsidiary binData wrapper
+element, or consist of XML information and be contained within the
+subsidiary xmlData wrapper element.<br xmlns:xsd="http://www.w3.org/2001/XMLSchema">					</div>
+<div>
+may contain
+	
+|	<a class="onpage" href="#binData">&lt;binData&gt;</a>
+|	<a class="onpage" href="#xmlData">&lt;xmlData&gt;</a>
+</div>
+<div>contained within 
+|	<a xmlns:xsd="http://www.w3.org/2001/XMLSchema" class="onpage" href="#file">&lt;file&gt;</a>
+|	<a xmlns:xsd="http://www.w3.org/2001/XMLSchema" class="onpage" href="#file">&lt;file&gt;</a>
+</div>
+<div class="attributes">
+<p>attributes</p>
+<div>ID: 
+xsd:ID &nbsp;
+optional &nbsp;
+<div><div class="documentation">ID: an optional XML ID value<br xmlns:xsd="http://www.w3.org/2001/XMLSchema">							</div></div>
+</div>
+<div>USE: 
+xsd:string &nbsp;
+optional &nbsp;
+<div><div class="documentation">USE: an optional string indicating the
+intended use of the embedded file. Examples might include "master",
+"reference", and "thumbnail" for image files.<br xmlns:xsd="http://www.w3.org/2001/XMLSchema">							</div></div>
+</div>
+</div>
+<a href="#toc" class="onpage">Contents</a> |
+<a href="#element" class="onpage">Elements</a> |
+<a href="#complexType" class="onpage">Named Complex Types</a>
+</div>
+<div class="element">
+<a name="binData"><h3>Element &lt;binData&gt;</h3></a> type="<a href="#xsd:base64Binary">xsd:base64Binary</a>"
+  minOccurs="0"
+  <div class="documentation">binData:	A wrapper element used to contain a Base64 encoded file.<br xmlns:xsd="http://www.w3.org/2001/XMLSchema">								</div>
+<div>may contain
+	</div>
+<div>contained within 
+|	<a xmlns:xsd="http://www.w3.org/2001/XMLSchema" class="onpage" href="#mdWrap">&lt;mdWrap&gt;</a>
+|	<a xmlns:xsd="http://www.w3.org/2001/XMLSchema" class="onpage" href="#FContent">&lt;FContent&gt;</a>
+</div>
+<div class="attributes"><p>attributes</p></div>
+<a href="#toc" class="onpage">Contents</a> |
+<a href="#element" class="onpage">Elements</a> |
+<a href="#complexType" class="onpage">Named Complex Types</a>
+</div>
+<div class="element">
+<a name="xmlData"><h3>Element &lt;xmlData&gt;</h3></a> minOccurs="0"
+  <div class="documentation">xmlData: A wrapper element used to contain  an XML encoded file.<br xmlns:xsd="http://www.w3.org/2001/XMLSchema">								</div>
+<div>contained within 
+|	<a xmlns:xsd="http://www.w3.org/2001/XMLSchema" class="onpage" href="#mdWrap">&lt;mdWrap&gt;</a>
+|	<a xmlns:xsd="http://www.w3.org/2001/XMLSchema" class="onpage" href="#FContent">&lt;FContent&gt;</a>
+</div>
+<div class="attributes"><p>attributes</p></div>
+<a href="#toc" class="onpage">Contents</a> |
+<a href="#element" class="onpage">Elements</a> |
+<a href="#complexType" class="onpage">Named Complex Types</a>
+</div>
+<div class="element">
+<a name="stream"><h3>Element &lt;stream&gt;</h3></a> minOccurs="0"
+  maxOccurs="unbounded"
+  <div class="documentation">stream: component byte stream<br xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+A file may be composed of one or more subsidiary streams. An MPEG4
+file, for example, might contain separate audio and video streams, each
+of which has its own technical metadata associated with it.</div>
+<div>contained within 
+|	<a xmlns:xsd="http://www.w3.org/2001/XMLSchema" class="onpage" href="#file">&lt;file&gt;</a>
+|	<a xmlns:xsd="http://www.w3.org/2001/XMLSchema" class="onpage" href="#file">&lt;file&gt;</a>
+</div>
+<div class="attributes">
+<p>attributes</p>
+<div>ID: 
+xsd:ID &nbsp;
+optional &nbsp;
+<div><div class="documentation">ID: an optional XML ID value<br xmlns:xsd="http://www.w3.org/2001/XMLSchema">									</div></div>
+</div>
+<div>streamType: 
+xsd:string &nbsp;
+optional &nbsp;
+<div></div>
+</div>
+<div>OWNERID: 
+xsd:string &nbsp;
+optional &nbsp;
+<div><div class="documentation">OWNERID: an optional string attribute
+which may be used to provide a unique identifier (including a URI)
+assigned to the file which may differ from the URI used to retrieve the
+file.<br xmlns:xsd="http://www.w3.org/2001/XMLSchema">									</div></div>
+</div>
+<div>ADMID: 
+xsd:IDREFS &nbsp;
+optional &nbsp;
+<div><div class="documentation">ADMID: an optional attribute used to
+list the XML ID attribute values for administrative metadata sections
+in the METS document that provide information regarding this file.<br xmlns:xsd="http://www.w3.org/2001/XMLSchema">									</div></div>
+</div>
+<div>DMDID: 
+xsd:IDREFS &nbsp;
+optional &nbsp;
+<div><div class="documentation">DMDID: an optional attribute used to
+list the XML ID attribute values for descriptive metadata sections in
+the METS document that provide information regarding this file.<br xmlns:xsd="http://www.w3.org/2001/XMLSchema">									</div></div>
+</div>
+</div>
+<a href="#toc" class="onpage">Contents</a> |
+<a href="#element" class="onpage">Elements</a> |
+<a href="#complexType" class="onpage">Named Complex Types</a>
+</div>
+<div class="element">
+<a name="transformFile"><h3>Element &lt;transformFile&gt;</h3></a> minOccurs="0"
+  maxOccurs="unbounded"
+  <div class="documentation"></div>
+<div>contained within 
+|	<a xmlns:xsd="http://www.w3.org/2001/XMLSchema" class="onpage" href="#file">&lt;file&gt;</a>
+|	<a xmlns:xsd="http://www.w3.org/2001/XMLSchema" class="onpage" href="#file">&lt;file&gt;</a>
+</div>
+<div class="attributes">
+<p>attributes</p>
+<div>ID: 
+xsd:ID &nbsp;
+optional &nbsp;
+<div><div class="documentation">ID: an optional XML ID value<br xmlns:xsd="http://www.w3.org/2001/XMLSchema">									</div></div>
+</div>
+<div>TRANSFORMTYPE: 
+ &nbsp;
+required &nbsp;
+
+| decompression
+| decryption<div><div class="documentation">TRANSFORMTYPE:
+a type of transformation needed to render content of a file accessible
+(including unpacking a file into subsidiary files/streams). </div></div>
+</div>
+<div>TRANSFORMALGORITHM: 
+xsd:string &nbsp;
+required &nbsp;
+<div><div class="documentation">TRANSFORMALGORITHM: a string describing
+the specific decompression or decryption routine used to access the
+contents of this file.</div></div>
+</div>
+<div>TRANSFORMKEY: 
+xsd:string &nbsp;
+optional &nbsp;
+<div><div class="documentation">TRANSFORMKEY: a key to be used with the transform algorithm for accessing the file's contents.</div></div>
+</div>
+<div>TRANSFORMBEHAVIOR: 
+xsd:IDREF &nbsp;
+optional &nbsp;
+<div><div class="documentation">TRANSFORMBEHAVIOR: an IDREF to a behavior element for this transformation</div></div>
+</div>
+<div>TRANSFORMORDER: 
+xsd:positiveInteger &nbsp;
+required &nbsp;
+<div></div>
+</div>
+</div>
+<a href="#toc" class="onpage">Contents</a> |
+<a href="#element" class="onpage">Elements</a> |
+<a href="#complexType" class="onpage">Named Complex Types</a>
+</div>
+<div class="element">
+<a name="file"><h3>Element &lt;file&gt;</h3></a> type="<a href="#fileType">fileType</a>"
+  minOccurs="0"
+  maxOccurs="unbounded"
+  <div>may contain
+	
+|	<a class="onpage" href="#FLocat">&lt;FLocat&gt;</a>
+|	<a class="onpage" href="#FContent">&lt;FContent&gt;</a>
+|	<a class="onpage" href="#stream">&lt;stream&gt;</a>
+|	<a class="onpage" href="#transformFile">&lt;transformFile&gt;</a>
+|	<a class="onpage" href="#file">&lt;file&gt;</a>
+</div>
+<div>contained within 
+|	<a xmlns:xsd="http://www.w3.org/2001/XMLSchema" class="onpage" href="#fileGrp">&lt;fileGrp&gt;</a>
+|	<a xmlns:xsd="http://www.w3.org/2001/XMLSchema" class="onpage" href="#fileGrp">&lt;fileGrp&gt;</a>
+|	<a xmlns:xsd="http://www.w3.org/2001/XMLSchema" class="onpage" href="#file">&lt;file&gt;</a>
+|	<a xmlns:xsd="http://www.w3.org/2001/XMLSchema" class="onpage" href="#file">&lt;file&gt;</a>
+</div>
+<div class="attributes">
+<p>attributes</p>
+<div>ID: 
+xsd:ID &nbsp;
+required &nbsp;
+<div><div class="documentation">ID: an XML ID value.<br xmlns:xsd="http://www.w3.org/2001/XMLSchema">				</div></div>
+</div>
+<div>MIMETYPE: 
+xsd:string &nbsp;
+optional &nbsp;
+<div><div class="documentation">MIMETYPE: an optional string attribute providing the MIME type for the file.<br xmlns:xsd="http://www.w3.org/2001/XMLSchema">				</div></div>
+</div>
+<div>SEQ: 
+xsd:int &nbsp;
+optional &nbsp;
+<div><div class="documentation">SEQ: an optional integer indicating the sequence of this  file relative to the others in its file group.<br xmlns:xsd="http://www.w3.org/2001/XMLSchema">				</div></div>
+</div>
+<div>SIZE: 
+xsd:long &nbsp;
+optional &nbsp;
+<div><div class="documentation">SIZE: an optional long integer specifying the size of the file in bytes.<br xmlns:xsd="http://www.w3.org/2001/XMLSchema">				</div></div>
+</div>
+<div>CREATED: 
+xsd:dateTime &nbsp;
+optional &nbsp;
+<div><div class="documentation">CREATED: an optional dateTime providing the date of creation for the file.<br xmlns:xsd="http://www.w3.org/2001/XMLSchema">				</div></div>
+</div>
+<div>CHECKSUM: 
+xsd:string &nbsp;
+optional &nbsp;
+<div><div class="documentation">CHECKSUM: an optional string attribute providing a checksum value for the included file.<br xmlns:xsd="http://www.w3.org/2001/XMLSchema">				</div></div>
+</div>
+<div>CHECKSUMTYPE: 
+ &nbsp;
+optional &nbsp;
+
+| HAVAL
+| MD5
+| SHA-1
+| SHA-256
+| SHA-384
+| SHA-512
+| TIGER
+| WHIRLPOOL<div><div class="documentation">CHECKSUMTYPE:
+an optional attribute specifying the checksum algorithm used to produce
+the value contained in the CHECKSUM attribute. CHECKSUMTYPE must
+contain one of the following values:<br xmlns:xsd="http://www.w3.org/2001/XMLSchema">					HAVAL<br xmlns:xsd="http://www.w3.org/2001/XMLSchema">					MD5<br xmlns:xsd="http://www.w3.org/2001/XMLSchema">					SHA-1<br xmlns:xsd="http://www.w3.org/2001/XMLSchema">					SHA-256<br xmlns:xsd="http://www.w3.org/2001/XMLSchema">					SHA-384<br xmlns:xsd="http://www.w3.org/2001/XMLSchema">					SHA-512<br xmlns:xsd="http://www.w3.org/2001/XMLSchema">					TIGER<br xmlns:xsd="http://www.w3.org/2001/XMLSchema">					WHIRLPOOL<br xmlns:xsd="http://www.w3.org/2001/XMLSchema">				</div></div>
+</div>
+<div>OWNERID: 
+xsd:string &nbsp;
+optional &nbsp;
+<div><div class="documentation">OWNERID: an optional string attribute
+which may be used to provide a unique identifier (including a URI)
+assigned to the file which may differ from the URI used to retrieve the
+file.<br xmlns:xsd="http://www.w3.org/2001/XMLSchema">				</div></div>
+</div>
+<div>ADMID: 
+xsd:IDREFS &nbsp;
+optional &nbsp;
+<div><div class="documentation">ADMID: an optional attribute used to
+list the XML ID attribute values for administrative metadata sections
+in the METS document that provide information regarding this file.<br xmlns:xsd="http://www.w3.org/2001/XMLSchema">				</div></div>
+</div>
+<div>DMDID: 
+xsd:IDREFS &nbsp;
+optional &nbsp;
+<div><div class="documentation">DMDID: an optional attribute used to
+list the XML ID attribute values for descriptive metadata sections in
+the METS document that provide information regarding this file.<br xmlns:xsd="http://www.w3.org/2001/XMLSchema">				</div></div>
+</div>
+<div>GROUPID: 
+xsd:string &nbsp;
+optional &nbsp;
+<div><div class="documentation">GROUPID: an optional string attribute
+which may be used to record an identifier that establishes a
+correspondence between this file and files in other file groups. For
+example, a master image in one file group would share the same GROUPID
+value with a reference copy in a second file group and a thumbnail
+image in a third file group.<br xmlns:xsd="http://www.w3.org/2001/XMLSchema">				</div></div>
+</div>
+<div>USE: 
+xsd:string &nbsp;
+optional &nbsp;
+<div><div class="documentation">USE: an optional string attribute
+indicating the intended use of this file (e.g., "master", "reference",
+"thumbnail" for image files).<br xmlns:xsd="http://www.w3.org/2001/XMLSchema">				</div></div>
+</div>
+</div>
+<a href="#toc" class="onpage">Contents</a> |
+<a href="#element" class="onpage">Elements</a> |
+<a href="#complexType" class="onpage">Named Complex Types</a>
+</div>
+</div>
+<div>
+<a name="complexType"><h2>Named Complex Types</h2></a><div>
+| <a class="onpage" href="#amdSecType">amdSecType</a>
+| <a class="onpage" href="#areaType">areaType</a>
+| <a class="onpage" href="#behaviorSecType">behaviorSecType</a>
+| <a class="onpage" href="#behaviorType">behaviorType</a>
+| <a class="onpage" href="#divType">divType</a>
+| <a class="onpage" href="#fileGrpType">fileGrpType</a>
+| <a class="onpage" href="#fileType">fileType</a>
+| <a class="onpage" href="#mdSecType">mdSecType</a>
+| <a class="onpage" href="#metsType">metsType</a>
+| <a class="onpage" href="#objectType">objectType</a>
+| <a class="onpage" href="#seqType">seqType</a>
+| <a class="onpage" href="#structLinkType">structLinkType</a>
+| <a class="onpage" href="#structMapType">structMapType</a>
+</div>
+<div class="complexType">
+<a name="metsType"><h3>Complex type metsType</h3></a><div>elements of this type
+
+|	<a class="onpage" href="#mets">&lt;mets&gt;</a>
+</div>
+<div class="documentation">mets Complex Type.<br xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+A METS document consists of seven possible subsidiary sections: metsHdr
+(METS document header), dmdSec (descriptive metadata section), amdSec
+(administrative metadata section), fileGrp (file inventory group),
+structLink (structural map linking), structMap (structural map) and
+behaviorSec (behaviors section).<br xmlns:xsd="http://www.w3.org/2001/XMLSchema">			</div>
+<div>may contain
+	
+|	<a class="onpage" href="#metsHdr">&lt;metsHdr&gt;</a>
+|	<a class="onpage" href="#dmdSec">&lt;dmdSec&gt;</a>
+|	<a class="onpage" href="#amdSec">&lt;amdSec&gt;</a>
+|	<a class="onpage" href="#fileSec">&lt;fileSec&gt;</a>
+|	<a class="onpage" href="#structMap">&lt;structMap&gt;</a>
+|	<a class="onpage" href="#structLink">&lt;structLink&gt;</a>
+|	<a class="onpage" href="#behaviorSec">&lt;behaviorSec&gt;</a>
+</div>
+<div class="attributes">
+<p>attributes</p>
+<div>ID: 
+xsd:ID &nbsp;
+optional &nbsp;
+<div><div class="documentation">ID: an optional XML ID value<br xmlns:xsd="http://www.w3.org/2001/XMLSchema">				</div></div>
+</div>
+<div>OBJID: 
+xsd:string &nbsp;
+optional &nbsp;
+<div><div class="documentation">OBJID: an optional attribute recording a primary identifier assigned to the METS document.<br xmlns:xsd="http://www.w3.org/2001/XMLSchema">				</div></div>
+</div>
+<div>LABEL: 
+xsd:string &nbsp;
+optional &nbsp;
+<div><div class="documentation">LABEL: an optional attribute providing a title/text string identifying the document for users.<br xmlns:xsd="http://www.w3.org/2001/XMLSchema">				</div></div>
+</div>
+<div>TYPE: 
+xsd:string &nbsp;
+optional &nbsp;
+<div><div class="documentation">TYPE: an optional string attribute describing the type of object, e.g., book, journal, stereograph, etc.<br xmlns:xsd="http://www.w3.org/2001/XMLSchema">				</div></div>
+</div>
+<div>PROFILE: 
+xsd:string &nbsp;
+optional &nbsp;
+<div><div class="documentation">PROFILE: an optional attribute providing a URI or other identifier for a METS profile to which  this METS document conforms.<br xmlns:xsd="http://www.w3.org/2001/XMLSchema">			</div></div>
+</div>
+</div>
+<a href="#toc" class="onpage">Contents</a> |
+<a href="#element" class="onpage">Elements</a> |
+<a href="#complexType" class="onpage">Named Complex Types</a>
+</div>
+<div class="complexType">
+<a name="amdSecType"><h3>Complex type amdSecType</h3></a><div>elements of this type
+
+|	<a class="onpage" href="#amdSec">&lt;amdSec&gt;</a>
+</div>
+<div class="documentation">amdSecType: Complex Type for Administrative Metadata.<br xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+The administrative metadata section consists of four possible
+subsidiary sections: techMD (technical metadata for
+text/image/audio/video files), rightsMD (intellectual property rights
+metadata), sourceMD (analog/digital source metadata), and digiprovMD
+(digital provenance metadata, that is, the history of
+migrations/translations performed on a digital library object from it's
+original digital capture/encoding).<br xmlns:xsd="http://www.w3.org/2001/XMLSchema">			</div>
+<div>may contain
+	
+|	<a class="onpage" href="#techMD">&lt;techMD&gt;</a>
+|	<a class="onpage" href="#rightsMD">&lt;rightsMD&gt;</a>
+|	<a class="onpage" href="#sourceMD">&lt;sourceMD&gt;</a>
+|	<a class="onpage" href="#digiprovMD">&lt;digiprovMD&gt;</a>
+</div>
+<div class="attributes">
+<p>attributes</p>
+<div>ID: 
+xsd:ID &nbsp;
+optional &nbsp;
+<div><div class="documentation">ID: an optional XML ID value<br xmlns:xsd="http://www.w3.org/2001/XMLSchema">				</div></div>
+</div>
+</div>
+<a href="#toc" class="onpage">Contents</a> |
+<a href="#element" class="onpage">Elements</a> |
+<a href="#complexType" class="onpage">Named Complex Types</a>
+</div>
+<div class="complexType">
+<a name="fileGrpType"><h3>Complex type fileGrpType</h3></a><div>elements of this type
+
+|	<a class="onpage" href="#fileGrp">&lt;fileGrp&gt;</a>
+|	<a class="onpage" href="#fileGrp">&lt;fileGrp&gt;</a>
+</div>
+<div class="documentation">fileGrp: File Group.<br xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+The file group is used to cluster all of the digital files composing a
+digital library object in a hierarchical arrangement (fileGrp is
+recursively defined to enable the creation of the hierarchy). Any file
+group may contain zero or more file elements. File elements in turn can
+contain one or more FLocat elements (a pointer to a file containing
+content for this object) and/or a FContent element (the contents of the
+file, in either XML or Base64 encoding).<br xmlns:xsd="http://www.w3.org/2001/XMLSchema">				</div>
+<div>may contain
+	
+|	<a class="onpage" href="#fileGrp">&lt;fileGrp&gt;</a>
+|	<a class="onpage" href="#file">&lt;file&gt;</a>
+</div>
+<div class="attributes">
+<p>attributes</p>
+<div>ID: 
+xsd:ID &nbsp;
+optional &nbsp;
+<div><div class="documentation">ID: an optional XML ID value.<br xmlns:xsd="http://www.w3.org/2001/XMLSchema">				</div></div>
+</div>
+<div>VERSDATE: 
+xsd:dateTime &nbsp;
+optional &nbsp;
+<div><div class="documentation">VERSDATE: an optional dateTime attribute specifying the date this version/fileGrp of the digital object was created.<br xmlns:xsd="http://www.w3.org/2001/XMLSchema">				</div></div>
+</div>
+<div>ADMID: 
+xsd:IDREFS &nbsp;
+optional &nbsp;
+<div><div class="documentation">ADMID: an optional attribute specifying
+the XML ID values for administrative metadata sections in the METS
+document that provide information applicable to all of the files in
+this particular file group.<br xmlns:xsd="http://www.w3.org/2001/XMLSchema">				</div></div>
+</div>
+<div>USE: 
+xsd:string &nbsp;
+optional &nbsp;
+<div><div class="documentation">USE: an optional string attribute
+indicating the intended use of all the files within this file group
+(e.g., master, reference, thumbnails for image files).<br xmlns:xsd="http://www.w3.org/2001/XMLSchema">				</div></div>
+</div>
+</div>
+<a href="#toc" class="onpage">Contents</a> |
+<a href="#element" class="onpage">Elements</a> |
+<a href="#complexType" class="onpage">Named Complex Types</a>
+</div>
+<div class="complexType">
+<a name="structMapType"><h3>Complex type structMapType</h3></a><div>elements of this type
+
+|	<a class="onpage" href="#structMap">&lt;structMap&gt;</a>
+</div>
+<div class="documentation">structMap Complex Type<br xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+The structural map (structMap) outlines a hierarchical structure for
+the original object being encoded, using a series of nested div
+elements.<br xmlns:xsd="http://www.w3.org/2001/XMLSchema">			</div>
+<div>may contain
+	
+|	<a class="onpage" href="#div">&lt;div&gt;</a>
+</div>
+<div class="attributes">
+<p>attributes</p>
+<div>ID: 
+xsd:ID &nbsp;
+optional &nbsp;
+<div><div class="documentation">ID: an optional XML ID value.<br xmlns:xsd="http://www.w3.org/2001/XMLSchema">				</div></div>
+</div>
+<div>TYPE: 
+xsd:string &nbsp;
+optional &nbsp;
+<div><div class="documentation">TYPE: an optional string attribute
+specifying the type of structural map provided. Typical values will be
+"PHYSICAL" for a map which describes the physical composition of the
+original work (a series with individual monographs with pages) and
+"LOGICAL" for one which describes the intellectual structure of the
+work (a monograph with TOC, forward, chapters, index., etc.);<br xmlns:xsd="http://www.w3.org/2001/XMLSchema">				</div></div>
+</div>
+<div>LABEL: 
+xsd:string &nbsp;
+optional &nbsp;
+<div><div class="documentation">LABEL: an optional string attribute
+which may be used to describe the structMap to users. This is primarily
+useful where more than one structMap is provided for a single object
+(e.g., both logical and physical structMap).<br xmlns:xsd="http://www.w3.org/2001/XMLSchema">				</div></div>
+</div>
+</div>
+<a href="#toc" class="onpage">Contents</a> |
+<a href="#element" class="onpage">Elements</a> |
+<a href="#complexType" class="onpage">Named Complex Types</a>
+</div>
+<div class="complexType">
+<a name="divType"><h3>Complex type divType</h3></a><div>elements of this type
+
+|	<a class="onpage" href="#div">&lt;div&gt;</a>
+|	<a class="onpage" href="#div">&lt;div&gt;</a>
+</div>
+<div class="documentation">Div Complex Type<br xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+The METS standard represents a document structurally as a series of
+nested div elements, that is, as a hierarchy (e.g., a book, which is
+composed of chapters, which are composed of subchapters, which are
+composed of text). Every div node in the structural map hierarchy may
+be connected (via subsidiary mptr or fptr elements) to content files
+which represent that div's portion of the whole document.<br xmlns:xsd="http://www.w3.org/2001/XMLSchema"><br xmlns:xsd="http://www.w3.org/2001/XMLSchema">SPECIAL NOTE REGARDING DIV ATTRIBUTE VALUES:<br xmlns:xsd="http://www.w3.org/2001/XMLSchema">to
+clarify the differences between the ORDER, ORDERLABEL, and LABEL
+attributes for the &lt;div&gt; element, imagine a text with 10 roman
+numbered pages followed by 10 arabic numbered pages. Page iii would
+have an ORDER of "3", an ORDERLABEL of "iii" and a LABEL of "Page iii",
+while page 3 would have an ORDER of "13", an ORDERLABEL of "3" and a
+LABEL of "Page 3".<br xmlns:xsd="http://www.w3.org/2001/XMLSchema">			</div>
+<div>may contain
+	
+|	<a class="onpage" href="#mptr">&lt;mptr&gt;</a>
+|	<a class="onpage" href="#fptr">&lt;fptr&gt;</a>
+|	<a class="onpage" href="#div">&lt;div&gt;</a>
+</div>
+<div class="attributes">
+<p>attributes</p>
+<div>ID: 
+xsd:ID &nbsp;
+optional &nbsp;
+<div><div class="documentation">ID: an optional XML ID value.<br xmlns:xsd="http://www.w3.org/2001/XMLSchema">				</div></div>
+</div>
+<div>ORDER: 
+xsd:integer &nbsp;
+optional &nbsp;
+<div><div class="documentation">ORDER: an optional integer representation of this div's order among its siblings (e.g., its sequence).<br xmlns:xsd="http://www.w3.org/2001/XMLSchema">				</div></div>
+</div>
+<div>ORDERLABEL: 
+xsd:string &nbsp;
+optional &nbsp;
+<div><div class="documentation">ORDERLABEL: an optional string
+representation of this div's order among its siblings (e.g., "xii"), or
+a non-integer native numbering system. It is presumed that this value
+will still be machine-actionable (e.g., supports a page 'go to'
+function), and is not a replacement/substitute for the LABEL attribute.<br xmlns:xsd="http://www.w3.org/2001/XMLSchema">				</div></div>
+</div>
+<div>LABEL: 
+xsd:string &nbsp;
+optional &nbsp;
+<div><div class="documentation">LABEL: an optional string label to
+describe this div to an end user viewing the document, as per a table
+of contents entry (NB: a div LABEL should be specific to its level in
+the structural map. In the case of a book with chapters, the book div
+LABEL should have the book title, and the chapter div LABELS should
+have the individual chapter titles, rather than having the chapter div
+LABELs combine both book title and chapter title).<br xmlns:xsd="http://www.w3.org/2001/XMLSchema">				</div></div>
+</div>
+<div>DMDID: 
+xsd:IDREFS &nbsp;
+optional &nbsp;
+<div><div class="documentation">DMDID: an optional attribute providing
+the XML ID values for the descriptive metadata sections within this
+METS document applicable to this div.<br xmlns:xsd="http://www.w3.org/2001/XMLSchema">				</div></div>
+</div>
+<div>ADMID: 
+xsd:IDREFS &nbsp;
+optional &nbsp;
+<div><div class="documentation">ADMID: an optional attribute providing
+the XML ID values for the administrative metadata sections within this
+METS document applicable to this div.<br xmlns:xsd="http://www.w3.org/2001/XMLSchema">				</div></div>
+</div>
+<div>TYPE: 
+xsd:string &nbsp;
+optional &nbsp;
+<div><div class="documentation">TYPE: an optional string attribute for specifying a type of division (e.g., chapter, article, page, etc.).<br xmlns:xsd="http://www.w3.org/2001/XMLSchema">				</div></div>
+</div>
+<div>CONTENTIDS: 
+URIs &nbsp;
+optional &nbsp;
+<div><div class="documentation">CONTENTIDS: Content IDs for this division (equivalent to DIDL DII)<br xmlns:xsd="http://www.w3.org/2001/XMLSchema">				</div></div>
+</div>
+<div>: 
+xlink:label &nbsp;
+ &nbsp;
+<div><div class="documentation">xlink:label - an xlink label to be referred to by an smLink element</div></div>
+</div>
+</div>
+<a href="#toc" class="onpage">Contents</a> |
+<a href="#element" class="onpage">Elements</a> |
+<a href="#complexType" class="onpage">Named Complex Types</a>
+</div>
+<div class="complexType">
+<a name="seqType"><h3>Complex type seqType</h3></a><div>elements of this type
+
+|	<a class="onpage" href="#seq">&lt;seq&gt;</a>
+|	<a class="onpage" href="#seq">&lt;seq&gt;</a>
+</div>
+<div class="documentation">seq: Sequence of files.  <br xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+The seq element should be used to link a div to a set of content files
+when those files should be played/displayed sequentially to deliver
+content to a user. Individual &lt;area&gt; subelements within the seq
+element provide the links to the files or portions thereof.<br xmlns:xsd="http://www.w3.org/2001/XMLSchema">				</div>
+<div>may contain
+	
+|	<a class="onpage" href="#area">&lt;area&gt;</a>
+</div>
+<div class="attributes">
+<p>attributes</p>
+<div>ID: 
+xsd:ID &nbsp;
+optional &nbsp;
+<div><div class="documentation">ID: an optional XML ID value.<br xmlns:xsd="http://www.w3.org/2001/XMLSchema">				</div></div>
+</div>
+</div>
+<a href="#toc" class="onpage">Contents</a> |
+<a href="#element" class="onpage">Elements</a> |
+<a href="#complexType" class="onpage">Named Complex Types</a>
+</div>
+<div class="complexType">
+<a name="areaType"><h3>Complex type areaType</h3></a><div>elements of this type
+
+|	<a class="onpage" href="#area">&lt;area&gt;</a>
+|	<a class="onpage" href="#area">&lt;area&gt;</a>
+|	<a class="onpage" href="#area">&lt;area&gt;</a>
+</div>
+<div class="documentation">areaType: Complex Type for Area linking.<br xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+The area element provides for more sophisticated linking between a div
+element and content files representing that div, be they text, image,
+audio, or video files. An area element can link a div to a point within
+a file, to a one-dimension segment of a file (e.g., text segment, image
+line, audio/video clip), or a two-dimensional section of a file (e.g,
+subsection of an image, or a subsection of the video display of a video
+file. The area element has no content; all information is recorded
+within its various attributes.<br xmlns:xsd="http://www.w3.org/2001/XMLSchema">			</div>
+<div class="attributes">
+<p>attributes</p>
+<div>ID: 
+xsd:ID &nbsp;
+optional &nbsp;
+<div><div class="documentation">ID: an optional XML ID value.<br xmlns:xsd="http://www.w3.org/2001/XMLSchema">				</div></div>
+</div>
+<div>FILEID: 
+xsd:IDREF &nbsp;
+required &nbsp;
+<div><div class="documentation">FILEID: a mandatory IDREF to the file element being pointed to by the div.<br xmlns:xsd="http://www.w3.org/2001/XMLSchema">				</div></div>
+</div>
+<div>SHAPE: 
+ &nbsp;
+optional &nbsp;
+
+| RECT
+| CIRCLE
+| POLY<div><div class="documentation">SHAPE:
+an optional string attribute defining the shape of a two-dimensional
+area being referenced within a linked content file. It must have one of
+the following values:<br xmlns:xsd="http://www.w3.org/2001/XMLSchema">RECT: rectangular area<br xmlns:xsd="http://www.w3.org/2001/XMLSchema">CIRCLE: a circular area<br xmlns:xsd="http://www.w3.org/2001/XMLSchema">POLY: an irregular polygon.<br xmlns:xsd="http://www.w3.org/2001/XMLSchema">The SHAPE attribute should be used as in HTML 4.<br xmlns:xsd="http://www.w3.org/2001/XMLSchema">				</div></div>
+</div>
+<div>COORDS: 
+xsd:string &nbsp;
+optional &nbsp;
+<div><div class="documentation">COORDS: an optional string attribute
+listing a set of visual coordinates within an image (still image or
+video frame). The COORDS attribute should be used as in HTML 4.<br xmlns:xsd="http://www.w3.org/2001/XMLSchema">				</div></div>
+</div>
+<div>BEGIN: 
+xsd:string &nbsp;
+optional &nbsp;
+<div><div class="documentation">BEGIN: an optional string attribute
+specifying the beginning location for a subpart of the referenced file.
+Used with the END attribute.<br xmlns:xsd="http://www.w3.org/2001/XMLSchema">				</div></div>
+</div>
+<div>END: 
+xsd:string &nbsp;
+optional &nbsp;
+<div><div class="documentation">END: an optional string attribute
+specifying the ending location for a subpart of the referenced file.
+Used with the BEGIN attribute.<br xmlns:xsd="http://www.w3.org/2001/XMLSchema">				</div></div>
+</div>
+<div>BETYPE: 
+ &nbsp;
+optional &nbsp;
+
+| BYTE
+| IDREF
+| SMIL
+| MIDI
+| SMPTE-25
+| SMPTE-24
+| SMPTE-DF30
+| SMPTE-NDF30
+| SMPTE-DF29.97
+| SMPTE-NDF29.97
+| TIME
+| TCF<div><div class="documentation">BETYPE: Begin/End Type.<br xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+An optional attribute specifying the syntax used in the values recorded
+in the BEGIN and END attributes. It must have one of the following
+values:<br xmlns:xsd="http://www.w3.org/2001/XMLSchema">BYTE: a byte offset<br xmlns:xsd="http://www.w3.org/2001/XMLSchema">IDREF: an XML ID value for an element in the content file<br xmlns:xsd="http://www.w3.org/2001/XMLSchema">SMIL: a SMIL	time value<br xmlns:xsd="http://www.w3.org/2001/XMLSchema">MIDI: a MIDI time code<br xmlns:xsd="http://www.w3.org/2001/XMLSchema">SMPTE-25: SMPTE time code for 25 frame/second material<br xmlns:xsd="http://www.w3.org/2001/XMLSchema">SMPTE-24: SMPTE time code for 24 frame/second material<br xmlns:xsd="http://www.w3.org/2001/XMLSchema">SMPTE-DF30: SMPTE time code for 30 frame/second drop frame material<br xmlns:xsd="http://www.w3.org/2001/XMLSchema">SMPTE-NDF30: SMPTE time code for 30 frame/second non-drop frame material<br xmlns:xsd="http://www.w3.org/2001/XMLSchema">SMPTE-DF29.97: SMPTE time code for 29.97 frame/second drop frame material<br xmlns:xsd="http://www.w3.org/2001/XMLSchema">SMPTE-NDF29.97: SMPTE time code for 29.97 frame/second non-drop frame material<br xmlns:xsd="http://www.w3.org/2001/XMLSchema">TIME: a simple time code of the form	HH:MM:SS<br xmlns:xsd="http://www.w3.org/2001/XMLSchema">TCF: a Time code Character Format value<br xmlns:xsd="http://www.w3.org/2001/XMLSchema">				</div></div>
+</div>
+<div>EXTENT: 
+xsd:string &nbsp;
+optional &nbsp;
+<div><div class="documentation">EXTENT: an optional string attribute specifying the duration of the segment pointed to by the area element.<br xmlns:xsd="http://www.w3.org/2001/XMLSchema">				</div></div>
+</div>
+<div>EXTTYPE: 
+ &nbsp;
+optional &nbsp;
+
+| BYTE
+| SMIL
+| MIDI
+| SMPTE-25
+| SMPTE-24
+| SMPTE-DF30
+| SMPTE-NDF30
+| SMPTE-DF29.97
+| SMPTE-NDF29.97
+| TIME
+| TCF<div><div class="documentation">EXTTYPE: Extent Type<br xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+an option attribute specifying the syntax used for the value in the
+EXTENT attribute. See the BETYPE attribute for the specific values
+which may be used in EXTTYPE.<br xmlns:xsd="http://www.w3.org/2001/XMLSchema">				</div></div>
+</div>
+<div>ADMID: 
+xsd:IDREFS &nbsp;
+optional &nbsp;
+<div><div class="documentation">ADMID: an optional attribute listing
+the XML ID values for the administrative metadata sections within the
+METS document that provide information regarding this area.<br xmlns:xsd="http://www.w3.org/2001/XMLSchema">				</div></div>
+</div>
+<div>CONTENTIDS: 
+URIs &nbsp;
+optional &nbsp;
+<div><div class="documentation">CONTENTIDS: Content IDs for this division (equivalent to DIDL DII)<br xmlns:xsd="http://www.w3.org/2001/XMLSchema">				</div></div>
+</div>
+</div>
+<a href="#toc" class="onpage">Contents</a> |
+<a href="#element" class="onpage">Elements</a> |
+<a href="#complexType" class="onpage">Named Complex Types</a>
+</div>
+<div class="complexType">
+<a name="structLinkType"><h3>Complex type structLinkType</h3></a><div>elements of this type
+
+|	<a class="onpage" href="#structLink">&lt;structLink&gt;</a>
+</div>
+<div class="documentation">structLink: Structural Map Linking.<br xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+The Structural Map Linking section allows for the specification of
+hyperlinks between different components of a METS structure delineated
+in a structural map. structLink contains a single, repeatable element,
+smLink. Each smLink element indicates a hyperlink between two nodes in
+the structMap. The structMap nodes recorded in smLink are identified
+using their XML ID attribute values.<br xmlns:xsd="http://www.w3.org/2001/XMLSchema">			</div>
+<div>may contain
+	
+|	<a class="onpage" href="#smLink">&lt;smLink&gt;</a>
+</div>
+<div class="attributes">
+<p>attributes</p>
+<div>ID: 
+xsd:ID &nbsp;
+optional &nbsp;
+<div><div class="documentation">ID: an optional XML ID value<br xmlns:xsd="http://www.w3.org/2001/XMLSchema">				</div></div>
+</div>
+</div>
+<a href="#toc" class="onpage">Contents</a> |
+<a href="#element" class="onpage">Elements</a> |
+<a href="#complexType" class="onpage">Named Complex Types</a>
+</div>
+<div class="complexType">
+<a name="behaviorSecType"><h3>Complex type behaviorSecType</h3></a><div>elements of this type
+
+|	<a class="onpage" href="#behaviorSec">&lt;behaviorSec&gt;</a>
+|	<a class="onpage" href="#behaviorSec">&lt;behaviorSec&gt;</a>
+</div>
+<div class="documentation">behaviorSecType: Behaviors Section.<br xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+Behaviors are executable code which can be associated with parts of a
+METS object. The behaviorSec element is used to group individual
+behaviors within a hierarchical structure. Such grouping can be useful
+to organize families of behaviors together or to indicate other
+relationships between particular behaviors.<br xmlns:xsd="http://www.w3.org/2001/XMLSchema">			</div>
+<div>may contain
+	
+|	<a class="onpage" href="#behaviorSec">&lt;behaviorSec&gt;</a>
+|	<a class="onpage" href="#behavior">&lt;behavior&gt;</a>
+</div>
+<div class="attributes">
+<p>attributes</p>
+<div>ID: 
+xsd:ID &nbsp;
+optional &nbsp;
+<div><div class="documentation">ID: an optional XML ID value.<br xmlns:xsd="http://www.w3.org/2001/XMLSchema">				</div></div>
+</div>
+<div>CREATED: 
+xsd:dateTime &nbsp;
+optional &nbsp;
+<div><div class="documentation">CREATED: an optional dateTime attribute specifying when the behaviorSec was created.<br xmlns:xsd="http://www.w3.org/2001/XMLSchema">				</div></div>
+</div>
+<div>LABEL: 
+xsd:string &nbsp;
+optional &nbsp;
+<div><div class="documentation">LABEL: an optional string attribute providing a text description of the behaviorSec.<br xmlns:xsd="http://www.w3.org/2001/XMLSchema">				</div></div>
+</div>
+</div>
+<a href="#toc" class="onpage">Contents</a> |
+<a href="#element" class="onpage">Elements</a> |
+<a href="#complexType" class="onpage">Named Complex Types</a>
+</div>
+<div class="complexType">
+<a name="behaviorType"><h3>Complex type behaviorType</h3></a><div>elements of this type
+
+|	<a class="onpage" href="#behavior">&lt;behavior&gt;</a>
+</div>
+<div class="documentation">behaviorType: Complex Type for Behaviors. <br xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+A behavior can be used to associate executable behaviors with content
+in the METS object. A behavior element has an interface definition
+element that represents an abstract definition of the set of behaviors
+represented by a particular behavior. A behavior element also has an
+behavior mechanism which is a module of executable code that implements
+and runs the behavior defined abstractly by the interface definition.<br xmlns:xsd="http://www.w3.org/2001/XMLSchema">			</div>
+<div>may contain
+	
+|	<a class="onpage" href="#interfaceDef">&lt;interfaceDef&gt;</a>
+|	<a class="onpage" href="#mechanism">&lt;mechanism&gt;</a>
+</div>
+<div class="attributes">
+<p>attributes</p>
+<div>ID: 
+xsd:ID &nbsp;
+required &nbsp;
+<div><div class="documentation">ID: a required XML ID value for the element   <br xmlns:xsd="http://www.w3.org/2001/XMLSchema">				</div></div>
+</div>
+<div>STRUCTID: 
+xsd:IDREFS &nbsp;
+required &nbsp;
+<div><div class="documentation">STRUCTID: Structural Map IDS<br xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+IDREFS to structMap sections or divs within a structMap in the METS
+document. The content that the STRUCTID attribute points to is
+considered "input" to the behavior mechanism (executable) defined for
+the behavior. <br xmlns:xsd="http://www.w3.org/2001/XMLSchema">				</div></div>
+</div>
+<div>BTYPE: 
+xsd:string &nbsp;
+optional &nbsp;
+<div><div class="documentation">BTYPE: Behavior Type<br xmlns:xsd="http://www.w3.org/2001/XMLSchema">					 an optional string attribute providing an identifier for a given set of related behaviors. 					</div></div>
+</div>
+<div>CREATED: 
+xsd:dateTime &nbsp;
+optional &nbsp;
+<div><div class="documentation">CREATED: an optional dateTime attribute specifying a date this behavior was created.  <br xmlns:xsd="http://www.w3.org/2001/XMLSchema">				</div></div>
+</div>
+<div>LABEL: 
+xsd:string &nbsp;
+optional &nbsp;
+<div><div class="documentation">LABEL: an optional string attribute providing a description of the behavior.  <br xmlns:xsd="http://www.w3.org/2001/XMLSchema">				</div></div>
+</div>
+<div>GROUPID: 
+xsd:string &nbsp;
+optional &nbsp;
+<div><div class="documentation">GROUPID: an optional string attribute
+providing an identifier that establishes a correspondence between this
+behavior and other behaviors. Typically, this will be used to
+facilitate versioning of behaviors. <br xmlns:xsd="http://www.w3.org/2001/XMLSchema">				</div></div>
+</div>
+<div>ADMID: 
+xsd:IDREFS &nbsp;
+optional &nbsp;
+<div><div class="documentation">ADMID: an optional attribute listing
+the XML ID values of administrative metadata sections within the METS
+document pertaining to this behavior.<br xmlns:xsd="http://www.w3.org/2001/XMLSchema">				</div></div>
+</div>
+</div>
+<a href="#toc" class="onpage">Contents</a> |
+<a href="#element" class="onpage">Elements</a> |
+<a href="#complexType" class="onpage">Named Complex Types</a>
+</div>
+<div class="complexType">
+<a name="objectType"><h3>Complex type objectType</h3></a><div>elements of this type
+
+|	<a class="onpage" href="#interfaceDef">&lt;interfaceDef&gt;</a>
+|	<a class="onpage" href="#mechanism">&lt;mechanism&gt;</a>
+</div>
+<div class="attributes">
+<p>attributes</p>
+<div>ID: 
+xsd:ID &nbsp;
+optional &nbsp;
+<div><div class="documentation">ID: an optional XML ID value<br xmlns:xsd="http://www.w3.org/2001/XMLSchema">				</div></div>
+</div>
+<div>LABEL: 
+xsd:string &nbsp;
+optional &nbsp;
+<div><div class="documentation">LABEL: an optional string attribute providing a description of the object that is being linked to.<br xmlns:xsd="http://www.w3.org/2001/XMLSchema">				</div></div>
+</div>
+<p>attributeGroup ref:LOCATION</p>
+<div>LOCTYPE: 
+ &nbsp;
+required &nbsp;
+
+| ARK
+| URN
+| URL
+| PURL
+| HANDLE
+| DOI
+| OTHER<div><div class="documentation">LOCTYPE: Location Type<br xmlns:xsd="http://www.w3.org/2001/XMLSchema">					the type of locator used to reference a file.  It must have one of the following values:<br xmlns:xsd="http://www.w3.org/2001/XMLSchema">URN: Uniform Resource Name<br xmlns:xsd="http://www.w3.org/2001/XMLSchema">URL: Uniform Resource Locator<br xmlns:xsd="http://www.w3.org/2001/XMLSchema">PURL: Persistent URL<br xmlns:xsd="http://www.w3.org/2001/XMLSchema">HANDLE: a CNRI Handle<br xmlns:xsd="http://www.w3.org/2001/XMLSchema">DOI: A Digital Object Identifier<br xmlns:xsd="http://www.w3.org/2001/XMLSchema">OTHER: a form of locator not specified above.<br xmlns:xsd="http://www.w3.org/2001/XMLSchema">				</div></div>
+</div>
+<div>OTHERLOCTYPE: 
+xsd:string &nbsp;
+optional &nbsp;
+<div><div class="documentation">OTHERLOCTYPE: an optional<br xmlns:xsd="http://www.w3.org/2001/XMLSchema">						string attribute used to indicate an alternative LOCTYPE if the LOCTYPE attribute itself has a value of "OTHER";<br xmlns:xsd="http://www.w3.org/2001/XMLSchema">				</div></div>
+</div>
+<p>attributeGroup ref:xlink:simpleLink</p>
+</div>
+<a href="#toc" class="onpage">Contents</a> |
+<a href="#element" class="onpage">Elements</a> |
+<a href="#complexType" class="onpage">Named Complex Types</a>
+</div>
+<div class="complexType">
+<a name="mdSecType"><h3>Complex type mdSecType</h3></a><div>elements of this type
+
+|	<a class="onpage" href="#dmdSec">&lt;dmdSec&gt;</a>
+|	<a class="onpage" href="#techMD">&lt;techMD&gt;</a>
+|	<a class="onpage" href="#rightsMD">&lt;rightsMD&gt;</a>
+|	<a class="onpage" href="#sourceMD">&lt;sourceMD&gt;</a>
+|	<a class="onpage" href="#digiprovMD">&lt;digiprovMD&gt;</a>
+</div>
+<div class="documentation">mdSec (metadata section) Complex Type<br xmlns:xsd="http://www.w3.org/2001/XMLSchema">			A generic framework for pointing to/including metadata within a METS document, a la Warwick Framework.<br xmlns:xsd="http://www.w3.org/2001/XMLSchema">			</div>
+<div>may contain
+	
+|	<a class="onpage" href="#mdRef">&lt;mdRef&gt;</a>
+|	<a class="onpage" href="#mdWrap">&lt;mdWrap&gt;</a>
+</div>
+<div class="attributes">
+<p>attributes</p>
+<div>ID: 
+xsd:ID &nbsp;
+required &nbsp;
+<div><div class="documentation">ID: a required XML ID value<br xmlns:xsd="http://www.w3.org/2001/XMLSchema">				</div></div>
+</div>
+<div>GROUPID: 
+xsd:string &nbsp;
+optional &nbsp;
+<div><div class="documentation">GROUPID: an optional string attribute
+providing an identifier that may be used to indicate that different
+metadata sections may be considered as part of a single group. Two
+metadata sections with the same GROUPID value are to be considered part
+of the same group. This facility might be used, for example, to group
+changed versions of the same metadata if previous versions are
+maintained in a file for tracking purposes;<br xmlns:xsd="http://www.w3.org/2001/XMLSchema">				</div></div>
+</div>
+<div>ADMID: 
+xsd:IDREFS &nbsp;
+optional &nbsp;
+<div><div class="documentation">ADMID: an optional attribute providing
+the XML ID attribute values for administrative metadata elements which
+apply to the current descriptive or administrative metadata. Typically
+used to reference preservation metadata which applies to the current
+metadata.<br xmlns:xsd="http://www.w3.org/2001/XMLSchema">				</div></div>
+</div>
+<div>CREATED: 
+xsd:dateTime &nbsp;
+optional &nbsp;
+<div><div class="documentation">CREATED: an optional dateTime attribute specifying the date and time of creation for the metadata.<br xmlns:xsd="http://www.w3.org/2001/XMLSchema">				</div></div>
+</div>
+<div>STATUS: 
+xsd:string &nbsp;
+optional &nbsp;
+<div><div class="documentation">STATUS: an optional string attribute indicating the status of this metadata (e.g., superceded, current, etc.).<br xmlns:xsd="http://www.w3.org/2001/XMLSchema">				</div></div>
+</div>
+</div>
+<a href="#toc" class="onpage">Contents</a> |
+<a href="#element" class="onpage">Elements</a> |
+<a href="#complexType" class="onpage">Named Complex Types</a>
+</div>
+<div class="complexType">
+<a name="fileType"><h3>Complex type fileType</h3></a><div>elements of this type
+
+|	<a class="onpage" href="#file">&lt;file&gt;</a>
+|	<a class="onpage" href="#file">&lt;file&gt;</a>
+</div>
+<div class="documentation">file: File element.<br xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+The file element provides access to content files for a METS object. A
+file element may contain one or more FLocat elements, which provide
+pointers to a content file, and/or an FContent element, which wraps an
+encoded version of the file. Note that ALL FLocat and FContent elements
+underneath a single file element should identify/contain identical
+copies of a single file.<br xmlns:xsd="http://www.w3.org/2001/XMLSchema">			</div>
+<div>may contain
+	
+|	<a class="onpage" href="#FLocat">&lt;FLocat&gt;</a>
+|	<a class="onpage" href="#FContent">&lt;FContent&gt;</a>
+|	<a class="onpage" href="#stream">&lt;stream&gt;</a>
+|	<a class="onpage" href="#transformFile">&lt;transformFile&gt;</a>
+|	<a class="onpage" href="#file">&lt;file&gt;</a>
+</div>
+<div class="attributes">
+<p>attributes</p>
+<div>ID: 
+xsd:ID &nbsp;
+required &nbsp;
+<div><div class="documentation">ID: an XML ID value.<br xmlns:xsd="http://www.w3.org/2001/XMLSchema">				</div></div>
+</div>
+<div>MIMETYPE: 
+xsd:string &nbsp;
+optional &nbsp;
+<div><div class="documentation">MIMETYPE: an optional string attribute providing the MIME type for the file.<br xmlns:xsd="http://www.w3.org/2001/XMLSchema">				</div></div>
+</div>
+<div>SEQ: 
+xsd:int &nbsp;
+optional &nbsp;
+<div><div class="documentation">SEQ: an optional integer indicating the sequence of this  file relative to the others in its file group.<br xmlns:xsd="http://www.w3.org/2001/XMLSchema">				</div></div>
+</div>
+<div>SIZE: 
+xsd:long &nbsp;
+optional &nbsp;
+<div><div class="documentation">SIZE: an optional long integer specifying the size of the file in bytes.<br xmlns:xsd="http://www.w3.org/2001/XMLSchema">				</div></div>
+</div>
+<div>CREATED: 
+xsd:dateTime &nbsp;
+optional &nbsp;
+<div><div class="documentation">CREATED: an optional dateTime providing the date of creation for the file.<br xmlns:xsd="http://www.w3.org/2001/XMLSchema">				</div></div>
+</div>
+<div>CHECKSUM: 
+xsd:string &nbsp;
+optional &nbsp;
+<div><div class="documentation">CHECKSUM: an optional string attribute providing a checksum value for the included file.<br xmlns:xsd="http://www.w3.org/2001/XMLSchema">				</div></div>
+</div>
+<div>CHECKSUMTYPE: 
+ &nbsp;
+optional &nbsp;
+
+| HAVAL
+| MD5
+| SHA-1
+| SHA-256
+| SHA-384
+| SHA-512
+| TIGER
+| WHIRLPOOL<div><div class="documentation">CHECKSUMTYPE:
+an optional attribute specifying the checksum algorithm used to produce
+the value contained in the CHECKSUM attribute. CHECKSUMTYPE must
+contain one of the following values:<br xmlns:xsd="http://www.w3.org/2001/XMLSchema">					HAVAL<br xmlns:xsd="http://www.w3.org/2001/XMLSchema">					MD5<br xmlns:xsd="http://www.w3.org/2001/XMLSchema">					SHA-1<br xmlns:xsd="http://www.w3.org/2001/XMLSchema">					SHA-256<br xmlns:xsd="http://www.w3.org/2001/XMLSchema">					SHA-384<br xmlns:xsd="http://www.w3.org/2001/XMLSchema">					SHA-512<br xmlns:xsd="http://www.w3.org/2001/XMLSchema">					TIGER<br xmlns:xsd="http://www.w3.org/2001/XMLSchema">					WHIRLPOOL<br xmlns:xsd="http://www.w3.org/2001/XMLSchema">				</div></div>
+</div>
+<div>OWNERID: 
+xsd:string &nbsp;
+optional &nbsp;
+<div><div class="documentation">OWNERID: an optional string attribute
+which may be used to provide a unique identifier (including a URI)
+assigned to the file which may differ from the URI used to retrieve the
+file.<br xmlns:xsd="http://www.w3.org/2001/XMLSchema">				</div></div>
+</div>
+<div>ADMID: 
+xsd:IDREFS &nbsp;
+optional &nbsp;
+<div><div class="documentation">ADMID: an optional attribute used to
+list the XML ID attribute values for administrative metadata sections
+in the METS document that provide information regarding this file.<br xmlns:xsd="http://www.w3.org/2001/XMLSchema">				</div></div>
+</div>
+<div>DMDID: 
+xsd:IDREFS &nbsp;
+optional &nbsp;
+<div><div class="documentation">DMDID: an optional attribute used to
+list the XML ID attribute values for descriptive metadata sections in
+the METS document that provide information regarding this file.<br xmlns:xsd="http://www.w3.org/2001/XMLSchema">				</div></div>
+</div>
+<div>GROUPID: 
+xsd:string &nbsp;
+optional &nbsp;
+<div><div class="documentation">GROUPID: an optional string attribute
+which may be used to record an identifier that establishes a
+correspondence between this file and files in other file groups. For
+example, a master image in one file group would share the same GROUPID
+value with a reference copy in a second file group and a thumbnail
+image in a third file group.<br xmlns:xsd="http://www.w3.org/2001/XMLSchema">				</div></div>
+</div>
+<div>USE: 
+xsd:string &nbsp;
+optional &nbsp;
+<div><div class="documentation">USE: an optional string attribute
+indicating the intended use of this file (e.g., "master", "reference",
+"thumbnail" for image files).<br xmlns:xsd="http://www.w3.org/2001/XMLSchema">				</div></div>
+</div>
+</div>
+<a href="#toc" class="onpage">Contents</a> |
+<a href="#element" class="onpage">Elements</a> |
+<a href="#complexType" class="onpage">Named Complex Types</a>
+</div>
+</div>
+<p><a href="http://findaid.oac.cdlib.org/mets/schema_documentation/xsd2doc.xsl">xsd2doc.xsl</a></p>
+
+</body></html>
