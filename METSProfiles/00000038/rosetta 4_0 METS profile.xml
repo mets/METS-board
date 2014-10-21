@@ -1,0 +1,1157 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<METS_Profile xmlns="http://www.loc.gov/METS_Profile/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.loc.gov/METS_Profile/ http://www.loc.gov/standards/mets/profile_docs/mets.profile.v1-2.xsd http://www.loc.gov/METS/ http://www.loc.gov/standards/mets/version16/mets.v1-6.xsd">
+	<URI LOCTYPE="URL">http://www.loc.gov/standards/mets/profiles/00000038.xml</URI>
+	<title>Ex Libris - Rosetta METS entity</title>
+	<abstract>
+  This profile describes a Rosetta Intellectual Entity (IE), stored in the permanent repository as an Archival Information Package (AIP). All IEs in Rosetta are represented as METS files according to this profile. The METS structure map allows describing hierarchy of files within a representation (for example, a logical table of contents of a book). The content files may be of any format type, e.g. audio, image, text, or video, and there can be any combination of formats within a single IE. 
+	</abstract>
+	<date>2011-12-01T00:00:00</date>
+	<contact>
+		<name>Ex Libris LTD.</name>
+		<address>Gan Technology 8, Malcha Jerusalem, Israel</address>
+		<phone>972-2-6499100 or 972-2-6499106</phone>
+		<email>rosetta.support@exlibrisgroup.com</email>
+	</contact>
+	<related_profile>There are no related profiles.</related_profile>
+	<extension_schema>
+		<name>DC XML Schema (dc:)</name>
+		<URI>http://dublincore.org/schemas/xmls/qdc/2003/04/02/dc.xsd</URI>
+		<context>Used for encoding descriptive metadata. (MDTYPE="DC")</context>
+	</extension_schema>
+	<extension_schema>
+		<name>Qualified DC XML Schema (dcterms:)</name>
+		<URI>http://dublincore.org/schemas/xmls/qdc/2003/04/02/dcterms.xsd</URI>
+		<context>Used for encoding descriptive metadata. (MDTYPE="DC")</context>
+	</extension_schema>
+	<extension_schema>
+		<name>DNX</name>
+		<URI>http://www.exlibrisgroup.com/dps/dnx</URI>
+		<context>Used for encoding technical metadata. (MDTYPE="OTHER" OTHERMDTYPE="dnx")</context>
+	</extension_schema>
+	<description_rules>
+		<p>Descriptive metadata contents should be encoded using Dublin Core or Dublin Core Terms, following both the appropriate guidelines recommended by the extension schemas' maintenance agencies and the Ex Libris Guidelines for descriptive metadata. The metadata should be embedded in the METS file as XML, using the mdWrap tag.</p>
+	</description_rules>
+	<controlled_vocabularies>
+		<vocabulary ID="vc1">
+			<name> MDTYPE Attribute Values </name>
+			<maintenance_agency>Ex Libris LTD.</maintenance_agency>
+			<values>
+				<value>DC</value>
+			</values>
+			<context>
+				<p>mets:mdWrap MDTYPE="DC"</p>
+			</context>
+			<description>
+				<p> This profile specifies MDTYPE attribute value on the dmdSec:mdWrap element. The MDTYPE can be only "DC".</p>
+			</description>
+		</vocabulary>
+		<vocabulary ID="vc2">
+			<name> OTHERMDTYPE in techMD:mdWrap, digiprovMD:mdWrap and rightsMD:mdWrap elements </name>
+			<maintenance_agency>Ex Libris LTD.</maintenance_agency>
+			<values>
+				<value>dnx</value>
+			</values>
+			<context>
+				<p>mets:mdWrap MDTYPE="OTHER" OTHERMDTYPE="dnx"</p>
+			</context>
+			<description>
+				<p> This profile specifies OTHERMDTYPE attribute value on the techMD:mdWrap, digiprovMD:mdWrap and rightsMD:mdWrap elements. The MDTYPE="OTHER", and the OTHERMDTYPE="dnx".</p>
+			</description>
+		</vocabulary>
+		<vocabulary ID="vc3">
+			<name> OTHERMDTYPE in sourceMD:mdWrap element </name>
+			<maintenance_agency>Ex Libris LTD.</maintenance_agency>
+			<values>
+				<value>MARC</value>
+				<value>DC</value>
+				<value>MODS</value>
+				<value>EAD</value>
+				<value>NISO</value>
+				<value>MIX</value>
+			</values>
+			<context>
+				<p>sourceMD/mdWrap/@OTHERMDTYPE</p>
+			</context>
+			<description>
+				<p> This profile specifies OTHERMDTYPE attribute value on the sourceMD:mdWrap elements. If the MDTYPE="OTHER", then a value must be declared for OTHERMDTYPE from the listed attribute values</p>
+			</description>
+		</vocabulary>
+		<vocabulary ID="vc4">
+			<name>METS fileGrp USE Attribute Values</name>
+			<maintenance_agency>Ex Libris LTD.</maintenance_agency>
+			<values>
+				<value>VIEW</value>
+			</values>
+			<context>
+				<p>mets/fileSec/fileGrp/@USE</p>
+			</context>
+			<description>
+				<p>This is the supported value for mets/fileSec/fileGrp USE attribute.</p>
+			</description>
+		</vocabulary>
+	</controlled_vocabularies>
+	<structural_requirements>
+		<metsRootElement>
+			<requirement>
+				<p>The root &lt;mets&gt; element must include only the METS name space URL.</p>
+			</requirement>
+		</metsRootElement>
+		<metsHdr>
+			<requirement>
+				<p>A conforming METS document should not contain a &lt;metsHdr&gt; element.</p>
+			</requirement>
+		</metsHdr>
+		<dmdSec>
+			<requirement ID="dmdSec1">
+				<p>Conforming METS documents must contain one, and only one, IE-level &lt;dmdSec&gt; element</p>
+				<p>Conforming METS documents may contain up to one file-level &lt;dmdSec&gt; element per file</p>
+			</requirement>
+			<requirement ID="dmdSec2">
+				<p>Any metadata provided must be embedded in the METS file as XML using the mdWrap tag.</p>
+				<p>mdRef is not supported.</p>
+			</requirement>
+			<requirement ID="dmdSec3">
+				<p>If a &lt;dmdSec&gt; of a conforming document contains a &lt;mdWrap&gt; with &lt;xmlData&gt;, the &lt;xmlData&gt; must conform to those listed in the extension schemas section above.</p>
+			</requirement>
+			<requirement ID="dmdSec4">
+				<p>For IE-level, the dmdSec ID should be referenced by the DMDID value "ie-dmd". </p>
+				<p>For File-level, the dmdSec ID should be referenced by the DMDID value "FL{ID}-dmd". </p>
+			</requirement>
+		</dmdSec>
+		<amdSec>
+			<requirement ID="amdSec1">
+				<head>Conforming METS documents must contain administrative metadata. The following &lt;amdSec&gt; child elements should be in any METS file:</head>
+				<p>techMD (technical metadata) - DNX sections that holds the technical metadata</p>
+				<p>rightsMD (intellectual property rights metadata) - Access Rights Policy, Copyrights Metadata.</p>
+				<p>sourceMD (analog/digital source metadata) - Any kind of metadata that is relevant for preservation. </p>
+				<p>digiprovMD (digital provenance metadata) - Provenance events.</p>
+			</requirement>
+			<requirement ID="amdSec2">
+				<p>A conforming METS document will contain one &lt;amdSec&gt; element for each object in each level - IE, Representation and file.</p>
+			</requirement>
+			<requirement ID="amdSec3">
+				<p>Each &lt;techMD&gt; element must contain an &lt;mdWrap&gt; element and corresponding MDTYPE/OTHERMDTYPE attribute. The MDTYPE/OTHERMDTYPE attributes must conform to the controlled vocabulary contained within this profile. MDTYPE/OTHERMDTYPE attributes must describe the type of file as (DNX).</p>
+			</requirement>
+			<requirement ID="amdSec4">
+				<p>Any amdSec or child element techMD, rightsMD, sourceMD or digiprovMD ID need to be referenced by the ADMID value denoted in either the fileSec section or structMap div section sections.</p>
+				<p>When referenced using ADMID from the fileSec level - the metadata will be associated specifically with that particular file.</p>
+			</requirement>
+			<requirement ID="amdSec5">
+				<p>A &lt;rightsMD&gt; element can be populated only in the "ie-amd-rights" or "rep-amd-rights" section.</p>
+			</requirement>
+		</amdSec>
+		<fileSec>
+			<requirement ID="fileSec1" RELATEDMAT="vc4">
+				<p>The &lt;fileSec&gt; must contain a &lt;fileGrp&gt; for each Representation (set of files).</p>
+				<p>For example, the &lt;fileSec&gt; of a typical METS document implementing this profile might contain one &lt;fileGrp&gt; representing TIFF master images, one &lt;fileGrp&gt; representing high resolution JPEG reference images , one &lt;fileGrp&gt; representing medium resolution JPEG reference images and one &lt;fileGrp&gt; representing OCR full text files.</p>
+			</requirement>
+			<requirement ID="fileSec2">
+				<p>Each &lt;fileGrp&gt; represented in the &lt;fileSec&gt; must have an ID and ADMID attribute.</p>
+				<p>The ADMID attribute will associate each Representation with its &lt;amdSec&gt; sections.</p>
+			</requirement>
+			<requirement ID="fileSec3">
+				<p>Each &lt;file&gt; represented in the &lt;fileGrp&gt; must have an ID and ADMID attribute.</p>
+				<p>The ADMID attribute will associate each file with its &lt;amdSec&gt; and structMap sections.</p>
+			</requirement>
+			<requirement ID="fileSec5">
+				<p>Each &lt;file&gt; element must contain an &lt;FLocat&gt; element which specifies the location of the content file in an xlink:href attribute in Rosetta's permanent repository.The &lt;FLocat&gt; element must contain an xlink:href attribute, as well as a LOCTYPE attribute, which in all cases should be "URL".</p>
+			</requirement>
+		</fileSec>
+		<structMap>
+			<requirement ID="structMap1">
+				<p>A conforming METS document must contain at least one &lt;structMap&gt;; it may, however, contain more than one &lt;structMap&gt;.</p>
+			</requirement>
+			<requirement ID="structMap2" RELATEDMAT="vc1">
+				<p>A conforming &lt;structMap&gt; must contain a TYPE attribute. "logical" and "physical" are reserved (see description below). Other types are not validated by Rosetta METS xsd (only by the LOC METS xsd) and can be used for delivery only using external viewers.</p>
+			</requirement>
+			<requirement ID="structMap3">
+				<p>Each &lt;structMap&gt; must include a LABEL attribute value.</p>
+			</requirement>
+			<requirement ID="structMap4">
+				<p>Each &lt;div&gt; must include a LABEL attribute value.</p>
+			</requirement>
+			<requirement ID="structMap5">
+				<p>The physical &lt;structMap&gt; represents a flattened structure and must only contain two levels of &lt;div&gt; elements with no further nesting. The top level &lt;div&gt; element required by the METS schema contains one level of child &lt;div&gt; elements to represent the linear sequence of the components of the Representation.</p>
+			</requirement>
+			<requirement ID="structMap6">
+				<p>The logical structMap represents the full hierarchical structure of the Representation, and can contain as many levels of nested &lt;div&gt; elements as required to express the object's full structure.</p>
+			</requirement>
+			<requirement ID="structMap7">
+				<p>A &lt;div&gt; element may or may not directly contain &lt;fptr&gt; elements. (In other words, a &lt;div&gt; of the &lt;structMap&gt; may or may not have content files directly associated with it).</p>
+			</requirement>
+			<requirement ID="structMap8">
+				<p>An &lt;fptr&gt; element must directly point to a &lt;file&gt; element via its FILEID attribute;</p>
+			</requirement>
+		</structMap>
+		<structLink>
+			<requirement ID="structLink1">
+				<p>A conforming METS document should not contain a &lt;structLink&gt; element.</p>
+			</requirement>
+		</structLink>
+		<behaviorSec>
+			<requirement ID="behaviorSec1">
+				<p>A conforming METS document should not contain a &lt;behaviorSec&gt; element.</p>
+			</requirement>
+		</behaviorSec>
+	</structural_requirements>
+	<technical_requirements>
+		<content_files>
+			<requirement>
+				<p>This profile supports all kinds of content files.</p>
+			</requirement>
+		</content_files>
+	</technical_requirements>
+	<tool>
+		<note>
+			<p>No specific tools are required by this profile.</p>
+		</note>
+	</tool>
+	<Appendix NUMBER="1" LABEL="Simple METS">
+		<mets:mets xmlns:mets="http://www.loc.gov/METS/">
+			<mets:dmdSec ID="ie-dmd">
+				<mets:mdWrap MDTYPE="DC">
+					<mets:xmlData>
+						<dc:record xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:mods="http://www.loc.gov/mods/v3" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+							<dc:title>Wien University Test</dc:title>
+							<dc:creator>Roland</dc:creator>
+							<dc:description>This is just a test</dc:description>
+							<dc:type>Drawing and Prints</dc:type>
+							<dcterms:created>01/02/2011</dcterms:created>
+						</dc:record>
+					</mets:xmlData>
+				</mets:mdWrap>
+			</mets:dmdSec>
+			<mets:dmdSec ID="FL1780-dmd">
+				<mets:mdWrap MDTYPE="DC">
+					<mets:xmlData>
+						<dc:record xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:mods="http://www.loc.gov/mods/v3" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+							<dc:title>Some file level metadata</dc:title>
+							<dc:description>Some more file level metadata</dc:description>
+						</dc:record>
+					</mets:xmlData>
+				</mets:mdWrap>
+			</mets:dmdSec>
+			<mets:amdSec ID="REP1779-amd">
+				<mets:techMD ID="REP1779-amd-tech">
+					<mets:mdWrap MDTYPE="OTHER" OTHERMDTYPE="dnx">
+						<mets:xmlData>
+							<dnx xmlns="http://www.exlibrisgroup.com/dps/dnx">
+								<section id="generalRepCharacteristics">
+									<record>
+										<key id="preservationType">PRESERVATION_MASTER</key>
+										<key id="usageType">VIEW</key>
+										<key id="RevisionNumber">1</key>
+										<key id="DigitalOriginal">false</key>
+									</record>
+								</section>
+								<section id="internalIdentifier">
+									<record>
+										<key id="internalIdentifierType">SIPID</key>
+										<key id="internalIdentifierValue">70</key>
+									</record>
+									<record>
+										<key id="internalIdentifierType">PID</key>
+										<key id="internalIdentifierValue">REP1779</key>
+									</record>
+									<record>
+										<key id="internalIdentifierType">DepositSetID</key>
+										<key id="internalIdentifierValue">475</key>
+									</record>
+								</section>
+								<section id="objectCharacteristics">
+									<record>
+										<key id="objectType">REPRESENTATION</key>
+										<key id="creationDate">2011-02-01 13:03:51</key>
+										<key id="createdBy">admin1</key>
+										<key id="modificationDate">2011-02-01 13:03:51</key>
+										<key id="modifiedBy">admin1</key>
+										<key id="owner">CRS00.INS00.DPR00</key>
+									</record>
+								</section>
+							</dnx>
+						</mets:xmlData>
+					</mets:mdWrap>
+				</mets:techMD>
+				<mets:rightsMD ID="REP1779-amd-rights">
+					<mets:mdWrap MDTYPE="OTHER" OTHERMDTYPE="dnx">
+						<mets:xmlData>
+							<dnx xmlns="http://www.exlibrisgroup.com/dps/dnx">
+								<section id="accessRightsPolicy">
+									<record>
+										<key id="policyId">AR_EVERYONE</key>
+										<key id="policyParameters"/>
+										<key id="policyDescription">No restrictions</key>
+									</record>
+								</section>
+							</dnx>
+						</mets:xmlData>
+					</mets:mdWrap>
+				</mets:rightsMD>
+				<mets:sourceMD ID="REP1779-amd-source">
+					<mets:mdWrap MDTYPE="OTHER" OTHERMDTYPE="dnx">
+						<mets:xmlData>
+							<dnx xmlns="http://www.exlibrisgroup.com/dps/dnx">
+							</dnx>
+						</mets:xmlData>
+					</mets:mdWrap>
+				</mets:sourceMD>
+				<mets:digiprovMD ID="REP1779-amd-digiprov">
+					<mets:mdWrap MDTYPE="OTHER" OTHERMDTYPE="dnx">
+						<mets:xmlData>
+							<dnx xmlns="http://www.exlibrisgroup.com/dps/dnx"/>
+						</mets:xmlData>
+					</mets:mdWrap>
+				</mets:digiprovMD>
+			</mets:amdSec>
+			<mets:amdSec ID="FL1780-amd">
+				<mets:techMD ID="FL1780-amd-tech">
+					<mets:mdWrap MDTYPE="OTHER" OTHERMDTYPE="dnx">
+						<mets:xmlData>
+							<dnx xmlns="http://www.exlibrisgroup.com/dps/dnx">
+								<section id="internalIdentifier">
+									<record>
+										<key id="internalIdentifierType">SIPID</key>
+										<key id="internalIdentifierValue">70</key>
+									</record>
+									<record>
+										<key id="internalIdentifierType">PID</key>
+										<key id="internalIdentifierValue">FL1780</key>
+									</record>
+									<record>
+										<key id="internalIdentifierType">DepositSetID</key>
+										<key id="internalIdentifierValue">475</key>
+									</record>
+								</section>
+								<section id="objectCharacteristics">
+									<record>
+										<key id="objectType">FILE</key>
+										<key id="creationDate">2011-02-01 13:03:51</key>
+										<key id="createdBy">admin1</key>
+										<key id="modificationDate">2011-11-29 14:01:30</key>
+										<key id="modifiedBy">admin1</key>
+										<key id="owner">CRS00.INS00.DPR00</key>
+									</record>
+								</section>
+								<section id="generalFileCharacteristics">
+									<record>
+										<key id="label">Image</key>
+										<key id="note"/>
+										<key id="fileCreationDate"/>
+										<key id="fileModificationDate">06/10/2010 17:01:48</key>
+										<key id="FileEntityType"/>
+										<key id="compositionLevel"/>
+										<key id="fileLocationType">FILE</key>
+										<key id="fileLocation"/>
+										<key id="fileOriginalName">Image.txt</key>
+										<key id="fileOriginalPath">C:\Documents and Settings\idop\My Documents\My Pictures\Uploadable\Image.txt</key>
+										<key id="fileOriginalID">/exlibris/dps/d4_1/profile/units/DTL01/deposit_area_1///1-1000/dep_475/deposit/content/streams/Image.txt</key>
+										<key id="fileExtension">txt</key>
+										<key id="fileMIMEType">text/plain</key>
+										<key id="fileSizeBytes">186</key>
+										<key id="storageID"/>
+										<key id="streamRefId"/>
+										<key id="formatLibraryId">x-fmt/16</key>
+										<key id="riskLibraryIdentifiers"/>
+									</record>
+								</section>
+								<section id="fileFixity">
+									<record>
+										<key id="agent">REG_SA_JAVA5_FIXITY</key>
+										<key id="fixityType">MD5</key>
+										<key id="fixityValue">4fdfbb7b8200b1acd8f03da4e56aa15a</key>
+									</record>
+									<record>
+										<key id="agent">REG_SA_JAVA5_FIXITY</key>
+										<key id="fixityType">SHA1</key>
+										<key id="fixityValue">6b54e4453ecd92c51964b35fe44480bf670b17c4</key>
+									</record>
+									<record>
+										<key id="agent">REG_SA_JAVA5_FIXITY</key>
+										<key id="fixityType">CRC32</key>
+										<key id="fixityValue">5975e40a</key>
+									</record>
+								</section>
+								<section id="vsOutcome">
+									<record>
+										<key id="checkDate">Tue Nov 29 14:01:30 IST 2011</key>
+										<key id="vsAgent">REG_SA_DROID , Version 5.0 , Signature version 52</key>
+										<key id="type">FILE_FORMAT</key>
+										<key id="result">FAILED</key>
+										<key id="resultDetails">Tentative format identification  (vs_Error.9)</key>
+										<key id="vsEvaluation">FAILED</key>
+										<key id="vsEvaluationDetails">vs_Error.9</key>
+									</record>
+									<record>
+										<key id="checkDate">Tue Feb 01 13:12:36 IST 2011</key>
+										<key id="vsAgent">JHOVE , UTF8-hul 1.4 , Plugin Version 2.0</key>
+										<key id="type">TECHMD</key>
+										<key id="result">PASSED</key>
+										<key id="resultDetails"/>
+										<key id="vsEvaluation">PASSED</key>
+										<key id="vsEvaluationDetails"/>
+									</record>
+									<record>
+										<key id="checkDate">Thu Feb 17 20:33:47 IST 2011</key>
+										<key id="vsAgent">REG_SA_JAVA5_FIXITY</key>
+										<key id="type">CHECKSUM</key>
+										<key id="result">PASSED</key>
+										<key id="resultDetails"/>
+										<key id="vsEvaluation">PASSED</key>
+										<key id="vsEvaluationDetails"/>
+									</record>
+									<record>
+										<key id="checkDate">Thu Feb 17 20:33:48 IST 2011</key>
+										<key id="vsAgent">REG_SA_DPS</key>
+										<key id="type">VIRUSCHECK</key>
+										<key id="result">PASSED</key>
+										<key id="resultDetails"/>
+										<key id="vsEvaluation">PASSED</key>
+										<key id="vsEvaluationDetails"/>
+									</record>
+									<record>
+										<key id="checkDate">Thu Feb 24 13:58:10 IST 2011</key>
+										<key id="type">RISK_ANALYSIS</key>
+										<key id="vsAgent">REG_SA_DPS</key>
+										<key id="result">PASSED</key>
+										<key id="resultDetails"/>
+										<key id="vsEvaluation">PASSED</key>
+										<key id="vsEvaluationDetails"/>
+									</record>
+								</section>
+								<section id="fileVirusCheck">
+									<record>
+										<key id="agent">REG_SA_DPS</key>
+										<key id="status">00</key>
+										<key id="content">/exlibris/dps/d4_1/profile/permanent/file/storage1/2011/02/01/file_1/V1-FL1780.txt is Virus Free</key>
+									</record>
+								</section>
+								<section id="fileFormat">
+									<record>
+										<key id="agent">REG_SA_DROID</key>
+										<key id="formatRegistry">PRONOM</key>
+										<key id="formatRegistryId">x-fmt/111</key>
+										<key id="formatRegistryRole"/>
+										<key id="formatName">x-fmt/111</key>
+										<key id="formatVersion"/>
+										<key id="formatDescription">Plain Text File</key>
+										<key id="formatNote"/>
+										<key id="exactFormatIdentification">false</key>
+										<key id="mimeType">text/plain</key>
+										<key id="agentVersion">5.0</key>
+										<key id="agentSignatureVersion">52</key>
+									</record>
+								</section>
+								<section id="fileValidation">
+									<record>
+										<key id="agent">JHOVE , UTF8-hul 1.4 , Plugin Version 2.0</key>
+										<key id="status"/>
+										<key id="format">UTF-8</key>
+										<key id="version"/>
+										<key id="mimeType">text/plain; charset=UTF-8</key>
+										<key id="profile"/>
+										<key id="isValid">true</key>
+										<key id="isWellFormed">true</key>
+										<key id="errorMessage"/>
+									</record>
+								</section>
+								<section id="significantProperties">
+									<record>
+										<key id="significantPropertiesType">text.charactersCount</key>
+										<key id="significantPropertiesValue">186</key>
+									</record>
+									<record>
+										<key id="significantPropertiesType">text.lineEndings</key>
+										<key id="significantPropertiesValue">[CRLF]</key>
+									</record>
+									<record>
+										<key id="significantPropertiesType">text.unicodeBlocks</key>
+										<key id="significantPropertiesValue">[Basic Latin]</key>
+									</record>
+								</section>
+							</dnx>
+						</mets:xmlData>
+					</mets:mdWrap>
+				</mets:techMD>
+				<mets:rightsMD ID="FL1780-amd-rights">
+					<mets:mdWrap MDTYPE="OTHER" OTHERMDTYPE="dnx">
+						<mets:xmlData>
+							<dnx xmlns="http://www.exlibrisgroup.com/dps/dnx"/>
+						</mets:xmlData>
+					</mets:mdWrap>
+				</mets:rightsMD>
+				<mets:sourceMD ID="FL1780-amd-source">
+					<mets:mdWrap MDTYPE="OTHER" OTHERMDTYPE="dnx">
+						<mets:xmlData>
+							<dnx xmlns="http://www.exlibrisgroup.com/dps/dnx">
+							</dnx>
+						</mets:xmlData>
+					</mets:mdWrap>
+				</mets:sourceMD>
+				<mets:digiprovMD ID="FL1780-amd-digiprov">
+					<mets:mdWrap MDTYPE="OTHER" OTHERMDTYPE="dnx">
+						<mets:xmlData>
+							<dnx xmlns="http://www.exlibrisgroup.com/dps/dnx">
+								<section id="event">
+									<record>
+										<key id="eventDateTime">2011-02-01 13:03:53</key>
+										<key id="eventType">VALIDATION</key>
+										<key id="eventIdentifierType">DPS</key>
+										<key id="eventIdentifierValue">27</key>
+										<key id="eventOutcome1">SUCCESS</key>
+										<key id="eventOutcomeDetail1">PROCESS_ID=30067;PID=FL1780;SIP_ID=70;DEPOSIT_ACTIVITY_ID=475;MF_ID=11;TASK_ID=1;ALGORITHM_NAME=MD5;PRODUCER_ID=10000;</key>
+										<key id="eventDescription">Fixity check performed on file</key>
+										<key id="linkingAgentIdentifierType1">SOFTWARE</key>
+										<key id="linkingAgentIdentifierValue1">REG_SA_JAVA5_FIXITY</key>
+									</record>
+									<record>
+										<key id="eventDateTime">2011-02-01 13:03:53</key>
+										<key id="eventType">VALIDATION</key>
+										<key id="eventIdentifierType">DPS</key>
+										<key id="eventIdentifierValue">27</key>
+										<key id="eventOutcome1">SUCCESS</key>
+										<key id="eventOutcomeDetail1">PROCESS_ID=30067;PID=FL1780;SIP_ID=70;DEPOSIT_ACTIVITY_ID=475;MF_ID=11;TASK_ID=1;ALGORITHM_NAME=SHA1;PRODUCER_ID=10000;</key>
+										<key id="eventDescription">Fixity check performed on file</key>
+										<key id="linkingAgentIdentifierType1">SOFTWARE</key>
+										<key id="linkingAgentIdentifierValue1">REG_SA_JAVA5_FIXITY</key>
+									</record>
+									<record>
+										<key id="eventDateTime">2011-02-01 13:03:53</key>
+										<key id="eventType">VALIDATION</key>
+										<key id="eventIdentifierType">DPS</key>
+										<key id="eventIdentifierValue">27</key>
+										<key id="eventOutcome1">SUCCESS</key>
+										<key id="eventOutcomeDetail1">PROCESS_ID=30067;PID=FL1780;SIP_ID=70;DEPOSIT_ACTIVITY_ID=475;MF_ID=11;TASK_ID=1;ALGORITHM_NAME=CRC32;PRODUCER_ID=10000;</key>
+										<key id="eventDescription">Fixity check performed on file</key>
+										<key id="linkingAgentIdentifierType1">SOFTWARE</key>
+										<key id="linkingAgentIdentifierValue1">REG_SA_JAVA5_FIXITY</key>
+									</record>
+									<record>
+										<key id="eventDateTime">2011-02-01 13:03:54</key>
+										<key id="eventType">VALIDATION</key>
+										<key id="eventIdentifierType">DPS</key>
+										<key id="eventIdentifierValue">24</key>
+										<key id="eventOutcome1">SUCCESS</key>
+										<key id="eventOutcomeDetail1">PROCESS_ID=30067;PID=FL1780;SIP_ID=70;DEPOSIT_ACTIVITY_ID=475;MF_ID=11;TASK_ID=7;PRODUCER_ID=10000;</key>
+										<key id="eventDescription">Virus check performed on file</key>
+										<key id="linkingAgentIdentifierType1">SOFTWARE</key>
+										<key id="linkingAgentIdentifierValue1">REG_SA_DPS</key>
+									</record>
+									<record>
+										<key id="eventDateTime">2011-02-01 13:03:54</key>
+										<key id="eventType">VALIDATION</key>
+										<key id="eventIdentifierType">DPS</key>
+										<key id="eventIdentifierValue">25</key>
+										<key id="eventOutcome1">FAILURE</key>
+										<key id="eventOutcomeDetail1">PROCESS_ID=30067;PID=FL1780;SIP_ID=70;DEPOSIT_ACTIVITY_ID=475;MF_ID=11;TASK_ID=48;PRODUCER_ID=10000;</key>
+										<key id="eventDescription">Format Identification performed on file</key>
+										<key id="linkingAgentIdentifierType1">SOFTWARE</key>
+										<key id="linkingAgentIdentifierValue1">REG_SA_DROID</key>
+									</record>
+									<record>
+										<key id="eventDateTime">2011-02-01 13:03:54</key>
+										<key id="eventType">VALIDATION</key>
+										<key id="eventIdentifierType">DPS</key>
+										<key id="eventIdentifierValue">165</key>
+										<key id="eventOutcome1">SUCCESS</key>
+										<key id="eventOutcomeDetail1">PROCESS_ID=30067;PID=FL1780;SIP_ID=70;DEPOSIT_ACTIVITY_ID=475;MF_ID=11;TASK_ID=49;PRODUCER_ID=10000;</key>
+										<key id="eventDescription">Technical Metadata extraction performed on file</key>
+										<key id="linkingAgentIdentifierType1">SOFTWARE</key>
+										<key id="linkingAgentIdentifierValue1">JHOVE , JPEG-hul 1.2 , Plugin Version 2.0</key>
+									</record>
+									<record>
+										<key id="eventDateTime">2011-02-01 13:03:55</key>
+										<key id="eventType">VALIDATION</key>
+										<key id="eventIdentifierType">DPS</key>
+										<key id="eventIdentifierValue">381</key>
+										<key id="eventOutcome1">SUCCESS</key>
+										<key id="eventOutcomeDetail1">PROCESS_ID=30067;PID=FL1780;SIP_ID=70;DEPOSIT_ACTIVITY_ID=475;MF_ID=11;TASK_ID=29;PRODUCER_ID=10000;</key>
+										<key id="eventDescription">Risk identification performed on file</key>
+										<key id="linkingAgentIdentifierType1">SOFTWARE</key>
+										<key id="linkingAgentIdentifierValue1"/>
+									</record>
+									<record>
+										<key id="eventDateTime">2011-02-01 13:09:28</key>
+										<key id="eventType">PROCESSING</key>
+										<key id="eventIdentifierType">DPS</key>
+										<key id="eventIdentifierValue">31</key>
+										<key id="eventOutcome1">SUCCESS</key>
+										<key id="eventOutcomeDetail1">key:PID;value:FL1780;key:SIP_ID;value:70;key:DEPOSIT_ACTIVITY_ID;value:475;key:MF_ID;value:11;key:PRODUCER_ID;value:10000;key:REASON_CODE;value:Corrupted file:Extension doesn't match content (it's a JPEG file);</key>
+										<key id="eventDescription">Technical Analyst - Reject File</key>
+										<key id="linkingAgentIdentifierType1">USER</key>
+										<key id="linkingAgentIdentifierValue1">admin1</key>
+										<key id="linkingAgentRole1">agent</key>
+									</record>
+									<record>
+										<key id="eventDateTime">2011-02-01 13:12:35</key>
+										<key id="eventType">PROCESSING</key>
+										<key id="eventIdentifierType">DPS</key>
+										<key id="eventIdentifierValue">385</key>
+										<key id="eventOutcome1">SUCCESS</key>
+										<key id="eventOutcomeDetail1">PID=FL1780;SIP_ID=70;MF_ID=11;DEPOSIT_ACTIVITY_ID=475;PRODUCER_ID=10000;REASON_CODE=;</key>
+										<key id="eventDescription">Upload and Replace File by Producer Agent</key>
+										<key id="linkingAgentIdentifierType1">SOFTWARE</key>
+										<key id="linkingAgentIdentifierValue1">REG_SA_DPS</key>
+									</record>
+									<record>
+										<key id="eventDateTime">2011-02-01 13:12:35</key>
+										<key id="eventType">VALIDATION</key>
+										<key id="eventIdentifierType">DPS</key>
+										<key id="eventIdentifierValue">27</key>
+										<key id="eventOutcome1">SUCCESS</key>
+										<key id="eventOutcomeDetail1">PROCESS_ID=;PID=FL1780;SIP_ID=70;DEPOSIT_ACTIVITY_ID=475;MF_ID=11;TASK_ID=1;ALGORITHM_NAME=SHA1;PRODUCER_ID=10000;</key>
+										<key id="eventDescription">Fixity check performed on file</key>
+										<key id="linkingAgentIdentifierType1">SOFTWARE</key>
+										<key id="linkingAgentIdentifierValue1">REG_SA_JAVA5_FIXITY</key>
+									</record>
+									<record>
+										<key id="eventDateTime">2011-02-01 13:12:35</key>
+										<key id="eventType">VALIDATION</key>
+										<key id="eventIdentifierType">DPS</key>
+										<key id="eventIdentifierValue">27</key>
+										<key id="eventOutcome1">SUCCESS</key>
+										<key id="eventOutcomeDetail1">PROCESS_ID=;PID=FL1780;SIP_ID=70;DEPOSIT_ACTIVITY_ID=475;MF_ID=11;TASK_ID=1;ALGORITHM_NAME=CRC32;PRODUCER_ID=10000;</key>
+										<key id="eventDescription">Fixity check performed on file</key>
+										<key id="linkingAgentIdentifierType1">SOFTWARE</key>
+										<key id="linkingAgentIdentifierValue1">REG_SA_JAVA5_FIXITY</key>
+									</record>
+									<record>
+										<key id="eventDateTime">2011-02-01 13:12:36</key>
+										<key id="eventType">VALIDATION</key>
+										<key id="eventIdentifierType">DPS</key>
+										<key id="eventIdentifierValue">24</key>
+										<key id="eventOutcome1">SUCCESS</key>
+										<key id="eventOutcomeDetail1">PROCESS_ID=;PID=FL1780;SIP_ID=70;DEPOSIT_ACTIVITY_ID=475;MF_ID=11;TASK_ID=7;PRODUCER_ID=10000;</key>
+										<key id="eventDescription">Virus check performed on file</key>
+										<key id="linkingAgentIdentifierType1">SOFTWARE</key>
+										<key id="linkingAgentIdentifierValue1">REG_SA_DPS</key>
+									</record>
+									<record>
+										<key id="eventDateTime">2011-02-01 13:12:36</key>
+										<key id="eventType">VALIDATION</key>
+										<key id="eventIdentifierType">DPS</key>
+										<key id="eventIdentifierValue">25</key>
+										<key id="eventOutcome1">SUCCESS</key>
+										<key id="eventOutcomeDetail1">PROCESS_ID=;PID=FL1780;SIP_ID=70;DEPOSIT_ACTIVITY_ID=475;MF_ID=11;TASK_ID=48;PRODUCER_ID=10000;</key>
+										<key id="eventDescription">Format Identification performed on file</key>
+										<key id="linkingAgentIdentifierType1">SOFTWARE</key>
+										<key id="linkingAgentIdentifierValue1">REG_SA_DROID</key>
+									</record>
+									<record>
+										<key id="eventDateTime">2011-02-01 13:12:36</key>
+										<key id="eventType">VALIDATION</key>
+										<key id="eventIdentifierType">DPS</key>
+										<key id="eventIdentifierValue">165</key>
+										<key id="eventOutcome1">SUCCESS</key>
+										<key id="eventOutcomeDetail1">PROCESS_ID=;PID=FL1780;SIP_ID=70;DEPOSIT_ACTIVITY_ID=475;MF_ID=11;TASK_ID=49;PRODUCER_ID=10000;</key>
+										<key id="eventDescription">Technical Metadata extraction performed on file</key>
+										<key id="linkingAgentIdentifierType1">SOFTWARE</key>
+										<key id="linkingAgentIdentifierValue1">JHOVE , UTF8-hul 1.4 , Plugin Version 2.0</key>
+									</record>
+									<record>
+										<key id="eventDateTime">2011-02-01 13:12:36</key>
+										<key id="eventType">VALIDATION</key>
+										<key id="eventIdentifierType">DPS</key>
+										<key id="eventIdentifierValue">381</key>
+										<key id="eventOutcome1">SUCCESS</key>
+										<key id="eventOutcomeDetail1">PROCESS_ID=;PID=FL1780;SIP_ID=70;DEPOSIT_ACTIVITY_ID=475;MF_ID=11;TASK_ID=29;PRODUCER_ID=10000;</key>
+										<key id="eventDescription">Risk identification performed on file</key>
+										<key id="linkingAgentIdentifierType1">SOFTWARE</key>
+										<key id="linkingAgentIdentifierValue1"/>
+									</record>
+								</section>
+							</dnx>
+						</mets:xmlData>
+					</mets:mdWrap>
+				</mets:digiprovMD>
+			</mets:amdSec>
+			<mets:amdSec ID="FL1781-amd">
+				<mets:techMD ID="FL1781-amd-tech">
+					<mets:mdWrap MDTYPE="OTHER" OTHERMDTYPE="dnx">
+						<mets:xmlData>
+							<dnx xmlns="http://www.exlibrisgroup.com/dps/dnx">
+								<section id="internalIdentifier">
+									<record>
+										<key id="internalIdentifierType">SIPID</key>
+										<key id="internalIdentifierValue">70</key>
+									</record>
+									<record>
+										<key id="internalIdentifierType">PID</key>
+										<key id="internalIdentifierValue">FL1781</key>
+									</record>
+									<record>
+										<key id="internalIdentifierType">DepositSetID</key>
+										<key id="internalIdentifierValue">475</key>
+									</record>
+								</section>
+								<section id="objectCharacteristics">
+									<record>
+										<key id="objectType">FILE</key>
+										<key id="creationDate">2011-02-01 13:03:51</key>
+										<key id="createdBy">admin1</key>
+										<key id="modificationDate">2011-11-29 14:01:33</key>
+										<key id="modifiedBy">admin1</key>
+										<key id="owner">CRS00.INS00.DPR00</key>
+									</record>
+								</section>
+								<section id="fileFixity">
+									<record>
+										<key id="agent">REG_SA_JAVA5_FIXITY</key>
+										<key id="fixityType">MD5</key>
+										<key id="fixityValue">dc5b3c4d72b912959ca3693d22e04676</key>
+									</record>
+									<record>
+										<key id="agent">REG_SA_JAVA5_FIXITY</key>
+										<key id="fixityType">SHA1</key>
+										<key id="fixityValue">59b66f930c1aae230bb812a13aaab21c8ee099a2</key>
+									</record>
+									<record>
+										<key id="agent">REG_SA_JAVA5_FIXITY</key>
+										<key id="fixityType">CRC32</key>
+										<key id="fixityValue">388ec968</key>
+									</record>
+								</section>
+								<section id="vsOutcome">
+									<record>
+										<key id="checkDate">Tue Feb 01 13:03:54 IST 2011</key>
+										<key id="vsAgent">REG_SA_DROID , Version 5.0 , Signature version 52</key>
+										<key id="type">FILE_FORMAT</key>
+										<key id="result">PASSED</key>
+										<key id="resultDetails"/>
+										<key id="vsEvaluation">PASSED</key>
+										<key id="vsEvaluationDetails"/>
+									</record>
+									<record>
+										<key id="checkDate">Tue Feb 01 13:03:54 IST 2011</key>
+										<key id="vsAgent">JHOVE , JPEG-hul 1.2 , Plugin Version 2.0</key>
+										<key id="type">TECHMD</key>
+										<key id="result">PASSED</key>
+										<key id="resultDetails"/>
+										<key id="vsEvaluation">PASSED</key>
+										<key id="vsEvaluationDetails"/>
+									</record>
+									<record>
+										<key id="checkDate">Thu Feb 17 20:33:47 IST 2011</key>
+										<key id="vsAgent">REG_SA_JAVA5_FIXITY</key>
+										<key id="type">CHECKSUM</key>
+										<key id="result">PASSED</key>
+										<key id="resultDetails"/>
+										<key id="vsEvaluation">PASSED</key>
+										<key id="vsEvaluationDetails"/>
+									</record>
+									<record>
+										<key id="checkDate">Thu Feb 17 20:33:48 IST 2011</key>
+										<key id="vsAgent">REG_SA_DPS</key>
+										<key id="type">VIRUSCHECK</key>
+										<key id="result">PASSED</key>
+										<key id="resultDetails"/>
+										<key id="vsEvaluation">PASSED</key>
+										<key id="vsEvaluationDetails"/>
+									</record>
+									<record>
+										<key id="checkDate">Thu Feb 24 13:58:11 IST 2011</key>
+										<key id="type">RISK_ANALYSIS</key>
+										<key id="vsAgent">REG_SA_DPS</key>
+										<key id="result">PASSED</key>
+										<key id="resultDetails"/>
+										<key id="vsEvaluation">PASSED</key>
+										<key id="vsEvaluationDetails"/>
+									</record>
+								</section>
+								<section id="fileVirusCheck">
+									<record>
+										<key id="agent">REG_SA_DPS</key>
+										<key id="status">00</key>
+										<key id="content">/exlibris/dps/d4_1/profile/permanent/file/storage1/2011/02/01/file_1/V1-FL1781.jpg is Virus Free</key>
+									</record>
+								</section>
+								<section id="fileFormat">
+									<record>
+										<key id="agent">REG_SA_DROID</key>
+										<key id="formatRegistry">PRONOM</key>
+										<key id="formatRegistryId">fmt/43</key>
+										<key id="formatRegistryRole"/>
+										<key id="formatName">fmt/43</key>
+										<key id="formatVersion">1.01</key>
+										<key id="formatDescription">JPEG File Interchange Format</key>
+										<key id="formatNote"/>
+										<key id="exactFormatIdentification">false</key>
+										<key id="mimeType">image/jpeg</key>
+										<key id="agentVersion">5.0</key>
+										<key id="agentSignatureVersion">52</key>
+									</record>
+								</section>
+								<section id="generalFileCharacteristics">
+									<record>
+										<key id="label">Pisa Tower</key>
+										<key id="note"/>
+										<key id="fileCreationDate"/>
+										<key id="fileModificationDate">06/10/2010 16:56:30</key>
+										<key id="FileEntityType"/>
+										<key id="compositionLevel"/>
+										<key id="fileLocationType">FILE</key>
+										<key id="fileLocation"/>
+										<key id="fileOriginalName">Pisa.jpg</key>
+										<key id="fileOriginalPath">C:\Documents and Settings\idop\My Documents\My Pictures\Uploadable\Pisa.jpg</key>
+										<key id="fileOriginalID">/exlibris/dps/d4_1/profile/units/DTL01/deposit_area_1///1-1000/dep_475/deposit/content/streams/Pisa.jpg</key>
+										<key id="fileExtension">jpg</key>
+										<key id="fileMIMEType">image/jpeg</key>
+										<key id="fileSizeBytes">62173</key>
+										<key id="storageID"/>
+										<key id="streamRefId"/>
+										<key id="formatLibraryId">fmt/43</key>
+										<key id="riskLibraryIdentifiers"/>
+									</record>
+								</section>
+								<section id="fileValidation">
+									<record>
+										<key id="agent">JHOVE , JPEG-hul 1.2 , Plugin Version 2.0</key>
+										<key id="status"/>
+										<key id="format">JPEG</key>
+										<key id="version">1.01</key>
+										<key id="mimeType">image/jpeg</key>
+										<key id="profile"/>
+										<key id="isValid">true</key>
+										<key id="isWellFormed">true</key>
+										<key id="errorMessage"/>
+									</record>
+								</section>
+								<section id="significantProperties">
+									<record>
+										<key id="significantPropertiesType">image.pixelAspectRatioX</key>
+										<key id="significantPropertiesValue">1</key>
+									</record>
+									<record>
+										<key id="significantPropertiesType">image.pixelAspectRatioY</key>
+										<key id="significantPropertiesValue">1</key>
+									</record>
+									<record>
+										<key id="significantPropertiesType">image.quantisationTableDestinationID</key>
+										<key id="significantPropertiesValue">0</key>
+									</record>
+									<record>
+										<key id="significantPropertiesType">image.quantisationTablePrecision</key>
+										<key id="significantPropertiesValue">8-bit</key>
+									</record>
+									<record>
+										<key id="significantPropertiesType">image.scans</key>
+										<key id="significantPropertiesValue">1</key>
+									</record>
+									<record>
+										<key id="significantPropertiesType">object.imageCount</key>
+										<key id="significantPropertiesValue">1</key>
+									</record>
+									<record>
+										<key id="significantPropertiesType">nisoImage.samplesPerPixel</key>
+										<key id="significantPropertiesValue">3</key>
+									</record>
+									<record>
+										<key id="significantPropertiesType">nisoImage.samplingFrequencyUnit</key>
+										<key id="significantPropertiesValue">1</key>
+									</record>
+									<record>
+										<key id="significantPropertiesType">image.applicationSegments</key>
+										<key id="significantPropertiesValue">[APP0]</key>
+									</record>
+									<record>
+										<key id="significantPropertiesType">image.compressionType</key>
+										<key id="significantPropertiesValue">Huffman coding, Baseline DCT</key>
+									</record>
+									<record>
+										<key id="significantPropertiesType">nisoImage.bitsPerSample</key>
+										<key id="significantPropertiesValue">[8, 8, 8]</key>
+									</record>
+									<record>
+										<key id="significantPropertiesType">nisoImage.byteOrder</key>
+										<key id="significantPropertiesValue">big-endian</key>
+									</record>
+									<record>
+										<key id="significantPropertiesType">nisoImage.class</key>
+										<key id="significantPropertiesValue">class edu.harvard.hul.ois.jhove.NisoImageMetadata</key>
+									</record>
+									<record>
+										<key id="significantPropertiesType">nisoImage.colourSpace</key>
+										<key id="significantPropertiesValue">YCbCr</key>
+									</record>
+									<record>
+										<key id="significantPropertiesType">nisoImage.compressionScheme</key>
+										<key id="significantPropertiesValue">JPEG</key>
+									</record>
+									<record>
+										<key id="significantPropertiesType">nisoImage.imageLength</key>
+										<key id="significantPropertiesValue">640</key>
+									</record>
+									<record>
+										<key id="significantPropertiesType">nisoImage.imageWidth</key>
+										<key id="significantPropertiesValue">480</key>
+									</record>
+									<record>
+										<key id="significantPropertiesType">nisoImage.mimeType</key>
+										<key id="significantPropertiesValue">image/jpeg</key>
+									</record>
+								</section>
+							</dnx>
+						</mets:xmlData>
+					</mets:mdWrap>
+				</mets:techMD>
+				<mets:rightsMD ID="FL1781-amd-rights">
+					<mets:mdWrap MDTYPE="OTHER" OTHERMDTYPE="dnx">
+						<mets:xmlData>
+							<dnx xmlns="http://www.exlibrisgroup.com/dps/dnx"/>
+						</mets:xmlData>
+					</mets:mdWrap>
+				</mets:rightsMD>
+				<mets:sourceMD ID="FL1781-amd-source">
+					<mets:mdWrap MDTYPE="OTHER" OTHERMDTYPE="dnx">
+						<mets:xmlData>
+							<dnx xmlns="http://www.exlibrisgroup.com/dps/dnx">
+							</dnx>
+						</mets:xmlData>
+					</mets:mdWrap>
+				</mets:sourceMD>
+				<mets:digiprovMD ID="FL1781-amd-digiprov">
+					<mets:mdWrap MDTYPE="OTHER" OTHERMDTYPE="dnx">
+						<mets:xmlData>
+							<dnx xmlns="http://www.exlibrisgroup.com/dps/dnx">
+								<section id="event">
+									<record>
+										<key id="eventDateTime">2011-02-01 13:03:53</key>
+										<key id="eventType">VALIDATION</key>
+										<key id="eventIdentifierType">DPS</key>
+										<key id="eventIdentifierValue">27</key>
+										<key id="eventOutcome1">SUCCESS</key>
+										<key id="eventOutcomeDetail1">PROCESS_ID=30067;PID=FL1781;SIP_ID=70;DEPOSIT_ACTIVITY_ID=475;MF_ID=11;TASK_ID=1;ALGORITHM_NAME=MD5;PRODUCER_ID=10000;</key>
+										<key id="eventDescription">Fixity check performed on file</key>
+										<key id="linkingAgentIdentifierType1">SOFTWARE</key>
+										<key id="linkingAgentIdentifierValue1">REG_SA_JAVA5_FIXITY</key>
+									</record>
+									<record>
+										<key id="eventDateTime">2011-02-01 13:03:53</key>
+										<key id="eventType">VALIDATION</key>
+										<key id="eventIdentifierType">DPS</key>
+										<key id="eventIdentifierValue">27</key>
+										<key id="eventOutcome1">SUCCESS</key>
+										<key id="eventOutcomeDetail1">PROCESS_ID=30067;PID=FL1781;SIP_ID=70;DEPOSIT_ACTIVITY_ID=475;MF_ID=11;TASK_ID=1;ALGORITHM_NAME=SHA1;PRODUCER_ID=10000;</key>
+										<key id="eventDescription">Fixity check performed on file</key>
+										<key id="linkingAgentIdentifierType1">SOFTWARE</key>
+										<key id="linkingAgentIdentifierValue1">REG_SA_JAVA5_FIXITY</key>
+									</record>
+									<record>
+										<key id="eventDateTime">2011-02-01 13:03:53</key>
+										<key id="eventType">VALIDATION</key>
+										<key id="eventIdentifierType">DPS</key>
+										<key id="eventIdentifierValue">27</key>
+										<key id="eventOutcome1">SUCCESS</key>
+										<key id="eventOutcomeDetail1">PROCESS_ID=30067;PID=FL1781;SIP_ID=70;DEPOSIT_ACTIVITY_ID=475;MF_ID=11;TASK_ID=1;ALGORITHM_NAME=CRC32;PRODUCER_ID=10000;</key>
+										<key id="eventDescription">Fixity check performed on file</key>
+										<key id="linkingAgentIdentifierType1">SOFTWARE</key>
+										<key id="linkingAgentIdentifierValue1">REG_SA_JAVA5_FIXITY</key>
+									</record>
+									<record>
+										<key id="eventDateTime">2011-02-01 13:03:54</key>
+										<key id="eventType">VALIDATION</key>
+										<key id="eventIdentifierType">DPS</key>
+										<key id="eventIdentifierValue">24</key>
+										<key id="eventOutcome1">SUCCESS</key>
+										<key id="eventOutcomeDetail1">PROCESS_ID=30067;PID=FL1781;SIP_ID=70;DEPOSIT_ACTIVITY_ID=475;MF_ID=11;TASK_ID=7;PRODUCER_ID=10000;</key>
+										<key id="eventDescription">Virus check performed on file</key>
+										<key id="linkingAgentIdentifierType1">SOFTWARE</key>
+										<key id="linkingAgentIdentifierValue1">REG_SA_DPS</key>
+									</record>
+									<record>
+										<key id="eventDateTime">2011-02-01 13:03:54</key>
+										<key id="eventType">VALIDATION</key>
+										<key id="eventIdentifierType">DPS</key>
+										<key id="eventIdentifierValue">25</key>
+										<key id="eventOutcome1">SUCCESS</key>
+										<key id="eventOutcomeDetail1">PROCESS_ID=30067;PID=FL1781;SIP_ID=70;DEPOSIT_ACTIVITY_ID=475;MF_ID=11;TASK_ID=48;PRODUCER_ID=10000;</key>
+										<key id="eventDescription">Format Identification performed on file</key>
+										<key id="linkingAgentIdentifierType1">SOFTWARE</key>
+										<key id="linkingAgentIdentifierValue1">REG_SA_DROID</key>
+									</record>
+									<record>
+										<key id="eventDateTime">2011-02-01 13:03:54</key>
+										<key id="eventType">VALIDATION</key>
+										<key id="eventIdentifierType">DPS</key>
+										<key id="eventIdentifierValue">165</key>
+										<key id="eventOutcome1">SUCCESS</key>
+										<key id="eventOutcomeDetail1">PROCESS_ID=30067;PID=FL1781;SIP_ID=70;DEPOSIT_ACTIVITY_ID=475;MF_ID=11;TASK_ID=49;PRODUCER_ID=10000;</key>
+										<key id="eventDescription">Technical Metadata extraction performed on file</key>
+										<key id="linkingAgentIdentifierType1">SOFTWARE</key>
+										<key id="linkingAgentIdentifierValue1">JHOVE , JPEG-hul 1.2 , Plugin Version 2.0</key>
+									</record>
+									<record>
+										<key id="eventDateTime">2011-02-01 13:03:55</key>
+										<key id="eventType">VALIDATION</key>
+										<key id="eventIdentifierType">DPS</key>
+										<key id="eventIdentifierValue">381</key>
+										<key id="eventOutcome1">SUCCESS</key>
+										<key id="eventOutcomeDetail1">PROCESS_ID=30067;PID=FL1781;SIP_ID=70;DEPOSIT_ACTIVITY_ID=475;MF_ID=11;TASK_ID=29;PRODUCER_ID=10000;</key>
+										<key id="eventDescription">Risk identification performed on file</key>
+										<key id="linkingAgentIdentifierType1">SOFTWARE</key>
+										<key id="linkingAgentIdentifierValue1"/>
+									</record>
+								</section>
+							</dnx>
+						</mets:xmlData>
+					</mets:mdWrap>
+				</mets:digiprovMD>
+			</mets:amdSec>
+			<mets:amdSec ID="ie-amd">
+				<mets:techMD ID="ie-amd-tech">
+					<mets:mdWrap MDTYPE="OTHER" OTHERMDTYPE="dnx">
+						<mets:xmlData>
+							<dnx xmlns="http://www.exlibrisgroup.com/dps/dnx">
+								<section id="internalIdentifier">
+									<record>
+										<key id="internalIdentifierType">SIPID</key>
+										<key id="internalIdentifierValue">70</key>
+									</record>
+									<record>
+										<key id="internalIdentifierType">PID</key>
+										<key id="internalIdentifierValue">IE1778</key>
+									</record>
+									<record>
+										<key id="internalIdentifierType">DepositSetID</key>
+										<key id="internalIdentifierValue">475</key>
+									</record>
+								</section>
+								<section id="generalIECharacteristics">
+									<record>
+										<key id="status">ACTIVE</key>
+									</record>
+								</section>
+								<section id="objectCharacteristics">
+									<record>
+										<key id="objectType">INTELLECTUAL_ENTITY</key>
+										<key id="parentID"/>
+										<key id="groupID"/>
+										<key id="creationDate">2011-02-01 13:03:51</key>
+										<key id="createdBy">admin1</key>
+										<key id="modificationDate">2011-11-29 13:58:31</key>
+										<key id="modifiedBy">admin1</key>
+										<key id="owner">CRS00.INS00.DPR00</key>
+									</record>
+								</section>
+							</dnx>
+						</mets:xmlData>
+					</mets:mdWrap>
+				</mets:techMD>
+				<mets:rightsMD ID="ie-amd-rights">
+					<mets:mdWrap MDTYPE="OTHER" OTHERMDTYPE="dnx">
+						<mets:xmlData>
+							<dnx xmlns="http://www.exlibrisgroup.com/dps/dnx">
+								<section id="accessRightsPolicy">
+									<record>
+										<key id="policyId">AR_EVERYONE</key>
+										<key id="policyParameters"/>
+										<key id="policyDescription">No restrictions</key>
+									</record>
+								</section>
+							</dnx>
+						</mets:xmlData>
+					</mets:mdWrap>
+				</mets:rightsMD>
+				<mets:sourceMD ID="ie-amd-source">
+					<mets:mdWrap MDTYPE="OTHER" OTHERMDTYPE="dnx">
+						<mets:xmlData>
+							<dnx xmlns="http://www.exlibrisgroup.com/dps/dnx">
+							</dnx>
+						</mets:xmlData>
+					</mets:mdWrap>
+				</mets:sourceMD>
+				<mets:digiprovMD ID="ie-amd-digiprov">
+					<mets:mdWrap MDTYPE="OTHER" OTHERMDTYPE="dnx">
+						<mets:xmlData>
+							<dnx xmlns="http://www.exlibrisgroup.com/dps/dnx">
+								<section id="producer">
+									<record>
+										<key id="userName"/>
+										<key id="address1"/>
+										<key id="address2"/>
+										<key id="address3"/>
+										<key id="address4"/>
+										<key id="address5">New Zealand</key>
+										<key id="defaultLanguage">en</key>
+										<key id="emailAddress"/>
+										<key id="firstName">INS00</key>
+										<key id="jobTitle"/>
+										<key id="lastName"/>
+										<key id="middleName"/>
+										<key id="telephone1"/>
+										<key id="telephone2"/>
+										<key id="authorativeName">Demo Internal Producer</key>
+										<key id="producerId">10000</key>
+										<key id="userIdAppId">10000</key>
+										<key id="webSiteUrl"/>
+										<key id="zip"/>
+									</record>
+								</section>
+								<section id="producerAgent">
+									<record>
+										<key id="firstName">John</key>
+										<key id="lastName">Smith</key>
+										<key id="middleName"/>
+									</record>
+								</section>
+								<section id="event">
+									<record>
+										<key id="eventDateTime">2011-02-01 13:26:53</key>
+										<key id="eventType">PROCESSING</key>
+										<key id="eventIdentifierType">DPS</key>
+										<key id="eventIdentifierValue">130</key>
+										<key id="eventOutcome1">SUCCESS</key>
+										<key id="eventDescription">Object's Metadata Record Modified</key>
+										<key id="linkingAgentIdentifierType1">USER</key>
+										<key id="linkingAgentIdentifierValue1">admin1</key>
+									</record>
+									<record>
+										<key id="eventDateTime">2011-11-23 17:02:15</key>
+										<key id="eventType">PROCESSING</key>
+										<key id="eventIdentifierType">DPS</key>
+										<key id="eventIdentifierValue">130</key>
+										<key id="eventOutcome1">SUCCESS</key>
+										<key id="eventDescription">Object's Metadata Record Modified</key>
+										<key id="linkingAgentIdentifierType1">USER</key>
+										<key id="linkingAgentIdentifierValue1">admin1</key>
+									</record>
+									<record>
+										<key id="eventDateTime">2011-11-29 13:55:51</key>
+										<key id="eventType">PROCESSING</key>
+										<key id="eventIdentifierType">DPS</key>
+										<key id="eventIdentifierValue">130</key>
+										<key id="eventOutcome1">SUCCESS</key>
+										<key id="eventDescription">Object's Metadata Record Modified</key>
+										<key id="linkingAgentIdentifierType1">USER</key>
+										<key id="linkingAgentIdentifierValue1">admin1</key>
+									</record>
+								</section>
+							</dnx>
+						</mets:xmlData>
+					</mets:mdWrap>
+				</mets:digiprovMD>
+			</mets:amdSec>
+			<mets:fileSec>
+				<mets:fileGrp USE="VIEW" ID="REP1779" ADMID="REP1779-amd">
+					<mets:file ID="FL1780" DMDID="FL1780-dmd" ADMID="FL1780-amd">
+						<mets:FLocat LOCTYPE="URL" xlin:href="/exlibris/dps/d4_1/profile/permanent/file/storage1/2011/02/01/file_1/V1-FL1780.txt" xmlns:xlin="http://www.w3.org/1999/xlink"/>
+					</mets:file>
+					<mets:file ID="FL1781" ADMID="FL1781-amd">
+						<mets:FLocat LOCTYPE="URL" xlin:href="/exlibris/dps/d4_1/profile/permanent/file/storage1/2011/02/01/file_1/V1-FL1781.jpg" xmlns:xlin="http://www.w3.org/1999/xlink"/>
+					</mets:file>
+				</mets:fileGrp>
+			</mets:fileSec>
+			<structMap ID="REP1779-1" TYPE="PHYSICAL" xmlns="http://www.loc.gov/METS/">
+				<mets:div LABEL="PRESERVATION_MASTER;VIEW">
+					<mets:div LABEL="Table of Contents">
+						<mets:div LABEL="Image" TYPE="FILE">
+							<mets:fptr FILEID="FL1780"/>
+						</mets:div>
+						<mets:div LABEL="Pisa Tower" TYPE="FILE">
+							<mets:fptr FILEID="FL1781"/>
+						</mets:div>
+					</mets:div>
+				</mets:div>
+			</structMap>
+		</mets:mets>
+	</Appendix>
+</METS_Profile>
