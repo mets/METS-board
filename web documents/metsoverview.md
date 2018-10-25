@@ -137,9 +137,9 @@ particular digital library object:
 
 ```xml 
 <dmdSec ID="dmd001">
-  <mdRef LOCTYPE="URN" MIMETYPE="application/xml" MDTYPE="EAD" 
-         LABEL="Berol Collection Finding Aid">urn:x-nyu:fales1735</mdRef>
-</dmdSec>          
+  <mdRef LOCTYPE="URN" MIMETYPE="application/xml" MDTYPE="EAD"
+    LABEL="Berol Collection Finding Aid" xlink:href="urn:x-nyu:fales1735" />
+</dmdSec>       
 ```
 
 The `<mdRef>` element of this `<dmdSec>` contains four attributes. The
@@ -183,8 +183,7 @@ demonstrate the use of the mdWrap element:
 ```xml 
 <dmdSec ID="dmd003">
   <mdWrap MIMETYPE="application/marc" MDTYPE="MARC" LABEL="OPAC Record">
-    <binData>MDI0ODdjam0gIDIyMDA1ODkgYSA0NU0wMDAxMDA...(etc.)
-    </binData>
+    <binData>MDI0ODdjam0gIDIyMDA1ODkgYSA0NU0wMDAxMDA...(etc.)</binData>
   </mdWrap>
 </dmdSec>           
 ```
@@ -250,7 +249,7 @@ an ADMID attribute to point to this `<techMD>` element:
 
 ```xml
 <file ID="FILE001" ADMID="AMD001">
-  <FLocat LOCTYPE="URL">http://dlib.nyu.edu/press/testimg.tif</FLocat>
+  <FLocat LOCTYPE="URL" xlink:href="http://dlib.nyu.edu/press/testimg.tif" />
 </file>
 ```
 
@@ -271,20 +270,20 @@ derivative audio file in MP3 format:
 ```xml 
 <fileSec>
   <fileGrp ID="VERS1">
-    <file ID="FILE001" MIMETYPE="application/xml" SIZE="257537" CREATED="2001-06-10">
-      <FLocat LOCTYPE="URL">http://dlib.nyu.edu/tamwag/beame.xml</FLocat>
+    <file ID="FILE001" MIMETYPE="application/xml" SIZE="257537" CREATED="2001-06-10T00:00:00Z">
+      <FLocat LOCTYPE="URL" xlink:href="http://dlib.nyu.edu/tamwag/beame.xml" />
     </file>
   </fileGrp>
   <fileGrp ID="VERS2">
     <file ID="FILE002" MIMETYPE="audio/wav" SIZE="64232836"
-      CREATED="2001-05-17" GROUPID="AUDIO1">
-      <FLocat LOCTYPE="URL">http://dlib.nyu.edu/tamwag/beame.wav</FLocat>
+      CREATED="2001-05-17T00:00:00Z" GROUPID="AUDIO1">
+      <FLocat LOCTYPE="URL" xlink:href="http://dlib.nyu.edu/tamwag/beame.wav" />
     </file>
   </fileGrp>
-  <fileGrp ID="VERS3" VERSDATE="2001-05-18">
+  <fileGrp ID="VERS3" VERSDATE="2001-05-18T00:00:00Z">
     <file ID="FILE003" MIMETYPE="audio/mpeg" SIZE="8238866"
-      CREATED="2001-05-18" GROUPID="AUDIO1">
-      <FLocat LOCTYPE="URL">http://dlib.nyu.edu/tamwag/beame.mp3</FLocat>
+      CREATED="2001-05-18T00:00:00Z" GROUPID="AUDIO1">
+      <FLocat LOCTYPE="URL" xlink:href="http://dlib.nyu.edu/tamwag/beame.mp3" />
     </file>
   </fileGrp>
 </fileSec>
@@ -347,7 +346,6 @@ represented by the current `<div>`.
 The following provides an example of an extremely simple structural map:
 
 ```xml 
-<?xml version="1.0"?>
 <structMap TYPE="logical">
   <div ID="div1" LABEL="Oral History: Mayor Abraham Beame" TYPE="oral history">
     <div ID="div1.1" LABEL="Interviewer Introduction" ORDER="1">
@@ -474,16 +472,16 @@ web services as in the following example from the Mellon
 project.
 
 ```xml 
-<METS:behavior ID="DISS1.1" STRUCTID="S1.1" BTYPE="uva-bdef:stdImage"
+<behavior ID="DISS1.1" STRUCTID="S1.1" BTYPE="uva-bdef:stdImage"
   CREATED="2002-05-25T08:32:00" LABEL="UVA Std Image Disseminator"
   GROUPID="DISS1" ADMID="AUDREC1">
 
-  <METS:interfaceDef LABEL="UVA Standard Image Behavior Definition"
+  <interfaceDef LABEL="UVA Standard Image Behavior Definition"
     LOCTYPE="URN" xlink:href="uva-bdef:stdImage"/>
 
-  <METS:mechanism LABEL="A NEW AND IMPROVED Image Mechanism"
+  <mechanism LABEL="A NEW AND IMPROVED Image Mechanism"
     LOCTYPE="URN" xlink:href="uva-bmech:BETTER-imageMech"/>
-</METS:behavior>
+</behavior>
 ```
 
 See also:
