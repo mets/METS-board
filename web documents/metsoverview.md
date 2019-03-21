@@ -6,11 +6,11 @@ METS is a standard for the encoding of descriptive, administrative, and structur
 
 METS provides a coherent integrated framework for the complex set of metadata needed for maintaining a library of digital objects. This metadata is both more extensive than and different from that used for managing collections of printed works and other physical materials. A book, for instance, will not dissolve into a series of unconnected pages if its owner fails to record structural metadata regarding the book's organization, nor will scholars be unable to evaluate the book's worth if the creator fails to note how it was produced. The same cannot be said for a digital version of the same book. Without structural metadata, the page image or text files comprising the digital work are of little use, and without technical metadata regarding the digitization process, scholars may be unsure of how accurate a reflection of the original the digital version provides. An organization must also have access to appropriate technical metadata for internal management purposes in order, for instance, to periodically refresh and migrate the data, so ensuring the durability of valuable resources.
 
-A METS document consists of seven major sections:
+A METS document consists of seven main sections:
 
 1.  [**METS Header**](#MHead) - The METS Header contains metadata
     describing the METS document itself, including such information as
-    creator, editor, etc.
+    creator, editor, last modification date, etc.
 
 2.  [**Descriptive Metadata**](#descMD) - The descriptive metadata
     section may point to descriptive metadata external to the METS
@@ -36,14 +36,14 @@ A METS document consists of seven major sections:
     elements, to provide for subdividing the files by object version.
 
 5.  [**Structural Map**](#structmap) - The structural map is the heart
-    of a METS document. It outlines a hierarchical structure for the
-    digital library object, and links the elements of that structure to
-    content files and metadata that pertain to each element.
+    of a METS document and the only required section. It outlines a hierarchical structure for the
+    digital object, and links the elements of that structure to
+    content files and metadata that pertain to each element. Multiple structural maps are allowed.
 
 6.  [**Structural Links**](#structlink) - The Structural Links section
     of METS allows METS creators to record the existence of hyperlinks
     between nodes in the hierarchy outlined in the Structural Map. This
-    is of particular value in using METS to archive Websites.
+    is of particular value in using METS to archive websites.
 
 7.  [**Behavior**](#behavior) - A behavior section can be used to
     associate executable behaviors with content in the METS object. Each
@@ -89,8 +89,8 @@ record's processing. Two individual agents are listed who have worked on
 this METS record, the person responsible for creating the record and an
 archivist responsible for the original material. Both the ROLE and TYPE
 attributes on the `<agent>` element employ controlled vocabularies.
-Allowable values for ROLE include "ARCHIVIST," "CREATOR," "CUSTODIAN,"
-"DISSEMINATOR," "EDITOR," "IPOWNER" and "OTHER." Allowable values for
+Allowed values for ROLE include "ARCHIVIST," "CREATOR," "CUSTODIAN,"
+"DISSEMINATOR," "EDITOR," "IPOWNER" and "OTHER." Allowed values for
 the TYPE attribute are "INDIVIDUAL," "ORGANIZATION" or "OTHER."
 
 ## <span id="descMD">Descriptive Metadata</span>
@@ -104,7 +104,7 @@ or both.
 **External Descriptive Metadata (mdRef):** an `mdRef` element provides a
 URI which may be used in retrieving the external metadata. For example,
 the following metadata reference points to the finding aid for a
-particular digital library object:
+particular digital object:
 
 ```xml 
 <dmdSec ID="dmd001">
@@ -169,19 +169,19 @@ of the digital object.
 ## <span id="admMD">Administrative Metadata</span>
 
 `<amdSec>` elements contain the administrative metadata pertaining to
-the files comprising a digital library object, as well as that
+the files comprising a digital object, as well as that
 pertaining to the original source material used to create the object.
 There are four main forms of administrative metadata provided for in a
 METS document: 1. Technical Metadata (information regarding files'
 creation, format, and use characteristics), 2. Intellectual Property
 Rights Metadata (copyright and license information), 3. Source Metadata
 (descriptive and administrative metadata regarding the analog source
-from which a digital library object derives), and 4. Digital Provenance
+from which a digital object derives), and 4. Digital Provenance
 Metadata (information regarding source/destination relationships between
 files, including master/derivative relationships between files and
 information regarding migrations/transformations employed on files
 between original digitization of an artifact and its current incarnation
-as a digital library object). Each of these four different types of
+as a digital object). Each of these four different types of
 administrative metadata has a unique subelement within the `<amdSec>`
 portion of a METS document in which that form of metadata can be
 embedded: `<techMD>`, `<rightsMD>`, `<sourceMD>`, and `<digiprovMD>`.
@@ -228,12 +228,12 @@ an ADMID attribute to point to this `<techMD>` element:
 
 The file section (`<fileSec>`) contains one or more `<fileGrp>` elements
 used to group together related files. A `<fileGrp>` lists all of the
-files which comprise a single electronic version of the digital library
+files which comprise a single electronic version of the digital
 object. For example, there might be separate `<fileGrp>` elements for
 the thumbnails, the master archival images, the pdf versions, the TEI
 encoded text versions, etc.
 
-Consider the following example of a file section from a digital library
+Consider the following example of a file section from a digital
 object for an oral history which has three different versions: a
 TEI-encoded transcript, a master audio file in WAV format, and a
 derivative audio file in MP3 format:
@@ -277,7 +277,7 @@ You may note the presence of the GROUPID attributes with identical
 values on the two audio `<file>` elements; these indicate that the two
 files, while belonging to different versions of the object, contain the
 same basic information (you can use the GROUPID for the same purpose to
-indicate equivalent page image files in digital library objects
+indicate equivalent page image files in digital objects
 containing many scanned page images).
 
 You should also note that all of the `<file>` elements have a unique ID
@@ -292,14 +292,14 @@ elements are used to embed the actual contents of the file within the
 METS document; if this is done, the file contents must either be in XML
 format or be Base64-encoded. While embedding files is not something one
 would typically do when preparing a METS document for use in displaying
-a digital library objects to users, it can be a valuable feature for
-exchanging digital library objects between repositories, or for
-archiving versions of digital library objects for off-site storage.
+a digital objects to users, it can be a valuable feature for
+exchanging digital objects between repositories, or for
+archiving versions of digital objects for off-site storage.
 
 ## <span id="structmap">Structural Map</span>
 
 The structural map section of a METS document defines a hierarchical
-structure which can be presented to users of the digital library object
+structure which can be presented to users of the digital  object
 to allow them to navigate through it. The `<structMap>` element encodes
 this hierarchy as a nested series of `<div>` elements. Each `<div>`
 carries attribute information specifying what kind of division it is,
@@ -476,10 +476,10 @@ See also:
 ## Conclusion
 
 The METS schema provides a flexible mechanism for encoding descriptive,
-administrative, and structural metadata for a digital library object,
+administrative, and structural metadata for a digital object and its parts,
 and for expressing the complex links between these various forms of
-metadata. It can therefore provide a useful standard for the exchange of
-digital library objects between repositories. In addition, METS provides
+metadata and constituent parts of the object. It can therefore provide a useful standard for the exchange of
+digital objects between repositories. In addition, METS provides
 the ability to associate a digital object with behaviours or services.
 The above discussion highlights the major features of the schema, but a
 thorough examination of the schema and its included documentation is
