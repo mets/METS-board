@@ -2,9 +2,9 @@
 
 ## Introduction
 
-METS is a standard for the encoding of descriptive, administrative, and structural metadata for complex digital objects, whether these are text-, video- or image-based. A [Digital Library Federation](http://www.diglib.org/) initiative, METS provides an XML document format for encoding metadata necessary for both the management of digital library objects within a repository and the exchange of such objects between repositories (or between repositories and their users). Depending on its use, a METS document can  be used in the role of Submission Information Package (SIP), Archival Information Package (AIP), or Dissemination Information Package (DIP) within the [Open Archival Information System (OAIS) Reference Model](http://nssdc.gsfc.nasa.gov/nost/isoas/ref_model.html).
+METS is a standard for the encoding of descriptive, administrative, and structural metadata for complex digital objects, whether these are text-, video- or image-based. A [Digital Library Federation](http://www.diglib.org/) initiative, METS provides an XML document format for encoding metadata necessary for both the management of digital objects within a repository and the exchange of such objects between repositories, or between repositories and their users. Depending on its use, a METS document can  be used in the role of Submission Information Package (SIP), Archival Information Package (AIP), or Dissemination Information Package (DIP) within the [Open Archival Information System (OAIS) Reference Model](http://nssdc.gsfc.nasa.gov/nost/isoas/ref_model.html).
 
-METS provides a coherent integrated framework for the complex set of metadata needed for maintaining a library of digital objects. This metadata is both more extensive than and different from that used for managing collections of printed works and other physical materials. A library book, for instance, will not dissolve into a series of unconnected pages if the library fails to record structural metadata regarding the book's organization, nor will scholars be unable to evaluate the book's worth if the library fails to note how it was produced. The same cannot be said for a digital version of the same book. Without structural metadata, the page image or text files comprising the digital work are of little use, and without technical metadata regarding the digitization process, scholars may be unsure of how accurate a reflection of the original the digital version provides. A library must also have access to appropriate technical metadata for internal management purposes in order, for instance, to periodically refresh and migrate the data, so ensuring the durability of valuable resources.
+METS provides a coherent integrated framework for the complex set of metadata needed for maintaining a library of digital objects. This metadata is both more extensive than and different from that used for managing collections of printed works and other physical materials. A book, for instance, will not dissolve into a series of unconnected pages if its owner fails to record structural metadata regarding the book's organization, nor will scholars be unable to evaluate the book's worth if the creator fails to note how it was produced. The same cannot be said for a digital version of the same book. Without structural metadata, the page image or text files comprising the digital work are of little use, and without technical metadata regarding the digitization process, scholars may be unsure of how accurate a reflection of the original the digital version provides. An organization must also have access to appropriate technical metadata for internal management purposes in order, for instance, to periodically refresh and migrate the data, so ensuring the durability of valuable resources.
 
 A METS document consists of seven major sections:
 
@@ -23,9 +23,9 @@ A METS document consists of seven major sections:
 3.  [**Administrative Metadata**](#admMD) - The administrative metadata
     section provides information regarding how the files were created
     and stored, intellectual property rights, metadata regarding the
-    original source object from which the digital library object
+    original source object from which the digital object
     derives, and information regarding the provenance of the files
-    comprising the digital library object (i.e., master/derivative file
+    comprising the digital object (i.e., master/derivative file
     relationships, and migration/transformation information). As with
     descriptive metadata, administrative metadata may be either external
     to the METS document, or encoded internally.
