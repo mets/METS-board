@@ -24,7 +24,6 @@ METS文档由七个主要节（section）组成：
 7. 行为（Behavior）—— 行为节用于关联可执行代码与METS对象内容。行为节的每一个行为（behavior），有接口定义元素（interface definition element），也有机制元素（mechanism element）。前者明确了一组行为的抽象定义，并用特定的行为节（behavior sector）表示，后者则标识了在接口定义中已被抽象定义的若干行为所对应的可执行代码模块。
 
 下面对上述各节及其关系作更详细的说明。
-
   
 ## <span id="MHead">METS 头</span>
 
@@ -41,16 +40,13 @@ METS头元素允许你精简地记录关于METS文档中METS对象本身的描�
 </metsHdr>         
 ```
   
-
 上例中的 `<metsHdr>` 元素包含两个属性——CREATEDATE 和 RECORDSTATUS，说明了该METS文档的创建日期时间以及记录处理的状态，还列出了曾为该METS记录工作过的两个独立机构（agent），一个负责创建该记录，一个负责存档原始资料。`<agent>` 元素的ROLE 和TYPE 属性都取自受控词表。ROLE的可选值包括 “ARCHIVIST”、“CREATOR”、“CUSTODIAN”、“DISSEMINATOR”、“EDITOR”、 “IPOWNER” 和“OTHER”。TYPE则可取值“INDIVIDUAL”、“ORGANIZATION” 或者“OTHER”。
-
   
 ## <span id="descMD">描述型元数据</span>
 
 METS文档的描述型元数据节由一个或多个 `<dmdSec>` 元素（Descriptive Metadata Section）组成。每个 `<dmdSec>` 元素可以包含一个指向外部元数据的指针（`<mdRef>`元素），也可以包含内嵌元数据（嵌在`<mdWrap>`元素内），或二者兼备。
 
 **外部描述型元数据（****mdRef****）：** mdRef 元素给出了用作检索外部元数据的 URI。 下面是一个元数据引用例子，它把一个特定的数字对象的元数据指向了finding aid ：
-
   
 ```xml 
 <dmdSec ID="dmd001">
@@ -62,7 +58,6 @@ METS文档的描述型元数据节由一个或多个 `<dmdSec>` 元素（Descrip
 这个 `<dmdSec>` 的 `<mdRef>` 元素内有四个属性。LOCTYPE 属性说明元素内定位器的类型，其有效值包括 “URN”、“URL”、“PURL”、“HANDLE”、“DOI”、和“OTHER” 。MIMETYPE 属性指定外部描述型元数据的MIME 类型。 MDTYPE 指明被引用的元数据格式，其有效值包括 MARC、 MODS、EAD、VRA (VRA Core)、DC (Dublin Core)、NISOIMG (NISO Technical Metadata for Digital Still Images)、LC-AV (Library of Congress Audiovisual Metadata) 、TEIHDR (TEI Header)、DDI (Data Documentation Initiative)、FGDC (Federal Geographic Data Committee Metadata Standard \[FGDC-STD-001-1998\] ) 和OTHER。 LABEL 则为METS 文档浏览者提供该元数据的描述文字，比如显示该METS 文档的目录内容。
 
 **内部描述型元数据（****mdWrap****）：** mdWrap 元素提供封装器给内嵌于METS 文档的元数据，而元数据是如下两种格式之一： 1.  XML编码元数据，它用XML编码表明本身所属于的命名空间不同于该METS文档的命名空间。2.  任何二进制或文本格式元数据，前提是这个元数据是Base64 编码的且被封装在mdWrap 元素内的`<binData>` 元素中。下例示范了mdWrap 元素的用法：
-
   
 ```xml
 <dmdSec ID="dmd002">
@@ -86,19 +81,13 @@ METS文档的描述型元数据节由一个或多个 `<dmdSec>` 元素（Descrip
 </dmdSec>           
 ```
 
-注意，所有 `<dmdSec>`
-元素必须要有ID
-属性。此属性为每个`<dmdSec>`
-元素提供了唯一的内部名称，它可以应用于结构图中，把文档层次结构中指定的div
-与指定的`<dmdSec>`
-元素联系起来。这样，指定的描述型元数据节就可以关联数字对象的指定部分。
+注意，所有 `<dmdSec>` 元素必须要有ID 属性。此属性为每个`<dmdSec>` 元素提供了唯一的内部名称，它可以应用于结构图中，把文档层次结构中指定的div 与指定的`<dmdSec>` 元素联系起来。这样，指定的描述型元数据节就可以关联数字对象的指定部分。
 
 ## <span id="admMD">管理型元数据</span>
 
 `<amdSec>` 元素中的管理型元数据，既可以描述组成该数字对象的文件，也可以描述生成该对象的原始素材。METS 文档中规定了管理型元数据的四种主要格式： 1.  技术元数据 (关于文件的创建、格式和使用特征的信息。) 2. 知识产权元数据 (版权和许可信息。) 3.  来源元数据 (关于该数字对象之模拟来源的描述型元数据和管理型元数据。) 4. 数字起源元数据 (关于作品的原始数字化形态与作为数字对象的当前形态之间的关系信息，包括文件之间的来源/目标关系、主体/派生关系和迁移/转换关系。) 上述四种类型的管理型元数据分别对应于METS 文档 `<amdSec>` 的子元素`<techMD>`、 `<rightsMD>`、`<sourceMD>`、 和 `<digiprovMD>`，其中可以嵌入相应格式的元数据。这四种元素在任何METS 文档中均可以出现一次以上。
 
 `<techMD>`、 `<rightsMD>`、 `<sourceMD>` 和 `<digiprovMD>` 元素与 `<dmdSec>` 共用同一种内容模型： 它们可以用 `<mdRef>` 元素指向外部管理型元数据，也可以用`<mdWrap>` 元素在METS 文档内部嵌入管理型元数据，或兼而有之。 一个METS文档可有以上元素的多个实例，但它们都必须有 ID 属性，以便被该METS文档的其它元素 (比如结构图中的div 或`<file>` 元素) 关联到对应的`<amdSec>` 子元素。下例中，我们用了技术元数据 `<techMD>` 元素来描述某文件的准备过程：
-
   
 ```xml
 <techMD ID="AMD001">
@@ -126,9 +115,7 @@ METS文档的描述型元数据节由一个或多个 `<dmdSec>` 元素（Descrip
 
 文件节 (`<fileSec>`) 包含一个或多个`<fileGrp>` 元素，把相关文件划分成组。 `<fileGrp>` 列出的所有文件组成了一个数字对象的电子版本。例如，可以分别设立若干`<fileGrp>` 元素，有缩略图组、主档案影像组、pdf版组、TEI 编码文本版组等等。
   
-
 我们看看下面文件节的例子，选自一个口述历史的数字对象，它有三个版本：一个是TEI-编码的文件，一个是WAV 格式的主要音频文件，还有一个MP3格式的派生文件：
-
   
 ```xml 
 <fileSec>
@@ -164,7 +151,6 @@ METS文档的描述型元数据节由一个或多个 `<dmdSec>` 元素（Descrip
 
 METS 文档的结构图定义了一种把数字对象呈现给用户的层次结构，并允许用户通过结构图导航。 `<structMap>` 元素利用一系列嵌套的`<div>` 元素体现了这种层次结构。 `<div>` 将其所属类型用属性信息标明，而把对应于该div 的内容，用多个METS 指针元素(`<mptr>`) 和文件指针元素(`<fptr>`) 指向。METS 指针指向 METS 文档，其中包含了该`<div>`的相关文件信息——这种机制适于编码大量资料(例如一种完整的期刊)，它可以保持集合内每个METS 文件的尺寸较小。 文件指针则指向当前METS 文档`<fileSec>`节中的文件(有时是指向文件组或某文件内的特定位置) ，当然被指向的文件对应于当前`<div>` 所示的层次结构部分。
   
-
 下面所示是一个非常简单的结构图的例子：
 
 ```xml 
@@ -269,7 +255,5 @@ METS的结构链接节是几个主要的METS节中格式最简单的，只包含
 
 ## 结论
 
-METS 模式提出了一种灵活的机制，用于编码数字对象的描述型、
-管理型和结构型元数据，并表示出这些不同格式元数据之间存在的连结。因此，它为仓储间数字对象的交换提供了可用的标准。此外，METS
-还能够将数字对象与行为或服务关联。上述讨论仅突出了METS模式的主要特色，而全面理解其功能则需要仔细研究METS模式及其文档。
+METS 模式提出了一种灵活的机制，用于编码数字对象的描述型、 管理型和结构型元数据，并表示出这些不同格式元数据之间存在的连结。因此，它为仓储间数字对象的交换提供了可用的标准。此外，METS 还能够将数字对象与行为或服务关联。上述讨论仅突出了METS模式的主要特色，而全面理解其功能则需要仔细研究METS模式及其文档。
 
