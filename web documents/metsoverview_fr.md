@@ -68,8 +68,8 @@ Un document METS comprend sept sections principales :
 
 4.  [**Section des fichiers**](#filegrp) - la section des fichiers liste
     tous les fichiers dont le contenu comprend les versions
-    électroniques de l'objet numérique. Les éléments \<file\> peuvent
-    être regroupés dans des éléments \<fileGrp\>, qui permettent de
+    électroniques de l'objet numérique. Les éléments `<file>` peuvent
+    être regroupés dans des éléments `<fileGrp>`, qui permettent de
     subdiviser les fichiers par version de l'objet.
 
 5.  [**Carte de structure**](#structmap) - la carte de structure est le
@@ -111,27 +111,25 @@ principal du document METS, qui figure dans l'attribut OBJID de
 l'élément racine METS. Un exemple simple d'en-tête METS pourrait avoir
 l'aspect suivant :  
 
-``` 
-      <metsHdr CREATEDATE="2003-07-04T15:00:00" RECORDSTATUS="Complete">
-    <agent ROLE="CREATOR" TYPE="INDIVIDUAL">
-      <name>Jerome McDonough</name>
-    </agent>
-    <agent ROLE="ARCHIVIST" TYPE="INDIVIDUAL">
-      <name>Ann Butler</name>
-    </agent>
-      </metsHdr>
-
-            
+```xml
+<metsHdr CREATEDATE="2003-07-04T15:00:00" RECORDSTATUS="Complete">
+  <agent ROLE="CREATOR" TYPE="INDIVIDUAL">
+    <name>Jerome McDonough</name>
+  </agent>
+  <agent ROLE="ARCHIVIST" TYPE="INDIVIDUAL">
+    <name>Ann Butler</name>
+  </agent>
+</metsHdr>         
 ```
 
-Cet exemple comprend deux attributs pour l'élément \<metsHdr\>,
+Cet exemple comprend deux attributs pour l'élément `<metsHdr>`,
 CREATEDATE et RECORDSTATUS, qui servent à indiquer respectivement la
 date et l'heure auxquelles le fichier METS a été créé, et l'état
 d'avancement de l'enregistrement du document. On y liste deux agents
 individuels qui ont travaillé sur ce fichier METS : la personne
 responsable de la création du fichier et un archiviste responsable du
 document original. Les deux attributs ROLE et TYPE de l'élément
-\<agent\> utilisent des vocabulaires contrôlés. Les valeurs autorisées
+`<agent>` utilisent des vocabulaires contrôlés. Les valeurs autorisées
 de ROLE incluent "ARCHIVIST" (archiviste), "CREATOR" (créateur),
 "CUSTODIAN" (conservateur), "DISSEMINATOR" (diffuseur), "EDITOR"
 (éditeur), "IPOWNER" (propriétaire de l'adresse IP) et "OTHER" (autre).
@@ -141,25 +139,24 @@ Les valeurs autorisées de l'attribut TYPE sont "INDIVIDUAL" (individu),
 ## <span id="descMD">Métadonnées descriptives</span>
 
 La section des métadonnées descriptives d'un document METS consiste en
-un ou plusieurs éléments \<dmdSec\> (section des métadonnées
-descriptives). Chaque élément \<dmdSec\> peut contenir un pointeur vers
-des métadonnées externes (élément \<mdRef\>), des métadonnées
-encapsulées (à l'intérieur d'un élément \<mdWrap\>), ou les deux.
+un ou plusieurs éléments `<dmdSec>` (section des métadonnées
+descriptives). Chaque élément `<dmdSec>` peut contenir un pointeur vers
+des métadonnées externes (élément `<mdRef>`), des métadonnées
+encapsulées (à l'intérieur d'un élément `<mdWrap>`), ou les deux.
 
 **Métadonnées descriptives externes (mdRef) :** l'élément mdRef fournit
 une URI qui peut être utilisée pour récupérer les métadonnées externes.
 Par exemple, les métadonnées ci-dessous font référence à l'instrument de
 recherche pour un objet particulier dans une bibliothèque numérique :
 
-``` 
-      <dmdSec ID="dmd001">
-          <mdRef LOCTYPE="URN" MIMETYPE="application/xml" MDTYPE="EAD" 
-          LABEL="Berol Collection Finding Aid">urn:x-nyu:fales1735</mdRef>
-      </dmdSec>
-            
+```xml 
+<dmdSec ID="dmd001">
+  <mdRef LOCTYPE="URN" MIMETYPE="application/xml" MDTYPE="EAD"
+    LABEL="Berol Collection Finding Aid" xlink:href="urn:x-nyu:fales1735" />
+</dmdSec>       
 ```
 
-L'élément \<mdRef\> de ce \<dmdSec\> comporte quatre attributs.
+L'élément `<mdRef>` de ce `<dmdSec>` comporte quatre attributs.
 L'attribut LOCTYPE précise le système de localisation contenu dans le
 corps de l'élément ; comme valeurs autorisées de LOCTYPE, on trouve
 'URN', 'URL', 'PURL', 'HANDLE', 'DOI' et 'OTHER'. L'attribut MIMETYPE
@@ -182,44 +179,41 @@ formes : 1. des métadonnées encodées en XML, l'encodage XML concerné se
 déclarant comme appartenant à un autre espace de noms que celui du
 document METS, ou 2. toute forme de données binaire ou textuelle, A
 CONDITION que les métadonnées soient encodées en Base64 et encapsulées
-dans un élément \<binData\> fils de l'élément \<mdWrap\>. Les exemples
+dans un élément `<binData>` fils de l'élément `<mdWrap>`. Les exemples
 ci-dessous illustrent l'utilisation de l'élément mdWrap
 
-``` 
-      <dmdSec ID="dmd002">
-    <mdWrap MIMETYPE="text/xml" MDTYPE="DC" LABEL="Dublin Core Metadata">
-      <xmlData>
-        <dc:title>Alice's Adventures in Wonderland</dc:title>
-        <dc:creator>Lewis Carroll</dc:creator>
-        <dc:date>between 1872 and 1890</dc:date>
-        <dc:publisher>McCloughlin Brothers</dc:publisher>
-        <dc:type>text</dc:type>
-      </xmlData>
-    </mdWrap>
-      </dmdSec>
-            
+```xml
+<dmdSec ID="dmd002">
+  <mdWrap MIMETYPE="text/xml" MDTYPE="DC" LABEL="Dublin Core Metadata">
+    <xmlData>
+      <dc:title>Alice's Adventures in Wonderland</dc:title>
+      <dc:creator>Lewis Carroll</dc:creator>
+      <dc:date>between 1872 and 1890</dc:date>
+      <dc:publisher>McCloughlin Brothers</dc:publisher>
+      <dc:type>text</dc:type>
+    </xmlData>
+  </mdWrap>
+</dmdSec>           
 ```
 
-``` 
-      <dmdSec ID="dmd003">
-    <mdWrap MIMETYPE="application/marc" MDTYPE="MARC" LABEL="OPAC Record">
-      <binData>MDI0ODdjam0gIDIyMDA1ODkgYSA0NU0wMDAxMDA...(etc.)
-      </binData>
-    </mdWrap>
-      </dmdSec>
-            
+```xml 
+<dmdSec ID="dmd003">
+  <mdWrap MIMETYPE="application/marc" MDTYPE="MARC" LABEL="OPAC Record">
+    <binData>MDI0ODdjam0gIDIyMDA1ODkgYSA0NU0wMDAxMDA...(etc.)</binData>
+  </mdWrap>
+</dmdSec>           
 ```
 
-Remarque : tout élément \<dmdSec\> doit obligatoirement avoir un
-attribut ID. Cet attribut fournit pour chaque élément \<dmdSec\> une
+Remarque : tout élément `<dmdSec>` doit obligatoirement avoir un
+attribut ID. Cet attribut fournit pour chaque élément `<dmdSec>` une
 dénomination interne unique qui peut être utilisée dans la carte de
 structure pour relier telle division dans la hiérarchie du document à
-tel élément \<dmdSec\>. Cela permet de relier des sections de
+tel élément `<dmdSec>`. Cela permet de relier des sections de
 métadonnées descriptives à des parties précises de l'objet numérique.
 
 ## <span id="admMD">Métadonnées administratives</span>
 
-Les éléments \<amdSec\> comprennent les métadonnées administratives
+Les éléments `<amdSec>` comprennent les métadonnées administratives
 concernant les fichiers qui constituent un objet de bibliothèque
 numérique, ainsi que des métadonnées concernant la source matérielle
 utilisée à l'origine pour créer cet objet. Il y a quatre types
@@ -237,57 +231,55 @@ migrations/transformations réalisées sur des fichiers entre la
 numérisation originale d'un artefact et sa manifestation actuelle sous
 forme d'un objet de bibliothèque numérique). Chacun de ces quatre types
 différents de métadonnées administratives possède un sous-élément de la
-section \<amdSec\> du document METS dans lequel les métadonnées du type
-concerné peuvent être encapsulées : \<techMD\>, \<rightsMD\>,
-\<sourceMD\> et \<digiprovMD\>. Chacun de ces quatre éléments peut
+section `<amdSec>` du document METS dans lequel les métadonnées du type
+concerné peuvent être encapsulées : `<techMD>`, `<rightsMD>`,
+`<sourceMD>` et `<digiprovMD>`. Chacun de ces quatre éléments peut
 apparaître plus d'une fois dans un fichier METS.
 
-Les éléments \<techMD\>, \<rightsMD\>, \<sourceMD\> et \<digiprovMD\>
-utilisent le même modèle que \<dmdSec\> : ils peuvent contenir un
-élément \<mdRef\> pour faire référence à des métadonnées
-administratives externes, un élément \<mdWrap\> pour encapsuler des
+Les éléments `<techMD>`, `<rightsMD>`, `<sourceMD>` et `<digiprovMD>`
+utilisent le même modèle que `<dmdSec>` : ils peuvent contenir un
+élément `<mdRef>` pour faire référence à des métadonnées
+administratives externes, un élément `<mdWrap>` pour encapsuler des
 métadonnées administratives à l'intérieur d'un document METS, ou les
 deux. Ces éléments peuvent être répétés dans un fichier METS, et chacun
 doit comporter un attribut ID afin que d'autres éléments dans le fichier
 METS (tels que des divisions de la carte de structure ou des éléments
-\<file\>) puissent être reliés aux éléments fils d'\<amdSec\> qui les
-décrivent. Par exemple, on pourrait avoir un élément \<techMD\>
+`<file>`) puissent être reliés aux éléments fils d'`<amdSec>` qui les
+décrivent. Par exemple, on pourrait avoir un élément `<techMD>`
 comprenant des métadonnées techniques sur la création d'un fichier :
 
-``` 
-      <techMD ID="AMD001">
-    <mdWrap MIMETYPE="text/xml" MDTYPE="NISOIMG" LABEL="NISO Img. Data">
-      <xmlData>
-        <niso:MIMEtype>image/tiff</niso:MIMEtype>
-        <niso:Compression>LZW</niso:Compression>
-        <niso:PhotometricInterpretation>8</niso:PhotometricInterpretation>
-        <niso:Orientation>1</niso:Orientation>
-        <niso:ScanningAgency>NYU Press</niso:ScanningAgency>
-      </xmlData>
-    </mdWrap>
-      </techMD>
-            
+```xml
+<techMD ID="AMD001">
+  <mdWrap MIMETYPE="text/xml" MDTYPE="NISOIMG" LABEL="NISO Img. Data">
+    <xmlData>
+      <niso:MIMEtype>image/tiff</niso:MIMEtype>
+      <niso:Compression>LZW</niso:Compression>
+      <niso:PhotometricInterpretation>8</niso:PhotometricInterpretation>
+      <niso:Orientation>1</niso:Orientation>
+      <niso:ScanningAgency>NYU Press</niso:ScanningAgency>
+    </xmlData>
+  </mdWrap>
+</techMD>
 ```
 
-L'élément \<file\> dans un \<fileGrp\> pourrait alors identifier les
+L'élément `<file>` dans un `<fileGrp>` pourrait alors identifier les
 métadonnées administratives ci-dessus comme celles du fichier
 correspondant en utilisant un attribut ADMID qui fasse référence à
-l'élément \<techMD\> ci-dessus :
+l'élément `<techMD>` ci-dessus :
 
-``` 
-      <file ID="FILE001" ADMID="AMD001">
-    <FLocat LOCTYPE="URL">http://dlib.nyu.edu/press/testimg.tif</FLocat>
-      </file>
-            
+```xml
+<file ID="FILE001" ADMID="AMD001">
+  <FLocat LOCTYPE="URL" xlink:href="http://dlib.nyu.edu/press/testimg.tif" />
+</file>
 ```
 
 ## <span id="filegrp">Section des fichiers</span>
 
-La section des fichiers (\<fileSec\>) comprend un ou plusieurs éléments
-\<fileGrp\> qui servent à regrouper des fichiers de même nature. Un
-\<fileGrp\> liste tous les fichiers constituant une version électronique
+La section des fichiers (`<fileSec>`) comprend un ou plusieurs éléments
+`<fileGrp>` qui servent à regrouper des fichiers de même nature. Un
+`<fileGrp>` liste tous les fichiers constituant une version électronique
 distincte de l'objet de bibliothèque numérique. Par exemple, on pourrait
-avoir des éléments \<fileGrp\> distincts pour les vignettes, les masters
+avoir des éléments `<fileGrp>` distincts pour les vignettes, les masters
 des images, les versions PDF, les versions textuelles encodées en TEI,
 etc.
 
@@ -296,45 +288,44 @@ bibliothèque numérique de trois versions différentes : une transcription
 encodée en TEI, un fichier master audio au format WAV, et un fichier
 audio dérivé au format MP3 :
 
-``` 
-      <fileSec>
-    <fileGrp ID="VERS1">
-      <file ID="FILE001" MIMETYPE="application/xml" SIZE="257537" CREATED="2001-06-10">
-        <FLocat LOCTYPE="URL">http://dlib.nyu.edu/tamwag/beame.xml</FLocat>
-      </file>
-    </fileGrp>
-    <fileGrp ID="VERS2">
-      <file ID="FILE002" MIMETYPE="audio/wav" SIZE="64232836"
-        CREATED="2001-05-17" GROUPID="AUDIO1">
-        <FLocat LOCTYPE="URL">http://dlib.nyu.edu/tamwag/beame.wav</FLocat>
-      </file>
-    </fileGrp>
-    <fileGrp ID="VERS3" VERSDATE="2001-05-18">
-      <file ID="FILE003" MIMETYPE="audio/mpeg" SIZE="8238866"
-        CREATED="2001-05-18" GROUPID="AUDIO1">
-        <FLocat LOCTYPE="URL">http://dlib.nyu.edu/tamwag/beame.mp3</FLocat>
-      </file>
-    </fileGrp>
-      </fileSec>
-            
+```xml 
+<fileSec>
+  <fileGrp ID="VERS1">
+    <file ID="FILE001" MIMETYPE="application/xml" SIZE="257537" CREATED="2001-06-10T00:00:00Z">
+      <FLocat LOCTYPE="URL" xlink:href="http://dlib.nyu.edu/tamwag/beame.xml" />
+    </file>
+  </fileGrp>
+  <fileGrp ID="VERS2">
+    <file ID="FILE002" MIMETYPE="audio/wav" SIZE="64232836"
+      CREATED="2001-05-17T00:00:00Z" GROUPID="AUDIO1">
+      <FLocat LOCTYPE="URL" xlink:href="http://dlib.nyu.edu/tamwag/beame.wav" />
+    </file>
+  </fileGrp>
+  <fileGrp ID="VERS3" VERSDATE="2001-05-18T00:00:00Z">
+    <file ID="FILE003" MIMETYPE="audio/mpeg" SIZE="8238866"
+      CREATED="2001-05-18T00:00:00Z" GROUPID="AUDIO1">
+      <FLocat LOCTYPE="URL" xlink:href="http://dlib.nyu.edu/tamwag/beame.mp3" />
+    </file>
+  </fileGrp>
+</fileSec>
 ```
 
-Dans ce cas, la \<fileSec\> contient trois sous-éléments \<fileGrp\>, un
+Dans ce cas, la `<fileSec>` contient trois sous-éléments `<fileGrp>`, un
 pour chacune des trois versions différentes de l'objet. Le premier est
 un fichier de transcription du texte encodé en XML, le second est un
 fichier master audio au format WAV, et le troisième est un fichier audio
 dérivé au format MP3. Même si dans un exemple aussi simple il ne semble
-pas vraiment nécessaire d'utiliser des éléments \<fileGrp\> pour
-distinguer les différentes versions d'un objet, cet élément \<fileGrp\>
+pas vraiment nécessaire d'utiliser des éléments `<fileGrp>` pour
+distinguer les différentes versions d'un objet, cet élément `<fileGrp>`
 devient beaucoup plus utile dans le cas d'objets composés d'un grand
 nombre d'images de pages numérisées, et en fait dans tout cas où une
 seule version de l'objet consiste en un grand nombre de fichiers. Dans
-ces cas-là, la possibilité de répartir les éléments \<file\> dans des
-\<fileGrp\>s facilite l'identification des fichiers appartenant à une
+ces cas-là, la possibilité de répartir les éléments `<file>` dans des
+`<fileGrp>`s facilite l'identification des fichiers appartenant à une
 version particulière du document.
 
 Vous avez peut-être remarqué la présence des attributs GROUPID avec des
-valeurs identiques pour les deux éléments \<file\> correspondant à un
+valeurs identiques pour les deux éléments `<file>` correspondant à un
 fichier audio ; ils indiquent que les deux fichiers, bien qu'appartenant
 à deux versions différentes de l'objet, contiennent pour l'essentiel la
 même information (on peut utiliser le GROUPID de la même manière pour
@@ -342,15 +333,15 @@ indiquer des fichiers images correspondant à la même page dans des
 objets de bibliothèque numérique comprenant plusieurs images de pages
 numérisées).
 
-Vous devriez remarquer également que tous les éléments \<file\> ont un
+Vous devriez remarquer également que tous les éléments `<file>` ont un
 attribut ID unique. Cet attribut fournit une dénomination unique et
 interne du fichier, auquel d'autres portions du document peuvent faire
 référence. On verra ce type de référencement par l'exemple dans la
 section de la carte de structure.
 
-Il convient de signaler que les éléments \<file\> peuvent contenir un
-élément \<FContent\> au lieu d'un élément \<FLocat\>. L'élément
-\<FContent\> est utilisé pour encapsuler le contenu même du fichier à
+Il convient de signaler que les éléments `<file>` peuvent contenir un
+élément `<FContent>` au lieu d'un élément `<FLocat>`. L'élément
+`<FContent>` est utilisé pour encapsuler le contenu même du fichier à
 l'intérieur du document METS ; si l'on fait cela, le contenu du fichier
 doit être soit dans un format XML soit encodé en Base64. Même si
 l'inclusion des fichiers n'est pas une pratique habituelle quand on crée
@@ -365,76 +356,64 @@ numérique pour un stockage hors site.
 La carte de structure d'un document METS définit une structure
 hiérarchique qui peut être diffusée aux utilisateurs d'un objet de la
 bibliothèque numérique afin de leur permettre de naviguer dans celui-ci.
-L'élément \<structMap\> définit cette hiérarchie comme une arborescence
-d'éléments \<div\> imbriqués. Chaque division \<div\> comprend un
+L'élément `<structMap>` définit cette hiérarchie comme une arborescence
+d'éléments `<div>` imbriqués. Chaque division `<div>` comprend un
 attribut spécifiant son type. Une division peut aussi comprendre de
-multiples éléments, pointeurs METS (\<mptr\>) et pointeurs de fichier
-(\<fptr\>), qui permettent d'identifier le contenu correspondant à cette
-\<div\>. Les pointeurs METS référencent des documents METS distincts
-comprenant la description du contenu de la \<div\> courante. Cette
+multiples éléments, pointeurs METS (`<mptr>`) et pointeurs de fichier
+(`<fptr>`), qui permettent d'identifier le contenu correspondant à cette
+`<div>`. Les pointeurs METS référencent des documents METS distincts
+comprenant la description du contenu de la `<div>` courante. Cette
 disposition peut être utile lors de la description d'un grand ensemble
 d'objets (par exemple, la collection complète d'un périodique) pour
 conserver une taille relativement faible à chaque fichier METS de
 l'ensemble. Les pointeurs de fichiers référencent des fichiers (ou, dans
 certains cas des groupes de fichiers, ou bien encore des emplacements
 précis dans un fichier) à l'intérieur du document METS courant, dans la
-section \<fileSec\> correspondant à la partie de la hiérarchie
-représentée par la \<div\> courante.
+section `<fileSec>` correspondant à la partie de la hiérarchie
+représentée par la `<div>` courante.
 
 Voici un exemple d'une carte de structure extrêmement simple :
 
-``` 
-      <structMap TYPE="logical">
-    <div ID="div1" LABEL="Oral History: Mayor Abraham Beame"
-      TYPE="oral history">
-      <div ID="div1.1" LABEL="Interviewer Introduction"
-        ORDER="1">
-    <fptr FILEID="FILE001">
-      <area FILEID="FILE001" BEGIN="INTVWBG" END="INTVWND"
-        BETYPE="IDREF" />
-    </fptr>
-    <fptr FILEID="FILE002">
-      <area FILEID="FILE002" BEGIN="00:00:00" END="00:01:47"
-        BETYPE="TIME" />
-    </fptr>
-    <fptr FILEID="FILE003">
-      <area FILEID="FILE003" BEGIN="00:00:00" END="00:01:47"
-        BETYPE="TIME" />
-    </fptr>
-      </div>
+```xml 
+<structMap TYPE="logical">
+  <div ID="div1" LABEL="Oral History: Mayor Abraham Beame" TYPE="oral history">
+    <div ID="div1.1" LABEL="Interviewer Introduction" ORDER="1">
+      <fptr FILEID="FILE001">
+        <area FILEID="FILE001" BEGIN="INTVWBG" END="INTVWND" BETYPE="IDREF"/>
+      </fptr>
+      <fptr FILEID="FILE002">
+        <area FILEID="FILE002" BEGIN="00:00:00" END="00:01:47" BETYPE="TIME"/>
+      </fptr>
+      <fptr FILEID="FILE003">
+        <area FILEID="FILE003" BEGIN="00:00:00" END="00:01:47" BETYPE="TIME"/>
+      </fptr>
+    </div>
     <div ID="div1.2" LABEL="Family History" ORDER="2">
-    <fptr FILEID="FILE001">
-      <area FILEID="FILE001" BEGIN="FHBG" END="FHND"
-        BETYPE="IDREF" />
-    </fptr>
-    <fptr FILEID="FILE002">
-      <area FILEID="FILE002" BEGIN="00:01:48"END="00:06:17"
-        BETYPE="TIME" />
-    </fptr>
-    <fptr FILEID="FILE003">
-      <area FILEID="FILE003" BEGIN="00:01:48" END="00:06:17"
-        BETYPE="TIME" />
-    </fptr>
-      </div>
-    <div ID="div1.3" LABEL="Introduction to Teachers' Union"
-      ORDER="3">
-    <fptr FILEID="FILE001">
-      <area FILEID="FILE001" BEGIN="TUBG" END="TUND"
-        BETYPE="IDREF" />
-    </fptr>
-    <fptr FILEID="FILE002">
-      <area FILEID="FILE002" BEGIN="00:06:18" END="00:10:03"
-        BETYPE="TIME" />
-    </fptr>
-    <fptr FILEID="FILE003">
-      <area FILEID="FILE003" BEGIN="00:06:18" END="00:10:03"
-        BETYPE="TIME" />
-    </fptr>
-      </div>
-      </div>
-      </structMap> 
-            
+      <fptr FILEID="FILE001">
+        <area FILEID="FILE001" BEGIN="FHBG" END="FHND" BETYPE="IDREF"/>
+      </fptr>
+      <fptr FILEID="FILE002">
+        <area FILEID="FILE002" BEGIN="00:01:48" END="00:06:17" BETYPE="TIME"/>
+      </fptr>
+      <fptr FILEID="FILE003">
+        <area FILEID="FILE003" BEGIN="00:01:48" END="00:06:17" BETYPE="TIME"/>
+      </fptr>
+    </div>
+    <div ID="div1.3" LABEL="Introduction to Teachers' Union" ORDER="3">
+      <fptr FILEID="FILE001">
+        <area FILEID="FILE001" BEGIN="TUBG" END="TUND" BETYPE="IDREF"/>
+      </fptr>
+      <fptr FILEID="FILE002">
+        <area FILEID="FILE002" BEGIN="00:06:18" END="00:10:03" BETYPE="TIME"/>
+      </fptr>
+      <fptr FILEID="FILE003">
+        <area FILEID="FILE003" BEGIN="00:06:18" END="00:10:03" BETYPE="TIME"/>
+      </fptr>
+    </div>
+  </div>
+</structMap>
 ```
+
 
 La carte de structure ci-dessus indique que le document décrit est un
 entretien avec Abraham Beame, maire de la ville de New York, document
@@ -444,7 +423,7 @@ façon dont il a été amené à être impliqué dans le syndicat des
 enseignants de New York. Chacune de ces sous-sections ou divisions est
 liée à trois fichiers (tirés de notre exemple précédent de groupes de
 fichiers) : une transcription XML, un master et un fichier audio dérivé.
-Un élément complémentaire \<area\> est utilisé dans chaque \<fptr\> pour
+Un élément complémentaire `<area>` est utilisé dans chaque `<fptr>` pour
 indiquer que cette division correspond à une partie seulement du fichier
 lié, et pour identifier exactement la partie concernée de chaque fichier
 lié. Par exemple, la première division (l'introduction par
@@ -463,10 +442,10 @@ finissant au temps 00:01:47.
 
 La section des liens structurels du format METS a la forme la plus
 simple parmi les principales sections de METS. En effet, cette section
-ne contient qu'un seul élément : \<smLink\> (bien que cet élément puisse
+ne contient qu'un seul élément : `<smLink>` (bien que cet élément puisse
 être répété). La section des liens structurels de METS est destinée à
 permettre de décrire l'existence d'hyperliens entre éléments au sein de
-la carte de structure, le plus souvent des éléments \<div\>. Cette
+la carte de structure, le plus souvent des éléments `<div>`. Cette
 disposition est très utile, par exemple, si l'on souhaite utiliser METS
 pour archiver des sites Web, et conserver trace de la structure
 hypertextuelle des sites séparément des fichiers HTML des sites
@@ -474,36 +453,34 @@ eux-mêmes.
 
 A titre d'exemple, considérons le cas d'un document METS décrivant une
 page web qui contient une image liée à une autre page. L'élément
-\<structMap\> comprendra probablement des \<divs\> comme pour les deux
+`<structMap>` comprendra probablement des `<divs>` comme pour les deux
 pages dans l'exemple suivant :
 
-``` 
-    <div ID="P1" TYPE="page" LABEL="Page 1">
-      <fptr FILEID="HTMLF1"/>
-    <div ID="IMG1" TYPE="image" LABEL="Image Hyperlink to
-      Page 2">
+```xml 
+<div ID="P1" TYPE="page" LABEL="Page 1">
+  <fptr FILEID="HTMLF1"/>
+  <div ID="IMG1" TYPE="image" LABEL="Image Hyperlink to Page 2">
     <fptr FILEID="JPGF1"/>
-    </div>
+  </div>
+</div>
 
-    <div ID="P2" TYPE="page" LABEL="Page 2">
-      <fptr FILEID="HTMLF2"/>
-    </div>
-            
+<div ID="P2" TYPE="page" LABEL="Page 2">
+  <fptr FILEID="HTMLF2"/>
+</div>
 ```
 
-Pour indiquer que le fichier image dans la \<div\> contenue dans la
-première page \<div\> a un lien hypertexte vers un fichier HTML dans la
-deuxième page \<div\>, on utilise un élément \<smLink\> au sein de la
-section \<structLink\> du document METS comme suit :
+Pour indiquer que le fichier image dans la `<div>` contenue dans la
+première page `<div>` a un lien hypertexte vers un fichier HTML dans la
+deuxième page `<div>`, on utilise un élément `<smLink>` au sein de la
+section `<structLink>` du document METS comme suit :
 
-``` 
-      <smLink from="IMG1" to="P2" xlink:title="Hyperlink from 
-      JPEG Image on Page 1 to Page 2" xlink:show="new"
-      xlink:actuate="onRequest" />
-            
+```xml 
+<smLink xlink:from="IMG1" xlink:to="P2" xlink:title="Hyperlink from 
+  JPEG Image on Page 1 to Page 2" xlink:show="new"
+  xlink:actuate="onRequest" />
 ```
 
-L'élément de lien \<smLink\> ci-dessus utilise une forme légèrement
+L'élément de lien `<smLink>` ci-dessus utilise une forme légèrement
 modifiée de la syntaxe XLink. Tous les attributs XLink sont utilisés,
 mais les attributs « to » et « from » sont déclarés de type IDREF, au
 lieu de NMTOKEN comme dans la spécification XLink d'origine. Cela permet
@@ -515,11 +492,11 @@ pour vérifier que les noeuds liés existent réellement.
 
 Une section de comportement peut être utilisée pour associer des
 comportements exécutables au contenu d'un objet METS. Une section de
-comportement contient un ou plusieurs éléments \<behavior\> dont chacun
-comprend un élément de définition d'interface \<interfaceDef\>, qui
+comportement contient un ou plusieurs éléments `<behavior>` dont chacun
+comprend un élément de définition d'interface `<interfaceDef>`, qui
 représente une définition abstraite de l'ensemble de comportements
-représentés par une section de comportement. Un \<behavior\> comprend
-également un élément \<mechanism\> qui est utilisé pour pointer vers un
+représentés par une section de comportement. Un `<behavior>` comprend
+également un élément `<mechanism>` qui est utilisé pour pointer vers un
 module de code exécutable, qui implémente et exécute le comportement
 défini de façon abstraite par la définition d'interface.
 
@@ -529,16 +506,17 @@ voir dans l'exemple ci-dessous tiré du projet
 [Fedora](http://www.fedora.info/) à
 Mellon.
 
-``` 
-         <METS:behavior ID="DISS1.1" STRUCTID="S1.1" BTYPE="uva-bdef:stdImage"
-      CREATED="2002-05-25T08:32:00" LABEL="UVA Std Image Disseminator"
-      GROUPID="DISS1" ADMID="AUDREC1">
-           <METS:interfaceDef LABEL="UVA Standard Image Behavior Definition"
-        LOCTYPE="URN" xlink:href="uva-bdef:stdImage"/>
-           <METS:mechanism LABEL="A NEW AND IMPROVED Image Mechanism"
-        LOCTYPE="URN" xlink:href="uva-bmech:BETTER-imageMech"/>
-         </METS:behavior>
-            
+```xml 
+<behavior ID="DISS1.1" STRUCTID="S1.1" BTYPE="uva-bdef:stdImage"
+  CREATED="2002-05-25T08:32:00" LABEL="UVA Std Image Disseminator"
+  GROUPID="DISS1" ADMID="AUDREC1">
+
+  <interfaceDef LABEL="UVA Standard Image Behavior Definition"
+    LOCTYPE="URN" xlink:href="uva-bdef:stdImage"/>
+
+  <mechanism LABEL="A NEW AND IMPROVED Image Mechanism"
+    LOCTYPE="URN" xlink:href="uva-bmech:BETTER-imageMech"/>
+</behavior>
 ```
 
 Voir aussi :
