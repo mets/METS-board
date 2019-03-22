@@ -61,7 +61,7 @@ Un documento METS consta de siete secciones:
 
 4.  [**Sección Archivo**](#filegrp) - lista todos los archivos con
     contenidos que forman parte del objeto digital. Los archivos pueden
-    agruparse en elementos \<fileGrp\>, uno para cada una de las
+    agruparse en elementos `<fileGrp>`, uno para cada una de las
     distintas versiones del objeto.
 
 5.  [**Mapa Estructural**](#structmap) - es la parte principal de un
@@ -97,17 +97,15 @@ documento METS adicionales al identificador principal que se registrará
 en el atributo OBJID del elemento raíz METS.  El siguiente fragmento
 recoge un ejemplo de Cabecera METS:  
 
-``` 
-      <metsHdr CREATEDATE="2003-07-04T15:00:00" RECORDSTATUS="Complete">
-    <agent ROLE="CREATOR" TYPE="INDIVIDUAL">
-      <name>Jerome McDonough</name>
-    </agent>
-    <agent ROLE="ARCHIVIST" TYPE="INDIVIDUAL">
-      <name>Ann Butler</name>
-    </agent>
-      </metsHdr>
-
-            
+```xml
+<metsHdr CREATEDATE="2003-07-04T15:00:00" RECORDSTATUS="Complete">
+  <agent ROLE="CREATOR" TYPE="INDIVIDUAL">
+    <name>Jerome McDonough</name>
+  </agent>
+  <agent ROLE="ARCHIVIST" TYPE="INDIVIDUAL">
+    <name>Ann Butler</name>
+  </agent>
+</metsHdr>         
 ```
 
 En este ejemplo el elemento \<metsHdr\> contiene dos atributos:
@@ -134,12 +132,11 @@ una URI en la que se pueden recuperar metadatos externos. Por ejemplo,
 la siguiente referencia apunta a un instrumento de descripción externo
 para un objeto digital:
 
-``` 
-      <dmdSec ID="dmd001">
-          <mdRef LOCTYPE="URN" MIMETYPE="application/xml" MDTYPE="EAD" 
-          LABEL="Berol Collection Finding Aid">urn:x-nyu:fales1735</mdRef>
-      </dmdSec>
-            
+```xml 
+<dmdSec ID="dmd001">
+  <mdRef LOCTYPE="URN" MIMETYPE="application/xml" MDTYPE="EAD"
+    LABEL="Berol Collection Finding Aid" xlink:href="urn:x-nyu:fales1735" />
+</dmdSec>       
 ```
 
 El elemento \<mdRef\> de este \<dmdSec\> contiene cuatro atributos. El
@@ -165,29 +162,26 @@ metadatos se codifiquen en Base64 y se escriban dentro de un elemento
 \<binData\> contenido dentro del elemento mdWrap. Los siguientes
 ejemplos muestran el uso del elemento mdWrap:
 
-``` 
-      <dmdSec ID="dmd002">
-    <mdWrap MIMETYPE="text/xml" MDTYPE="DC" LABEL="Dublin Core Metadata">
-      <xmlData>
-        <dc:title>Alice's Adventures in Wonderland</dc:title>
-        <dc:creator>Lewis Carroll</dc:creator>
-        <dc:date>between 1872 and 1890</dc:date>
-        <dc:publisher>McCloughlin Brothers</dc:publisher>
-        <dc:type>text</dc:type>
-      </xmlData>
-    </mdWrap>
-      </dmdSec>
-            
+```xml
+<dmdSec ID="dmd002">
+  <mdWrap MIMETYPE="text/xml" MDTYPE="DC" LABEL="Dublin Core Metadata">
+    <xmlData>
+      <dc:title>Alice's Adventures in Wonderland</dc:title>
+      <dc:creator>Lewis Carroll</dc:creator>
+      <dc:date>between 1872 and 1890</dc:date>
+      <dc:publisher>McCloughlin Brothers</dc:publisher>
+      <dc:type>text</dc:type>
+    </xmlData>
+  </mdWrap>
+</dmdSec>           
 ```
 
-``` 
-      <dmdSec ID="dmd003">
-    <mdWrap MIMETYPE="application/marc" MDTYPE="MARC" LABEL="OPAC Record">
-      <binData>MDI0ODdjam0gIDIyMDA1ODkgYSA0NU0wMDAxMDA...(etc.)
-      </binData>
-    </mdWrap>
-      </dmdSec>
-            
+```xml 
+<dmdSec ID="dmd003">
+  <mdWrap MIMETYPE="application/marc" MDTYPE="MARC" LABEL="OPAC Record">
+    <binData>MDI0ODdjam0gIDIyMDA1ODkgYSA0NU0wMDAxMDA...(etc.)</binData>
+  </mdWrap>
+</dmdSec>           
 ```
 
 Debemos señalar que todos los elementos \<dmdSec\> deben contar con un
@@ -229,29 +223,27 @@ documento METS (como las divisiones del mapa estructural o los elementos
 \<file\>) puedan hacerles referencia. Por ejemplo, podríamos tener un
 elemento \<techMD\> con los metadatos técnicos para un archivo:
 
-``` 
-      <techMD ID="AMD001">
-    <mdWrap MIMETYPE="text/xml" MDTYPE="NISOIMG" LABEL="NISO Img. Data">
-      <xmlData>
-        <niso:MIMEtype>image/tiff</niso:MIMEtype>
-        <niso:Compression>LZW</niso:Compression>
-        <niso:PhotometricInterpretation>8</niso:PhotometricInterpretation>
-        <niso:Orientation>1</niso:Orientation>
-        <niso:ScanningAgency>NYU Press</niso:ScanningAgency>
-      </xmlData>
-    </mdWrap>
-      </techMD>
-            
+```xml
+<techMD ID="AMD001">
+  <mdWrap MIMETYPE="text/xml" MDTYPE="NISOIMG" LABEL="NISO Img. Data">
+    <xmlData>
+      <niso:MIMEtype>image/tiff</niso:MIMEtype>
+      <niso:Compression>LZW</niso:Compression>
+      <niso:PhotometricInterpretation>8</niso:PhotometricInterpretation>
+      <niso:Orientation>1</niso:Orientation>
+      <niso:ScanningAgency>NYU Press</niso:ScanningAgency>
+    </xmlData>
+  </mdWrap>
+</techMD>
 ```
 
 Y un elemento \<file\> dentro de un elemento \<fileGrp\> en el que se
 apuntase a esos metadatos administrativos mediante un atributo ADMID:
 
-``` 
-      <file ID="FILE001" ADMID="AMD001">
-    <FLocat LOCTYPE="URL">http://dlib.nyu.edu/press/testimg.tif</FLocat>
-      </file>
-            
+```xml
+<file ID="FILE001" ADMID="AMD001">
+  <FLocat LOCTYPE="URL" xlink:href="http://dlib.nyu.edu/press/testimg.tif" />
+</file>
 ```
 
 ## <span id="filegrp">Sección Archivo</span>
@@ -268,27 +260,26 @@ del que hay tres versiones: una transcripción codificada en TEI, una
 copia maestra audio en formato WAV y una versión audio derivada de la
 anterior en formato MP3:
 
-``` 
-      <fileSec>
-    <fileGrp ID="VERS1">
-      <file ID="FILE001" MIMETYPE="application/xml" SIZE="257537" CREATED="2001-06-10">
-        <FLocat LOCTYPE="URL">http://dlib.nyu.edu/tamwag/beame.xml</FLocat>
-      </file>
-    </fileGrp>
-    <fileGrp ID="VERS2">
-      <file ID="FILE002" MIMETYPE="audio/wav" SIZE="64232836"
-        CREATED="2001-05-17" GROUPID="AUDIO1">
-        <FLocat LOCTYPE="URL">http://dlib.nyu.edu/tamwag/beame.wav</FLocat>
-      </file>
-    </fileGrp>
-    <fileGrp ID="VERS3" VERSDATE="2001-05-18">
-      <file ID="FILE003" MIMETYPE="audio/mpeg" SIZE="8238866"
-        CREATED="2001-05-18" GROUPID="AUDIO1">
-        <FLocat LOCTYPE="URL">http://dlib.nyu.edu/tamwag/beame.mp3</FLocat>
-      </file>
-    </fileGrp>
-      </fileSec>
-            
+```xml 
+<fileSec>
+  <fileGrp ID="VERS1">
+    <file ID="FILE001" MIMETYPE="application/xml" SIZE="257537" CREATED="2001-06-10T00:00:00Z">
+      <FLocat LOCTYPE="URL" xlink:href="http://dlib.nyu.edu/tamwag/beame.xml" />
+    </file>
+  </fileGrp>
+  <fileGrp ID="VERS2">
+    <file ID="FILE002" MIMETYPE="audio/wav" SIZE="64232836"
+      CREATED="2001-05-17T00:00:00Z" GROUPID="AUDIO1">
+      <FLocat LOCTYPE="URL" xlink:href="http://dlib.nyu.edu/tamwag/beame.wav" />
+    </file>
+  </fileGrp>
+  <fileGrp ID="VERS3" VERSDATE="2001-05-18T00:00:00Z">
+    <file ID="FILE003" MIMETYPE="audio/mpeg" SIZE="8238866"
+      CREATED="2001-05-18T00:00:00Z" GROUPID="AUDIO1">
+      <FLocat LOCTYPE="URL" xlink:href="http://dlib.nyu.edu/tamwag/beame.mp3" />
+    </file>
+  </fileGrp>
+</fileSec>
 ```
 
 En este caso, \<fileSec\> contiene tres elementos \<fileGrp\>, uno para
@@ -346,57 +337,44 @@ representada por el elemento \<div\>.
 
 A continuación se muestra un ejemplo de mapa estructural:
 
-``` 
-      <structMap TYPE="logical">
-    <div ID="div1" LABEL="Oral History: Mayor Abraham Beame"
-      TYPE="oral history">
-      <div ID="div1.1" LABEL="Interviewer Introduction"
-        ORDER="1">
-    <fptr FILEID="FILE001">
-      <area FILEID="FILE001" BEGIN="INTVWBG" END="INTVWND"
-        BETYPE="IDREF" />
-    </fptr>
-    <fptr FILEID="FILE002">
-      <area FILEID="FILE002" BEGIN="00:00:00" END="00:01:47"
-        BETYPE="TIME" />
-    </fptr>
-    <fptr FILEID="FILE003">
-      <area FILEID="FILE003" BEGIN="00:00:00" END="00:01:47"
-        BETYPE="TIME" />
-    </fptr>
-      </div>
+```xml 
+<structMap TYPE="logical">
+  <div ID="div1" LABEL="Oral History: Mayor Abraham Beame" TYPE="oral history">
+    <div ID="div1.1" LABEL="Interviewer Introduction" ORDER="1">
+      <fptr FILEID="FILE001">
+        <area FILEID="FILE001" BEGIN="INTVWBG" END="INTVWND" BETYPE="IDREF"/>
+      </fptr>
+      <fptr FILEID="FILE002">
+        <area FILEID="FILE002" BEGIN="00:00:00" END="00:01:47" BETYPE="TIME"/>
+      </fptr>
+      <fptr FILEID="FILE003">
+        <area FILEID="FILE003" BEGIN="00:00:00" END="00:01:47" BETYPE="TIME"/>
+      </fptr>
+    </div>
     <div ID="div1.2" LABEL="Family History" ORDER="2">
-    <fptr FILEID="FILE001">
-      <area FILEID="FILE001" BEGIN="FHBG" END="FHND"
-        BETYPE="IDREF" />
-    </fptr>
-    <fptr FILEID="FILE002">
-      <area FILEID="FILE002" BEGIN="00:01:48"END="00:06:17"
-        BETYPE="TIME" />
-    </fptr>
-    <fptr FILEID="FILE003">
-      <area FILEID="FILE003" BEGIN="00:01:48" END="00:06:17"
-        BETYPE="TIME" />
-    </fptr>
-      </div>
-    <div ID="div1.3" LABEL="Introduction to Teachers' Union"
-      ORDER="3">
-    <fptr FILEID="FILE001">
-      <area FILEID="FILE001" BEGIN="TUBG" END="TUND"
-        BETYPE="IDREF" />
-    </fptr>
-    <fptr FILEID="FILE002">
-      <area FILEID="FILE002" BEGIN="00:06:18" END="00:10:03"
-        BETYPE="TIME" />
-    </fptr>
-    <fptr FILEID="FILE003">
-      <area FILEID="FILE003" BEGIN="00:06:18" END="00:10:03"
-        BETYPE="TIME" />
-    </fptr>
-      </div>
-      </div>
-      </structMap> 
-            
+      <fptr FILEID="FILE001">
+        <area FILEID="FILE001" BEGIN="FHBG" END="FHND" BETYPE="IDREF"/>
+      </fptr>
+      <fptr FILEID="FILE002">
+        <area FILEID="FILE002" BEGIN="00:01:48" END="00:06:17" BETYPE="TIME"/>
+      </fptr>
+      <fptr FILEID="FILE003">
+        <area FILEID="FILE003" BEGIN="00:01:48" END="00:06:17" BETYPE="TIME"/>
+      </fptr>
+    </div>
+    <div ID="div1.3" LABEL="Introduction to Teachers' Union" ORDER="3">
+      <fptr FILEID="FILE001">
+        <area FILEID="FILE001" BEGIN="TUBG" END="TUND" BETYPE="IDREF"/>
+      </fptr>
+      <fptr FILEID="FILE002">
+        <area FILEID="FILE002" BEGIN="00:06:18" END="00:10:03" BETYPE="TIME"/>
+      </fptr>
+      <fptr FILEID="FILE003">
+        <area FILEID="FILE003" BEGIN="00:06:18" END="00:10:03" BETYPE="TIME"/>
+      </fptr>
+    </div>
+  </div>
+</structMap>
 ```
 
 Este mapa estructural se corresponde con un registro sonoro (una
@@ -437,29 +415,27 @@ una imagen que sirve de origen de un enlace a otra página. El elemento
 \<structMap\> contendría probablemente \<divs\> como los siguientes para
 las dos páginas:
 
-``` 
-    <div ID="P1" TYPE="page" LABEL="Page 1">
-      <fptr FILEID="HTMLF1"/>
-    <div ID="IMG1" TYPE="image" LABEL="Image Hyperlink to
-      Page 2">
+```xml 
+<div ID="P1" TYPE="page" LABEL="Page 1">
+  <fptr FILEID="HTMLF1"/>
+  <div ID="IMG1" TYPE="image" LABEL="Image Hyperlink to Page 2">
     <fptr FILEID="JPGF1"/>
-    </div>
+  </div>
+</div>
 
-    <div ID="P2" TYPE="page" LABEL="Page 2">
-      <fptr FILEID="HTMLF2"/>
-    </div>
-            
+<div ID="P2" TYPE="page" LABEL="Page 2">
+  <fptr FILEID="HTMLF2"/>
+</div>
 ```
 
 Si se quisiese indicar que el archivo de imagen está enlazado al archivo
 HTML de la segunda página \<div\>, tendríamos un elemento \<smLink\>
 dentro de la sección \<structLink\> como la siguiente:
 
-``` 
-      <smLink from="IMG1" to="P2" xlink:title="Hyperlink from 
-      JPEG Image on Page 1 to Page 2" xlink:show="new"
-      xlink:actuate="onRequest" />
-            
+```xml 
+<smLink xlink:from="IMG1" xlink:to="P2" xlink:title="Hyperlink from 
+  JPEG Image on Page 1 to Page 2" xlink:show="new"
+  xlink:actuate="onRequest" />
 ```
 
 El elemento \<smLink\> anterior usa la sintaxis XLink ligeramente
@@ -485,16 +461,17 @@ enlaces a servicios web distribuidos, como en el siguiente ejemplo del
 proyecto Mellon
 [Fedora](http://www.fedora.info/).
 
-``` 
-         <METS:behavior ID="DISS1.1" STRUCTID="S1.1" BTYPE="uva-bdef:stdImage"
-      CREATED="2002-05-25T08:32:00" LABEL="UVA Std Image Disseminator"
-      GROUPID="DISS1" ADMID="AUDREC1">
-           <METS:interfaceDef LABEL="UVA Standard Image Behavior Definition"
-        LOCTYPE="URN" xlink:href="uva-bdef:stdImage"/>
-           <METS:mechanism LABEL="A NEW AND IMPROVED Image Mechanism"
-        LOCTYPE="URN" xlink:href="uva-bmech:BETTER-imageMech"/>
-         </METS:behavior>
-            
+```xml 
+<behavior ID="DISS1.1" STRUCTID="S1.1" BTYPE="uva-bdef:stdImage"
+  CREATED="2002-05-25T08:32:00" LABEL="UVA Std Image Disseminator"
+  GROUPID="DISS1" ADMID="AUDREC1">
+
+  <interfaceDef LABEL="UVA Standard Image Behavior Definition"
+    LOCTYPE="URN" xlink:href="uva-bdef:stdImage"/>
+
+  <mechanism LABEL="A NEW AND IMPROVED Image Mechanism"
+    LOCTYPE="URN" xlink:href="uva-bmech:BETTER-imageMech"/>
+</behavior>
 ```
 
 Véase además:
