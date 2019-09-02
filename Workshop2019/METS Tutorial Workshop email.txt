@@ -1,7 +1,7 @@
 Dear participant in METS Tutorial Workshop,
 
 We welcome you to the workshop and we are hoping that you are prepared to aid us in making this workshop a success! 
-We would like to direct you to the presentation slides and accompanying materials. We have loaded these materials at <insert URL>. We kindly ask that you download copies of these materials so you can refer to them on the day.
+We would like to direct you to the presentation slides and accompanying materials. We have loaded these materials at https://github.com/mets/METS-board/tree/master/Workshop2019. We kindly ask that you download copies of these materials so you can refer to them on the day.
 Our agenda for the workshop is as follows:
 
   Time	          Timeslot	    Agenda item	                                        Presenter
