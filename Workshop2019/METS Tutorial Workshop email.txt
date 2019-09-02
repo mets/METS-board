@@ -1,0 +1,28 @@
+Dear participant in METS Tutorial Workshop,
+
+We welcome you to the workshop and we are hoping that you are prepared to aid us in making this workshop a success! 
+We would like to direct you to the presentation slides and accompanying materials. We have loaded these materials at <insert URL>. We kindly ask that you download copies of these materials so you can refer to them on the day.
+Our agenda for the workshop is as follows:
+
+  Time	          Timeslot	    Agenda item	                                        Presenter
+  11.35-11.55	    20 minutes    Welcome                                             Karin Bradenberg
+                              Introduction to METS
+                              Background (brief history and rationale of METS)
+                              Benefits of implementing METS
+                              METS core elements
+                              METS profile
+
+  11.55-12.30	     35 minutes	  Implementing and tools	                            Juha Lehtonen
+
+  12.30-13.30	     60 minutes	  Lunch break	
+  13.30-13.50	     20 minutes	  Implementing and tools                              Sean Mosely
+
+  13.50-14:10	     20 minutes	  Simple example to build familiarity                 Sean and Karin
+
+  14.10-14.25	     15 minutes	  Wrap up	                                            All
+
+If you need to get in touch in advance of the workshop please email Karin Bradenberg: Karin.Bredenberg@riksarkivet.se
+
+Welcome!
+
+Karin Bredenberg (National Archives of Sweden), Juha Lehtonen (CSC – IT Center for Science, Finland) and Sean Mosely (National Library of New Zealand)
