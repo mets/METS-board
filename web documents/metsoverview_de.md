@@ -2,50 +2,16 @@
 
 ## Einleitung
 
-Die Pflege einer Sammlung digitaler Objekte benötigt Metadaten über
-diese Objekte. Die Metadaten, die für eine Sammlung digitaler Objekte
-erforderlich sind, umfassen andere und ausführlichere Angaben als die
-Metadaten für eine Sammlung von gedruckten Werken oder anderen
-physischen Objekten. Wenn eine Bibliothek Metadaten zu einem Buch in
-ihrem Bestand erfasst, wird dieses Buch nicht in eine Reihe einzelner
-Blätter zerfallen, weil keine Strukturangaben über die innere Ordnung
-des Buches erhoben werden. Noch werden Forscher das Buch schlechter
-nutzen können, wenn nicht angegeben wurde, dass es mit einer Ryobi
-Druckmaschine hergestellt wurde. Gleiches gilt jedoch nicht für die
-digitale Version desselben Buches. Ohne Metadaten zur Struktur sind die
-Seitenabbildungen oder die Textdateien, aus denen es besteht, so gut wie
-wertlos. Und ohne technische Metadaten über den Digitalisierungsprozess
-können Leser nicht sicher sein, wie genau die digitale Version die
-ursprüngliche Vorlage wiedergibt. Für interne Verwaltungszwecke und die
-Datenadministration benötigt die Bibliothek außerdem technische
-Metadaten, um die Digitalisate regelmäßig auffrischen oder migrieren zu
-können und so die wertvollen Quellen langfristig zugänglich zu erhalten.
+METS ist ein Kodierungsstandard für beschreibende, administrative und strukturelle Metadaten von komplexen digitalen Objekten unterschiedlichster Art, bspw. Text-, Bild- oder Multimedia-Objekte. Ursprünglich eine Initiative der [Digital Library Federation](http://www.diglib.org/) ist METS ein XML-Dokumentformat für die Kodierung von Metadaten sowohl für die Verwaltung von digitalen Objekten innerhalb eines digitalen Archivsystems als auch für den Austausch solcher Objekte zwischen digitalen Archivsystemen und mit den Benutzerinnen und Benutzern. Abhängig vom jeweiligen Anwendungsfall können METS-Dokumente im Kontext des [Referenzmodells für ein Offenes Archiv-Informations-System (OAIS)](http://ssdoo.gsfc.nasa.gov/nost/isoas/ref_model.html) entweder als Übergabeinformationspaket (Submission Information Package - SIP), Archivinformationspaket (Archival Information Package - AIP) oder Auslieferungsinformationspaket (Dissemination Information Package - DIP) verwendet werden.
 
-Das Projekt [Making of America II](http://sunsite.berkeley.edu/MOA2/)
-Making of America II (MOA2) versuchte Lösungen für diese Probleme zu
-finden, indem es ein Kodierungsformat zur Speicherung und Nutzung von
-Erschließungsangaben, Verwaltungsdaten und Metadaten zur Struktur für
-Text- oder Imagedigitalisierungen entwickelte. METS, eine Initiative der
-[Digital Library Federation](http://www.diglib.org/) versuchte dann
-aufbauend auf der Arbeit von MOA2 ein XML-Dokumentformat zu entwickeln,
-das kodierte Metadaten sowohl für die Verwaltung von Objekten einer
-digitalen Bibliothek in einer Sammlung wie auch für den Austausch
-solcher Objekte mit anderen Sammlungen (oder die Übermittlung an
-Benutzer) aufnehmen kann. Ein METS-Dokument kann zudem im Kontext des
-[Open Archival Information System
-(OAIS)-Referenzmodells.](http://ssdoo.gsfc.nasa.gov/nost/isoas/ref_model.html)
-\[für die langfristige Erhaltung digitaler Aufzeichnungen\] entweder als
-Liefereinheit (Submission Information Package - SIP),
-Archivierungseinheit (Archival Information Package - AIP), oder
-Bereitstellungseinheit (Dissemination Information Package - DIP)
-verwendet werden.
+METS bietet ein kohärentes, integriertes Framework für die komplexen Metadaten, die für die Pflege von einer Sammlung digitaler Objekte benötigt werden. Diese Metadaten sind sowohl ausführlicher als auch unterschiedlich im Vergleich zu denen über Sammlungen von gedruckten Werken oder anderen physischen Objekten. Ein Buch bspw. wird weder in einzelne Blätter zerfallen, wenn keine Strukturmetadaten über die innere Ordnung des Buches vom Besitzer erfasst werden, noch wird es Benutzerinnen und Benutzer hindern, den Nutzungswert beurteilen zu können, wenn der Hersteller keine Angaben zum Entstehungsprozess gemacht hat. Gleiches gilt jedoch nicht für eine digitale Version desselben Buches. Ohne Strukturmetadaten sind die Seitenabbildungen oder die Textdateien, aus denen es besteht, so gut wie wertlos. Und ohne technische Metadaten über den Digitalisierungsprozess können Benutzerinnen und Benutzer nicht sicher sein, wie genau die digitale Version die ursprüngliche Vorlage wiedergibt. Eine Organisation muss auch über notwendige technische Metadaten für interne Verwaltungszwecke verfügen, um bspw. die Daten regelmäßig überprüfen und migrieren zu können und damit die dauerhafte Nutzbarkeit der wertvollen Ressourcen sicher zu stellen.
 
-Ein METS-Dokument besteht aus 7 Hauptabschnitten:
+Ein METS-Dokument besteht aus sieben Hauptabschnitten:
 
 1.  [**Der Kopfteil (METS Header)**](#MHead) - Der Kopfteil enthält
     Metadaten, die das jeweilige METS-Dokument selbst beschreiben,
-    einschließlich der Angaben zum Bearbeiter oder Herausgeber des
-    METS-Dokuments
+    einschließlich der Angaben zum Bearbeiter, zum Herausgeber, des 
+    letzten Änderungsdatums des METS-Dokuments, etc.
 
 2.  [**Erschließungsangaben (Descriptive Metadata)**](#descMD) - Der
     Abschnitt für die Erschließungsangaben kann sowohl Verweise auf ein
@@ -72,10 +38,11 @@ Ein METS-Dokument besteht aus 7 Hauptabschnitten:
 
 5.  [**Strukturbeschreibung (Structural Map)**](#structmap) - Die
     Strukturbeschreibung ist zentraler Bestandteil eines jeden
-    METS-Dokuments. Sie bildet den inneren Aufbau des digitalen Objektes
-    ab und verknüpft die Elemente der Struktur mit den Dateien, aus
-    denen der Inhalt des digitalen Objektes besteht, sowie mit deren
-    Metadaten.
+    METS-Dokuments und das einzige obligatorische Element. Sie bildet
+    den inneren Aufbau des digitalen Objektes ab und verknüpft die
+    Elemente der Struktur mit den Dateien, aus denen der Inhalt des
+    digitalen Objektes besteht, sowie mit deren Metadaten. Mehrere
+    Strukturbeschreibungen sind möglich
 
 6.  [**Strukturverknüpfungen (Structural Links)**](#structlink) - Der
     Abschnitt mit den Strukturverknüpfungen erlaubt es den Erstellern
@@ -129,9 +96,9 @@ das METS-Dokument bearbeitet haben. Die erste Person hat den
 METS-Datensatz erstellt, die zweite Person ist für die archivarische
 Bearbeitung des Ausgangsmaterials verantwortlich. Sowohl das ROLE- als
 auch das TYPE- Attribut zum `<agent>`-Element benutzen kontrollierte
-Terminologien. Mögliche Werte für das Attribut ROLE sind "ARCHIVIST,"
+Terminologien. Erlaubte Werte für das Attribut ROLE sind "ARCHIVIST,"
 "CREATOR," "CUSTODIAN," "DISSEMINATOR," "EDITOR," "IPOWNER" und "OTHER."
-Mögliche Werte für das Attribut TYPE sind "INDIVIDUAL," "ORGANIZATION"
+Erlaubte Werte für das Attribut TYPE sind "INDIVIDUAL," "ORGANIZATION"
 oder "OTHER."
 
 ## <span id="descMD">Erschließungsangaben (Deskriptive Metadata)</span>
@@ -530,9 +497,10 @@ Vergleiche dazu:
 ## Zusammenfassung
 
 Das METS-Schema liefert einen flexiblen Mechanismus für die Kodierung
-von Erschließungs-, Verwaltungs- und Strukturangaben für ein digitales
-Objekt und für die Beschreibung der komplexen Bezüge zwischen diesen
-verschiedenen Metadatenkategorien. Es kann deshalb einen nützlichen
+von Erschließungs-, Verwaltungs- und Strukturangaben eines digitalen
+Objekts und für die Beschreibung der komplexen Bezüge zwischen diesen
+verschiedenen Metadatenkategorien und der einzelnen Bestandteile des 
+digitalen Objekts. Es kann deshalb einen nützlichen
 Standard für den Austausch von digitalen Objekte zwischen
 unterschiedlichen Sammlungen liefern. Außerdem kann METS digitale
 Objekte mit Verhalten und Diensten verknüpfen. Diese Beschreibung
