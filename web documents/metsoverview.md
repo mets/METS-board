@@ -2,9 +2,33 @@
 
 ## Introduction
 
-METS is a standard for the encoding of descriptive, administrative, and structural metadata for complex digital objects, whether these are text-, video- or image-based. A [Digital Library Federation](http://www.diglib.org/) initiative, METS provides an XML document format for encoding metadata necessary for both the management of digital objects within a repository and the exchange of such objects between repositories, or between repositories and their users. Depending on its use, a METS document can  be used in the role of Submission Information Package (SIP), Archival Information Package (AIP), or Dissemination Information Package (DIP) within the [Open Archival Information System (OAIS) Reference Model](http://nssdc.gsfc.nasa.gov/nost/isoas/ref_model.html).
+METS is a standard for the encoding of descriptive, administrative, and
+structural metadata for complex digital objects, whether these are text-,
+video- or image-based. A [Digital Library Federation](http://www.diglib.org/)
+initiative, METS provides an XML document format for encoding metadata
+necessary for both the management of digital objects within a repository and
+the exchange of such objects between repositories, or between repositories and
+their users. Depending on its use, a METS document can  be used in the role of
+Submission Information Package (SIP), Archival Information Package (AIP), or
+Dissemination Information Package (DIP) within the [Open Archival Information
+System (OAIS) Reference
+Model](http://nssdc.gsfc.nasa.gov/nost/isoas/ref_model.html).
 
-METS provides a coherent integrated framework for the complex set of metadata needed for maintaining a library of digital objects. This metadata is both more extensive than and different from that used for managing collections of printed works and other physical materials. A book, for instance, will not dissolve into a series of unconnected pages if its owner fails to record structural metadata regarding the book's organization, nor will scholars be unable to evaluate the book's worth if the creator fails to note how it was produced. The same cannot be said for a digital version of the same book. Without structural metadata, the page image or text files comprising the digital work are of little use, and without technical metadata regarding the digitization process, scholars may be unsure of how accurate a reflection of the original the digital version provides. An organization must also have access to appropriate technical metadata for internal management purposes in order, for instance, to periodically refresh and migrate the data, so ensuring the durability of valuable resources.
+METS provides a coherent integrated framework for the complex set of metadata
+needed for maintaining a library of digital objects. This metadata is both more
+extensive than and different from that used for managing collections of printed
+works and other physical materials. A book, for instance, will not dissolve
+into a series of unconnected pages if its owner fails to record structural
+metadata regarding the book's organization, nor will scholars be unable to
+evaluate the book's worth if the creator fails to note how it was produced. The
+same cannot be said for a digital version of the same book. Without structural
+metadata, the page image or text files comprising the digital work are of
+little use, and without technical metadata regarding the digitization process,
+scholars may be unsure of how accurate a reflection of the original the digital
+version provides. An organization must also have access to appropriate
+technical metadata for internal management purposes in order, for instance, to
+periodically refresh and migrate the data, so ensuring the durability of
+valuable resources.
 
 A METS document consists of seven main sections:
 
@@ -39,20 +63,6 @@ A METS document consists of seven main sections:
     of a METS document and the only required section. It outlines a hierarchical structure for the
     digital object, and links the elements of that structure to
     content files and metadata that pertain to each element. Multiple structural maps are allowed.
-
-6.  [**Structural Links**](#structlink) - The Structural Links section
-    of METS allows METS creators to record the existence of hyperlinks
-    between nodes in the hierarchy outlined in the Structural Map. This
-    is of particular value in using METS to archive websites.
-
-7.  [**Behavior**](#behavior) - A behavior section can be used to
-    associate executable behaviors with content in the METS object. Each
-    behavior within a behavior section has an interface definition
-    element that represents an abstract definition of the set of
-    behaviors represented by a particular behavior section. Each
-    behavior also has a mechanism element which identifies a module of
-    executable code that implements and runs the behaviors defined
-    abstractly by the interface definition.
 
 A more detailed explanation of each section and their inter-relations
 follows.
@@ -108,8 +118,8 @@ particular digital object:
 
 ```xml 
 <dmdSec ID="dmd001">
-  <mdRef LOCTYPE="URN" MIMETYPE="application/xml" MDTYPE="EAD"
-    LABEL="Berol Collection Finding Aid" xlink:href="urn:x-nyu:fales1735" />
+  <mdRef MIMETYPE="application/xml" MDTYPE="EAD"
+    LABEL="Berol Collection Finding Aid" href="urn:x-nyu:fales1735" />
 </dmdSec>       
 ```
 
@@ -220,7 +230,7 @@ an ADMID attribute to point to this `<techMD>` element:
 
 ```xml
 <file ID="FILE001" ADMID="AMD001">
-  <FLocat LOCTYPE="URL" xlink:href="http://dlib.nyu.edu/press/testimg.tif" />
+  <FLocat href="http://dlib.nyu.edu/press/testimg.tif" />
 </file>
 ```
 
@@ -242,19 +252,19 @@ derivative audio file in MP3 format:
 <fileSec>
   <fileGrp ID="VERS1">
     <file ID="FILE001" MIMETYPE="application/xml" SIZE="257537" CREATED="2001-06-10T00:00:00Z">
-      <FLocat LOCTYPE="URL" xlink:href="http://dlib.nyu.edu/tamwag/beame.xml" />
+      <FLocat href="http://dlib.nyu.edu/tamwag/beame.xml" />
     </file>
   </fileGrp>
   <fileGrp ID="VERS2">
     <file ID="FILE002" MIMETYPE="audio/wav" SIZE="64232836"
       CREATED="2001-05-17T00:00:00Z" GROUPID="AUDIO1">
-      <FLocat LOCTYPE="URL" xlink:href="http://dlib.nyu.edu/tamwag/beame.wav" />
+      <FLocat href="http://dlib.nyu.edu/tamwag/beame.wav" />
     </file>
   </fileGrp>
   <fileGrp ID="VERS3" VERSDATE="2001-05-18T00:00:00Z">
     <file ID="FILE003" MIMETYPE="audio/mpeg" SIZE="8238866"
       CREATED="2001-05-18T00:00:00Z" GROUPID="AUDIO1">
-      <FLocat LOCTYPE="URL" xlink:href="http://dlib.nyu.edu/tamwag/beame.mp3" />
+      <FLocat href="http://dlib.nyu.edu/tamwag/beame.mp3" />
     </file>
   </fileGrp>
 </fileSec>
@@ -377,110 +387,13 @@ interviewer introduction can be found in both audio files in the segment
 beginning at time 00:00:00 in the file and extending through time
 00:01:47.
 
-## <span id="structlink">Structural Links</span>
-
-The structural links section of the METS format is the simplest in form
-of any of the major METS sections, containing only a single element,
-`<smLink>` (although that element may be repeated). The structural links
-section of METS is intended to allow you to record the existence of
-hyperlinks between items within the structural map, usually `<div>`
-elements. This is a useful facility if you wish to use METS to archive
-web sites, and wish to maintain a record of the hypertext structure of
-the sites separately from the HTML files of the site itself.
-
-As an example, consider the case of a METS document for a web page
-containing an image which is hyperlinked to another page. The
-`<structMap>` element would probably contain `<divs>` like the following
-for the two pages:
-
-```xml 
-<div ID="P1" TYPE="page" LABEL="Page 1">
-  <fptr FILEID="HTMLF1"/>
-  <div ID="IMG1" TYPE="image" LABEL="Image Hyperlink to Page 2">
-    <fptr FILEID="JPGF1"/>
-  </div>
-</div>
-
-<div ID="P2" TYPE="page" LABEL="Page 2">
-  <fptr FILEID="HTMLF2"/>
-</div>
-```
-
-If you wished to indicate that the image file in the `<div>` contained
-with the first page `<div>` is hyperlinked to the HTML file in the
-second page `<div>`, you would have a `<smLink>` element within the
-`<structLink>` section of the METS document as
-follows:
-
-```xml 
-<smLink xlink:from="IMG1" xlink:to="P2" xlink:title="Hyperlink from 
-  JPEG Image on Page 1 to Page 2" xlink:show="new"
-  xlink:actuate="onRequest" />
-```
-
-The `<smLink>` link element above uses a slightly modified form of the
-XLink syntax; all of the XLink attributes are used, but the "to" and
-"from" attributes are declared to be of type IDREF rather than NMTOKEN
-as in the original XLink specification. This allows you to indicate the
-existence of links between any two nodes in the structural map, and also
-use XML processing tools to confirm that the linked nodes actually
-exist.
-
-## <span id="behavior">Behavior Section</span>
-
-A behavior section can be used to associate executable behaviors with
-content in the METS object. A behavior section contains one or more
-`<behavior>` elements, each of which has an interface definition element
-that represents an abstract definition of the set of behaviors
-represented by a particular behavior section. A `<behavior>` also has a
-`<mechanism>` element which is used to point to a module of executable
-code that implements and runs the behavior defined abstractly by the
-interface definition.
-
-Digital object behaviors can be implemented as linkages to distributed
-web services as in the following example from the Mellon
-[Fedora](http://www.fedora.info/)
-project.
-
-```xml 
-<behavior ID="DISS1.1" STRUCTID="S1.1" BTYPE="uva-bdef:stdImage"
-  CREATED="2002-05-25T08:32:00" LABEL="UVA Std Image Disseminator"
-  GROUPID="DISS1" ADMID="AUDREC1">
-
-  <interfaceDef LABEL="UVA Standard Image Behavior Definition"
-    LOCTYPE="URN" xlink:href="uva-bdef:stdImage"/>
-
-  <mechanism LABEL="A NEW AND IMPROVED Image Mechanism"
-    LOCTYPE="URN" xlink:href="uva-bmech:BETTER-imageMech"/>
-</behavior>
-```
-
-See also:
-
-  - [The Fedora Technical
-    Specification](http://www.autopenhosting.org/fedora/master-spec-12.20.02.pdf)
-    (pdf)
-
-  - [Sample Digital
-    Object](http://www.autopenhosting.org/fedora/obj-image-userinput-archdraw.xml)
-    (encoded using METS)
-
-  - [Sample Behavior Definition
-    Object](http://www.autopenhosting.org/fedora/bdef-image-userinput.xml)
-    (encoded using METS)
-
-  - [Sample Behavior Mechanism
-    Object](http://www.autopenhosting.org/fedora/bmech-image-userinput-mrsid.xml)
-    (encoded using METS)
-
 ## Conclusion
 
 The METS schema provides a flexible mechanism for encoding descriptive,
-administrative, and structural metadata for a digital object and its parts,
-and for expressing the complex links between these various forms of
-metadata and constituent parts of the object. It can therefore provide a useful standard for the exchange of
-digital objects between repositories. In addition, METS provides
-the ability to associate a digital object with behaviours or services.
-The above discussion highlights the major features of the schema, but a
-thorough examination of the schema and its included documentation is
-necessary to understand the full range of its capabilities.
+administrative, and structural metadata for a digital object and its parts, and
+for expressing the complex links between these various forms of metadata and
+constituent parts of the object. It can therefore provide a useful standard for
+the exchange of digital objects between repositories.  The above discussion
+highlights the major features of the schema, but a thorough examination of the
+schema and its included documentation is necessary to understand the full range
+of its capabilities.
