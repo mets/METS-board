@@ -36,30 +36,22 @@ A METS document consists of seven main sections:
     describing the METS document itself, including such information as
     creator, editor, last modification date, etc.
 
-2.  [**Descriptive Metadata**](#descMD) - The descriptive metadata
-    section may point to descriptive metadata external to the METS
-    document (e.g., a MARC record in an OPAC or an EAD finding aid
-    maintained on a WWW server), or contain internally embedded
-    descriptive metadata, or both. Multiple instances of both external
-    and internal descriptive metadata may be included in the descriptive
-    metadata section.
+2.  [**Metadata**](#mdSec) - The metadata section can provide information regarding descriptive metadata,
+    technical metadata describing how the files were created and stored,
+    intellectual property rights, metadata regarding the original source object
+    from which the digital object derives, and information regarding the provenance
+    of the files comprising the digital object (i.e., master/derivative file The
+    metadata element can point to metadata external to the METS document (e.g., a
+    MARC record in an OPAC or an EAD finding aid maintained on a WWW server),
+    contain internally embedded metadata, or both. Multiple instances of both
+    external and internal metadata may be included in the metadata section.
 
-3.  [**Administrative Metadata**](#admMD) - The administrative metadata
-    section provides information regarding how the files were created
-    and stored, intellectual property rights, metadata regarding the
-    original source object from which the digital object
-    derives, and information regarding the provenance of the files
-    comprising the digital object (i.e., master/derivative file
-    relationships, and migration/transformation information). As with
-    descriptive metadata, administrative metadata may be either external
-    to the METS document, or encoded internally.
-
-4.  [**File Section**](#filegrp) - The file section lists all files
+3.  [**File Section**](#filegrp) - The file section lists all files
     containing content which comprise the electronic versions of the
     digital object. `<file>` elements may be grouped within `<fileGrp>`
     elements, to provide for subdividing the files by object version.
 
-5.  [**Structural Map**](#structmap) - The structural map is the heart
+4.  [**Structural Map**](#structmap) - The structural map is the heart
     of a METS document and the only required section. It outlines a hierarchical structure for the
     digital object, and links the elements of that structure to
     content files and metadata that pertain to each element. Multiple structural maps are allowed.
@@ -103,40 +95,51 @@ Allowed values for ROLE include "ARCHIVIST," "CREATOR," "CUSTODIAN,"
 "DISSEMINATOR," "EDITOR," "IPOWNER" and "OTHER." Allowed values for
 the TYPE attribute are "INDIVIDUAL," "ORGANIZATION" or "OTHER."
 
-## <span id="descMD">Descriptive Metadata</span>
+## <span id="descMD">Metadata</span>
 
-The descriptive metadata section of a METS document consists of one or
-more `<dmdSec>` (Descriptive Metadata Section) elements. Each `<dmdSec>`
+The metadata section of a METS document consists of one or
+more `<metadata>` elements. Each `<metadata>`
 element may contain a pointer to external metadata (an `<mdRef>`
 element), internally embedded metadata (within an `<mdWrap>` element),
-or both.
+or both. Metadata may pertain to the object described in the METS document as a
+whole, the original source material used to create the object, or the
+individual files comprising the object.
 
-**External Descriptive Metadata (mdRef):** an `mdRef` element provides a
+There are five main forms of metadata provided for in a METS document: 
+1. Descriptive metadata about the digital object, such as MARC, MODS, EAD,
+   Dublin Core, etc;
+2. Technical Metadata (information regarding files' creation, format, and use
+   characteristics), 3. Intellectual Property Rights Metadata (copyright and
+license information), 4. Source Metadata (descriptive and administrative
+metadata regarding the analog source from which a digital object derives), and
+5. Digital Provenance Metadata (information regarding source/destination
+   relationships between files, including master/derivative relationships
+between files and information regarding migrations/transformations employed on
+files between original digitization of an artifact and its current incarnation
+as a digital object).  Each of these five different types of metadata has a
+distinct `USE` attribute in the `<metadata>` element: `DESCRIPTIVE`, `TECHNICAL`,
+`RIGHTS`, `SOURCE`, or `DIGIPROV`.  `<metadata>` elements may occur as many
+times as needed in any METS document with any combination of `USE` attributes.
+
+**External Metadata (mdRef):** an `mdRef` element provides a
 URI which may be used in retrieving the external metadata. For example,
 the following metadata reference points to the finding aid for a
 particular digital object:
 
 ```xml 
-<dmdSec ID="dmd001">
+<metadata USE="DESCRIPTIVE" ID="dmd001">
   <mdRef MIMETYPE="application/xml" MDTYPE="EAD"
     LABEL="Berol Collection Finding Aid" href="urn:x-nyu:fales1735" />
-</dmdSec>       
+</metadata>       
 ```
 
-The `<mdRef>` element of this `<dmdSec>` contains four attributes. The
-LOCTYPE attribute specifies the type of locator contained in body of the
-element; valid values for LOCTYPE include 'URN,' 'URL,' 'PURL,'
-'HANDLE,' 'DOI,' and 'OTHER.' The MIMETYPE attribute allows you to
-specify the MIME type for the external descriptive metadata, and the
-MDTYPE allows you to indicate what form of metadata is being referenced.
-Valid values for the MDTYPE element include MARC, MODS, EAD, VRA (VRA
-Core), DC (Dublin Core), NISOIMG (NISO Technical Metadata for Digital
-Still Images), LC-AV (Library of Congress Audiovisual Metadata) , TEIHDR
-(TEI Header), DDI (Data Documentation Initiative), FGDC (Federal
-Geographic Data Committee Metadata Standard \[FGDC-STD-001-1998\] ), and
-OTHER. LABEL provides a mechanism for describing this metadata to those
-viewing a METS document, in a 'Table of Contents' display of the METS
-document, for example.
+The `<mdRef>` element of this `<metadata>` contains three attributes. The
+MIMETYPE attribute allows you to specify the MIME type for the external
+descriptive metadata, and the MDTYPE allows you to indicate what form of
+metadata is being referenced. Suggested values for the MDTYPE element are
+listed ELSEWHERE - TODO.  LABEL provides a mechanism for describing this
+metadata to those viewing a METS document, in a 'Table of Contents' display of
+the METS document, for example.
 
 **Internal Descriptive Metadata (mdWrap):** An mdWrap element provides a
 wrapper around metadata embedded within a METS document. Such metadata
@@ -148,7 +151,7 @@ PROVIDED that the metadata is Base64 encoded and wrapped in a
 demonstrate the use of the mdWrap element:
 
 ```xml
-<dmdSec ID="dmd002">
+<metadata ID="dmd002" USE="DESCRIPTIVE">
   <mdWrap MIMETYPE="text/xml" MDTYPE="DC" LABEL="Dublin Core Metadata">
     <xmlData>
       <dc:title>Alice's Adventures in Wonderland</dc:title>
@@ -158,60 +161,28 @@ demonstrate the use of the mdWrap element:
       <dc:type>text</dc:type>
     </xmlData>
   </mdWrap>
-</dmdSec>           
+</metadata>           
 ```
 
 ```xml 
-<dmdSec ID="dmd003">
+<metadata ID="dmd003" USE="DESCRIPTIVE">
   <mdWrap MIMETYPE="application/marc" MDTYPE="MARC" LABEL="OPAC Record">
     <binData>MDI0ODdjam0gIDIyMDA1ODkgYSA0NU0wMDAxMDA...(etc.)</binData>
   </mdWrap>
-</dmdSec>           
+</metadata>           
 ```
 
-Note that all `<dmdSec>` elements must possess an ID attribute. This
-attribute provides a unique, internal name for each `<dmdSec>` element
-which can be used in the structural map to link a particular division of
-the document hierarchy to a particular `<dmdSec>` element. This allows
-specific sections of descriptive metadata to be linked to specific parts
-of the digital object.
+Note that all `<metadata>` elements must possess an ID attribute. This
+attribute provides a unique, internal name for each `<metadata>` element which
+can be used in the structural map to link a particular division of the document
+hierarchy to a particular `<metadata>` element. This allows specific sections
+of metadata to be linked to specific parts of the digital object.
 
-## <span id="admMD">Administrative Metadata</span>
-
-`<amdSec>` elements contain the administrative metadata pertaining to
-the files comprising a digital object, as well as that
-pertaining to the original source material used to create the object.
-There are four main forms of administrative metadata provided for in a
-METS document: 1. Technical Metadata (information regarding files'
-creation, format, and use characteristics), 2. Intellectual Property
-Rights Metadata (copyright and license information), 3. Source Metadata
-(descriptive and administrative metadata regarding the analog source
-from which a digital object derives), and 4. Digital Provenance
-Metadata (information regarding source/destination relationships between
-files, including master/derivative relationships between files and
-information regarding migrations/transformations employed on files
-between original digitization of an artifact and its current incarnation
-as a digital object). Each of these four different types of
-administrative metadata has a unique subelement within the `<amdSec>`
-portion of a METS document in which that form of metadata can be
-embedded: `<techMD>`, `<rightsMD>`, `<sourceMD>`, and `<digiprovMD>`.
-Each of these four elements may occur more than once in any METS
-document.
-
-The `<techMD>`, `<rightsMD>`, `<sourceMD>` and `<digiprovMD>` elements
-employ the same content model as `<dmdSec>`: they may contain an
-`<mdRef>` element to point to external administrative metadata, an
-`<mdWrap>` element to use when embedding administrative metadata within
-a METS document, or both. Multiple instances of these elements may occur
-within a METS document, and all of them must carry an ID attribute so
-that other elements within the METS document (such as divisions within
-the structural map or `<file>` elements) may be linked to the `<amdSec>`
-subelements which describe them. One might, for example, have an
-`<techMD>` element which includes technical metadata regarding a file's
-preparation:
+Technical, rights, source, and digital provenance metadata can be included 
+in the same way:
 
 ```xml
-<techMD ID="AMD001">
+<metadata USE="TECHNICAL" ID="techmd001">
   <mdWrap MIMETYPE="text/xml" MDTYPE="NISOIMG" LABEL="NISO Img. Data">
     <xmlData>
       <niso:MIMEtype>image/tiff</niso:MIMEtype>
@@ -226,10 +197,10 @@ preparation:
 
 A `<file>` element within a `<fileGrp>` might then identify this
 administrative metadata as pertaining to the file it identifies by using
-an ADMID attribute to point to this `<techMD>` element:
+an MDID attribute to point to this `<metadata>` element:
 
 ```xml
-<file ID="FILE001" ADMID="AMD001">
+<file ID="FILE001" MDID="techmd001">
   <FLocat href="http://dlib.nyu.edu/press/testimg.tif" />
 </file>
 ```
