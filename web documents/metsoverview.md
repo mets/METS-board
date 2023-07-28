@@ -66,7 +66,7 @@ also record the names of one or more agents who have played some role
 with respect to the METS document, specify the role they have played,
 and add a small note regarding their activity. Finally, you may record a
 variety of alternative identifiers for the METS document to supplement
-the primary identifier for the METS document recorded in the OBJID
+the primary identifier for the METS document recorded in the `OBJID`
 attribute on the METS root element. A small example of a METS Header
 might look like the following:  
 
@@ -82,15 +82,13 @@ might look like the following:
 ```
 
 This example contains two attributes on the `<metsHdr>` element,
-CREATEDATE and RECORDSTATUS, which are used to indicate the date and
+`CREATEDATE` and `RECORDSTATUS`, which are used to indicate the date and
 time the METS record was created, and indicate the status of the
 record's processing. Two individual agents are listed who have worked on
 this METS record, the person responsible for creating the record and an
-archivist responsible for the original material. Both the ROLE and TYPE
-attributes on the `<agent>` element employ controlled vocabularies.
-Allowed values for ROLE include "ARCHIVIST," "CREATOR," "CUSTODIAN,"
-"DISSEMINATOR," "EDITOR," "IPOWNER" and "OTHER." Allowed values for
-the TYPE attribute are "INDIVIDUAL," "ORGANIZATION" or "OTHER."
+archivist responsible for the original material. Both the `ROLE` and `TYPE`
+attributes on the `<agent>` element best employ controlled vocabularies.
+==TODO: external link to suggested values==
 
 ## <span id="mdSec">Metadata</span>
 
