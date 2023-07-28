@@ -88,32 +88,37 @@ record's processing. Two individual agents are listed who have worked on
 this METS record, the person responsible for creating the record and an
 archivist responsible for the original material. Both the `ROLE` and `TYPE`
 attributes on the `<agent>` element best employ controlled vocabularies.
-==TODO: external link to suggested values==
 
-## <span id="mdSec">Metadata</span>
+>TODO: external link to suggested values
 
-The metadata section of a METS document consists of one or
-more `<metadata>` elements. Each `<metadata>`
+## <span id="mdSec">Metadata Section</span>
+
+The metadata section of a METS document contains all metadata pertaining to the digital object, its components and any original source material from which the digital object is derived.
+The `<mdSec>` element consists of one or
+more `<md>` elements. Each `<md>`
 element may contain a pointer to external metadata (an `<mdRef>`
 element), internally embedded metadata (within an `<mdWrap>` element),
-or both. Metadata may pertain to the object described in the METS document as a
+or both.
+The optional `<mdGrp>` element allows grouping related kinds of metadata.
+Metadata may pertain to the object described in the METS document as a
 whole, the original source material used to create the object, or the
 individual files comprising the object.
 
-There are five main forms of metadata provided for in a METS document: 
+There are five main types of metadata provided for in a METS document: 
 1. Descriptive metadata about the digital object, such as MARC, MODS, EAD,
    Dublin Core, etc;
 2. Technical Metadata (information regarding files' creation, format, and use
-   characteristics), 3. Intellectual Property Rights Metadata (copyright and
-license information), 4. Source Metadata (descriptive and administrative
-metadata regarding the analog source from which a digital object derives), and
+   characteristics);
+3. Intellectual Property Rights Metadata (copyright and license information);
+4. Source Metadata (descriptive and administrative metadata regarding the analog source from which a digital object derives), and
 5. Digital Provenance Metadata (information regarding source/destination
-   relationships between files, including master/derivative relationships
-between files and information regarding migrations/transformations employed on
+   relationships between files, including master/derivative relationships between files and information regarding migrations/transformations employed on
 files between original digitization of an artifact and its current incarnation
-as a digital object).  Each of these five different types of metadata has a
-distinct `USE` attribute in the `<metadata>` element: `DESCRIPTIVE`, `TECHNICAL`,
-`RIGHTS`, `SOURCE`, or `DIGIPROV`.  `<metadata>` elements may occur as many
+as a digital object).
+
+Each of these five different types of metadata has a
+distinct `USE` attribute in the `<md>` element: `DESCRIPTIVE`, `TECHNICAL`,
+`RIGHTS`, `SOURCE`, or `DIGIPROV`.  `<md>` elements may occur as many
 times as needed in any METS document with any combination of `USE` attributes.
 
 **External Metadata (mdRef):** an `mdRef` element provides a
