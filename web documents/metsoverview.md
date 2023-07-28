@@ -30,19 +30,19 @@ technical metadata for internal management purposes in order, for instance, to
 periodically refresh and migrate the data, so ensuring the durability of
 valuable resources.
 
-A METS document consists of seven main sections:
+A METS document consists of four main sections:
 
 1.  [**METS Header**](#MHead) - The METS Header contains metadata
     describing the METS document itself, including such information as
     creator, editor, last modification date, etc.
 
-2.  [**Metadata**](#mdSec) - The metadata section can provide information regarding descriptive metadata,
+2.  [**Metadata Section**](#mdSec) - The metadata section can provide information regarding descriptive metadata,
     technical metadata describing how the files were created and stored,
     intellectual property rights, metadata regarding the original source object
     from which the digital object derives, and information regarding the provenance
-    of the files comprising the digital object (i.e., master/derivative file The
+    of the files comprising the digital object (i.e., master/derivative file relationships, and migration/transformation information). The
     metadata element can point to metadata external to the METS document (e.g., a
-    MARC record in an OPAC or an EAD finding aid maintained on a WWW server),
+    MARC record in an OPAC or an EAD finding aid maintained on a WWW server), or
     contain internally embedded metadata, or both. Multiple instances of both
     external and internal metadata may be included in the metadata section.
 
@@ -51,10 +51,7 @@ A METS document consists of seven main sections:
     digital object. `<file>` elements may be grouped within `<fileGrp>`
     elements, to provide for subdividing the files by object version.
 
-4.  [**Structural Map**](#structmap) - The structural map is the heart
-    of a METS document and the only required section. It outlines a hierarchical structure for the
-    digital object, and links the elements of that structure to
-    content files and metadata that pertain to each element. Multiple structural maps are allowed.
+4.  [**Structural Section**](#structSec) - The structural section contains the `structMap` elements that provide hierarchical organizations of the components of the digital object, and links the elements of that structure to content files and metadata that pertain to each element. Multiple structural maps are allowed.
 
 A more detailed explanation of each section and their inter-relations
 follows.
@@ -95,7 +92,7 @@ Allowed values for ROLE include "ARCHIVIST," "CREATOR," "CUSTODIAN,"
 "DISSEMINATOR," "EDITOR," "IPOWNER" and "OTHER." Allowed values for
 the TYPE attribute are "INDIVIDUAL," "ORGANIZATION" or "OTHER."
 
-## <span id="descMD">Metadata</span>
+## <span id="mdSec">Metadata</span>
 
 The metadata section of a METS document consists of one or
 more `<metadata>` elements. Each `<metadata>`
@@ -277,7 +274,7 @@ a digital objects to users, it can be a valuable feature for
 exchanging digital objects between repositories, or for
 archiving versions of digital objects for off-site storage.
 
-## <span id="structmap">Structural Map</span>
+## <span id="structSec">Structural Section</span>
 
 The structural map section of a METS document defines a hierarchical
 structure which can be presented to users of the digital  object
