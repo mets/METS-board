@@ -94,13 +94,15 @@ attributes on the `<agent>` element best employ controlled vocabularies.
 ## <span id="mdSec">Metadata Section</span>
 
 The metadata section of a METS document contains all metadata pertaining to the digital object, its components and any original source material from which the digital object is derived.
-The `<mdSec>` element consists of one or
-more `<md>` elements. Each `<md>`
-element may contain a pointer to external metadata (an `<mdRef>`
-element), internally embedded metadata (within an `<mdWrap>` element),
-or both.
-The optional `<mdGrp>` element allows grouping related kinds of metadata.
-Metadata may pertain to the object described in the METS document as a
+The `<mdSec>` element consists of one or more `<md>` elements, optionally grouped by one or more `<mdGrp>` elements. 
+
+Note that all  `<mdSec>`, `<mdGrp>` and `<md>` elements must possess an `ID` attribute. This
+attribute provides a unique, internal name for each element which
+can be used in the file section and structural section to link a particular division of the document
+hierarchy to a particular element with an `MDID` attribute. This allows specific sections
+of metadata to be linked to specific parts of the digital object.
+  
+Metadata in `<md>` element may pertain to the object described in the METS document as a
 whole, the original source material used to create the object, or the
 individual files comprising the object.
 
@@ -108,18 +110,23 @@ There are five main types of metadata provided for in a METS document:
 1. Descriptive metadata about the digital object, such as MARC, MODS, EAD,
    Dublin Core, etc;
 2. Technical Metadata (information regarding files' creation, format, and use
-   characteristics);
-3. Intellectual Property Rights Metadata (copyright and license information);
+   characteristics), such as PREMIS, NISOIMG, etc;
+3. Intellectual Property Rights Metadata (copyright and license information), such as PREMIS, ODRL, etc;
 4. Source Metadata (descriptive and administrative metadata regarding the analog source from which a digital object derives), and
 5. Digital Provenance Metadata (information regarding source/destination
    relationships between files, including master/derivative relationships between files and information regarding migrations/transformations employed on
 files between original digitization of an artifact and its current incarnation
-as a digital object).
+as a digital object), such as PREMIS.etc.
 
-Each of these five different types of metadata has a
+Each of these five different types of metadata can have a
 distinct `USE` attribute in the `<md>` element: `DESCRIPTIVE`, `TECHNICAL`,
 `RIGHTS`, `SOURCE`, or `DIGIPROV`.  `<md>` elements may occur as many
 times as needed in any METS document with any combination of `USE` attributes.
+
+Each `<md>`
+element may contain a pointer to external metadata (an `<mdRef>`
+element), internally embedded metadata (within an `<mdWrap>` element),
+or both.
 
 **External Metadata (mdRef):** an `mdRef` element provides a
 URI which may be used in retrieving the external metadata. For example,
@@ -127,31 +134,36 @@ the following metadata reference points to the finding aid for a
 particular digital object:
 
 ```xml 
-<metadata USE="DESCRIPTIVE" ID="dmd001">
+<md USE="DESCRIPTIVE" ID="dmd001">
   <mdRef MIMETYPE="application/xml" MDTYPE="EAD"
-    LABEL="Berol Collection Finding Aid" href="urn:x-nyu:fales1735" />
-</metadata>       
+    LABEL="Berol Collection Finding Aid" LOCTYPE="URI" LOCREF="urn:x-nyu:fales1735" />
+</md>       
 ```
 
-The `<mdRef>` element of this `<metadata>` contains three attributes. The
-MIMETYPE attribute allows you to specify the MIME type for the external
-descriptive metadata, and the MDTYPE allows you to indicate what form of
+The `<mdRef>` element of this `<md>` element contains five attributes. The
+`MIMETYPE` attribute allows you to specify the MIME type for the external
+metadata, and the `MDTYPE` attribute allows you to indicate what form of
 metadata is being referenced. Suggested values for the MDTYPE element are
-listed ELSEWHERE - TODO.  LABEL provides a mechanism for describing this
+listed 
+>ELSEWHERE - TODO.
+
+The `LABEL` attribute provides a mechanism for describing this
 metadata to those viewing a METS document, in a 'Table of Contents' display of
 the METS document, for example.
+The attribute pair `LOCTYPE` and `LOCREF` contain information about the location of the external metadata.
+The `LOCTYPE` attribute is used to record the type of the reference (e.g. URI, URL, database, relative path), and the actual reference is given in `LOCREF` attribute.
 
-**Internal Descriptive Metadata (mdWrap):** An mdWrap element provides a
+**Internal Metadata (mdWrap):** An `<mdWrap>` element provides a
 wrapper around metadata embedded within a METS document. Such metadata
 can be in one of two forms: 1. XML-encoded metadata, with the
 XML-encoding identifying itself as belonging to a namespace other than
 the METS document namespace, or 2. any arbitrary binary or textual form,
 PROVIDED that the metadata is Base64 encoded and wrapped in a
-`<binData>` element within the mdWrap element. The following examples
-demonstrate the use of the mdWrap element:
+`<binData>` element within the `<mdWrap>` element. The following examples
+demonstrate the use of the `<mdWrap>` element:
 
 ```xml
-<metadata ID="dmd002" USE="DESCRIPTIVE">
+<md ID="dmd002" USE="DESCRIPTIVE">
   <mdWrap MIMETYPE="text/xml" MDTYPE="DC" LABEL="Dublin Core Metadata">
     <xmlData>
       <dc:title>Alice's Adventures in Wonderland</dc:title>
@@ -161,28 +173,22 @@ demonstrate the use of the mdWrap element:
       <dc:type>text</dc:type>
     </xmlData>
   </mdWrap>
-</metadata>           
+</md>           
 ```
 
 ```xml 
-<metadata ID="dmd003" USE="DESCRIPTIVE">
+<md ID="dmd003" USE="DESCRIPTIVE">
   <mdWrap MIMETYPE="application/marc" MDTYPE="MARC" LABEL="OPAC Record">
     <binData>MDI0ODdjam0gIDIyMDA1ODkgYSA0NU0wMDAxMDA...(etc.)</binData>
   </mdWrap>
-</metadata>           
+</md>           
 ```
-
-Note that all `<metadata>` elements must possess an ID attribute. This
-attribute provides a unique, internal name for each `<metadata>` element which
-can be used in the structural map to link a particular division of the document
-hierarchy to a particular `<metadata>` element. This allows specific sections
-of metadata to be linked to specific parts of the digital object.
 
 Technical, rights, source, and digital provenance metadata can be included 
 in the same way:
 
 ```xml
-<metadata USE="TECHNICAL" ID="techmd001">
+<md USE="TECHNICAL" ID="techmd001">
   <mdWrap MIMETYPE="text/xml" MDTYPE="NISOIMG" LABEL="NISO Img. Data">
     <xmlData>
       <niso:MIMEtype>image/tiff</niso:MIMEtype>
@@ -192,16 +198,16 @@ in the same way:
       <niso:ScanningAgency>NYU Press</niso:ScanningAgency>
     </xmlData>
   </mdWrap>
-</techMD>
+</md>
 ```
 
 A `<file>` element within a `<fileGrp>` might then identify this
-administrative metadata as pertaining to the file it identifies by using
-an MDID attribute to point to this `<metadata>` element:
+technical metadata as pertaining to the file it identifies by using
+an `MDID` attribute to point to this `<md>` element:
 
 ```xml
 <file ID="FILE001" MDID="techmd001">
-  <FLocat href="http://dlib.nyu.edu/press/testimg.tif" />
+  <FLocat LOCTYPE="URL" LOCREF="http://dlib.nyu.edu/press/testimg.tif" />
 </file>
 ```
 
