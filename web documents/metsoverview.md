@@ -119,8 +119,11 @@ files between original digitization of an artifact and its current incarnation
 as a digital object), such as PREMIS.etc.
 
 Each of these five different types of metadata can have a
-distinct `USE` attribute in the `<md>` element: `DESCRIPTIVE`, `TECHNICAL`,
-`RIGHTS`, `SOURCE`, or `DIGIPROV`.  `<md>` elements may occur as many
+distinct `USE` attribute in the `<md>` element with suggested values: `DESCRIPTIVE`, `TECHNICAL`,
+`RIGHTS`, `SOURCE`, or `DIGIPROV`.
+>TODO: external link to suggested values
+
+`<md>` elements may occur as many
 times as needed in any METS document with any combination of `USE` attributes.
 
 Each `<md>`
@@ -160,7 +163,7 @@ XML-encoding identifying itself as belonging to a namespace other than
 the METS document namespace, or 2. any arbitrary binary or textual form,
 PROVIDED that the metadata is Base64 encoded and wrapped in a
 `<binData>` element within the `<mdWrap>` element. The following examples
-demonstrate the use of the `<mdWrap>` element:
+demonstrate the use of the `<mdWrap>` element for descriptive metadata:
 
 ```xml
 <md ID="dmd002" USE="DESCRIPTIVE">
@@ -213,9 +216,9 @@ an `MDID` attribute to point to this `<md>` element:
 
 ## <span id="filegrp">File Section</span>
 
-The file section (`<fileSec>`) contains one or more `<fileGrp>` elements
-used to group together related files. A `<fileGrp>` lists all of the
-files which comprise a single electronic version of the digital
+The file section (`<fileSec>`) can contain one or more `<fileGrp>` elements
+used to group together related files. An optional `<fileGrp>` element lists all of the
+`<file>` elements which comprise a single electronic version of the digital
 object. For example, there might be separate `<fileGrp>` elements for
 the thumbnails, the master archival images, the pdf versions, the TEI
 encoded text versions, etc.
@@ -229,25 +232,25 @@ derivative audio file in MP3 format:
 <fileSec>
   <fileGrp ID="VERS1">
     <file ID="FILE001" MIMETYPE="application/xml" SIZE="257537" CREATED="2001-06-10T00:00:00Z">
-      <FLocat href="http://dlib.nyu.edu/tamwag/beame.xml" />
+      <FLocat LOCTYPE="URL" LOCREF="http://dlib.nyu.edu/tamwag/beame.xml" />
     </file>
   </fileGrp>
   <fileGrp ID="VERS2">
     <file ID="FILE002" MIMETYPE="audio/wav" SIZE="64232836"
       CREATED="2001-05-17T00:00:00Z" GROUPID="AUDIO1">
-      <FLocat href="http://dlib.nyu.edu/tamwag/beame.wav" />
+      <FLocat LOCTYPE="URL" LOCREF="http://dlib.nyu.edu/tamwag/beame.wav" />
     </file>
   </fileGrp>
   <fileGrp ID="VERS3" VERSDATE="2001-05-18T00:00:00Z">
     <file ID="FILE003" MIMETYPE="audio/mpeg" SIZE="8238866"
       CREATED="2001-05-18T00:00:00Z" GROUPID="AUDIO1">
-      <FLocat href="http://dlib.nyu.edu/tamwag/beame.mp3" />
+      <FLocat LOCTYPE="URL" LOCREF="http://dlib.nyu.edu/tamwag/beame.mp3" />
     </file>
   </fileGrp>
 </fileSec>
 ```
 
-In this case, the `<fileSec>` contains three subsidiary `<fileGrp>`
+In this case, the `<fileSec>` element contains three subsidiary `<fileGrp>`
 elements, one for each different version of the object. The first is an
 XML-encoded transcription file, the second is a master audio file in WAV
 format, and the third is a derivative audio file in MP3 format. While
@@ -260,18 +263,22 @@ cases, being able to separate `<file>` elements into `<fileGrp>`s makes
 identifying the files belonging to a particular version of the document
 a simple task.
 
-You may note the presence of the GROUPID attributes with identical
+The location of the files is captured in the `<FLocat>` element. The attribute pair `LOCTYPE` and `LOCREF` must be used when using a reference of any kind. The `LOCTYPE` attribute is used to record the type of the reference (e.g. URL, database, relative path
+>TODO: external link to suggested values
+
+), and the actual reference is given in `LOCREF` attribute. 
+
+You may note the presence of the `GROUPID` attributes with identical
 values on the two audio `<file>` elements; these indicate that the two
 files, while belonging to different versions of the object, contain the
-same basic information (you can use the GROUPID for the same purpose to
+same basic information (you can use the `GROUPID` attribute for the same purpose to
 indicate equivalent page image files in digital objects
 containing many scanned page images).
 
-You should also note that all of the `<file>` elements have a unique ID
-attribute. This attribute provides a unique, internal name for this file
+You should also note that all of the `<file>` elements have a unique `ID`
+attribute. This attribute provides a unique, internal name for this file within the METS document
 which can be referenced by other portions of the document. You’ll see
-this type of referencing in action when we look at the Structural Map
-Section.
+this type of referencing in action when we look at the Structural Section.
 
 It should be mentioned that `<file>` elements may possess an
 `<FContent>` element rather than an `<FLocat>` element. `<FContent>`
