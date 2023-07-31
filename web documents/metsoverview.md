@@ -292,9 +292,12 @@ archiving versions of digital objects for off-site storage.
 
 ## <span id="structSec">Structural Section</span>
 
-The structural map section of a METS document defines a hierarchical
-structure which can be presented to users of the digital  object
-to allow them to navigate through it. The `<structMap>` element encodes
+The structural section of a METS document defines one or more hierarchical
+structures which can be presented to users of the digital object
+to allow them to navigate through it. The `<structSec>` element contains one 
+or more `<structMap>` elements which potentially describe multiple arrangements 
+of files, for example, it could describe both a physical layout of files on disk 
+as well as a logical arrangement of intellectual content. The `<structMap>` element encodes
 this hierarchy as a nested series of `<div>` elements. Each `<div>`
 carries attribute information specifying what kind of division it is,
 and also may contain multiple METS pointer (`<mptr>`) and file pointer
@@ -308,7 +311,7 @@ specific locations within a file) within the current METS document's
 `<fileSec>` section that correspond to the portion in the hierarchy
 represented by the current `<div>`.
 
-The following provides an example of an extremely simple structural map:
+The following provides an example of an extremely simple structural map within a structural section:
 
 ```xml 
 <structMap TYPE="logical">
@@ -362,14 +365,15 @@ corresponds with only a portion of the linked file, and to identify the
 exact portion of each linked file. For example, the first division (the
 interviewer introduction) is linked to a portion of the XML
 transcription file (FILE001) which is found between the two tags in the
-transcription file with ID attribute values of "INTVWBG" and "INTVWND."
+transcription file with `ID` attribute values of "INTVWBG" and "INTVWND."
 It is also linked to the two different audio files; in these cases,
-rather than specifying ID attribute values within the linked files, the
+rather than specifying `ID` attribute values within the linked files, the
 begin and end points of the linked material within the files is
 indicated by a simple time code value of the form HH:MM:SS. So, the
 interviewer introduction can be found in both audio files in the segment
 beginning at time 00:00:00 in the file and extending through time
 00:01:47.
+> TODO: probably add something about linking between structmaps
 
 ## Conclusion
 
