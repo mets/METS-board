@@ -1,3 +1,4 @@
+>TO DECIDE: provide information about METS 1 or link to Overview & Tutorial METS 1?
 # METS: An Overview & Tutorial
 
 ## Introduction
@@ -41,7 +42,7 @@ A METS document consists of four main sections:
     intellectual property rights, metadata regarding the original source object
     from which the digital object derives, and information regarding the provenance
     of the files comprising the digital object (i.e., master/derivative file relationships, and migration/transformation information). The
-    metadata element can point to metadata external to the METS document (e.g., a
+    `<md>` element can point to metadata external to the METS document (e.g., a
     MARC record in an OPAC or an EAD finding aid maintained on a WWW server), or
     contain internally embedded metadata, or both. Multiple instances of both
     external and internal metadata may be included in the metadata section.
@@ -97,16 +98,16 @@ The metadata section of a METS document contains all metadata pertaining to the 
 The `<mdSec>` element consists of one or more `<md>` elements, optionally grouped by one or more `<mdGrp>` elements. 
 
 Note that all  `<mdSec>`, `<mdGrp>` and `<md>` elements must possess an `ID` attribute. This
-attribute provides a unique, internal name for each element which
-can be used in the file section and structural section to link a particular division of the document
-hierarchy to a particular element with an `MDID` attribute. This allows specific sections
+attribute provides a unique, internal name for each element within the METS document which
+can be used in the file section and structural section to link a particular file or file group or particular division of the document
+hierarchy to a particular metadata element with an `MDID` attribute. This allows specific sections
 of metadata to be linked to specific parts of the digital object.
   
 Metadata in `<md>` element may pertain to the object described in the METS document as a
 whole, the original source material used to create the object, or the
 individual files comprising the object.
 
-There are five main types of metadata provided for in a METS document: 
+Generally there are five main types of metadata provided for in a METS document: 
 1. Descriptive metadata about the digital object, such as MARC, MODS, EAD,
    Dublin Core, etc;
 2. Technical Metadata (information regarding files' creation, format, and use
@@ -265,6 +266,8 @@ a simple task.
 
 The location of the files is captured in the `<FLocat>` element. The attribute pair `LOCTYPE` and `LOCREF` must be used when using a reference of any kind. The `LOCTYPE` attribute is used to record the type of the reference (e.g. URL, database, relative path
 >TODO: external link to suggested values
+>
+>TO DECIDE: provide information about relative file references or not?
 
 ), and the actual reference is given in `LOCREF` attribute. 
 
@@ -373,7 +376,7 @@ indicated by a simple time code value of the form HH:MM:SS. So, the
 interviewer introduction can be found in both audio files in the segment
 beginning at time 00:00:00 in the file and extending through time
 00:01:47.
-> TODO: probably add something about linking between structmaps
+> TODO: probably add something about linking between structmaps replacing structLink
 
 ## Conclusion
 
