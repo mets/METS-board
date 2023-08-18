@@ -88,9 +88,7 @@ time the METS record was created, and indicate the status of the
 record's processing. Two individual agents are listed who have worked on
 this METS record, the person responsible for creating the record and an
 archivist responsible for the original material. Both the `ROLE` and `TYPE`
-attributes on the `<agent>` element best employ controlled vocabularies.
-
->TODO: external link to suggested values
+attributes on the `<agent>` element best employ [[controlled vocabularies](https://github.com/mets/METS-schema/wiki/METS2-Suggested-Attribute-Values)].
 
 ## <span id="mdSec">Metadata Section</span>
 
@@ -121,8 +119,7 @@ as a digital object), such as PREMIS.etc.
 
 Each of these five different types of metadata can have a
 distinct `USE` attribute in the `<md>` element with suggested values: `DESCRIPTIVE`, `TECHNICAL`,
-`RIGHTS`, `SOURCE`, or `DIGIPROV`.
->TODO: external link to suggested values
+`RIGHTS`, `SOURCE`, or `DIGIPROV`. See [[suggested values](https://github.com/mets/METS-schema/wiki/METS2-Suggested-Attribute-Values)].
 
 `<md>` elements may occur as many
 times as needed in any METS document with any combination of `USE` attributes.
@@ -148,8 +145,8 @@ The `<mdRef>` element of this `<md>` element contains five attributes. The
 `MIMETYPE` attribute allows you to specify the MIME type for the external
 metadata, and the `MDTYPE` attribute allows you to indicate what form of
 metadata is being referenced. Suggested values for the MDTYPE element are
-listed 
->ELSEWHERE - TODO.
+listed on [[suggested values](https://github.com/mets/METS-schema/wiki/METS2-Suggested-Attribute-Values)].
+
 
 The `LABEL` attribute provides a mechanism for describing this
 metadata to those viewing a METS document, in a 'Table of Contents' display of
@@ -264,9 +261,7 @@ cases, being able to separate `<file>` elements into `<fileGrp>`s makes
 identifying the files belonging to a particular version of the document
 a simple task.
 
-The location of the files is captured in the `<FLocat>` element. The attribute pair `LOCTYPE` and `LOCREF` must be used when using a reference of any kind. The `LOCTYPE` attribute is used to record the type of the reference (e.g. URL, database, relative path
->TODO: external link to suggested values
->
+The location of the files is captured in the `<FLocat>` element. The attribute pair `LOCTYPE` and `LOCREF` must be used when using a reference of any kind. The `LOCTYPE` attribute is used to record the type of the reference (e.g. URL, database, relative path, see  [[suggested values](https://github.com/mets/METS-schema/wiki/METS2-Suggested-Attribute-Values)]
 >TO DECIDE: provide information about relative file references or not?
 
 ), and the actual reference is given in `LOCREF` attribute. 
@@ -376,7 +371,6 @@ indicated by a simple time code value of the form HH:MM:SS. So, the
 interviewer introduction can be found in both audio files in the segment
 beginning at time 00:00:00 in the file and extending through time
 00:01:47.
-> TODO: probably add something about linking between structmaps replacing structLink
 
 ## Conclusion
 
