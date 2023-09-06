@@ -1,4 +1,3 @@
->TO DECIDE: provide information about METS 1 or link to Overview & Tutorial METS 1?
 # METS: An Overview & Tutorial
 
 ## Introduction
@@ -52,7 +51,7 @@ A METS document consists of four main sections:
     digital object. `<file>` elements may be grouped within `<fileGrp>`
     elements, to provide for subdividing the files by object version.
 
-4.  [**Structural Section**](#structSec) - The structural section contains the `structMap` elements that provide hierarchical organizations of the components of the digital object, and links the elements of that structure to content files and metadata that pertain to each element. Multiple structural maps are allowed.
+4.  [**Structural Section**](#structSec) - The structural section contains the `<structMap>` elements that provide hierarchical organizations of the components of the digital object, and links the elements of that structure to content files and metadata that pertain to each element. Multiple structural maps are allowed.
 
 A more detailed explanation of each section and their inter-relations
 follows.
@@ -88,7 +87,7 @@ time the METS record was created, and indicate the status of the
 record's processing. Two individual agents are listed who have worked on
 this METS record, the person responsible for creating the record and an
 archivist responsible for the original material. Both the `ROLE` and `TYPE`
-attributes on the `<agent>` element best employ [[controlled vocabularies](https://github.com/mets/METS-schema/wiki/METS2-Suggested-Attribute-Values)].
+attributes on the `<agent>` element best employ [controlled vocabularies](https://github.com/mets/METS-schema/wiki/METS2-Suggested-Attribute-Values)
 
 ## <span id="mdSec">Metadata Section</span>
 
@@ -119,7 +118,7 @@ as a digital object), such as PREMIS.etc.
 
 Each of these five different types of metadata can have a
 distinct `USE` attribute in the `<md>` element with suggested values: `DESCRIPTIVE`, `TECHNICAL`,
-`RIGHTS`, `SOURCE`, or `DIGIPROV`. See [[suggested values](https://github.com/mets/METS-schema/wiki/METS2-Suggested-Attribute-Values)].
+`RIGHTS`, `SOURCE`, or `PROVENANCE`. See [METS2 Suggested Attribute Values](https://github.com/mets/METS-schema/wiki/METS2-Suggested-Attribute-Values) on METS Wiki.
 
 `<md>` elements may occur as many
 times as needed in any METS document with any combination of `USE` attributes.
@@ -129,7 +128,7 @@ element may contain a pointer to external metadata (an `<mdRef>`
 element), internally embedded metadata (within an `<mdWrap>` element),
 or both.
 
-**External Metadata (mdRef):** an `mdRef` element provides a
+**External Metadata (mdRef):** an `<mdRef>` element provides a
 URI which may be used in retrieving the external metadata. For example,
 the following metadata reference points to the finding aid for a
 particular digital object:
@@ -145,7 +144,7 @@ The `<mdRef>` element of this `<md>` element contains five attributes. The
 `MIMETYPE` attribute allows you to specify the MIME type for the external
 metadata, and the `MDTYPE` attribute allows you to indicate what form of
 metadata is being referenced. Suggested values for the MDTYPE element are
-listed on [[suggested values](https://github.com/mets/METS-schema/wiki/METS2-Suggested-Attribute-Values)].
+listed on [METS2 Suggested Attribute Values](https://github.com/mets/METS-schema/wiki/METS2-Suggested-Attribute-Values) on METS Wiki.
 
 
 The `LABEL` attribute provides a mechanism for describing this
@@ -202,7 +201,7 @@ in the same way:
 </md>
 ```
 
-A `<file>` element within a `<fileGrp>` might then identify this
+A `<file>` element within a `<fileGrp>` element might then identify this
 technical metadata as pertaining to the file it identifies by using
 an `MDID` attribute to point to this `<md>` element:
 
@@ -261,10 +260,7 @@ cases, being able to separate `<file>` elements into `<fileGrp>`s makes
 identifying the files belonging to a particular version of the document
 a simple task.
 
-The location of the files is captured in the `<FLocat>` element. The attribute pair `LOCTYPE` and `LOCREF` must be used when using a reference of any kind. The `LOCTYPE` attribute is used to record the type of the reference (e.g. URL, database, relative path, see  [[suggested values](https://github.com/mets/METS-schema/wiki/METS2-Suggested-Attribute-Values)]
->TO DECIDE: provide information about relative file references or not?
-
-), and the actual reference is given in `LOCREF` attribute. 
+The location of the files is captured in the `<FLocat>` element. The attribute pair `LOCTYPE` and `LOCREF` must be used when using a reference of any kind. The `LOCTYPE` attribute is used to record the type of the reference (e.g. URL, database, relative path, see  [METS2 Suggested Attribute Values](https://github.com/mets/METS-schema/wiki/METS2-Suggested-Attribute-Values) for more suggested values), and the actual reference is given in `LOCREF` attribute. 
 
 You may note the presence of the `GROUPID` attributes with identical
 values on the two audio `<file>` elements; these indicate that the two
